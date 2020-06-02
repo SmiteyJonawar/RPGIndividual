@@ -14,18 +14,14 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import smitey.rpgindividual.AEffect;
 import smitey.rpgindividual.Add;
-import smitey.rpgindividual.AfterE;
 import smitey.rpgindividual.AltAttribute;
 import smitey.rpgindividual.And;
 import smitey.rpgindividual.Attribute;
 import smitey.rpgindividual.AttributeValues;
 import smitey.rpgindividual.Attributes;
-import smitey.rpgindividual.BEffect;
 import smitey.rpgindividual.Bigger;
 import smitey.rpgindividual.BiggerEq;
-import smitey.rpgindividual.Buff;
 import smitey.rpgindividual.Death;
 import smitey.rpgindividual.Div;
 import smitey.rpgindividual.EType;
@@ -76,14 +72,8 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == RpgindividualPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case RpgindividualPackage.AEFFECT:
-				sequence_AEffect(context, (AEffect) semanticObject); 
-				return; 
 			case RpgindividualPackage.ADD:
 				sequence_Sum(context, (Add) semanticObject); 
-				return; 
-			case RpgindividualPackage.AFTER_E:
-				sequence_AfterE(context, (AfterE) semanticObject); 
 				return; 
 			case RpgindividualPackage.ALT_ATTRIBUTE:
 				sequence_AltAttribute(context, (AltAttribute) semanticObject); 
@@ -100,17 +90,11 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 			case RpgindividualPackage.ATTRIBUTES:
 				sequence_Attributes(context, (Attributes) semanticObject); 
 				return; 
-			case RpgindividualPackage.BEFFECT:
-				sequence_BEffect(context, (BEffect) semanticObject); 
-				return; 
 			case RpgindividualPackage.BIGGER:
 				sequence_Comparator(context, (Bigger) semanticObject); 
 				return; 
 			case RpgindividualPackage.BIGGER_EQ:
 				sequence_Comparator(context, (BiggerEq) semanticObject); 
-				return; 
-			case RpgindividualPackage.BUFF:
-				sequence_Buff(context, (Buff) semanticObject); 
 				return; 
 			case RpgindividualPackage.DEATH:
 				sequence_Death(context, (Death) semanticObject); 
@@ -218,24 +202,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Contexts:
-	 *     AEffect returns AEffect
-	 *
-	 * Constraint:
-	 *     afterEName=[AfterE|ID]
-	 */
-	protected void sequence_AEffect(ISerializationContext context, AEffect semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.AEFFECT__AFTER_ENAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.AEFFECT__AFTER_ENAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAEffectAccess().getAfterENameAfterEIDTerminalRuleCall_2_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.AEFFECT__AFTER_ENAME, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
 	 *     ORcondition returns And
 	 *     ORcondition.Or_1_1 returns And
 	 *     ANDcondition returns And
@@ -255,28 +221,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getANDconditionAccess().getAndLeftAction_1_1(), semanticObject.getLeft());
 		feeder.accept(grammarAccess.getANDconditionAccess().getRightStatementParserRuleCall_1_2_0(), semanticObject.getRight());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Effect returns AfterE
-	 *     AfterE returns AfterE
-	 *
-	 * Constraint:
-	 *     (name=ID rule=Rule)
-	 */
-	protected void sequence_AfterE(ISerializationContext context, AfterE semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getAfterEAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getAfterEAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
 		feeder.finish();
 	}
 	
@@ -336,46 +280,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_Attributes(ISerializationContext context, Attributes semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     BEffect returns BEffect
-	 *
-	 * Constraint:
-	 *     buffEName=[Buff|ID]
-	 */
-	protected void sequence_BEffect(ISerializationContext context, BEffect semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.BEFFECT__BUFF_ENAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.BEFFECT__BUFF_ENAME));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBEffectAccess().getBuffENameBuffIDTerminalRuleCall_2_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.BEFFECT__BUFF_ENAME, false));
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Effect returns Buff
-	 *     Buff returns Buff
-	 *
-	 * Constraint:
-	 *     (name=ID rule=Rule)
-	 */
-	protected void sequence_Buff(ISerializationContext context, Buff semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getBuffAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getBuffAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
-		feeder.finish();
 	}
 	
 	
@@ -667,10 +571,10 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_MoveE(ISerializationContext context, MoveE semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME));
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE));
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.MOVE_E__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MOVE_E__NAME));
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.MOVE_E__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MOVE_E__RULE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
@@ -684,7 +588,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Move returns Move
 	 *
 	 * Constraint:
-	 *     (name=ID eType=EType att+=AltAttribute* (mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*)
+	 *     (name=ID eType=EType att+=AltAttribute* mEffect+=MEffect+)
 	 */
 	protected void sequence_Move(ISerializationContext context, Move semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -768,15 +672,18 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     NameAttribute returns NameAttribute
 	 *
 	 * Constraint:
-	 *     attribute=[Attribute|ID]
+	 *     (target=Target attribute=[Attribute|ID])
 	 */
 	protected void sequence_NameAttribute(ISerializationContext context, NameAttribute semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.NAME_ATTRIBUTE__TARGET) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.NAME_ATTRIBUTE__TARGET));
 			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.NAME_ATTRIBUTE__ATTRIBUTE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.NAME_ATTRIBUTE__ATTRIBUTE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getNameAttributeAccess().getAttributeAttributeIDTerminalRuleCall_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.NAME_ATTRIBUTE__ATTRIBUTE, false));
+		feeder.accept(grammarAccess.getNameAttributeAccess().getTargetTargetParserRuleCall_0_0(), semanticObject.getTarget());
+		feeder.accept(grammarAccess.getNameAttributeAccess().getAttributeAttributeIDTerminalRuleCall_1_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.NAME_ATTRIBUTE__ATTRIBUTE, false));
 		feeder.finish();
 	}
 	
@@ -871,7 +778,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (or=ORcondition? target=[Attribute|ID] sum=Sum)
+	 *     (or=ORcondition? targetThen=Target targetAtt=[Attribute|ID] sum=Sum)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

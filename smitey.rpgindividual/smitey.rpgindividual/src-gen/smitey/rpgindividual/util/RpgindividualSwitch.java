@@ -102,27 +102,11 @@ public class RpgindividualSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RpgindividualPackage.BUFF:
-      {
-        Buff buff = (Buff)theEObject;
-        T result = caseBuff(buff);
-        if (result == null) result = caseEffect(buff);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RpgindividualPackage.MOVE_E:
       {
         MoveE moveE = (MoveE)theEObject;
         T result = caseMoveE(moveE);
         if (result == null) result = caseEffect(moveE);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RpgindividualPackage.AFTER_E:
-      {
-        AfterE afterE = (AfterE)theEObject;
-        T result = caseAfterE(afterE);
-        if (result == null) result = caseEffect(afterE);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -197,20 +181,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
       {
         MEffect mEffect = (MEffect)theEObject;
         T result = caseMEffect(mEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RpgindividualPackage.BEFFECT:
-      {
-        BEffect bEffect = (BEffect)theEObject;
-        T result = caseBEffect(bEffect);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case RpgindividualPackage.AEFFECT:
-      {
-        AEffect aEffect = (AEffect)theEObject;
-        T result = caseAEffect(aEffect);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -556,22 +526,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Buff</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Buff</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBuff(Buff object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Move E</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -583,22 +537,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMoveE(MoveE object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>After E</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>After E</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAfterE(AfterE object)
   {
     return null;
   }
@@ -759,38 +697,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseMEffect(MEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>BEffect</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>BEffect</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseBEffect(BEffect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>AEffect</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>AEffect</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseAEffect(AEffect object)
   {
     return null;
   }

@@ -125,63 +125,20 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Effect");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cEffectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Alternatives cAlternatives_1 = (Alternatives)cGroup.eContents().get(1);
-		private final RuleCall cBuffParserRuleCall_1_0 = (RuleCall)cAlternatives_1.eContents().get(0);
-		private final RuleCall cMoveEParserRuleCall_1_1 = (RuleCall)cAlternatives_1.eContents().get(1);
-		private final RuleCall cAfterEParserRuleCall_1_2 = (RuleCall)cAlternatives_1.eContents().get(2);
+		private final RuleCall cMoveEParserRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
 		
 		//Effect:
-		//	'effect' (Buff | MoveE | AfterE);
+		//	'effect' MoveE;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'effect' (Buff | MoveE | AfterE)
+		//'effect' MoveE
 		public Group getGroup() { return cGroup; }
 		
 		//'effect'
 		public Keyword getEffectKeyword_0() { return cEffectKeyword_0; }
 		
-		//(Buff | MoveE | AfterE)
-		public Alternatives getAlternatives_1() { return cAlternatives_1; }
-		
-		//Buff
-		public RuleCall getBuffParserRuleCall_1_0() { return cBuffParserRuleCall_1_0; }
-		
 		//MoveE
-		public RuleCall getMoveEParserRuleCall_1_1() { return cMoveEParserRuleCall_1_1; }
-		
-		//AfterE
-		public RuleCall getAfterEParserRuleCall_1_2() { return cAfterEParserRuleCall_1_2; }
-	}
-	public class BuffElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Buff");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cBuffKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cRuleAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRuleRuleParserRuleCall_2_0 = (RuleCall)cRuleAssignment_2.eContents().get(0);
-		
-		//Buff:
-		//	'buff' name=ID rule=Rule;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'buff' name=ID rule=Rule
-		public Group getGroup() { return cGroup; }
-		
-		//'buff'
-		public Keyword getBuffKeyword_0() { return cBuffKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//rule=Rule
-		public Assignment getRuleAssignment_2() { return cRuleAssignment_2; }
-		
-		//Rule
-		public RuleCall getRuleRuleParserRuleCall_2_0() { return cRuleRuleParserRuleCall_2_0; }
+		public RuleCall getMoveEParserRuleCall_1() { return cMoveEParserRuleCall_1; }
 	}
 	public class MoveEElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.MoveE");
@@ -192,7 +149,11 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cRuleAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cRuleRuleParserRuleCall_2_0 = (RuleCall)cRuleAssignment_2.eContents().get(0);
 		
-		//MoveE:
+		///*
+		//Buff:
+		//	'buff' name=ID rule=Rule
+		//;
+		//*/ MoveE:
 		//	'move' name=ID rule=Rule;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -214,37 +175,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//Rule
 		public RuleCall getRuleRuleParserRuleCall_2_0() { return cRuleRuleParserRuleCall_2_0; }
 	}
-	public class AfterEElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.AfterE");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cAfterKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Assignment cRuleAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cRuleRuleParserRuleCall_2_0 = (RuleCall)cRuleAssignment_2.eContents().get(0);
-		
-		//AfterE:
-		//	'after' name=ID rule=Rule;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'after' name=ID rule=Rule
-		public Group getGroup() { return cGroup; }
-		
-		//'after'
-		public Keyword getAfterKeyword_0() { return cAfterKeyword_0; }
-		
-		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-		
-		//rule=Rule
-		public Assignment getRuleAssignment_2() { return cRuleAssignment_2; }
-		
-		//Rule
-		public RuleCall getRuleRuleParserRuleCall_2_0() { return cRuleRuleParserRuleCall_2_0; }
-	}
 	public class AttributesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Attributes");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -252,7 +182,11 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAttributeAttributeParserRuleCall_1_0 = (RuleCall)cAttributeAssignment_1.eContents().get(0);
 		
-		//Attributes:
+		///*
+		//AfterE:
+		//	'after' name=ID rule=Rule
+		//;
+		//*/ Attributes:
 		//	'attributes' attribute+=Attribute+;
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -539,19 +473,14 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cETypeETypeParserRuleCall_2_0 = (RuleCall)cETypeAssignment_2.eContents().get(0);
 		private final Assignment cAttAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cAttAltAttributeParserRuleCall_3_0 = (RuleCall)cAttAssignment_3.eContents().get(0);
-		private final Alternatives cAlternatives_4 = (Alternatives)cGroup.eContents().get(4);
-		private final Assignment cMEffectAssignment_4_0 = (Assignment)cAlternatives_4.eContents().get(0);
-		private final RuleCall cMEffectMEffectParserRuleCall_4_0_0 = (RuleCall)cMEffectAssignment_4_0.eContents().get(0);
-		private final Assignment cBEffectAssignment_4_1 = (Assignment)cAlternatives_4.eContents().get(1);
-		private final RuleCall cBEffectBEffectParserRuleCall_4_1_0 = (RuleCall)cBEffectAssignment_4_1.eContents().get(0);
-		private final Assignment cAEffectAssignment_4_2 = (Assignment)cAlternatives_4.eContents().get(2);
-		private final RuleCall cAEffectAEffectParserRuleCall_4_2_0 = (RuleCall)cAEffectAssignment_4_2.eContents().get(0);
+		private final Assignment cMEffectAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMEffectMEffectParserRuleCall_4_0 = (RuleCall)cMEffectAssignment_4.eContents().get(0);
 		
 		//Move:
-		//	'move' name=ID eType=EType att+=AltAttribute* (mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*;
+		//	'move' name=ID eType=EType att+=AltAttribute* mEffect+=MEffect+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'move' name=ID eType=EType att+=AltAttribute* (mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*
+		//'move' name=ID eType=EType att+=AltAttribute* mEffect+=MEffect+
 		public Group getGroup() { return cGroup; }
 		
 		//'move'
@@ -575,26 +504,11 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//AltAttribute
 		public RuleCall getAttAltAttributeParserRuleCall_3_0() { return cAttAltAttributeParserRuleCall_3_0; }
 		
-		//(mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*
-		public Alternatives getAlternatives_4() { return cAlternatives_4; }
-		
-		//mEffect+=MEffect
-		public Assignment getMEffectAssignment_4_0() { return cMEffectAssignment_4_0; }
+		//mEffect+=MEffect+
+		public Assignment getMEffectAssignment_4() { return cMEffectAssignment_4; }
 		
 		//MEffect
-		public RuleCall getMEffectMEffectParserRuleCall_4_0_0() { return cMEffectMEffectParserRuleCall_4_0_0; }
-		
-		//bEffect+=BEffect
-		public Assignment getBEffectAssignment_4_1() { return cBEffectAssignment_4_1; }
-		
-		//BEffect
-		public RuleCall getBEffectBEffectParserRuleCall_4_1_0() { return cBEffectBEffectParserRuleCall_4_1_0; }
-		
-		//aEffect+=AEffect
-		public Assignment getAEffectAssignment_4_2() { return cAEffectAssignment_4_2; }
-		
-		//AEffect
-		public RuleCall getAEffectAEffectParserRuleCall_4_2_0() { return cAEffectAEffectParserRuleCall_4_2_0; }
+		public RuleCall getMEffectMEffectParserRuleCall_4_0() { return cMEffectMEffectParserRuleCall_4_0; }
 	}
 	public class MEffectElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.MEffect");
@@ -627,68 +541,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//ID
 		public RuleCall getMoveENameMoveEIDTerminalRuleCall_2_0_1() { return cMoveENameMoveEIDTerminalRuleCall_2_0_1; }
 	}
-	public class BEffectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.BEffect");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEffectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cBuffKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cBuffENameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cBuffENameBuffCrossReference_2_0 = (CrossReference)cBuffENameAssignment_2.eContents().get(0);
-		private final RuleCall cBuffENameBuffIDTerminalRuleCall_2_0_1 = (RuleCall)cBuffENameBuffCrossReference_2_0.eContents().get(1);
-		
-		//BEffect:
-		//	'effect' 'buff' buffEName=[Buff];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'effect' 'buff' buffEName=[Buff]
-		public Group getGroup() { return cGroup; }
-		
-		//'effect'
-		public Keyword getEffectKeyword_0() { return cEffectKeyword_0; }
-		
-		//'buff'
-		public Keyword getBuffKeyword_1() { return cBuffKeyword_1; }
-		
-		//buffEName=[Buff]
-		public Assignment getBuffENameAssignment_2() { return cBuffENameAssignment_2; }
-		
-		//[Buff]
-		public CrossReference getBuffENameBuffCrossReference_2_0() { return cBuffENameBuffCrossReference_2_0; }
-		
-		//ID
-		public RuleCall getBuffENameBuffIDTerminalRuleCall_2_0_1() { return cBuffENameBuffIDTerminalRuleCall_2_0_1; }
-	}
-	public class AEffectElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.AEffect");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cEffectKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cAfterKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAfterENameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final CrossReference cAfterENameAfterECrossReference_2_0 = (CrossReference)cAfterENameAssignment_2.eContents().get(0);
-		private final RuleCall cAfterENameAfterEIDTerminalRuleCall_2_0_1 = (RuleCall)cAfterENameAfterECrossReference_2_0.eContents().get(1);
-		
-		//AEffect:
-		//	'effect' 'after' afterEName=[AfterE];
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'effect' 'after' afterEName=[AfterE]
-		public Group getGroup() { return cGroup; }
-		
-		//'effect'
-		public Keyword getEffectKeyword_0() { return cEffectKeyword_0; }
-		
-		//'after'
-		public Keyword getAfterKeyword_1() { return cAfterKeyword_1; }
-		
-		//afterEName=[AfterE]
-		public Assignment getAfterENameAssignment_2() { return cAfterENameAssignment_2; }
-		
-		//[AfterE]
-		public CrossReference getAfterENameAfterECrossReference_2_0() { return cAfterENameAfterECrossReference_2_0; }
-		
-		//ID
-		public RuleCall getAfterENameAfterEIDTerminalRuleCall_2_0_1() { return cAfterENameAfterEIDTerminalRuleCall_2_0_1; }
-	}
 	public class ETypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.EType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -697,7 +549,16 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTypeTypeCrossReference_1_0 = (CrossReference)cTypeAssignment_1.eContents().get(0);
 		private final RuleCall cTypeTypeIDTerminalRuleCall_1_0_1 = (RuleCall)cTypeTypeCrossReference_1_0.eContents().get(1);
 		
-		//EType:
+		///* 
+		//BEffect:
+		//	'effect' 'buff' buffEName=[Buff]
+		//;
+		//
+		//
+		//AEffect:
+		//	'effect' 'after' afterEName=[AfterE]
+		//;
+		//*/ EType:
 		//	'type' type=[Type];
 		@Override public ParserRule getRule() { return rule; }
 		
@@ -794,18 +655,20 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cOrAssignment_0_1 = (Assignment)cGroup_0.eContents().get(1);
 		private final RuleCall cOrORconditionParserRuleCall_0_1_0 = (RuleCall)cOrAssignment_0_1.eContents().get(0);
 		private final Keyword cThenKeyword_0_2 = (Keyword)cGroup_0.eContents().get(2);
-		private final Assignment cTargetAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final CrossReference cTargetAttributeCrossReference_1_0 = (CrossReference)cTargetAssignment_1.eContents().get(0);
-		private final RuleCall cTargetAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cTargetAttributeCrossReference_1_0.eContents().get(1);
-		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cSumAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cSumSumParserRuleCall_3_0 = (RuleCall)cSumAssignment_3.eContents().get(0);
+		private final Assignment cTargetThenAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cTargetThenTargetParserRuleCall_1_0 = (RuleCall)cTargetThenAssignment_1.eContents().get(0);
+		private final Assignment cTargetAttAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final CrossReference cTargetAttAttributeCrossReference_2_0 = (CrossReference)cTargetAttAssignment_2.eContents().get(0);
+		private final RuleCall cTargetAttAttributeIDTerminalRuleCall_2_0_1 = (RuleCall)cTargetAttAttributeCrossReference_2_0.eContents().get(1);
+		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cSumAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cSumSumParserRuleCall_4_0 = (RuleCall)cSumAssignment_4.eContents().get(0);
 		
 		//Rule:
-		//	('if' or=ORcondition 'then')? target=[Attribute] 'is' sum=Sum;
+		//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('if' or=ORcondition 'then')? target=[Attribute] 'is' sum=Sum
+		//('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum
 		public Group getGroup() { return cGroup; }
 		
 		//('if' or=ORcondition 'then')?
@@ -823,23 +686,29 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//'then'
 		public Keyword getThenKeyword_0_2() { return cThenKeyword_0_2; }
 		
-		//target=[Attribute]
-		public Assignment getTargetAssignment_1() { return cTargetAssignment_1; }
+		//targetThen=Target
+		public Assignment getTargetThenAssignment_1() { return cTargetThenAssignment_1; }
+		
+		//Target
+		public RuleCall getTargetThenTargetParserRuleCall_1_0() { return cTargetThenTargetParserRuleCall_1_0; }
+		
+		//targetAtt=[Attribute]
+		public Assignment getTargetAttAssignment_2() { return cTargetAttAssignment_2; }
 		
 		//[Attribute]
-		public CrossReference getTargetAttributeCrossReference_1_0() { return cTargetAttributeCrossReference_1_0; }
+		public CrossReference getTargetAttAttributeCrossReference_2_0() { return cTargetAttAttributeCrossReference_2_0; }
 		
 		//ID
-		public RuleCall getTargetAttributeIDTerminalRuleCall_1_0_1() { return cTargetAttributeIDTerminalRuleCall_1_0_1; }
+		public RuleCall getTargetAttAttributeIDTerminalRuleCall_2_0_1() { return cTargetAttAttributeIDTerminalRuleCall_2_0_1; }
 		
 		//'is'
-		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
+		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
 		
 		//sum=Sum
-		public Assignment getSumAssignment_3() { return cSumAssignment_3; }
+		public Assignment getSumAssignment_4() { return cSumAssignment_4; }
 		
 		//Sum
-		public RuleCall getSumSumParserRuleCall_3_0() { return cSumSumParserRuleCall_3_0; }
+		public RuleCall getSumSumParserRuleCall_4_0() { return cSumSumParserRuleCall_4_0; }
 	}
 	public class EntitiesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Entities");
@@ -1434,22 +1303,34 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	public class NameAttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.NameAttribute");
-		private final Assignment cAttributeAssignment = (Assignment)rule.eContents().get(1);
-		private final CrossReference cAttributeAttributeCrossReference_0 = (CrossReference)cAttributeAssignment.eContents().get(0);
-		private final RuleCall cAttributeAttributeIDTerminalRuleCall_0_1 = (RuleCall)cAttributeAttributeCrossReference_0.eContents().get(1);
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTargetAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTargetTargetParserRuleCall_0_0 = (RuleCall)cTargetAssignment_0.eContents().get(0);
+		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cAttributeAttributeCrossReference_1_0 = (CrossReference)cAttributeAssignment_1.eContents().get(0);
+		private final RuleCall cAttributeAttributeIDTerminalRuleCall_1_0_1 = (RuleCall)cAttributeAttributeCrossReference_1_0.eContents().get(1);
 		
 		//NameAttribute:
-		//	attribute=[Attribute];
+		//	target=Target attribute=[Attribute];
 		@Override public ParserRule getRule() { return rule; }
 		
+		//target=Target attribute=[Attribute]
+		public Group getGroup() { return cGroup; }
+		
+		//target=Target
+		public Assignment getTargetAssignment_0() { return cTargetAssignment_0; }
+		
+		//Target
+		public RuleCall getTargetTargetParserRuleCall_0_0() { return cTargetTargetParserRuleCall_0_0; }
+		
 		//attribute=[Attribute]
-		public Assignment getAttributeAssignment() { return cAttributeAssignment; }
+		public Assignment getAttributeAssignment_1() { return cAttributeAssignment_1; }
 		
 		//[Attribute]
-		public CrossReference getAttributeAttributeCrossReference_0() { return cAttributeAttributeCrossReference_0; }
+		public CrossReference getAttributeAttributeCrossReference_1_0() { return cAttributeAttributeCrossReference_1_0; }
 		
 		//ID
-		public RuleCall getAttributeAttributeIDTerminalRuleCall_0_1() { return cAttributeAttributeIDTerminalRuleCall_0_1; }
+		public RuleCall getAttributeAttributeIDTerminalRuleCall_1_0_1() { return cAttributeAttributeIDTerminalRuleCall_1_0_1; }
 	}
 	public class IntNumElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.IntNum");
@@ -1497,6 +1378,25 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//INT
 		public RuleCall getDecimalINTTerminalRuleCall_2_0() { return cDecimalINTTerminalRuleCall_2_0; }
 	}
+	public class TargetElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Target");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final Keyword cUserKeyword_0 = (Keyword)cAlternatives.eContents().get(0);
+		private final Keyword cEnemyKeyword_1 = (Keyword)cAlternatives.eContents().get(1);
+		
+		//Target:
+		//	'User' | 'Enemy';
+		@Override public ParserRule getRule() { return rule; }
+		
+		//'User' | 'Enemy'
+		public Alternatives getAlternatives() { return cAlternatives; }
+		
+		//'User'
+		public Keyword getUserKeyword_0() { return cUserKeyword_0; }
+		
+		//'Enemy'
+		public Keyword getEnemyKeyword_1() { return cEnemyKeyword_1; }
+	}
 	public class LegalTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.LegalType");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
@@ -1522,9 +1422,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	private final DeclarationElements pDeclaration;
 	private final EffectsElements pEffects;
 	private final EffectElements pEffect;
-	private final BuffElements pBuff;
 	private final MoveEElements pMoveE;
-	private final AfterEElements pAfterE;
 	private final AttributesElements pAttributes;
 	private final AttributeElements pAttribute;
 	private final LocationsElements pLocations;
@@ -1535,8 +1433,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	private final MovesElements pMoves;
 	private final MoveElements pMove;
 	private final MEffectElements pMEffect;
-	private final BEffectElements pBEffect;
-	private final AEffectElements pAEffect;
 	private final ETypeElements pEType;
 	private final AttributeValuesElements pAttributeValues;
 	private final AltAttributeElements pAltAttribute;
@@ -1561,6 +1457,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	private final NameAttributeElements pNameAttribute;
 	private final IntNumElements pIntNum;
 	private final FloatNumElements pFloatNum;
+	private final TargetElements pTarget;
 	private final LegalTypeElements pLegalType;
 	
 	private final Grammar grammar;
@@ -1576,9 +1473,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDeclaration = new DeclarationElements();
 		this.pEffects = new EffectsElements();
 		this.pEffect = new EffectElements();
-		this.pBuff = new BuffElements();
 		this.pMoveE = new MoveEElements();
-		this.pAfterE = new AfterEElements();
 		this.pAttributes = new AttributesElements();
 		this.pAttribute = new AttributeElements();
 		this.pLocations = new LocationsElements();
@@ -1589,8 +1484,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		this.pMoves = new MovesElements();
 		this.pMove = new MoveElements();
 		this.pMEffect = new MEffectElements();
-		this.pBEffect = new BEffectElements();
-		this.pAEffect = new AEffectElements();
 		this.pEType = new ETypeElements();
 		this.pAttributeValues = new AttributeValuesElements();
 		this.pAltAttribute = new AltAttributeElements();
@@ -1615,6 +1508,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		this.pNameAttribute = new NameAttributeElements();
 		this.pIntNum = new IntNumElements();
 		this.pFloatNum = new FloatNumElements();
+		this.pTarget = new TargetElements();
 		this.pLegalType = new LegalTypeElements();
 	}
 	
@@ -1676,7 +1570,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Effect:
-	//	'effect' (Buff | MoveE | AfterE);
+	//	'effect' MoveE;
 	public EffectElements getEffectAccess() {
 		return pEffect;
 	}
@@ -1685,17 +1579,11 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		return getEffectAccess().getRule();
 	}
 	
+	///*
 	//Buff:
-	//	'buff' name=ID rule=Rule;
-	public BuffElements getBuffAccess() {
-		return pBuff;
-	}
-	
-	public ParserRule getBuffRule() {
-		return getBuffAccess().getRule();
-	}
-	
-	//MoveE:
+	//	'buff' name=ID rule=Rule
+	//;
+	//*/ MoveE:
 	//	'move' name=ID rule=Rule;
 	public MoveEElements getMoveEAccess() {
 		return pMoveE;
@@ -1705,17 +1593,11 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		return getMoveEAccess().getRule();
 	}
 	
+	///*
 	//AfterE:
-	//	'after' name=ID rule=Rule;
-	public AfterEElements getAfterEAccess() {
-		return pAfterE;
-	}
-	
-	public ParserRule getAfterERule() {
-		return getAfterEAccess().getRule();
-	}
-	
-	//Attributes:
+	//	'after' name=ID rule=Rule
+	//;
+	//*/ Attributes:
 	//	'attributes' attribute+=Attribute+;
 	public AttributesElements getAttributesAccess() {
 		return pAttributes;
@@ -1796,7 +1678,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Move:
-	//	'move' name=ID eType=EType att+=AltAttribute* (mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*;
+	//	'move' name=ID eType=EType att+=AltAttribute* mEffect+=MEffect+;
 	public MoveElements getMoveAccess() {
 		return pMove;
 	}
@@ -1815,27 +1697,16 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		return getMEffectAccess().getRule();
 	}
 	
+	///* 
 	//BEffect:
-	//	'effect' 'buff' buffEName=[Buff];
-	public BEffectElements getBEffectAccess() {
-		return pBEffect;
-	}
-	
-	public ParserRule getBEffectRule() {
-		return getBEffectAccess().getRule();
-	}
-	
+	//	'effect' 'buff' buffEName=[Buff]
+	//;
+	//
+	//
 	//AEffect:
-	//	'effect' 'after' afterEName=[AfterE];
-	public AEffectElements getAEffectAccess() {
-		return pAEffect;
-	}
-	
-	public ParserRule getAEffectRule() {
-		return getAEffectAccess().getRule();
-	}
-	
-	//EType:
+	//	'effect' 'after' afterEName=[AfterE]
+	//;
+	//*/ EType:
 	//	'type' type=[Type];
 	public ETypeElements getETypeAccess() {
 		return pEType;
@@ -1866,7 +1737,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Rule:
-	//	('if' or=ORcondition 'then')? target=[Attribute] 'is' sum=Sum;
+	//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum;
 	public RuleElements getRuleAccess() {
 		return pRule;
 	}
@@ -2046,7 +1917,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//NameAttribute:
-	//	attribute=[Attribute];
+	//	target=Target attribute=[Attribute];
 	public NameAttributeElements getNameAttributeAccess() {
 		return pNameAttribute;
 	}
@@ -2073,6 +1944,16 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getFloatNumRule() {
 		return getFloatNumAccess().getRule();
+	}
+	
+	//Target:
+	//	'User' | 'Enemy';
+	public TargetElements getTargetAccess() {
+		return pTarget;
+	}
+	
+	public ParserRule getTargetRule() {
+		return getTargetAccess().getRule();
 	}
 	
 	//LegalType:

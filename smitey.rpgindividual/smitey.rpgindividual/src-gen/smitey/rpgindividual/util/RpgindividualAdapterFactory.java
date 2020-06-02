@@ -96,19 +96,9 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
         return createEffectAdapter();
       }
       @Override
-      public Adapter caseBuff(Buff object)
-      {
-        return createBuffAdapter();
-      }
-      @Override
       public Adapter caseMoveE(MoveE object)
       {
         return createMoveEAdapter();
-      }
-      @Override
-      public Adapter caseAfterE(AfterE object)
-      {
-        return createAfterEAdapter();
       }
       @Override
       public Adapter caseAttributes(Attributes object)
@@ -159,16 +149,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMEffect(MEffect object)
       {
         return createMEffectAdapter();
-      }
-      @Override
-      public Adapter caseBEffect(BEffect object)
-      {
-        return createBEffectAdapter();
-      }
-      @Override
-      public Adapter caseAEffect(AEffect object)
-      {
-        return createAEffectAdapter();
       }
       @Override
       public Adapter caseEType(EType object)
@@ -423,21 +403,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.Buff <em>Buff</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.Buff
-   * @generated
-   */
-  public Adapter createBuffAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link smitey.rpgindividual.MoveE <em>Move E</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -448,21 +413,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMoveEAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.AfterE <em>After E</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.AfterE
-   * @generated
-   */
-  public Adapter createAfterEAdapter()
   {
     return null;
   }
@@ -613,36 +563,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.BEffect <em>BEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.BEffect
-   * @generated
-   */
-  public Adapter createBEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.AEffect <em>AEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.AEffect
-   * @generated
-   */
-  public Adapter createAEffectAdapter()
   {
     return null;
   }

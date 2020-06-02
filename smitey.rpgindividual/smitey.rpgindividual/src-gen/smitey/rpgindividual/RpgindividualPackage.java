@@ -152,68 +152,13 @@ public interface RpgindividualPackage extends EPackage
   int EFFECT = 3;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFFECT__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Rule</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EFFECT__RULE = 1;
-
-  /**
    * The number of structural features of the '<em>Effect</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EFFECT_FEATURE_COUNT = 2;
-
-  /**
-   * The meta object id for the '{@link smitey.rpgindividual.impl.BuffImpl <em>Buff</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see smitey.rpgindividual.impl.BuffImpl
-   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBuff()
-   * @generated
-   */
-  int BUFF = 4;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BUFF__NAME = EFFECT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Rule</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BUFF__RULE = EFFECT__RULE;
-
-  /**
-   * The number of structural features of the '<em>Buff</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BUFF_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
+  int EFFECT_FEATURE_COUNT = 0;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.MoveEImpl <em>Move E</em>}' class.
@@ -223,7 +168,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMoveE()
    * @generated
    */
-  int MOVE_E = 5;
+  int MOVE_E = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -232,7 +177,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MOVE_E__NAME = EFFECT__NAME;
+  int MOVE_E__NAME = EFFECT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Rule</b></em>' containment reference.
@@ -241,7 +186,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MOVE_E__RULE = EFFECT__RULE;
+  int MOVE_E__RULE = EFFECT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Move E</em>' class.
@@ -250,44 +195,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MOVE_E_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
-
-  /**
-   * The meta object id for the '{@link smitey.rpgindividual.impl.AfterEImpl <em>After E</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see smitey.rpgindividual.impl.AfterEImpl
-   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAfterE()
-   * @generated
-   */
-  int AFTER_E = 6;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AFTER_E__NAME = EFFECT__NAME;
-
-  /**
-   * The feature id for the '<em><b>Rule</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AFTER_E__RULE = EFFECT__RULE;
-
-  /**
-   * The number of structural features of the '<em>After E</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AFTER_E_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 0;
+  int MOVE_E_FEATURE_COUNT = EFFECT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.AttributesImpl <em>Attributes</em>}' class.
@@ -297,7 +205,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAttributes()
    * @generated
    */
-  int ATTRIBUTES = 7;
+  int ATTRIBUTES = 5;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' containment reference list.
@@ -325,7 +233,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 8;
+  int ATTRIBUTE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -362,7 +270,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getLocations()
    * @generated
    */
-  int LOCATIONS = 9;
+  int LOCATIONS = 7;
 
   /**
    * The feature id for the '<em><b>Loc</b></em>' containment reference list.
@@ -390,7 +298,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getLoc()
    * @generated
    */
-  int LOC = 10;
+  int LOC = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -427,7 +335,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRelations()
    * @generated
    */
-  int RELATIONS = 11;
+  int RELATIONS = 9;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' containment reference list.
@@ -455,7 +363,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getType()
    * @generated
    */
-  int TYPE = 12;
+  int TYPE = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -492,7 +400,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getTypeExpression()
    * @generated
    */
-  int TYPE_EXPRESSION = 13;
+  int TYPE_EXPRESSION = 11;
 
   /**
    * The feature id for the '<em><b>Strong</b></em>' reference.
@@ -556,7 +464,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMoves()
    * @generated
    */
-  int MOVES = 14;
+  int MOVES = 12;
 
   /**
    * The feature id for the '<em><b>Move</b></em>' containment reference list.
@@ -584,7 +492,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMove()
    * @generated
    */
-  int MOVE = 15;
+  int MOVE = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -623,31 +531,13 @@ public interface RpgindividualPackage extends EPackage
   int MOVE__MEFFECT = 3;
 
   /**
-   * The feature id for the '<em><b>BEffect</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOVE__BEFFECT = 4;
-
-  /**
-   * The feature id for the '<em><b>AEffect</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MOVE__AEFFECT = 5;
-
-  /**
    * The number of structural features of the '<em>Move</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MOVE_FEATURE_COUNT = 6;
+  int MOVE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.MEffectImpl <em>MEffect</em>}' class.
@@ -657,7 +547,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMEffect()
    * @generated
    */
-  int MEFFECT = 16;
+  int MEFFECT = 14;
 
   /**
    * The feature id for the '<em><b>Move EName</b></em>' reference.
@@ -678,62 +568,6 @@ public interface RpgindividualPackage extends EPackage
   int MEFFECT_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link smitey.rpgindividual.impl.BEffectImpl <em>BEffect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see smitey.rpgindividual.impl.BEffectImpl
-   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBEffect()
-   * @generated
-   */
-  int BEFFECT = 17;
-
-  /**
-   * The feature id for the '<em><b>Buff EName</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEFFECT__BUFF_ENAME = 0;
-
-  /**
-   * The number of structural features of the '<em>BEffect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int BEFFECT_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link smitey.rpgindividual.impl.AEffectImpl <em>AEffect</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see smitey.rpgindividual.impl.AEffectImpl
-   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAEffect()
-   * @generated
-   */
-  int AEFFECT = 18;
-
-  /**
-   * The feature id for the '<em><b>After EName</b></em>' reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AEFFECT__AFTER_ENAME = 0;
-
-  /**
-   * The number of structural features of the '<em>AEffect</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AEFFECT_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.ETypeImpl <em>EType</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -741,7 +575,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEType()
    * @generated
    */
-  int ETYPE = 19;
+  int ETYPE = 15;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' reference.
@@ -769,7 +603,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAttributeValues()
    * @generated
    */
-  int ATTRIBUTE_VALUES = 20;
+  int ATTRIBUTE_VALUES = 16;
 
   /**
    * The feature id for the '<em><b>LTypes</b></em>' attribute.
@@ -806,7 +640,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAltAttribute()
    * @generated
    */
-  int ALT_ATTRIBUTE = 21;
+  int ALT_ATTRIBUTE = 17;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -843,7 +677,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRule()
    * @generated
    */
-  int RULE = 22;
+  int RULE = 18;
 
   /**
    * The feature id for the '<em><b>Or</b></em>' containment reference.
@@ -855,13 +689,22 @@ public interface RpgindividualPackage extends EPackage
   int RULE__OR = 0;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' reference.
+   * The feature id for the '<em><b>Target Then</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__TARGET = 1;
+  int RULE__TARGET_THEN = 1;
+
+  /**
+   * The feature id for the '<em><b>Target Att</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__TARGET_ATT = 2;
 
   /**
    * The feature id for the '<em><b>Sum</b></em>' containment reference.
@@ -870,7 +713,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE__SUM = 2;
+  int RULE__SUM = 3;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -879,7 +722,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 3;
+  int RULE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.EntitiesImpl <em>Entities</em>}' class.
@@ -889,7 +732,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntities()
    * @generated
    */
-  int ENTITIES = 23;
+  int ENTITIES = 19;
 
   /**
    * The feature id for the '<em><b>Entity</b></em>' containment reference list.
@@ -917,7 +760,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getDeath()
    * @generated
    */
-  int DEATH = 24;
+  int DEATH = 20;
 
   /**
    * The feature id for the '<em><b>Req</b></em>' containment reference.
@@ -945,7 +788,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 25;
+  int ENTITY = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1000,7 +843,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntityMoves()
    * @generated
    */
-  int ENTITY_MOVES = 26;
+  int ENTITY_MOVES = 22;
 
   /**
    * The feature id for the '<em><b>Move</b></em>' reference list.
@@ -1028,7 +871,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getTeams()
    * @generated
    */
-  int TEAMS = 27;
+  int TEAMS = 23;
 
   /**
    * The feature id for the '<em><b>Team</b></em>' containment reference list.
@@ -1056,7 +899,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getTeam()
    * @generated
    */
-  int TEAM = 28;
+  int TEAM = 24;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1093,7 +936,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMembers()
    * @generated
    */
-  int MEMBERS = 29;
+  int MEMBERS = 25;
 
   /**
    * The feature id for the '<em><b>Entity</b></em>' reference list.
@@ -1121,7 +964,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRequire()
    * @generated
    */
-  int REQUIRE = 30;
+  int REQUIRE = 26;
 
   /**
    * The feature id for the '<em><b>Log</b></em>' containment reference.
@@ -1149,7 +992,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getProposition()
    * @generated
    */
-  int PROPOSITION = 31;
+  int PROPOSITION = 27;
 
   /**
    * The number of structural features of the '<em>Proposition</em>' class.
@@ -1168,7 +1011,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNumberComparing()
    * @generated
    */
-  int NUMBER_COMPARING = 32;
+  int NUMBER_COMPARING = 28;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1214,7 +1057,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getComparator()
    * @generated
    */
-  int COMPARATOR = 33;
+  int COMPARATOR = 29;
 
   /**
    * The number of structural features of the '<em>Comparator</em>' class.
@@ -1233,7 +1076,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSum()
    * @generated
    */
-  int SUM = 34;
+  int SUM = 30;
 
   /**
    * The number of structural features of the '<em>Sum</em>' class.
@@ -1252,7 +1095,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 35;
+  int MULTIPLY = 31;
 
   /**
    * The number of structural features of the '<em>Multiply</em>' class.
@@ -1271,7 +1114,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAtomicNumber()
    * @generated
    */
-  int ATOMIC_NUMBER = 36;
+  int ATOMIC_NUMBER = 32;
 
   /**
    * The number of structural features of the '<em>Atomic Number</em>' class.
@@ -1290,7 +1133,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getActualNumbers()
    * @generated
    */
-  int ACTUAL_NUMBERS = 37;
+  int ACTUAL_NUMBERS = 33;
 
   /**
    * The number of structural features of the '<em>Actual Numbers</em>' class.
@@ -1309,7 +1152,16 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNameAttribute()
    * @generated
    */
-  int NAME_ATTRIBUTE = 38;
+  int NAME_ATTRIBUTE = 34;
+
+  /**
+   * The feature id for the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAME_ATTRIBUTE__TARGET = ATOMIC_NUMBER_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Attribute</b></em>' reference.
@@ -1318,7 +1170,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_ATTRIBUTE__ATTRIBUTE = ATOMIC_NUMBER_FEATURE_COUNT + 0;
+  int NAME_ATTRIBUTE__ATTRIBUTE = ATOMIC_NUMBER_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Name Attribute</em>' class.
@@ -1327,7 +1179,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int NAME_ATTRIBUTE_FEATURE_COUNT = ATOMIC_NUMBER_FEATURE_COUNT + 1;
+  int NAME_ATTRIBUTE_FEATURE_COUNT = ATOMIC_NUMBER_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.IntNumImpl <em>Int Num</em>}' class.
@@ -1337,7 +1189,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getIntNum()
    * @generated
    */
-  int INT_NUM = 39;
+  int INT_NUM = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1365,7 +1217,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getFloatNum()
    * @generated
    */
-  int FLOAT_NUM = 40;
+  int FLOAT_NUM = 36;
 
   /**
    * The feature id for the '<em><b>I</b></em>' attribute.
@@ -1402,7 +1254,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getOr()
    * @generated
    */
-  int OR = 41;
+  int OR = 37;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1439,7 +1291,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAnd()
    * @generated
    */
-  int AND = 42;
+  int AND = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1476,7 +1328,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmaller()
    * @generated
    */
-  int SMALLER = 43;
+  int SMALLER = 39;
 
   /**
    * The number of structural features of the '<em>Smaller</em>' class.
@@ -1495,7 +1347,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmallerEq()
    * @generated
    */
-  int SMALLER_EQ = 44;
+  int SMALLER_EQ = 40;
 
   /**
    * The number of structural features of the '<em>Smaller Eq</em>' class.
@@ -1514,7 +1366,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEq()
    * @generated
    */
-  int EQ = 45;
+  int EQ = 41;
 
   /**
    * The number of structural features of the '<em>Eq</em>' class.
@@ -1533,7 +1385,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBiggerEq()
    * @generated
    */
-  int BIGGER_EQ = 46;
+  int BIGGER_EQ = 42;
 
   /**
    * The number of structural features of the '<em>Bigger Eq</em>' class.
@@ -1552,7 +1404,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBigger()
    * @generated
    */
-  int BIGGER = 47;
+  int BIGGER = 43;
 
   /**
    * The number of structural features of the '<em>Bigger</em>' class.
@@ -1571,7 +1423,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNEq()
    * @generated
    */
-  int NEQ = 48;
+  int NEQ = 44;
 
   /**
    * The number of structural features of the '<em>NEq</em>' class.
@@ -1590,7 +1442,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAdd()
    * @generated
    */
-  int ADD = 49;
+  int ADD = 45;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1627,7 +1479,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSub()
    * @generated
    */
-  int SUB = 50;
+  int SUB = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1664,7 +1516,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMult()
    * @generated
    */
-  int MULT = 51;
+  int MULT = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1701,7 +1553,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 52;
+  int DIV = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1805,38 +1657,6 @@ public interface RpgindividualPackage extends EPackage
   EClass getEffect();
 
   /**
-   * Returns the meta object for the attribute '{@link smitey.rpgindividual.Effect#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see smitey.rpgindividual.Effect#getName()
-   * @see #getEffect()
-   * @generated
-   */
-  EAttribute getEffect_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Effect#getRule <em>Rule</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Rule</em>'.
-   * @see smitey.rpgindividual.Effect#getRule()
-   * @see #getEffect()
-   * @generated
-   */
-  EReference getEffect_Rule();
-
-  /**
-   * Returns the meta object for class '{@link smitey.rpgindividual.Buff <em>Buff</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Buff</em>'.
-   * @see smitey.rpgindividual.Buff
-   * @generated
-   */
-  EClass getBuff();
-
-  /**
    * Returns the meta object for class '{@link smitey.rpgindividual.MoveE <em>Move E</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1847,14 +1667,26 @@ public interface RpgindividualPackage extends EPackage
   EClass getMoveE();
 
   /**
-   * Returns the meta object for class '{@link smitey.rpgindividual.AfterE <em>After E</em>}'.
+   * Returns the meta object for the attribute '{@link smitey.rpgindividual.MoveE#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>After E</em>'.
-   * @see smitey.rpgindividual.AfterE
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see smitey.rpgindividual.MoveE#getName()
+   * @see #getMoveE()
    * @generated
    */
-  EClass getAfterE();
+  EAttribute getMoveE_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.MoveE#getRule <em>Rule</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Rule</em>'.
+   * @see smitey.rpgindividual.MoveE#getRule()
+   * @see #getMoveE()
+   * @generated
+   */
+  EReference getMoveE_Rule();
 
   /**
    * Returns the meta object for class '{@link smitey.rpgindividual.Attributes <em>Attributes</em>}'.
@@ -2156,28 +1988,6 @@ public interface RpgindividualPackage extends EPackage
   EReference getMove_MEffect();
 
   /**
-   * Returns the meta object for the containment reference list '{@link smitey.rpgindividual.Move#getBEffect <em>BEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>BEffect</em>'.
-   * @see smitey.rpgindividual.Move#getBEffect()
-   * @see #getMove()
-   * @generated
-   */
-  EReference getMove_BEffect();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link smitey.rpgindividual.Move#getAEffect <em>AEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>AEffect</em>'.
-   * @see smitey.rpgindividual.Move#getAEffect()
-   * @see #getMove()
-   * @generated
-   */
-  EReference getMove_AEffect();
-
-  /**
    * Returns the meta object for class '{@link smitey.rpgindividual.MEffect <em>MEffect</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2197,48 +2007,6 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    */
   EReference getMEffect_MoveEName();
-
-  /**
-   * Returns the meta object for class '{@link smitey.rpgindividual.BEffect <em>BEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>BEffect</em>'.
-   * @see smitey.rpgindividual.BEffect
-   * @generated
-   */
-  EClass getBEffect();
-
-  /**
-   * Returns the meta object for the reference '{@link smitey.rpgindividual.BEffect#getBuffEName <em>Buff EName</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Buff EName</em>'.
-   * @see smitey.rpgindividual.BEffect#getBuffEName()
-   * @see #getBEffect()
-   * @generated
-   */
-  EReference getBEffect_BuffEName();
-
-  /**
-   * Returns the meta object for class '{@link smitey.rpgindividual.AEffect <em>AEffect</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>AEffect</em>'.
-   * @see smitey.rpgindividual.AEffect
-   * @generated
-   */
-  EClass getAEffect();
-
-  /**
-   * Returns the meta object for the reference '{@link smitey.rpgindividual.AEffect#getAfterEName <em>After EName</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>After EName</em>'.
-   * @see smitey.rpgindividual.AEffect#getAfterEName()
-   * @see #getAEffect()
-   * @generated
-   */
-  EReference getAEffect_AfterEName();
 
   /**
    * Returns the meta object for class '{@link smitey.rpgindividual.EType <em>EType</em>}'.
@@ -2347,15 +2115,26 @@ public interface RpgindividualPackage extends EPackage
   EReference getRule_Or();
 
   /**
-   * Returns the meta object for the reference '{@link smitey.rpgindividual.Rule#getTarget <em>Target</em>}'.
+   * Returns the meta object for the attribute '{@link smitey.rpgindividual.Rule#getTargetThen <em>Target Then</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
-   * @see smitey.rpgindividual.Rule#getTarget()
+   * @return the meta object for the attribute '<em>Target Then</em>'.
+   * @see smitey.rpgindividual.Rule#getTargetThen()
    * @see #getRule()
    * @generated
    */
-  EReference getRule_Target();
+  EAttribute getRule_TargetThen();
+
+  /**
+   * Returns the meta object for the reference '{@link smitey.rpgindividual.Rule#getTargetAtt <em>Target Att</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Target Att</em>'.
+   * @see smitey.rpgindividual.Rule#getTargetAtt()
+   * @see #getRule()
+   * @generated
+   */
+  EReference getRule_TargetAtt();
 
   /**
    * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Rule#getSum <em>Sum</em>}'.
@@ -2692,6 +2471,17 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    */
   EClass getNameAttribute();
+
+  /**
+   * Returns the meta object for the attribute '{@link smitey.rpgindividual.NameAttribute#getTarget <em>Target</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Target</em>'.
+   * @see smitey.rpgindividual.NameAttribute#getTarget()
+   * @see #getNameAttribute()
+   * @generated
+   */
+  EAttribute getNameAttribute_Target();
 
   /**
    * Returns the meta object for the reference '{@link smitey.rpgindividual.NameAttribute#getAttribute <em>Attribute</em>}'.
@@ -3097,32 +2887,6 @@ public interface RpgindividualPackage extends EPackage
     EClass EFFECT = eINSTANCE.getEffect();
 
     /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EFFECT__NAME = eINSTANCE.getEffect_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EFFECT__RULE = eINSTANCE.getEffect_Rule();
-
-    /**
-     * The meta object literal for the '{@link smitey.rpgindividual.impl.BuffImpl <em>Buff</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see smitey.rpgindividual.impl.BuffImpl
-     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBuff()
-     * @generated
-     */
-    EClass BUFF = eINSTANCE.getBuff();
-
-    /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.MoveEImpl <em>Move E</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3133,14 +2897,20 @@ public interface RpgindividualPackage extends EPackage
     EClass MOVE_E = eINSTANCE.getMoveE();
 
     /**
-     * The meta object literal for the '{@link smitey.rpgindividual.impl.AfterEImpl <em>After E</em>}' class.
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see smitey.rpgindividual.impl.AfterEImpl
-     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAfterE()
      * @generated
      */
-    EClass AFTER_E = eINSTANCE.getAfterE();
+    EAttribute MOVE_E__NAME = eINSTANCE.getMoveE_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Rule</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MOVE_E__RULE = eINSTANCE.getMoveE_Rule();
 
     /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.AttributesImpl <em>Attributes</em>}' class.
@@ -3385,22 +3155,6 @@ public interface RpgindividualPackage extends EPackage
     EReference MOVE__MEFFECT = eINSTANCE.getMove_MEffect();
 
     /**
-     * The meta object literal for the '<em><b>BEffect</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MOVE__BEFFECT = eINSTANCE.getMove_BEffect();
-
-    /**
-     * The meta object literal for the '<em><b>AEffect</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MOVE__AEFFECT = eINSTANCE.getMove_AEffect();
-
-    /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.MEffectImpl <em>MEffect</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3417,42 +3171,6 @@ public interface RpgindividualPackage extends EPackage
      * @generated
      */
     EReference MEFFECT__MOVE_ENAME = eINSTANCE.getMEffect_MoveEName();
-
-    /**
-     * The meta object literal for the '{@link smitey.rpgindividual.impl.BEffectImpl <em>BEffect</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see smitey.rpgindividual.impl.BEffectImpl
-     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBEffect()
-     * @generated
-     */
-    EClass BEFFECT = eINSTANCE.getBEffect();
-
-    /**
-     * The meta object literal for the '<em><b>Buff EName</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference BEFFECT__BUFF_ENAME = eINSTANCE.getBEffect_BuffEName();
-
-    /**
-     * The meta object literal for the '{@link smitey.rpgindividual.impl.AEffectImpl <em>AEffect</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see smitey.rpgindividual.impl.AEffectImpl
-     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAEffect()
-     * @generated
-     */
-    EClass AEFFECT = eINSTANCE.getAEffect();
-
-    /**
-     * The meta object literal for the '<em><b>After EName</b></em>' reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference AEFFECT__AFTER_ENAME = eINSTANCE.getAEffect_AfterEName();
 
     /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.ETypeImpl <em>EType</em>}' class.
@@ -3543,12 +3261,20 @@ public interface RpgindividualPackage extends EPackage
     EReference RULE__OR = eINSTANCE.getRule_Or();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Target Then</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference RULE__TARGET = eINSTANCE.getRule_Target();
+    EAttribute RULE__TARGET_THEN = eINSTANCE.getRule_TargetThen();
+
+    /**
+     * The meta object literal for the '<em><b>Target Att</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference RULE__TARGET_ATT = eINSTANCE.getRule_TargetAtt();
 
     /**
      * The meta object literal for the '<em><b>Sum</b></em>' containment reference feature.
@@ -3837,6 +3563,14 @@ public interface RpgindividualPackage extends EPackage
      * @generated
      */
     EClass NAME_ATTRIBUTE = eINSTANCE.getNameAttribute();
+
+    /**
+     * The meta object literal for the '<em><b>Target</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute NAME_ATTRIBUTE__TARGET = eINSTANCE.getNameAttribute_Target();
 
     /**
      * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.

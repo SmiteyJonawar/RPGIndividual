@@ -69,9 +69,7 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
       case RpgindividualPackage.DECLARATION: return createDeclaration();
       case RpgindividualPackage.EFFECTS: return createEffects();
       case RpgindividualPackage.EFFECT: return createEffect();
-      case RpgindividualPackage.BUFF: return createBuff();
       case RpgindividualPackage.MOVE_E: return createMoveE();
-      case RpgindividualPackage.AFTER_E: return createAfterE();
       case RpgindividualPackage.ATTRIBUTES: return createAttributes();
       case RpgindividualPackage.ATTRIBUTE: return createAttribute();
       case RpgindividualPackage.LOCATIONS: return createLocations();
@@ -82,8 +80,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
       case RpgindividualPackage.MOVES: return createMoves();
       case RpgindividualPackage.MOVE: return createMove();
       case RpgindividualPackage.MEFFECT: return createMEffect();
-      case RpgindividualPackage.BEFFECT: return createBEffect();
-      case RpgindividualPackage.AEFFECT: return createAEffect();
       case RpgindividualPackage.ETYPE: return createEType();
       case RpgindividualPackage.ATTRIBUTE_VALUES: return createAttributeValues();
       case RpgindividualPackage.ALT_ATTRIBUTE: return createAltAttribute();
@@ -177,34 +173,10 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public Buff createBuff()
-  {
-    BuffImpl buff = new BuffImpl();
-    return buff;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public MoveE createMoveE()
   {
     MoveEImpl moveE = new MoveEImpl();
     return moveE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AfterE createAfterE()
-  {
-    AfterEImpl afterE = new AfterEImpl();
-    return afterE;
   }
 
   /**
@@ -325,30 +297,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
   {
     MEffectImpl mEffect = new MEffectImpl();
     return mEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public BEffect createBEffect()
-  {
-    BEffectImpl bEffect = new BEffectImpl();
-    return bEffect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public AEffect createAEffect()
-  {
-    AEffectImpl aEffect = new AEffectImpl();
-    return aEffect;
   }
 
   /**

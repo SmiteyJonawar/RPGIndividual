@@ -37,9 +37,7 @@ import smitey.rpgindividual.Teams
 import smitey.rpgindividual.NumberComparing
 import smitey.rpgindividual.Team
 import smitey.rpgindividual.Effects
-import smitey.rpgindividual.Buff
 import smitey.rpgindividual.MoveE
-import smitey.rpgindividual.AfterE
  
 /**
  * Generates code from your model files on save.
@@ -102,12 +100,12 @@ class RpgindividualGenerator extends AbstractGenerator {
 		import java.util.*;
 		public class DeathChecker {
 			public boolean check(Entity entity){
-				HashMap<String, Number> eData = new HashMap<>();
+				HashMap<String, Number> userEntityData = new HashMap<>();
 				for(AttributeData aData : entity.getAttributes()){
-					eData.put(aData.getAttributeName(), aData.getNumber());
+					userEntityData.put(aData.getAttributeName(), aData.getNumber());
 				}
 				try{
-					return («death.req.new_re»);
+					return «death.req.new_re»;
 				} catch(NullPointerException e){
 					System.out.println("The target seems to be invincible.");
 					return false;
@@ -204,28 +202,13 @@ class RpgindividualGenerator extends AbstractGenerator {
 		   		}
 		   	}
 		   	
-			private void executeBuffMove(Move move, String moveName, Entity target){
-				if(!move.getMove(moveName).getBuffEffects().isEmpty()){
-					for(EffectBuff buffEffect: move.getMove(moveName).getBuffEffects()){
-							buffEffect.doEffect(move, moveName, target);
-					}
-				}
-			}
-			private void executeMove(Move move, String moveName, Entity target, Entity user){
+			private void executeMove(Move move, String moveName, Entity user, Entity target){
 				if(!move.getMove(moveName).getMoveEffects().isEmpty()){
 					for(EffectMove moveEffect: move.getMove(moveName).getMoveEffects()){
-						moveEffect.doEffect(move, moveName, target, user);
+						moveEffect.doEffect(move, moveName, user, target);
 					}
 				}
-			}
-			
-			private void executeAfter(Move move, String moveName, Entity target){
-				if(!move.getMove(moveName).getAfterEffects().isEmpty()){
-					for(EffectAfter afterEffect: move.getMove(moveName).getAfterEffects()){
-							afterEffect.doEffect(move, moveName, target);
-					}
-				}
-			}		   	
+			}	   	
 		   		
 		   	private void fight(Entity enemyEntity){
 		   		boolean fighting = true;
@@ -241,11 +224,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 						// Will check that the user picks a move which exists
 						if(moves.contains(moveName)){
 							System.out.println("You used "+ moveName + "\n");
-							
-							executeBuffMove(move, moveName, playerEntity);
-							executeMove(move, moveName, enemyEntity, playerEntity);
-							executeAfter(move, moveName, playerEntity);
-							
+							executeMove(move, moveName, playerEntity, enemyEntity);
 							pickMove = !pickMove;
 						}else{
 							System.out.println("That's not a possible move!");
@@ -260,9 +239,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 						int choosenMove = random.nextInt(enemyEntity.getMoveNameList().size());
 						System.out.println(enemyEntity.getName() + " used " + enemyEntity.getMoveNameList().get(choosenMove) + "\n");
 						
-						executeBuffMove(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity);
-						executeMove(move, enemyEntity.getMoveNameList().get(choosenMove), playerEntity, enemyEntity);
-						executeAfter(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity);
+						executeMove(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity, playerEntity);
 						
 						if(deathChecker.check(playerEntity)){
 							System.out.println("Your " + playerEntity.getName() + " is dead");
@@ -397,62 +374,100 @@ class RpgindividualGenerator extends AbstractGenerator {
       	var effectBoolean = false
     	for (effect : effects.effect){
     		switch effect{
+    			/*
     			Buff:  {    					
     					if(!effectBoolean){
     						fsa.addEveryEffect
     						effectBoolean = true
     					}
     					fsa.generateFile(effect.name + ".java", effect.generateBuffEffectFile)
-    					}
+				}
+				*/
     			MoveE: {
     					if(!effectBoolean){
     						fsa.addEveryEffect
     						effectBoolean = true
     					}
     					fsa.generateFile(effect.name + ".java", effect.generateMoveEffectFile)
-    					}
+				}
+				/*
     			AfterE:{
     					if(!effectBoolean){
     						fsa.addEveryEffect
     						effectBoolean = true
     					}
     					fsa.generateFile(effect.name + ".java", effect.generateAfterEffetFile)
-    				}
+				}
+				*/
     		}
 		}
 	}
 	
 	def addEveryEffect(IFileSystemAccess2 fsa){
-		fsa.generateFile("EffectBuff.java", generateEffectBuff)
+		//fsa.generateFile("EffectBuff.java", generateEffectBuff)
 		fsa.generateFile("EffectMove.java", generateEffectMove)
-		fsa.generateFile("EffectAfter.java", generateEffectAfter)
+		//fsa.generateFile("EffectAfter.java", generateEffectAfter)
 	}
 	
+	/*
 	def CharSequence generateEffectAfter(){
 		'''
 		public abstract class EffectAfter {
-			public abstract boolean effectAfter(Move move, String name, Entity player);
-			public abstract Number changeAfter(Move move, String name, Entity player);
-			public abstract void doEffect(Move move, String name, Entity player);    
+			public abstract boolean effectAfter(Move move, String name, Entity user, Entity enemy);
+			public abstract Number changeAfter(Move move, String name, Entity user, Entity enemy);
+			public abstract void doEffect(Move move, String name, Entity user, Entity enemy);    
 		}
 		'''
 	}
+	*/
 	
+	def CharSequence generateEffectMove(){
+			    	'''
+    	import java.util.*;
+    	public abstract class EffectMove {
+    	
+    	    public abstract boolean effectMove(Move move, String name, Entity user, Entity enemy);
+    	    public abstract Number changeMove(Move move, String name, Entity user, Entity enemy);
+    	    public abstract void doEffect(Move move, String name, Entity user, Entity enemy);    	
+    	}
+    	'''
+		}
+		
+	/*
+	def CharSequence generateEffectBuff(){
+			    	'''
+    	import java.util.*;
+    	public abstract class EffectBuff {
+    	
+    	    public abstract boolean effectBuff(Move move, String name, Entity user, Entity enemy);
+    	    public abstract Number changeBuff(Move move, String name, Entity user, Entity enemy);
+    	    public abstract void doEffect(Move move, String name, Entity user, Entity enemy);    	
+    	}
+    	'''
+		}	
+	*/
+	
+	/*
 	def CharSequence generateAfterEffetFile(AfterE afterEffect){
 		'''
 			import java.util.*;
 			public class «afterEffect.name» extends EffectAfter{
 				
 				@Override
-				public boolean effectAfter(Move move, String name, Entity player){					
+				public boolean effectAfter(Move move, String name, Entity user, Entity enemy){					
 					«IF afterEffect.rule.or !== null»
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData playerData : player.getAttributes()){
-						eData.put(playerData.getAttributeName(), playerData.getNumber());
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userData : user.getAttributes()){
+						userEntityData.put(userData.getAttributeName(), userData.getNumber());
+					}			
+					for(AttributeData enemyData : enemy.getAttributes()){
+						enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
 					}			
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-						eData.put(aData.getAttributeName(), aData.getNumber());				
-					}					
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());		
+					}
 					return «afterEffect.rule.or.new_logic»;
 					«ELSE»
 					return true;					
@@ -460,31 +475,36 @@ class RpgindividualGenerator extends AbstractGenerator {
 				}
 			
 				@Override
-				public Number changeAfter(Move move, String name, Entity player){
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData playerData : player.getAttributes()){
-							eData.put(playerData.getAttributeName(), playerData.getNumber());
-						}			
+				public Number changeAfter(Move move, String name, Entity user, Entity enemy){
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userData : user.getAttributes()){
+						userEntityData.put(userData.getAttributeName(), userData.getNumber());
+					}			
+					for(AttributeData enemyData : enemy.getAttributes()){
+						enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+					}	
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-							eData.put(aData.getAttributeName(), aData.getNumber());				
-						}
-						return «afterEffect.rule.sum.new_exp»;
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());				
+					}
+					return «afterEffect.rule.sum.new_exp»;
 				}
 			
 			
 				@Override		
-				public void doEffect(Move move, String name, Entity player){
-					if(effectAfter(move, name, player)){
-						for(AttributeData aData : player.getAttributes()){
-							if(aData.getAttributeName() == "«afterEffect.rule.target.name»"){
-								aData.setNumber(changeAfter(move, name, player));
-								System.out.println(player.getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+				public void doEffect(Move move, String name, Entity user, Entity enemy){
+					if(effectAfter(move, name, user, enemy)){				
+						for(AttributeData aData : «afterEffect.rule.targetThen».getAttributes()){
+							if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
+								aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
+								System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 							}
 						}
 						for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-							if(aData.getAttributeName() == "«afterEffect.rule.target.name»"){
-								aData.setNumber(changeAfter(move, name, player));
-								System.out.println(player.getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());								
+							if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
+								aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
+								System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());								
 							}				
 						}						
 					}			
@@ -493,33 +513,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 		'''
 	}
 	
-	def CharSequence generateEffectMove(){
-			    	'''
-    	import java.util.*;
-    	public abstract class EffectMove {
-    	
-    	    public abstract boolean effectMove(Move move, String name, Entity enemy);
-    	
-    	    public abstract Number changeMove(Move move, String name, Entity enemy);
-    	
-    	    public abstract void doEffect(Move move, String name, Entity enemy, Entity player);    	
-    	}
-    	'''
-		}
-		
-	def CharSequence generateEffectBuff(){
-			    	'''
-    	import java.util.*;
-    	public abstract class EffectBuff {
-    	
-    	    public abstract boolean effectBuff(Move move, String name, Entity player);
-    	
-    	    public abstract Number changeBuff(Move move, String name, Entity player);
-    	
-    	    public abstract void doEffect(Move move, String name, Entity player);    	
-    	}
-    	'''
-		}		
+	
     
     def CharSequence generateBuffEffectFile(Buff buff){
     	'''
@@ -527,15 +521,20 @@ class RpgindividualGenerator extends AbstractGenerator {
 			public class «buff.name» extends EffectBuff{
 				
 				@Override
-				public boolean effectBuff(Move move, String name, Entity player){
+				public boolean effectBuff(Move move, String name, Entity user, Entity enemy){
 					«IF buff.rule.or !== null»
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData playerData : player.getAttributes()){
-						eData.put(playerData.getAttributeName(), playerData.getNumber());
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userData : user.getAttributes()){
+						userEntityData.put(userData.getAttributeName(), userData.getNumber());
+					}			
+					for(AttributeData enemyData : enemy.getAttributes()){
+						enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
 					}			
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-						eData.put(aData.getAttributeName(), aData.getNumber());				
-					}					
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());				
+					}
 					return «buff.rule.or.new_logic»;
 					«ELSE»
 					return true;					
@@ -543,32 +542,37 @@ class RpgindividualGenerator extends AbstractGenerator {
 				}
 			
 				@Override
-				public Number changeBuff(Move move, String name, Entity player){
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData playerData : player.getAttributes()){
-							eData.put(playerData.getAttributeName(), playerData.getNumber());
-						}			
+				public Number changeBuff(Move move, String name, Entity user, Entity enemy){
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userData : user.getAttributes()){
+						userEntityData.put(userData.getAttributeName(), userData.getNumber());
+					}			
+					for(AttributeData enemyData : enemy.getAttributes()){
+						enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+					}	
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-							eData.put(aData.getAttributeName(), aData.getNumber());				
-						}
-						return «buff.rule.sum.new_exp»;
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());				
+					}
+					return «buff.rule.sum.new_exp»;
 				}
 			
 			
 				@Override		
-				public void doEffect(Move move, String name, Entity player){
-					if(effectBuff(move, name, player)){
-						for(AttributeData aData : player.getAttributes()){
-							if(aData.getAttributeName() == "«buff.rule.target.name»"){
-								aData.setNumber(changeBuff(move, name, player));
-								System.out.println(player.getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+				public void doEffect(Move move, String name, Entity user, Entity enemy){
+					if(effectBuff(move, name, user, enemy)){
+						for(AttributeData aData : «buff.rule.targetThen».getAttributes()){
+							if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
+								aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
+								System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 								
 							}
 						}
 						for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-							if(aData.getAttributeName() == "«buff.rule.target.name»"){
-								aData.setNumber(changeBuff(move, name, player));
-								System.out.println(player.getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+							if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
+								aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
+								System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 								
 							}				
 						}						
@@ -577,6 +581,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 			}
     	'''
     }
+    */
     
 	def CharSequence generateMoveEffectFile(MoveE moveE){
     	'''
@@ -584,14 +589,19 @@ class RpgindividualGenerator extends AbstractGenerator {
 			public class «moveE.name» extends EffectMove{
 				
 				@Override
-				public boolean effectMove(Move move, String name, Entity enemy){
+				public boolean effectMove(Move move, String name, Entity user, Entity enemy){
 					«IF moveE.rule.or !== null»
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData enemyData : enemy.getAttributes()){
-						eData.put(enemyData.getAttributeName(), enemyData.getNumber());
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userAttData : user.getAttributes()){
+						userEntityData.put(userAttData.getAttributeName(), userAttData.getNumber());
+					}	
+					for(AttributeData enemyAttData : enemy.getAttributes()){
+						enemyEntityData.put(enemyAttData.getAttributeName(), enemyAttData.getNumber());
 					}			
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-						eData.put(aData.getAttributeName(), aData.getNumber());				
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());				
 					}					
 					return «moveE.rule.or.new_logic»;
 					«ELSE»
@@ -600,25 +610,30 @@ class RpgindividualGenerator extends AbstractGenerator {
 				}
 				
 				@Override
-				public Number changeMove(Move move, String name, Entity enemy){
-					HashMap<String, Number> eData = new HashMap<>();
-					for(AttributeData enemyData : enemy.getAttributes()){
-							eData.put(enemyData.getAttributeName(), enemyData.getNumber());
-						}			
+				public Number changeMove(Move move, String name, Entity user, Entity enemy){
+					HashMap<String, Number> userEntityData = new HashMap<>();
+					HashMap<String, Number> enemyEntityData = new HashMap<>();
+					for(AttributeData userAttData : user.getAttributes()){
+						userEntityData.put(userAttData.getAttributeName(), userAttData.getNumber());
+					}	
+					for(AttributeData enemyAttData : enemy.getAttributes()){
+						enemyEntityData.put(enemyAttData.getAttributeName(), enemyAttData.getNumber());
+					}			
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-							eData.put(aData.getAttributeName(), aData.getNumber());				
-						}
-						return «moveE.rule.sum.new_exp»;
+						userEntityData.put(aData.getAttributeName(), aData.getNumber());
+						enemyEntityData.put(aData.getAttributeName(), aData.getNumber());				
+					}
+					return «moveE.rule.sum.new_exp»;
 				}
 			
 			
 				@Override		
-				public void doEffect(Move move, String name, Entity enemy, Entity player){
-					if(effectMove(move, name, player)){
+				public void doEffect(Move move, String name, Entity user, Entity enemy){
+					if(effectMove(move, name, user, enemy)){
 						for(AttributeData aData : enemy.getAttributes()){
-							if(aData.getAttributeName() == "«moveE.rule.target.name»"){
-								aData.setNumber(changeMove(move, name, enemy));
-								System.out.println(enemy.getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+							if(aData.getAttributeName() == "«moveE.rule.targetAtt.name»"){
+								aData.setNumber(changeMove(move, name, user, enemy));
+								System.out.println(«moveE.rule.targetThen.toLowerCase».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 							}
 						}
 					}			
@@ -796,13 +811,13 @@ class RpgindividualGenerator extends AbstractGenerator {
 	}
 	def dispatch CharSequence new_exp(NameAttribute x){
 		if(x.attribute.AVal.LTypes !== null && x.attribute.AVal.LTypes.equals("Integer")){
-			"eData.get(" + '"' +x.attribute.name + '"' + ").intValue()"
+			x.target.toLowerCase + "EntityData.get(" + '"' +x.attribute.name + '"' + ").intValue()"
 		}else if(x.attribute.AVal.LTypes !== null && x.attribute.AVal.LTypes.equals("Float")){ 
-			"eData.get(" + '"' +x.attribute.name + '"' + ").floatValue()"
+			x.target.toLowerCase + "EntityData.get(" + '"' +x.attribute.name + '"' + ").floatValue()"
 		}else if(x.attribute.AVal.an !== null && x.attribute.AVal.an instanceof IntNum){
-			"eData.get(" + '"' +x.attribute.name + '"' + ").intValue()"
+			x.target.toLowerCase + "EntityData.get(" + '"' +x.attribute.name + '"' + ").intValue()"
 		}else if(x.attribute.AVal.an !== null && x.attribute.AVal.an instanceof FloatNum){
-			"eData.get(" + '"' +x.attribute.name + '"' + ").floatValue()"
+			x.target.toLowerCase + "EntityData.get(" + '"' +x.attribute.name + '"' + ").floatValue()"
 		} else {
 			"Something went wrong" 
 		}
@@ -1114,22 +1129,25 @@ class RpgindividualGenerator extends AbstractGenerator {
 				«IF moveEffect !== null»
 				tempMoveData.addMoveEffect(new «moveEffect.moveEName.name»());
 				«ENDIF»
-				«ENDFOR»
-				«FOR buffEffect : move.BEffect»
-				«IF buffEffect !== null»
-				tempMoveData.addBuffEffect(new «buffEffect.buffEName.name»());
-				«ENDIF»
-				«ENDFOR»
-				«FOR afterEffect : move.AEffect»
-				«IF afterEffect !== null»
-				tempMoveData.addAfterEffect(new «afterEffect.afterEName.name»());
-				«ENDIF»
 				«ENDFOR»				
 				moves.addMove(tempMoveData);
 				«ENDFOR»
 			}
 		}
 		'''
+		
+		/*
+		 * «FOR buffEffect : move.BEffect»
+			«IF buffEffect !== null»
+			tempMoveData.addBuffEffect(new «buffEffect.buffEName.name»());
+			«ENDIF»
+			«ENDFOR»
+			«FOR afterEffect : move.AEffect»
+			«IF afterEffect !== null»
+			tempMoveData.addAfterEffect(new «afterEffect.afterEName.name»());
+			«ENDIF»
+			«ENDFOR»
+		  */
 	}
 	
 	def generateTeams(IFileSystemAccess2 fsa, Teams teams){

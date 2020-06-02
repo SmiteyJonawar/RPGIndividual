@@ -14,13 +14,11 @@
     <genClasses ecoreClass="Rpgindividual.ecore#//Effects">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Effects/effect"/>
     </genClasses>
-    <genClasses ecoreClass="Rpgindividual.ecore#//Effect">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//Effect/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Effect/rule"/>
+    <genClasses ecoreClass="Rpgindividual.ecore#//Effect"/>
+    <genClasses ecoreClass="Rpgindividual.ecore#//MoveE">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//MoveE/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//MoveE/rule"/>
     </genClasses>
-    <genClasses ecoreClass="Rpgindividual.ecore#//Buff"/>
-    <genClasses ecoreClass="Rpgindividual.ecore#//MoveE"/>
-    <genClasses ecoreClass="Rpgindividual.ecore#//AfterE"/>
     <genClasses ecoreClass="Rpgindividual.ecore#//Attributes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Attributes/attribute"/>
     </genClasses>
@@ -57,17 +55,9 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Move/eType"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Move/att"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Move/mEffect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Move/bEffect"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Move/aEffect"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//MEffect">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//MEffect/moveEName"/>
-    </genClasses>
-    <genClasses ecoreClass="Rpgindividual.ecore#//BEffect">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//BEffect/buffEName"/>
-    </genClasses>
-    <genClasses ecoreClass="Rpgindividual.ecore#//AEffect">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//AEffect/afterEName"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//EType">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EType/type"/>
@@ -82,7 +72,8 @@
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//Rule">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/or"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/target"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//Rule/targetThen"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/targetAtt"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/sum"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//Entities">
@@ -125,6 +116,7 @@
     <genClasses ecoreClass="Rpgindividual.ecore#//AtomicNumber"/>
     <genClasses ecoreClass="Rpgindividual.ecore#//ActualNumbers"/>
     <genClasses ecoreClass="Rpgindividual.ecore#//NameAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//NameAttribute/target"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//NameAttribute/attribute"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//IntNum">

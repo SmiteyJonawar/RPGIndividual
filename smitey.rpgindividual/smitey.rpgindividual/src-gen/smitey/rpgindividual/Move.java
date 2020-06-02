@@ -20,8 +20,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link smitey.rpgindividual.Move#getEType <em>EType</em>}</li>
  *   <li>{@link smitey.rpgindividual.Move#getAtt <em>Att</em>}</li>
  *   <li>{@link smitey.rpgindividual.Move#getMEffect <em>MEffect</em>}</li>
- *   <li>{@link smitey.rpgindividual.Move#getBEffect <em>BEffect</em>}</li>
- *   <li>{@link smitey.rpgindividual.Move#getAEffect <em>AEffect</em>}</li>
  * </ul>
  *
  * @see smitey.rpgindividual.RpgindividualPackage#getMove()
@@ -97,29 +95,5 @@ public interface Move extends EObject
    * @generated
    */
   EList<MEffect> getMEffect();
-
-  /**
-   * Returns the value of the '<em><b>BEffect</b></em>' containment reference list.
-   * The list contents are of type {@link smitey.rpgindividual.BEffect}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>BEffect</em>' containment reference list.
-   * @see smitey.rpgindividual.RpgindividualPackage#getMove_BEffect()
-   * @model containment="true"
-   * @generated
-   */
-  EList<BEffect> getBEffect();
-
-  /**
-   * Returns the value of the '<em><b>AEffect</b></em>' containment reference list.
-   * The list contents are of type {@link smitey.rpgindividual.AEffect}.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>AEffect</em>' containment reference list.
-   * @see smitey.rpgindividual.RpgindividualPackage#getMove_AEffect()
-   * @model containment="true"
-   * @generated
-   */
-  EList<AEffect> getAEffect();
 
 } // Move

@@ -9,6 +9,13 @@ package smitey.rpgindividual;
  * A representation of the model object '<em><b>Move E</b></em>'.
  * <!-- end-user-doc -->
  *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link smitey.rpgindividual.MoveE#getName <em>Name</em>}</li>
+ *   <li>{@link smitey.rpgindividual.MoveE#getRule <em>Rule</em>}</li>
+ * </ul>
  *
  * @see smitey.rpgindividual.RpgindividualPackage#getMoveE()
  * @model
@@ -16,4 +23,48 @@ package smitey.rpgindividual;
  */
 public interface MoveE extends Effect
 {
+  /**
+   * Returns the value of the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Name</em>' attribute.
+   * @see #setName(String)
+   * @see smitey.rpgindividual.RpgindividualPackage#getMoveE_Name()
+   * @model
+   * @generated
+   */
+  String getName();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.MoveE#getName <em>Name</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Name</em>' attribute.
+   * @see #getName()
+   * @generated
+   */
+  void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Rule</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Rule</em>' containment reference.
+   * @see #setRule(Rule)
+   * @see smitey.rpgindividual.RpgindividualPackage#getMoveE_Rule()
+   * @model containment="true"
+   * @generated
+   */
+  Rule getRule();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.MoveE#getRule <em>Rule</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Rule</em>' containment reference.
+   * @see #getRule()
+   * @generated
+   */
+  void setRule(Rule value);
+
 } // MoveE

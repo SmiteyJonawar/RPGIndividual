@@ -60,15 +60,6 @@ public interface RpgindividualFactory extends EFactory
   Effect createEffect();
 
   /**
-   * Returns a new object of class '<em>Buff</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Buff</em>'.
-   * @generated
-   */
-  Buff createBuff();
-
-  /**
    * Returns a new object of class '<em>Move E</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,15 +67,6 @@ public interface RpgindividualFactory extends EFactory
    * @generated
    */
   MoveE createMoveE();
-
-  /**
-   * Returns a new object of class '<em>After E</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>After E</em>'.
-   * @generated
-   */
-  AfterE createAfterE();
 
   /**
    * Returns a new object of class '<em>Attributes</em>'.
@@ -175,24 +157,6 @@ public interface RpgindividualFactory extends EFactory
    * @generated
    */
   MEffect createMEffect();
-
-  /**
-   * Returns a new object of class '<em>BEffect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>BEffect</em>'.
-   * @generated
-   */
-  BEffect createBEffect();
-
-  /**
-   * Returns a new object of class '<em>AEffect</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>AEffect</em>'.
-   * @generated
-   */
-  AEffect createAEffect();
 
   /**
    * Returns a new object of class '<em>EType</em>'.

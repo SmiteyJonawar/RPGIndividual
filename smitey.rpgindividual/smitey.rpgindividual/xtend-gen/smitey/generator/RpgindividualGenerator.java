@@ -11,18 +11,14 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import smitey.rpgindividual.AEffect;
 import smitey.rpgindividual.ActualNumbers;
 import smitey.rpgindividual.Add;
-import smitey.rpgindividual.AfterE;
 import smitey.rpgindividual.AltAttribute;
 import smitey.rpgindividual.And;
 import smitey.rpgindividual.Attribute;
 import smitey.rpgindividual.Attributes;
-import smitey.rpgindividual.BEffect;
 import smitey.rpgindividual.Bigger;
 import smitey.rpgindividual.BiggerEq;
-import smitey.rpgindividual.Buff;
 import smitey.rpgindividual.Comparator;
 import smitey.rpgindividual.Death;
 import smitey.rpgindividual.Declaration;
@@ -172,13 +168,13 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("public boolean check(Entity entity){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("HashMap<String, Number> eData = new HashMap<>();");
+    _builder.append("HashMap<String, Number> userEntityData = new HashMap<>();");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("for(AttributeData aData : entity.getAttributes()){");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());");
+    _builder.append("userEntityData.put(aData.getAttributeName(), aData.getNumber());");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("}");
@@ -187,10 +183,10 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("try{");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("return (");
+    _builder.append("return ");
     CharSequence _new_re = this.new_re(death.getReq());
     _builder.append(_new_re, "\t\t\t");
-    _builder.append(");");
+    _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append("} catch(NullPointerException e){");
@@ -462,28 +458,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("   \t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("private void executeBuffMove(Move move, String moveName, Entity target){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("if(!move.getMove(moveName).getBuffEffects().isEmpty()){");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(EffectBuff buffEffect: move.getMove(moveName).getBuffEffects()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("buffEffect.doEffect(move, moveName, target);");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("private void executeMove(Move move, String moveName, Entity target, Entity user){");
+    _builder.append("private void executeMove(Move move, String moveName, Entity user, Entity target){");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("if(!move.getMove(moveName).getMoveEffects().isEmpty()){");
@@ -492,7 +467,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("for(EffectMove moveEffect: move.getMove(moveName).getMoveEffects()){");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("moveEffect.doEffect(move, moveName, target, user);");
+    _builder.append("moveEffect.doEffect(move, moveName, user, target);");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("}");
@@ -501,30 +476,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("private void executeAfter(Move move, String moveName, Entity target){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("if(!move.getMove(moveName).getAfterEffects().isEmpty()){");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(EffectAfter afterEffect: move.getMove(moveName).getAfterEffects()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("afterEffect.doEffect(move, moveName, target);");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}\t\t   \t");
+    _builder.append("}\t   \t");
     _builder.newLine();
     _builder.append("   \t\t");
     _builder.newLine();
@@ -569,17 +521,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("System.out.println(\"You used \"+ moveName + \"\\n\");");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("executeBuffMove(move, moveName, playerEntity);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("executeMove(move, moveName, enemyEntity, playerEntity);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("executeAfter(move, moveName, playerEntity);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
+    _builder.append("executeMove(move, moveName, playerEntity, enemyEntity);");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("pickMove = !pickMove;");
@@ -623,13 +565,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t\t\t\t");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("executeBuffMove(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("executeMove(move, enemyEntity.getMoveNameList().get(choosenMove), playerEntity, enemyEntity);");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("executeAfter(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity);");
+    _builder.append("executeMove(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity, playerEntity);");
     _builder.newLine();
     _builder.append("\t\t\t\t");
     _builder.newLine();
@@ -920,227 +856,34 @@ public class RpgindividualGenerator extends AbstractGenerator {
     EList<Effect> _effect = effects.getEffect();
     for (final Effect effect : _effect) {
       boolean _matched = false;
-      if (effect instanceof Buff) {
+      if (effect instanceof MoveE) {
         _matched=true;
         if ((!effectBoolean)) {
           this.addEveryEffect(fsa);
           effectBoolean = true;
         }
-        String _name = ((Buff)effect).getName();
+        String _name = ((MoveE)effect).getName();
         String _plus = (_name + ".java");
-        fsa.generateFile(_plus, this.generateBuffEffectFile(((Buff)effect)));
-      }
-      if (!_matched) {
-        if (effect instanceof MoveE) {
-          _matched=true;
-          if ((!effectBoolean)) {
-            this.addEveryEffect(fsa);
-            effectBoolean = true;
-          }
-          String _name = ((MoveE)effect).getName();
-          String _plus = (_name + ".java");
-          fsa.generateFile(_plus, this.generateMoveEffectFile(((MoveE)effect)));
-        }
-      }
-      if (!_matched) {
-        if (effect instanceof AfterE) {
-          _matched=true;
-          if ((!effectBoolean)) {
-            this.addEveryEffect(fsa);
-            effectBoolean = true;
-          }
-          String _name = ((AfterE)effect).getName();
-          String _plus = (_name + ".java");
-          fsa.generateFile(_plus, this.generateAfterEffetFile(((AfterE)effect)));
-        }
+        fsa.generateFile(_plus, this.generateMoveEffectFile(((MoveE)effect)));
       }
     }
   }
   
   public void addEveryEffect(final IFileSystemAccess2 fsa) {
-    fsa.generateFile("EffectBuff.java", this.generateEffectBuff());
     fsa.generateFile("EffectMove.java", this.generateEffectMove());
-    fsa.generateFile("EffectAfter.java", this.generateEffectAfter());
   }
   
-  public CharSequence generateEffectAfter() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public abstract class EffectAfter {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public abstract boolean effectAfter(Move move, String name, Entity player);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public abstract Number changeAfter(Move move, String name, Entity player);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public abstract void doEffect(Move move, String name, Entity player);    ");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence generateAfterEffetFile(final AfterE afterEffect) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.append("public class ");
-    String _name = afterEffect.getName();
-    _builder.append(_name);
-    _builder.append(" extends EffectAfter{");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public boolean effectAfter(Move move, String name, Entity player){\t\t\t\t\t");
-    _builder.newLine();
-    {
-      Proposition _or = afterEffect.getRule().getOr();
-      boolean _tripleNotEquals = (_or != null);
-      if (_tripleNotEquals) {
-        _builder.append("\t\t");
-        _builder.append("HashMap<String, Number> eData = new HashMap<>();");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("for(AttributeData playerData : player.getAttributes()){");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        _builder.append("eData.put(playerData.getAttributeName(), playerData.getNumber());");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("}\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("}\t\t\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("return ");
-        CharSequence _new_logic = this.new_logic(afterEffect.getRule().getOr());
-        _builder.append(_new_logic, "\t\t");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t\t");
-        _builder.append("return true;\t\t\t\t\t");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public Number changeAfter(Move move, String name, Entity player){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("HashMap<String, Number> eData = new HashMap<>();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("for(AttributeData playerData : player.getAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(playerData.getAttributeName(), playerData.getNumber());");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("return ");
-    CharSequence _new_exp = this.new_exp(afterEffect.getRule().getSum());
-    _builder.append(_new_exp, "\t\t\t");
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void doEffect(Move move, String name, Entity player){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("if(effectAfter(move, name, player)){");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(AttributeData aData : player.getAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("if(aData.getAttributeName() == \"");
-    String _name_1 = afterEffect.getRule().getTarget().getName();
-    _builder.append(_name_1, "\t\t\t\t");
-    _builder.append("\"){");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("aData.setNumber(changeAfter(move, name, player));");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("System.out.println(player.getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("if(aData.getAttributeName() == \"");
-    String _name_2 = afterEffect.getRule().getTarget().getName();
-    _builder.append(_name_2, "\t\t\t\t");
-    _builder.append("\"){");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("aData.setNumber(changeAfter(move, name, player));");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("System.out.println(player.getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());\t\t\t\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("}\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}\t\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}\t\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("}\t\t");
-    _builder.newLine();
-    return _builder;
-  }
-  
+  /**
+   * def CharSequence generateEffectAfter(){
+   * '''
+   * public abstract class EffectAfter {
+   * public abstract boolean effectAfter(Move move, String name, Entity user, Entity enemy);
+   * public abstract Number changeAfter(Move move, String name, Entity user, Entity enemy);
+   * public abstract void doEffect(Move move, String name, Entity user, Entity enemy);
+   * }
+   * '''
+   * }
+   */
   public CharSequence generateEffectMove() {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import java.util.*;");
@@ -1149,208 +892,154 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public abstract boolean effectMove(Move move, String name, Entity enemy);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public abstract Number changeMove(Move move, String name, Entity enemy);");
-    _builder.newLine();
+    _builder.append("public abstract boolean effectMove(Move move, String name, Entity user, Entity enemy);");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public abstract void doEffect(Move move, String name, Entity enemy, Entity player);    \t");
+    _builder.append("public abstract Number changeMove(Move move, String name, Entity user, Entity enemy);");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.append("public abstract void doEffect(Move move, String name, Entity user, Entity enemy);    \t");
     _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;
   }
   
-  public CharSequence generateEffectBuff() {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.append("public abstract class EffectBuff {");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public abstract boolean effectBuff(Move move, String name, Entity player);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public abstract Number changeBuff(Move move, String name, Entity player);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("public abstract void doEffect(Move move, String name, Entity player);    \t");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  public CharSequence generateBuffEffectFile(final Buff buff) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.append("public class ");
-    String _name = buff.getName();
-    _builder.append(_name);
-    _builder.append(" extends EffectBuff{");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public boolean effectBuff(Move move, String name, Entity player){");
-    _builder.newLine();
-    {
-      Proposition _or = buff.getRule().getOr();
-      boolean _tripleNotEquals = (_or != null);
-      if (_tripleNotEquals) {
-        _builder.append("\t\t");
-        _builder.append("HashMap<String, Number> eData = new HashMap<>();");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("for(AttributeData playerData : player.getAttributes()){");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        _builder.append("eData.put(playerData.getAttributeName(), playerData.getNumber());");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("}\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("}\t\t\t\t\t");
-        _builder.newLine();
-        _builder.append("\t\t");
-        _builder.append("return ");
-        CharSequence _new_logic = this.new_logic(buff.getRule().getOr());
-        _builder.append(_new_logic, "\t\t");
-        _builder.append(";");
-        _builder.newLineIfNotEmpty();
-      } else {
-        _builder.append("\t\t");
-        _builder.append("return true;\t\t\t\t\t");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public Number changeBuff(Move move, String name, Entity player){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("HashMap<String, Number> eData = new HashMap<>();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("for(AttributeData playerData : player.getAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(playerData.getAttributeName(), playerData.getNumber());");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("return ");
-    CharSequence _new_exp = this.new_exp(buff.getRule().getSum());
-    _builder.append(_new_exp, "\t\t\t");
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("@Override\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void doEffect(Move move, String name, Entity player){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("if(effectBuff(move, name, player)){");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(AttributeData aData : player.getAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("if(aData.getAttributeName() == \"");
-    String _name_1 = buff.getRule().getTarget().getName();
-    _builder.append(_name_1, "\t\t\t\t");
-    _builder.append("\"){");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("aData.setNumber(changeBuff(move, name, player));");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("System.out.println(player.getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("if(aData.getAttributeName() == \"");
-    String _name_2 = buff.getRule().getTarget().getName();
-    _builder.append(_name_2, "\t\t\t\t");
-    _builder.append("\"){");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("aData.setNumber(changeBuff(move, name, player));");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.append("System.out.println(player.getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
-    _builder.newLine();
-    _builder.append("\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("}\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append("}\t\t\t\t\t\t");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("}\t\t\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
+  /**
+   * def CharSequence generateAfterEffetFile(AfterE afterEffect){
+   * '''
+   * import java.util.*;
+   * public class «afterEffect.name» extends EffectAfter{
+   * 
+   * @Override
+   * public boolean effectAfter(Move move, String name, Entity user, Entity enemy){
+   * «IF afterEffect.rule.or !== null»
+   * HashMap<String, Number> userEntityData = new HashMap<>();
+   * HashMap<String, Number> enemyEntityData = new HashMap<>();
+   * for(AttributeData userData : user.getAttributes()){
+   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
+   * }
+   * for(AttributeData enemyData : enemy.getAttributes()){
+   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * }
+   * return «afterEffect.rule.or.new_logic»;
+   * «ELSE»
+   * return true;
+   * «ENDIF»
+   * }
+   * 
+   * @Override
+   * public Number changeAfter(Move move, String name, Entity user, Entity enemy){
+   * HashMap<String, Number> userEntityData = new HashMap<>();
+   * HashMap<String, Number> enemyEntityData = new HashMap<>();
+   * for(AttributeData userData : user.getAttributes()){
+   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
+   * }
+   * for(AttributeData enemyData : enemy.getAttributes()){
+   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * }
+   * return «afterEffect.rule.sum.new_exp»;
+   * }
+   * 
+   * 
+   * @Override
+   * public void doEffect(Move move, String name, Entity user, Entity enemy){
+   * if(effectAfter(move, name, user, enemy)){
+   * for(AttributeData aData : «afterEffect.rule.targetThen».getAttributes()){
+   * if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
+   * aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
+   * System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+   * }
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
+   * aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
+   * System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+   * }
+   * }
+   * }
+   * }
+   * }
+   * '''
+   * }
+   * 
+   * 
+   * 
+   * def CharSequence generateBuffEffectFile(Buff buff){
+   * '''
+   * import java.util.*;
+   * public class «buff.name» extends EffectBuff{
+   * 
+   * @Override
+   * public boolean effectBuff(Move move, String name, Entity user, Entity enemy){
+   * «IF buff.rule.or !== null»
+   * HashMap<String, Number> userEntityData = new HashMap<>();
+   * HashMap<String, Number> enemyEntityData = new HashMap<>();
+   * for(AttributeData userData : user.getAttributes()){
+   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
+   * }
+   * for(AttributeData enemyData : enemy.getAttributes()){
+   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * }
+   * return «buff.rule.or.new_logic»;
+   * «ELSE»
+   * return true;
+   * «ENDIF»
+   * }
+   * 
+   * @Override
+   * public Number changeBuff(Move move, String name, Entity user, Entity enemy){
+   * HashMap<String, Number> userEntityData = new HashMap<>();
+   * HashMap<String, Number> enemyEntityData = new HashMap<>();
+   * for(AttributeData userData : user.getAttributes()){
+   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
+   * }
+   * for(AttributeData enemyData : enemy.getAttributes()){
+   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
+   * }
+   * return «buff.rule.sum.new_exp»;
+   * }
+   * 
+   * 
+   * @Override
+   * public void doEffect(Move move, String name, Entity user, Entity enemy){
+   * if(effectBuff(move, name, user, enemy)){
+   * for(AttributeData aData : «buff.rule.targetThen».getAttributes()){
+   * if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
+   * aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
+   * System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+   * 
+   * }
+   * }
+   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+   * if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
+   * aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
+   * System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+   * 
+   * }
+   * }
+   * }
+   * }
+   * }
+   * '''
+   * }
+   */
   public CharSequence generateMoveEffectFile(final MoveE moveE) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import java.util.*;");
@@ -1366,21 +1055,34 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("@Override");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public boolean effectMove(Move move, String name, Entity enemy){");
+    _builder.append("public boolean effectMove(Move move, String name, Entity user, Entity enemy){");
     _builder.newLine();
     {
       Proposition _or = moveE.getRule().getOr();
       boolean _tripleNotEquals = (_or != null);
       if (_tripleNotEquals) {
         _builder.append("\t\t");
-        _builder.append("HashMap<String, Number> eData = new HashMap<>();");
+        _builder.append("HashMap<String, Number> userEntityData = new HashMap<>();");
         _builder.newLine();
         _builder.append("\t\t");
-        _builder.append("for(AttributeData enemyData : enemy.getAttributes()){");
+        _builder.append("HashMap<String, Number> enemyEntityData = new HashMap<>();");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("for(AttributeData userAttData : user.getAttributes()){");
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("\t");
-        _builder.append("eData.put(enemyData.getAttributeName(), enemyData.getNumber());");
+        _builder.append("userEntityData.put(userAttData.getAttributeName(), userAttData.getNumber());");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("}\t");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("for(AttributeData enemyAttData : enemy.getAttributes()){");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("enemyEntityData.put(enemyAttData.getAttributeName(), enemyAttData.getNumber());");
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("}\t\t\t");
@@ -1390,7 +1092,11 @@ public class RpgindividualGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("\t");
-        _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
+        _builder.append("userEntityData.put(aData.getAttributeName(), aData.getNumber());");
+        _builder.newLine();
+        _builder.append("\t\t");
+        _builder.append("\t");
+        _builder.append("enemyEntityData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("}\t\t\t\t\t");
@@ -1416,33 +1122,48 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("@Override");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public Number changeMove(Move move, String name, Entity enemy){");
+    _builder.append("public Number changeMove(Move move, String name, Entity user, Entity enemy){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("HashMap<String, Number> eData = new HashMap<>();");
+    _builder.append("HashMap<String, Number> userEntityData = new HashMap<>();");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("for(AttributeData enemyData : enemy.getAttributes()){");
+    _builder.append("HashMap<String, Number> enemyEntityData = new HashMap<>();");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(enemyData.getAttributeName(), enemyData.getNumber());");
+    _builder.append("\t\t");
+    _builder.append("for(AttributeData userAttData : user.getAttributes()){");
     _builder.newLine();
     _builder.append("\t\t\t");
+    _builder.append("userEntityData.put(userAttData.getAttributeName(), userAttData.getNumber());");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("for(AttributeData enemyAttData : enemy.getAttributes()){");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("enemyEntityData.put(enemyAttData.getAttributeName(), enemyAttData.getNumber());");
+    _builder.newLine();
+    _builder.append("\t\t");
     _builder.append("}\t\t\t");
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append("eData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
+    _builder.append("\t\t\t");
+    _builder.append("userEntityData.put(aData.getAttributeName(), aData.getNumber());");
     _builder.newLine();
     _builder.append("\t\t\t");
+    _builder.append("enemyEntityData.put(aData.getAttributeName(), aData.getNumber());\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
     _builder.append("}");
     _builder.newLine();
-    _builder.append("\t\t\t");
+    _builder.append("\t\t");
     _builder.append("return ");
     CharSequence _new_exp = this.new_exp(moveE.getRule().getSum());
-    _builder.append(_new_exp, "\t\t\t");
+    _builder.append(_new_exp, "\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
@@ -1454,26 +1175,29 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("@Override\t\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public void doEffect(Move move, String name, Entity enemy, Entity player){");
+    _builder.append("public void doEffect(Move move, String name, Entity user, Entity enemy){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("if(effectMove(move, name, player)){");
+    _builder.append("if(effectMove(move, name, user, enemy)){");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("for(AttributeData aData : enemy.getAttributes()){");
     _builder.newLine();
     _builder.append("\t\t\t\t");
     _builder.append("if(aData.getAttributeName() == \"");
-    String _name_1 = moveE.getRule().getTarget().getName();
+    String _name_1 = moveE.getRule().getTargetAtt().getName();
     _builder.append(_name_1, "\t\t\t\t");
     _builder.append("\"){");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t\t");
-    _builder.append("aData.setNumber(changeMove(move, name, enemy));");
+    _builder.append("aData.setNumber(changeMove(move, name, user, enemy));");
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
-    _builder.append("System.out.println(enemy.getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
-    _builder.newLine();
+    _builder.append("System.out.println(");
+    String _lowerCase = moveE.getRule().getTargetThen().toLowerCase();
+    _builder.append(_lowerCase, "\t\t\t\t\t");
+    _builder.append(".getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t");
     _builder.append("}");
     _builder.newLine();
@@ -1961,31 +1685,43 @@ public class RpgindividualGenerator extends AbstractGenerator {
   protected CharSequence _new_exp(final NameAttribute x) {
     String _xifexpression = null;
     if (((x.getAttribute().getAVal().getLTypes() != null) && x.getAttribute().getAVal().getLTypes().equals("Integer"))) {
-      String _name = x.getAttribute().getName();
-      String _plus = (("eData.get(" + "\"") + _name);
+      String _lowerCase = x.getTarget().toLowerCase();
+      String _plus = (_lowerCase + "EntityData.get(");
       String _plus_1 = (_plus + "\"");
-      _xifexpression = (_plus_1 + ").intValue()");
+      String _name = x.getAttribute().getName();
+      String _plus_2 = (_plus_1 + _name);
+      String _plus_3 = (_plus_2 + "\"");
+      _xifexpression = (_plus_3 + ").intValue()");
     } else {
       String _xifexpression_1 = null;
       if (((x.getAttribute().getAVal().getLTypes() != null) && x.getAttribute().getAVal().getLTypes().equals("Float"))) {
+        String _lowerCase_1 = x.getTarget().toLowerCase();
+        String _plus_4 = (_lowerCase_1 + "EntityData.get(");
+        String _plus_5 = (_plus_4 + "\"");
         String _name_1 = x.getAttribute().getName();
-        String _plus_2 = (("eData.get(" + "\"") + _name_1);
-        String _plus_3 = (_plus_2 + "\"");
-        _xifexpression_1 = (_plus_3 + ").floatValue()");
+        String _plus_6 = (_plus_5 + _name_1);
+        String _plus_7 = (_plus_6 + "\"");
+        _xifexpression_1 = (_plus_7 + ").floatValue()");
       } else {
         String _xifexpression_2 = null;
         if (((x.getAttribute().getAVal().getAn() != null) && (x.getAttribute().getAVal().getAn() instanceof IntNum))) {
+          String _lowerCase_2 = x.getTarget().toLowerCase();
+          String _plus_8 = (_lowerCase_2 + "EntityData.get(");
+          String _plus_9 = (_plus_8 + "\"");
           String _name_2 = x.getAttribute().getName();
-          String _plus_4 = (("eData.get(" + "\"") + _name_2);
-          String _plus_5 = (_plus_4 + "\"");
-          _xifexpression_2 = (_plus_5 + ").intValue()");
+          String _plus_10 = (_plus_9 + _name_2);
+          String _plus_11 = (_plus_10 + "\"");
+          _xifexpression_2 = (_plus_11 + ").intValue()");
         } else {
           String _xifexpression_3 = null;
           if (((x.getAttribute().getAVal().getAn() != null) && (x.getAttribute().getAVal().getAn() instanceof FloatNum))) {
+            String _lowerCase_3 = x.getTarget().toLowerCase();
+            String _plus_12 = (_lowerCase_3 + "EntityData.get(");
+            String _plus_13 = (_plus_12 + "\"");
             String _name_3 = x.getAttribute().getName();
-            String _plus_6 = (("eData.get(" + "\"") + _name_3);
-            String _plus_7 = (_plus_6 + "\"");
-            _xifexpression_3 = (_plus_7 + ").floatValue()");
+            String _plus_14 = (_plus_13 + _name_3);
+            String _plus_15 = (_plus_14 + "\"");
+            _xifexpression_3 = (_plus_15 + ").floatValue()");
           } else {
             _xifexpression_3 = "Something went wrong";
           }
@@ -2710,36 +2446,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
                 _builder.append("tempMoveData.addMoveEffect(new ");
                 String _name_3 = moveEffect.getMoveEName().getName();
                 _builder.append(_name_3, "\t\t");
-                _builder.append("());");
-                _builder.newLineIfNotEmpty();
-              }
-            }
-          }
-        }
-        {
-          EList<BEffect> _bEffect = move.getBEffect();
-          for(final BEffect buffEffect : _bEffect) {
-            {
-              if ((buffEffect != null)) {
-                _builder.append("\t\t");
-                _builder.append("tempMoveData.addBuffEffect(new ");
-                String _name_4 = buffEffect.getBuffEName().getName();
-                _builder.append(_name_4, "\t\t");
-                _builder.append("());");
-                _builder.newLineIfNotEmpty();
-              }
-            }
-          }
-        }
-        {
-          EList<AEffect> _aEffect = move.getAEffect();
-          for(final AEffect afterEffect : _aEffect) {
-            {
-              if ((afterEffect != null)) {
-                _builder.append("\t\t");
-                _builder.append("tempMoveData.addAfterEffect(new ");
-                String _name_5 = afterEffect.getAfterEName().getName();
-                _builder.append(_name_5, "\t\t");
                 _builder.append("());");
                 _builder.newLineIfNotEmpty();
               }

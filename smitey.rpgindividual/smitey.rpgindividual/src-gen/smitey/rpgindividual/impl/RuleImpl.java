@@ -27,7 +27,8 @@ import smitey.rpgindividual.Sum;
  * </p>
  * <ul>
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getOr <em>Or</em>}</li>
- *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getTarget <em>Target</em>}</li>
+ *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getTargetThen <em>Target Then</em>}</li>
+ *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getTargetAtt <em>Target Att</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getSum <em>Sum</em>}</li>
  * </ul>
  *
@@ -46,14 +47,34 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
   protected Proposition or;
 
   /**
-   * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
+   * The default value of the '{@link #getTargetThen() <em>Target Then</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTarget()
+   * @see #getTargetThen()
    * @generated
    * @ordered
    */
-  protected Attribute target;
+  protected static final String TARGET_THEN_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getTargetThen() <em>Target Then</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetThen()
+   * @generated
+   * @ordered
+   */
+  protected String targetThen = TARGET_THEN_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getTargetAtt() <em>Target Att</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getTargetAtt()
+   * @generated
+   * @ordered
+   */
+  protected Attribute targetAtt;
 
   /**
    * The cached value of the '{@link #getSum() <em>Sum</em>}' containment reference.
@@ -142,29 +163,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
-  public Attribute getTarget()
+  public String getTargetThen()
   {
-    if (target != null && target.eIsProxy())
-    {
-      InternalEObject oldTarget = (InternalEObject)target;
-      target = (Attribute)eResolveProxy(oldTarget);
-      if (target != oldTarget)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RpgindividualPackage.RULE__TARGET, oldTarget, target));
-      }
-    }
-    return target;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Attribute basicGetTarget()
-  {
-    return target;
+    return targetThen;
   }
 
   /**
@@ -173,12 +174,57 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
-  public void setTarget(Attribute newTarget)
+  public void setTargetThen(String newTargetThen)
   {
-    Attribute oldTarget = target;
-    target = newTarget;
+    String oldTargetThen = targetThen;
+    targetThen = newTargetThen;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.RULE__TARGET, oldTarget, target));
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.RULE__TARGET_THEN, oldTargetThen, targetThen));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Attribute getTargetAtt()
+  {
+    if (targetAtt != null && targetAtt.eIsProxy())
+    {
+      InternalEObject oldTargetAtt = (InternalEObject)targetAtt;
+      targetAtt = (Attribute)eResolveProxy(oldTargetAtt);
+      if (targetAtt != oldTargetAtt)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RpgindividualPackage.RULE__TARGET_ATT, oldTargetAtt, targetAtt));
+      }
+    }
+    return targetAtt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Attribute basicGetTargetAtt()
+  {
+    return targetAtt;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setTargetAtt(Attribute newTargetAtt)
+  {
+    Attribute oldTargetAtt = targetAtt;
+    targetAtt = newTargetAtt;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.RULE__TARGET_ATT, oldTargetAtt, targetAtt));
   }
 
   /**
@@ -261,9 +307,11 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     {
       case RpgindividualPackage.RULE__OR:
         return getOr();
-      case RpgindividualPackage.RULE__TARGET:
-        if (resolve) return getTarget();
-        return basicGetTarget();
+      case RpgindividualPackage.RULE__TARGET_THEN:
+        return getTargetThen();
+      case RpgindividualPackage.RULE__TARGET_ATT:
+        if (resolve) return getTargetAtt();
+        return basicGetTargetAtt();
       case RpgindividualPackage.RULE__SUM:
         return getSum();
     }
@@ -283,8 +331,11 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case RpgindividualPackage.RULE__OR:
         setOr((Proposition)newValue);
         return;
-      case RpgindividualPackage.RULE__TARGET:
-        setTarget((Attribute)newValue);
+      case RpgindividualPackage.RULE__TARGET_THEN:
+        setTargetThen((String)newValue);
+        return;
+      case RpgindividualPackage.RULE__TARGET_ATT:
+        setTargetAtt((Attribute)newValue);
         return;
       case RpgindividualPackage.RULE__SUM:
         setSum((Sum)newValue);
@@ -306,8 +357,11 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case RpgindividualPackage.RULE__OR:
         setOr((Proposition)null);
         return;
-      case RpgindividualPackage.RULE__TARGET:
-        setTarget((Attribute)null);
+      case RpgindividualPackage.RULE__TARGET_THEN:
+        setTargetThen(TARGET_THEN_EDEFAULT);
+        return;
+      case RpgindividualPackage.RULE__TARGET_ATT:
+        setTargetAtt((Attribute)null);
         return;
       case RpgindividualPackage.RULE__SUM:
         setSum((Sum)null);
@@ -328,12 +382,31 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     {
       case RpgindividualPackage.RULE__OR:
         return or != null;
-      case RpgindividualPackage.RULE__TARGET:
-        return target != null;
+      case RpgindividualPackage.RULE__TARGET_THEN:
+        return TARGET_THEN_EDEFAULT == null ? targetThen != null : !TARGET_THEN_EDEFAULT.equals(targetThen);
+      case RpgindividualPackage.RULE__TARGET_ATT:
+        return targetAtt != null;
       case RpgindividualPackage.RULE__SUM:
         return sum != null;
     }
     return super.eIsSet(featureID);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String toString()
+  {
+    if (eIsProxy()) return super.toString();
+
+    StringBuilder result = new StringBuilder(super.toString());
+    result.append(" (targetThen: ");
+    result.append(targetThen);
+    result.append(')');
+    return result.toString();
   }
 
 } //RuleImpl

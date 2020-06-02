@@ -13,6 +13,7 @@ package smitey.rpgindividual;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link smitey.rpgindividual.NameAttribute#getTarget <em>Target</em>}</li>
  *   <li>{@link smitey.rpgindividual.NameAttribute#getAttribute <em>Attribute</em>}</li>
  * </ul>
  *
@@ -22,6 +23,28 @@ package smitey.rpgindividual;
  */
 public interface NameAttribute extends AtomicNumber
 {
+  /**
+   * Returns the value of the '<em><b>Target</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target</em>' attribute.
+   * @see #setTarget(String)
+   * @see smitey.rpgindividual.RpgindividualPackage#getNameAttribute_Target()
+   * @model
+   * @generated
+   */
+  String getTarget();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.NameAttribute#getTarget <em>Target</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target</em>' attribute.
+   * @see #getTarget()
+   * @generated
+   */
+  void setTarget(String value);
+
   /**
    * Returns the value of the '<em><b>Attribute</b></em>' reference.
    * <!-- begin-user-doc -->

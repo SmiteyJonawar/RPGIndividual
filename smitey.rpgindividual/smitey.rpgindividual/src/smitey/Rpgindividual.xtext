@@ -15,20 +15,24 @@ Effects:
 ;
 
 Effect:
-	'effect' (Buff | MoveE | AfterE)
+	'effect' MoveE
 ;
 
+/*
 Buff:
 	'buff' name=ID rule=Rule
 ;
+*/
 
 MoveE:
 	'move' name=ID rule=Rule
 ;
 
+/*
 AfterE:
 	'after' name=ID rule=Rule
 ;
+*/
 
 Attributes:
 	'attributes' attribute+=Attribute+
@@ -65,20 +69,23 @@ Moves:
 ;
 
 Move:
-	'move' name=ID eType=EType att+=AltAttribute* (mEffect+=MEffect | bEffect+=BEffect | aEffect+=AEffect)*
+	'move' name=ID eType=EType att+=AltAttribute* mEffect+=MEffect+
 ;
 
 MEffect:
 	'effect' 'move' moveEName=[MoveE]
 ;
 
+/* 
 BEffect:
 	'effect' 'buff' buffEName=[Buff]
 ;
 
+
 AEffect:
 	'effect' 'after' afterEName=[AfterE]
 ;
+*/
 
 EType:
 	'type' type=[Type]
@@ -93,7 +100,7 @@ AltAttribute:
 ;
 
 Rule:
-	('if' or = ORcondition 'then')? target=[Attribute] 'is' sum=Sum
+	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum
 ;
 
 Entities:
@@ -166,7 +173,7 @@ ActualNumbers:
 ;
 
 NameAttribute:
-	attribute=[Attribute]
+	target=Target attribute=[Attribute]
 ;
 
 
@@ -176,6 +183,10 @@ IntNum:
 
 FloatNum:
 	i=INT '.' decimal=INT
+;
+
+Target:
+	'User' | 'Enemy'
 ;
 
 LegalType:

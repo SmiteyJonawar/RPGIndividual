@@ -10,20 +10,16 @@ import org.eclipse.emf.ecore.EReference;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
-import smitey.rpgindividual.AEffect;
 import smitey.rpgindividual.ActualNumbers;
 import smitey.rpgindividual.Add;
-import smitey.rpgindividual.AfterE;
 import smitey.rpgindividual.AltAttribute;
 import smitey.rpgindividual.And;
 import smitey.rpgindividual.AtomicNumber;
 import smitey.rpgindividual.Attribute;
 import smitey.rpgindividual.AttributeValues;
 import smitey.rpgindividual.Attributes;
-import smitey.rpgindividual.BEffect;
 import smitey.rpgindividual.Bigger;
 import smitey.rpgindividual.BiggerEq;
-import smitey.rpgindividual.Buff;
 import smitey.rpgindividual.Comparator;
 import smitey.rpgindividual.Death;
 import smitey.rpgindividual.Declaration;
@@ -107,21 +103,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass buffEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   private EClass moveEEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass afterEEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -192,20 +174,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   private EClass mEffectEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass bEffectEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass aEffectEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -591,39 +559,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EAttribute getEffect_Name()
-  {
-    return (EAttribute)effectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getEffect_Rule()
-  {
-    return (EReference)effectEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getBuff()
-  {
-    return buffEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getMoveE()
   {
     return moveEEClass;
@@ -635,9 +570,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EClass getAfterE()
+  public EAttribute getMoveE_Name()
   {
-    return afterEEClass;
+    return (EAttribute)moveEEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getMoveE_Rule()
+  {
+    return (EReference)moveEEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -954,28 +900,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getMove_BEffect()
-  {
-    return (EReference)moveEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getMove_AEffect()
-  {
-    return (EReference)moveEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
   public EClass getMEffect()
   {
     return mEffectEClass;
@@ -990,50 +914,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
   public EReference getMEffect_MoveEName()
   {
     return (EReference)mEffectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getBEffect()
-  {
-    return bEffectEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getBEffect_BuffEName()
-  {
-    return (EReference)bEffectEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getAEffect()
-  {
-    return aEffectEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getAEffect_AfterEName()
-  {
-    return (EReference)aEffectEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1152,9 +1032,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getRule_Target()
+  public EAttribute getRule_TargetThen()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getRule_TargetAtt()
+  {
+    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1165,7 +1056,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
   @Override
   public EReference getRule_Sum()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(2);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1515,9 +1406,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
+  public EAttribute getNameAttribute_Target()
+  {
+    return (EAttribute)nameAttributeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getNameAttribute_Attribute()
   {
-    return (EReference)nameAttributeEClass.getEStructuralFeatures().get(0);
+    return (EReference)nameAttributeEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1880,14 +1782,10 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     createEReference(effectsEClass, EFFECTS__EFFECT);
 
     effectEClass = createEClass(EFFECT);
-    createEAttribute(effectEClass, EFFECT__NAME);
-    createEReference(effectEClass, EFFECT__RULE);
-
-    buffEClass = createEClass(BUFF);
 
     moveEEClass = createEClass(MOVE_E);
-
-    afterEEClass = createEClass(AFTER_E);
+    createEAttribute(moveEEClass, MOVE_E__NAME);
+    createEReference(moveEEClass, MOVE_E__RULE);
 
     attributesEClass = createEClass(ATTRIBUTES);
     createEReference(attributesEClass, ATTRIBUTES__ATTRIBUTE);
@@ -1925,17 +1823,9 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     createEReference(moveEClass, MOVE__ETYPE);
     createEReference(moveEClass, MOVE__ATT);
     createEReference(moveEClass, MOVE__MEFFECT);
-    createEReference(moveEClass, MOVE__BEFFECT);
-    createEReference(moveEClass, MOVE__AEFFECT);
 
     mEffectEClass = createEClass(MEFFECT);
     createEReference(mEffectEClass, MEFFECT__MOVE_ENAME);
-
-    bEffectEClass = createEClass(BEFFECT);
-    createEReference(bEffectEClass, BEFFECT__BUFF_ENAME);
-
-    aEffectEClass = createEClass(AEFFECT);
-    createEReference(aEffectEClass, AEFFECT__AFTER_ENAME);
 
     eTypeEClass = createEClass(ETYPE);
     createEReference(eTypeEClass, ETYPE__TYPE);
@@ -1950,7 +1840,8 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
 
     ruleEClass = createEClass(RULE);
     createEReference(ruleEClass, RULE__OR);
-    createEReference(ruleEClass, RULE__TARGET);
+    createEAttribute(ruleEClass, RULE__TARGET_THEN);
+    createEReference(ruleEClass, RULE__TARGET_ATT);
     createEReference(ruleEClass, RULE__SUM);
 
     entitiesEClass = createEClass(ENTITIES);
@@ -1999,6 +1890,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     actualNumbersEClass = createEClass(ACTUAL_NUMBERS);
 
     nameAttributeEClass = createEClass(NAME_ATTRIBUTE);
+    createEAttribute(nameAttributeEClass, NAME_ATTRIBUTE__TARGET);
     createEReference(nameAttributeEClass, NAME_ATTRIBUTE__ATTRIBUTE);
 
     intNumEClass = createEClass(INT_NUM);
@@ -2075,9 +1967,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
 
     // Add supertypes to classes
     effectsEClass.getESuperTypes().add(this.getDeclaration());
-    buffEClass.getESuperTypes().add(this.getEffect());
     moveEEClass.getESuperTypes().add(this.getEffect());
-    afterEEClass.getESuperTypes().add(this.getEffect());
     attributesEClass.getESuperTypes().add(this.getDeclaration());
     locationsEClass.getESuperTypes().add(this.getDeclaration());
     relationsEClass.getESuperTypes().add(this.getDeclaration());
@@ -2116,14 +2006,10 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getEffects_Effect(), this.getEffect(), null, "effect", null, 0, -1, Effects.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(effectEClass, Effect.class, "Effect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEffect_Name(), ecorePackage.getEString(), "name", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEffect_Rule(), this.getRule(), null, "rule", null, 0, 1, Effect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(buffEClass, Buff.class, "Buff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(moveEEClass, MoveE.class, "MoveE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-    initEClass(afterEEClass, AfterE.class, "AfterE", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getMoveE_Name(), ecorePackage.getEString(), "name", null, 0, 1, MoveE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMoveE_Rule(), this.getRule(), null, "rule", null, 0, 1, MoveE.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(attributesEClass, Attributes.class, "Attributes", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAttributes_Attribute(), this.getAttribute(), null, "attribute", null, 0, -1, Attributes.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2161,17 +2047,9 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getMove_EType(), this.getEType(), null, "eType", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMove_Att(), this.getAltAttribute(), null, "att", null, 0, -1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMove_MEffect(), this.getMEffect(), null, "mEffect", null, 0, -1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMove_BEffect(), this.getBEffect(), null, "bEffect", null, 0, -1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMove_AEffect(), this.getAEffect(), null, "aEffect", null, 0, -1, Move.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(mEffectEClass, MEffect.class, "MEffect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMEffect_MoveEName(), this.getMoveE(), null, "moveEName", null, 0, 1, MEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(bEffectEClass, BEffect.class, "BEffect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getBEffect_BuffEName(), this.getBuff(), null, "buffEName", null, 0, 1, BEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(aEffectEClass, AEffect.class, "AEffect", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getAEffect_AfterEName(), this.getAfterE(), null, "afterEName", null, 0, 1, AEffect.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eTypeEClass, EType.class, "EType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEType_Type(), this.getType(), null, "type", null, 0, 1, EType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2186,7 +2064,8 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
 
     initEClass(ruleEClass, Rule.class, "Rule", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getRule_Or(), this.getProposition(), null, "or", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getRule_Target(), this.getAttribute(), null, "target", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_TargetThen(), ecorePackage.getEString(), "targetThen", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getRule_TargetAtt(), this.getAttribute(), null, "targetAtt", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Sum(), this.getSum(), null, "sum", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entitiesEClass, Entities.class, "Entities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2235,6 +2114,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEClass(actualNumbersEClass, ActualNumbers.class, "ActualNumbers", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(nameAttributeEClass, NameAttribute.class, "NameAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getNameAttribute_Target(), ecorePackage.getEString(), "target", null, 0, 1, NameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getNameAttribute_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, NameAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(intNumEClass, IntNum.class, "IntNum", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

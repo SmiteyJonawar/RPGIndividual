@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link smitey.rpgindividual.Rule#getOr <em>Or</em>}</li>
- *   <li>{@link smitey.rpgindividual.Rule#getTarget <em>Target</em>}</li>
+ *   <li>{@link smitey.rpgindividual.Rule#getTargetThen <em>Target Then</em>}</li>
+ *   <li>{@link smitey.rpgindividual.Rule#getTargetAtt <em>Target Att</em>}</li>
  *   <li>{@link smitey.rpgindividual.Rule#getSum <em>Sum</em>}</li>
  * </ul>
  *
@@ -48,26 +49,48 @@ public interface Rule extends EObject
   void setOr(Proposition value);
 
   /**
-   * Returns the value of the '<em><b>Target</b></em>' reference.
+   * Returns the value of the '<em><b>Target Then</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(Attribute)
-   * @see smitey.rpgindividual.RpgindividualPackage#getRule_Target()
+   * @return the value of the '<em>Target Then</em>' attribute.
+   * @see #setTargetThen(String)
+   * @see smitey.rpgindividual.RpgindividualPackage#getRule_TargetThen()
    * @model
    * @generated
    */
-  Attribute getTarget();
+  String getTargetThen();
 
   /**
-   * Sets the value of the '{@link smitey.rpgindividual.Rule#getTarget <em>Target</em>}' reference.
+   * Sets the value of the '{@link smitey.rpgindividual.Rule#getTargetThen <em>Target Then</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' reference.
-   * @see #getTarget()
+   * @param value the new value of the '<em>Target Then</em>' attribute.
+   * @see #getTargetThen()
    * @generated
    */
-  void setTarget(Attribute value);
+  void setTargetThen(String value);
+
+  /**
+   * Returns the value of the '<em><b>Target Att</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Target Att</em>' reference.
+   * @see #setTargetAtt(Attribute)
+   * @see smitey.rpgindividual.RpgindividualPackage#getRule_TargetAtt()
+   * @model
+   * @generated
+   */
+  Attribute getTargetAtt();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.Rule#getTargetAtt <em>Target Att</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Target Att</em>' reference.
+   * @see #getTargetAtt()
+   * @generated
+   */
+  void setTargetAtt(Attribute value);
 
   /**
    * Returns the value of the '<em><b>Sum</b></em>' containment reference.
