@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
 public interface EntityMoves extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Move</b></em>' reference list.
-   * The list contents are of type {@link smitey.rpgindividual.Move}.
+   * Returns the value of the '<em><b>Move</b></em>' containment reference list.
+   * The list contents are of type {@link smitey.rpgindividual.EntityMoveModifier}.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Move</em>' reference list.
+   * @return the value of the '<em>Move</em>' containment reference list.
    * @see smitey.rpgindividual.RpgindividualPackage#getEntityMoves_Move()
-   * @model
+   * @model containment="true"
    * @generated
    */
-  EList<Move> getMove();
+  EList<EntityMoveModifier> getMove();
 
 } // EntityMoves

@@ -27,6 +27,8 @@ import smitey.rpgindividual.Effect;
 import smitey.rpgindividual.Effects;
 import smitey.rpgindividual.Entities;
 import smitey.rpgindividual.Entity;
+import smitey.rpgindividual.EntityMoveModifier;
+import smitey.rpgindividual.EntityMoveMultiplier;
 import smitey.rpgindividual.Eq;
 import smitey.rpgindividual.FloatNum;
 import smitey.rpgindividual.IntNum;
@@ -128,9 +130,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
   
   public CharSequence generateRunner(final String name) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("public class Runner {");
     _builder.newLine();
     _builder.append("    ");
@@ -212,8 +211,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import java.util.*;");
     _builder.newLine();
-    _builder.append("import java.awt.event.*;");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("public class ");
     _builder.append(classFileName);
@@ -224,9 +221,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("    ");
     _builder.append("private List<Entity> entities;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("private List<Entity> battleEntities;");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("private Team team;");
@@ -259,11 +253,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("private Random random;");
     _builder.newLine();
     _builder.append("    ");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("private String currentTeam;");
-    _builder.newLine();
-    _builder.append("    ");
     _builder.append("private boolean gameFinished;");
     _builder.newLine();
     _builder.append("    ");
@@ -293,9 +282,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("      \t");
     _builder.append("team = new Team();");
-    _builder.newLine();
-    _builder.append("    \t");
-    _builder.append("battleEntities = new ArrayList<>();");
     _builder.newLine();
     _builder.append("    \t");
     _builder.append("move = Move.getInstance();");
@@ -602,7 +588,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("}");
+    _builder.append("} ");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("}");
@@ -743,8 +729,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
   
   public CharSequence generateAttributeData() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
     _builder.append("public class AttributeData {");
     _builder.newLine();
     _builder.newLine();
@@ -886,8 +870,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
    */
   public CharSequence generateEffectMove() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
     _builder.append("public abstract class EffectMove {");
     _builder.newLine();
     _builder.newLine();
@@ -1181,8 +1163,11 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("if(effectMove(move, name, user, enemy)){");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("for(AttributeData aData : enemy.getAttributes()){");
-    _builder.newLine();
+    _builder.append("for(AttributeData aData : ");
+    String _lowerCase = moveE.getRule().getTargetThen().toLowerCase();
+    _builder.append(_lowerCase, "\t\t\t");
+    _builder.append(".getAttributes()){");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t");
     _builder.append("if(aData.getAttributeName() == \"");
     String _name_1 = moveE.getRule().getTargetAtt().getName();
@@ -1194,8 +1179,8 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("System.out.println(");
-    String _lowerCase = moveE.getRule().getTargetThen().toLowerCase();
-    _builder.append(_lowerCase, "\t\t\t\t\t");
+    String _lowerCase_1 = moveE.getRule().getTargetThen().toLowerCase();
+    _builder.append(_lowerCase_1, "\t\t\t\t\t");
     _builder.append(".getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t");
@@ -1205,7 +1190,33 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("}\t\t\t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("for(AttributeData aData : move.getMove(name).getMoveAttributes()){");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("if(aData.getAttributeName() == \"");
+    String _name_2 = moveE.getRule().getTargetAtt().getName();
+    _builder.append(_name_2, "\t\t\t");
+    _builder.append("\"){");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append("aData.setNumber(changeMove(move, name, user, enemy));");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append("System.out.println(");
+    String _lowerCase_2 = moveE.getRule().getTargetThen().toLowerCase();
+    _builder.append(_lowerCase_2, "\t\t\t\t");
+    _builder.append(".getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append("}\t\t\t\t");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append("}\t\t\t\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -1398,7 +1409,40 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("    ");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public void addMoveData(MoveData moveData){");
+    _builder.append("public void addMoveData(MoveData moveData, Map<String, Number> multipliers){");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("for (AttributeData attributeData : moveData.getMoveAttributes()){");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("if (multipliers.containsKey(attributeData.getAttributeName())){");
+    _builder.newLine();
+    _builder.append("          ");
+    _builder.append("String attName = attributeData.getAttributeName();");
+    _builder.newLine();
+    _builder.append("          ");
+    _builder.append("Number number = attributeData.getNumber();");
+    _builder.newLine();
+    _builder.append("          ");
+    _builder.append("if (number instanceof Float || multipliers.get(attName) instanceof Float){");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("attributeData.setNumber(number.floatValue() * multipliers.get(attributeData.getAttributeName()).floatValue());");
+    _builder.newLine();
+    _builder.append("          ");
+    _builder.append("} else {");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("attributeData.setNumber(number.intValue() * multipliers.get(attributeData.getAttributeName()).intValue());");
+    _builder.newLine();
+    _builder.append("          ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("      ");
+    _builder.append("}");
     _builder.newLine();
     _builder.append("      ");
     _builder.append("moves.add(moveData);");
@@ -1479,31 +1523,56 @@ public class RpgindividualGenerator extends AbstractGenerator {
         _builder.append(" = new Entity();");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
+        _builder.append("Map<String, Number> ");
         String _lowerCase_1 = entity.getName().toLowerCase();
         _builder.append(_lowerCase_1, "\t\t");
+        _builder.append("Multipliers = new HashMap<>();");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t");
+        String _lowerCase_2 = entity.getName().toLowerCase();
+        _builder.append(_lowerCase_2, "\t\t");
         _builder.append(".setName(\"");
         String _name = entity.getName();
         _builder.append(_name, "\t\t");
         _builder.append("\");");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
-        String _lowerCase_2 = entity.getName().toLowerCase();
-        _builder.append(_lowerCase_2, "\t\t");
+        String _lowerCase_3 = entity.getName().toLowerCase();
+        _builder.append(_lowerCase_3, "\t\t");
         _builder.append(".setType(\"");
         String _name_1 = entity.getEType().getType().getName();
         _builder.append(_name_1, "\t\t");
         _builder.append("\");");
         _builder.newLineIfNotEmpty();
         {
-          EList<Move> _move = entity.getEMoves().getMove();
-          for(final Move move : _move) {
+          EList<EntityMoveModifier> _move = entity.getEMoves().getMove();
+          for(final EntityMoveModifier move : _move) {
+            {
+              EList<EntityMoveMultiplier> _moveModification = move.getMoveModification();
+              for(final EntityMoveMultiplier modification : _moveModification) {
+                _builder.append("\t\t");
+                String _lowerCase_4 = entity.getName().toLowerCase();
+                _builder.append(_lowerCase_4, "\t\t");
+                _builder.append("Multipliers.put(\"");
+                String _lowerCase_5 = modification.getAttribute().getName().toLowerCase();
+                _builder.append(_lowerCase_5, "\t\t");
+                _builder.append("\", ");
+                CharSequence _new_exp = this.new_exp(modification.getMultiplier());
+                _builder.append(_new_exp, "\t\t");
+                _builder.append(");");
+                _builder.newLineIfNotEmpty();
+              }
+            }
             _builder.append("\t\t");
-            String _lowerCase_3 = entity.getName().toLowerCase();
-            _builder.append(_lowerCase_3, "\t\t");
+            String _lowerCase_6 = entity.getName().toLowerCase();
+            _builder.append(_lowerCase_6, "\t\t");
             _builder.append(".addMoveData(Move.getInstance().getMove(\"");
-            String _name_2 = move.getName();
+            String _name_2 = move.getMoveName().getName();
             _builder.append(_name_2, "\t\t");
-            _builder.append("\"));");
+            _builder.append("\"), ");
+            String _lowerCase_7 = entity.getName().toLowerCase();
+            _builder.append(_lowerCase_7, "\t\t");
+            _builder.append("Multipliers);");
             _builder.newLineIfNotEmpty();
           }
         }
@@ -1511,8 +1580,8 @@ public class RpgindividualGenerator extends AbstractGenerator {
           EList<AltAttribute> _att = entity.getAtt();
           for(final AltAttribute att : _att) {
             _builder.append("\t\t");
-            String _lowerCase_4 = entity.getName().toLowerCase();
-            _builder.append(_lowerCase_4, "\t\t");
+            String _lowerCase_8 = entity.getName().toLowerCase();
+            _builder.append(_lowerCase_8, "\t\t");
             _builder.append(".addAttribute(new AttributeData(\"");
             String _name_3 = att.getAttribute().getName();
             _builder.append(_name_3, "\t\t");
@@ -1525,8 +1594,8 @@ public class RpgindividualGenerator extends AbstractGenerator {
         }
         _builder.append("\t\t");
         _builder.append("entities.add(");
-        String _lowerCase_5 = entity.getName().toLowerCase();
-        _builder.append(_lowerCase_5, "\t\t");
+        String _lowerCase_9 = entity.getName().toLowerCase();
+        _builder.append(_lowerCase_9, "\t\t");
         _builder.append(");");
         _builder.newLineIfNotEmpty();
       }
@@ -1916,9 +1985,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
   
   public CharSequence generateLocationInit(final Locations locations) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("public class LocationsInit{");
     _builder.newLine();
     _builder.append("\t");
@@ -2081,12 +2147,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("    ");
     _builder.append("private List<EffectMove> moveEffects;");
     _builder.newLine();
-    _builder.append("    ");
-    _builder.append("private List<EffectBuff> buffEffects;");
-    _builder.newLine();
-    _builder.append("    ");
-    _builder.append("private List<EffectAfter> afterEffects;");
-    _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
     _builder.append("public MoveData(){");
@@ -2097,18 +2157,12 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t\t");
     _builder.append("this.moveEffects = new ArrayList<>();");
     _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.buffEffects = new ArrayList<>();");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.afterEffects = new ArrayList<>();");
-    _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<EffectMove> moveEffects, List<EffectBuff> buffEffects, List<EffectAfter> afterEffects) {");
+    _builder.append("public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<EffectMove> moveEffects) {");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("this.moveName = moveName;");
@@ -2121,12 +2175,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("this.moveEffects = moveEffects;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.buffEffects = buffEffects;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.afterEffects = afterEffects;\t");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
@@ -2204,15 +2252,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public List<EffectBuff> getBuffEffects(){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return this.buffEffects;");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public List<EffectMove> getMoveEffects(){");
@@ -2226,15 +2265,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public List<EffectAfter> getAfterEffects(){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("return this.afterEffects;");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("public void addMoveEffect(EffectMove moveEffect){");
@@ -2246,26 +2276,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("}");
     _builder.newLine();
     _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void addBuffEffect(EffectBuff buffEffect){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.buffEffects.add(buffEffect);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("public void addAfterEffect(EffectAfter afterEffect){");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.append("this.afterEffects.add(afterEffect);");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
@@ -2306,7 +2316,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("public int hashCode() {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("return Objects.hash(moveName, type, moveAttributes, moveEffects, buffEffects, afterEffects);");
+    _builder.append("return Objects.hash(moveName, type, moveAttributes, moveEffects);");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
@@ -2394,9 +2404,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
   
   public CharSequence generateMoveInit(final Moves moves) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.newLine();
     _builder.append("public class MoveInit{");
     _builder.newLine();
     _builder.append("\t");
@@ -2827,10 +2834,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
   
   public CharSequence generateTypeInit(final Relations relations) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("import java.util.*;");
-    _builder.newLine();
-    _builder.append("\t\t");
-    _builder.newLine();
     _builder.append("public class TypeRelationsInit{");
     _builder.newLine();
     _builder.append("\t");

@@ -84,8 +84,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 	
 	def CharSequence generateRunner(String name){
 		'''
-		import java.util.*;
-		
 		public class Runner {
 		    public static void main(String[] args) {
 		    	«name» «name.toLowerCase» = new «name»();
@@ -118,12 +116,10 @@ class RpgindividualGenerator extends AbstractGenerator {
 	def CharSequence generateGame(String classFileName){
 		'''
 		import java.util.*;
-		import java.awt.event.*;
 		
 		public class «classFileName»{
 			private Type type;
 		    private List<Entity> entities;
-		    private List<Entity> battleEntities;
 		    private Team team;
 		    private Move move;
 		    private MoveInit moveInit;
@@ -134,8 +130,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 		    private Location location;
 		    private DeathChecker deathChecker;
 		    private Random random;
-		    
-		    private String currentTeam;
 		    private boolean gameFinished;
 		    private boolean won = false;
 		    private boolean lost = false;
@@ -146,7 +140,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 		    	entities = new ArrayList<>();
 		    	type = Type.getInstance();
 		      	team = new Team();
-		    	battleEntities = new ArrayList<>();
 		    	move = Move.getInstance();
 		    	location = Location.getInstance();
 		    	deathChecker = new DeathChecker();
@@ -252,7 +245,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 								lost = true;
 								return;
 							}
-						}
+						} 
 					}
 		   		}
 		   	}
@@ -322,7 +315,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 	
 	def CharSequence generateAttributeData(){
 		'''
-		import java.util.*;
 		public class AttributeData {
 		
 		    private Number number;
@@ -422,8 +414,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 	*/
 	
 	def CharSequence generateEffectMove(){
-			    	'''
-    	import java.util.*;
+		'''
     	public abstract class EffectMove {
     	
     	    public abstract boolean effectMove(Move move, String name, Entity user, Entity enemy);
@@ -630,13 +621,20 @@ class RpgindividualGenerator extends AbstractGenerator {
 				@Override		
 				public void doEffect(Move move, String name, Entity user, Entity enemy){
 					if(effectMove(move, name, user, enemy)){
-						for(AttributeData aData : enemy.getAttributes()){
+						for(AttributeData aData : «moveE.rule.targetThen.toLowerCase».getAttributes()){
 							if(aData.getAttributeName() == "«moveE.rule.targetAtt.name»"){
 								aData.setNumber(changeMove(move, name, user, enemy));
 								System.out.println(«moveE.rule.targetThen.toLowerCase».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 							}
 						}
-					}			
+					}
+					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
+						if(aData.getAttributeName() == "«moveE.rule.targetAtt.name»"){
+							aData.setNumber(changeMove(move, name, user, enemy));
+							System.out.println(«moveE.rule.targetThen.toLowerCase».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
+							
+						}				
+					}				
 				}
 			}
     	'''
@@ -715,7 +713,18 @@ class RpgindividualGenerator extends AbstractGenerator {
 		      return moveNames;
 		    }
 		    
-		    public void addMoveData(MoveData moveData){
+		    public void addMoveData(MoveData moveData, Map<String, Number> multipliers){
+		      for (AttributeData attributeData : moveData.getMoveAttributes()){
+		        if (multipliers.containsKey(attributeData.getAttributeName())){
+		          String attName = attributeData.getAttributeName();
+		          Number number = attributeData.getNumber();
+		          if (number instanceof Float || multipliers.get(attName) instanceof Float){
+		            attributeData.setNumber(number.floatValue() * multipliers.get(attributeData.getAttributeName()).floatValue());
+		          } else {
+		            attributeData.setNumber(number.intValue() * multipliers.get(attributeData.getAttributeName()).intValue());
+		          }
+		        }
+		      }
 		      moves.add(moveData);
 		    }
 		}
@@ -757,10 +766,14 @@ class RpgindividualGenerator extends AbstractGenerator {
 			public void createEntities(List<Entity> entities){
 				«FOR entity : entities.entity»
 				Entity «entity.name.toLowerCase» = new Entity();
+				Map<String, Number> «entity.name.toLowerCase»Multipliers = new HashMap<>();
 				«entity.name.toLowerCase».setName("«entity.name»");
 				«entity.name.toLowerCase».setType("«entity.EType.type.name»");
 				«FOR move : entity.EMoves.move»
-				«entity.name.toLowerCase».addMoveData(Move.getInstance().getMove("«move.name»"));
+				«FOR modification : move.moveModification»
+				«entity.name.toLowerCase»Multipliers.put("«modification.attribute.name.toLowerCase»", «modification.multiplier.new_exp»);
+				«ENDFOR»
+				«entity.name.toLowerCase».addMoveData(Move.getInstance().getMove("«move.getMoveName.name»"), «entity.name.toLowerCase»Multipliers);
 				«ENDFOR»
 				«FOR att : entity.att»
 				«entity.name.toLowerCase».addAttribute(new AttributeData("«att.attribute.name»", «getNumberValue(att.av.an)»));
@@ -907,8 +920,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 	
 	def CharSequence generateLocationInit(Locations locations){
 		'''
-		import java.util.*;
-		
 		public class LocationsInit{
 			public void addLocations(Location location){
 				String locationName;
@@ -983,23 +994,17 @@ class RpgindividualGenerator extends AbstractGenerator {
 			private String type;
 		    private List<AttributeData> moveAttributes;
 		    private List<EffectMove> moveEffects;
-		    private List<EffectBuff> buffEffects;
-		    private List<EffectAfter> afterEffects;
 		
 		    public MoveData(){
 		        this.moveAttributes = new ArrayList<>();
 				this.moveEffects = new ArrayList<>();
-				this.buffEffects = new ArrayList<>();
-				this.afterEffects = new ArrayList<>();
 		    }
 		
-		    public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<EffectMove> moveEffects, List<EffectBuff> buffEffects, List<EffectAfter> afterEffects) {
+		    public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<EffectMove> moveEffects) {
 		        this.moveName = moveName;
 		        this.type = type;
 		        this.moveAttributes = moveAttributes;
 				this.moveEffects = moveEffects;
-				this.buffEffects = buffEffects;
-				this.afterEffects = afterEffects;	
 		    }
 		
 		    public String getMoveName(){
@@ -1030,29 +1035,16 @@ class RpgindividualGenerator extends AbstractGenerator {
 		        moveAttributes.add(attribute);
 		    }
 			
-			public List<EffectBuff> getBuffEffects(){
-				return this.buffEffects;
-			}
 			
 			public List<EffectMove> getMoveEffects(){
 				return this.moveEffects;
 			}
 			
-			public List<EffectAfter> getAfterEffects(){
-				return this.afterEffects;
-			}
 			
 			public void addMoveEffect(EffectMove moveEffect){
 				this.moveEffects.add(moveEffect);
 			}
 			
-			public void addBuffEffect(EffectBuff buffEffect){
-				this.buffEffects.add(buffEffect);
-			}
-			
-			public void addAfterEffect(EffectAfter afterEffect){
-				this.afterEffects.add(afterEffect);
-			}
 		
 		    @Override
 		    public boolean equals(Object o) {
@@ -1067,7 +1059,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 		
 		    @Override
 		    public int hashCode() {
-		        return Objects.hash(moveName, type, moveAttributes, moveEffects, buffEffects, afterEffects);
+		        return Objects.hash(moveName, type, moveAttributes, moveEffects);
 		    }
 		
 		    @Override
@@ -1113,8 +1105,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 	
 	def CharSequence generateMoveInit(Moves moves){
 		'''
-		import java.util.*;
-		
 		public class MoveInit{
 			public void addMoves(Move moves){ //private Move moves = Move.getInstance()
 				MoveData tempMoveData;
@@ -1309,8 +1299,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 	def CharSequence generateTypeInit(Relations relations){
 		
 		'''
-		import java.util.*;
-				
 		public class TypeRelationsInit{
 			public void createRelations(Type type){
 				TypeRelation tr;

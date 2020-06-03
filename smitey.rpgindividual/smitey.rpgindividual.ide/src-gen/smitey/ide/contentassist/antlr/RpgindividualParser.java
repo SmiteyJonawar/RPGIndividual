@@ -66,6 +66,8 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getDeathAccess().getGroup(), "rule__Death__Group__0");
 			builder.put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 			builder.put(grammarAccess.getEntityMovesAccess().getGroup(), "rule__EntityMoves__Group__0");
+			builder.put(grammarAccess.getEntityMoveModifierAccess().getGroup(), "rule__EntityMoveModifier__Group__0");
+			builder.put(grammarAccess.getEntityMoveMultiplierAccess().getGroup(), "rule__EntityMoveMultiplier__Group__0");
 			builder.put(grammarAccess.getTeamsAccess().getGroup(), "rule__Teams__Group__0");
 			builder.put(grammarAccess.getTeamAccess().getGroup(), "rule__Team__Group__0");
 			builder.put(grammarAccess.getMembersAccess().getGroup(), "rule__Members__Group__0");
@@ -116,7 +118,7 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMoveAccess().getETypeAssignment_2(), "rule__Move__ETypeAssignment_2");
 			builder.put(grammarAccess.getMoveAccess().getAttAssignment_3(), "rule__Move__AttAssignment_3");
 			builder.put(grammarAccess.getMoveAccess().getMEffectAssignment_4(), "rule__Move__MEffectAssignment_4");
-			builder.put(grammarAccess.getMEffectAccess().getMoveENameAssignment_2(), "rule__MEffect__MoveENameAssignment_2");
+			builder.put(grammarAccess.getMEffectAccess().getMoveENameAssignment_1(), "rule__MEffect__MoveENameAssignment_1");
 			builder.put(grammarAccess.getETypeAccess().getTypeAssignment_1(), "rule__EType__TypeAssignment_1");
 			builder.put(grammarAccess.getAttributeValuesAccess().getLTypesAssignment_1_0(), "rule__AttributeValues__LTypesAssignment_1_0");
 			builder.put(grammarAccess.getAttributeValuesAccess().getAnAssignment_1_1(), "rule__AttributeValues__AnAssignment_1_1");
@@ -133,6 +135,10 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getEntityAccess().getAttAssignment_3(), "rule__Entity__AttAssignment_3");
 			builder.put(grammarAccess.getEntityAccess().getEMovesAssignment_4(), "rule__Entity__EMovesAssignment_4");
 			builder.put(grammarAccess.getEntityMovesAccess().getMoveAssignment_1(), "rule__EntityMoves__MoveAssignment_1");
+			builder.put(grammarAccess.getEntityMoveModifierAccess().getMoveNameAssignment_0(), "rule__EntityMoveModifier__MoveNameAssignment_0");
+			builder.put(grammarAccess.getEntityMoveModifierAccess().getMoveModificationAssignment_2(), "rule__EntityMoveModifier__MoveModificationAssignment_2");
+			builder.put(grammarAccess.getEntityMoveMultiplierAccess().getAttributeAssignment_0(), "rule__EntityMoveMultiplier__AttributeAssignment_0");
+			builder.put(grammarAccess.getEntityMoveMultiplierAccess().getMultiplierAssignment_2(), "rule__EntityMoveMultiplier__MultiplierAssignment_2");
 			builder.put(grammarAccess.getTeamsAccess().getTeamAssignment_1(), "rule__Teams__TeamAssignment_1");
 			builder.put(grammarAccess.getTeamAccess().getNameAssignment_1(), "rule__Team__NameAssignment_1");
 			builder.put(grammarAccess.getTeamAccess().getMembersAssignment_2(), "rule__Team__MembersAssignment_2");

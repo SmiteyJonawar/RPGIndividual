@@ -242,6 +242,20 @@ public class RpgindividualSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case RpgindividualPackage.ENTITY_MOVE_MODIFIER:
+      {
+        EntityMoveModifier entityMoveModifier = (EntityMoveModifier)theEObject;
+        T result = caseEntityMoveModifier(entityMoveModifier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case RpgindividualPackage.ENTITY_MOVE_MULTIPLIER:
+      {
+        EntityMoveMultiplier entityMoveMultiplier = (EntityMoveMultiplier)theEObject;
+        T result = caseEntityMoveMultiplier(entityMoveMultiplier);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case RpgindividualPackage.TEAMS:
       {
         Teams teams = (Teams)theEObject;
@@ -825,6 +839,38 @@ public class RpgindividualSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEntityMoves(EntityMoves object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Move Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Move Modifier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntityMoveModifier(EntityMoveModifier object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Move Multiplier</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Move Multiplier</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntityMoveMultiplier(EntityMoveMultiplier object)
   {
     return null;
   }

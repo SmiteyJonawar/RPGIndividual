@@ -907,10 +907,6 @@ ruleMEffect returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getMEffectAccess().getEffectKeyword_0());
 		}
-		otherlv_1='move'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getMEffectAccess().getMoveKeyword_1());
-		}
 		(
 			(
 				{
@@ -918,9 +914,9 @@ ruleMEffect returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getMEffectRule());
 					}
 				}
-				otherlv_2=RULE_ID
+				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_2, grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_2_0());
+					newLeafNode(otherlv_1, grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_1_0());
 				}
 			)
 		)
@@ -1390,16 +1386,136 @@ ruleEntityMoves returns [EObject current=null]
 		(
 			(
 				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getEntityMovesRule());
-					}
+					newCompositeNode(grammarAccess.getEntityMovesAccess().getMoveEntityMoveModifierParserRuleCall_1_0());
 				}
-				otherlv_1=RULE_ID
+				lv_move_1_0=ruleEntityMoveModifier
 				{
-					newLeafNode(otherlv_1, grammarAccess.getEntityMovesAccess().getMoveMoveCrossReference_1_0());
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEntityMovesRule());
+					}
+					add(
+						$current,
+						"move",
+						lv_move_1_0,
+						"smitey.Rpgindividual.EntityMoveModifier");
+					afterParserOrEnumRuleCall();
 				}
 			)
 		)+
+	)
+;
+
+// Entry rule entryRuleEntityMoveModifier
+entryRuleEntityMoveModifier returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEntityMoveModifierRule()); }
+	iv_ruleEntityMoveModifier=ruleEntityMoveModifier
+	{ $current=$iv_ruleEntityMoveModifier.current; }
+	EOF;
+
+// Rule EntityMoveModifier
+ruleEntityMoveModifier returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEntityMoveModifierRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getEntityMoveModifierAccess().getMoveNameMoveCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='('
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEntityMoveModifierAccess().getLeftParenthesisKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEntityMoveModifierAccess().getMoveModificationEntityMoveMultiplierParserRuleCall_2_0());
+				}
+				lv_moveModification_2_0=ruleEntityMoveMultiplier
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEntityMoveModifierRule());
+					}
+					add(
+						$current,
+						"moveModification",
+						lv_moveModification_2_0,
+						"smitey.Rpgindividual.EntityMoveMultiplier");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		otherlv_3=')'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getEntityMoveModifierAccess().getRightParenthesisKeyword_3());
+		}
+	)
+;
+
+// Entry rule entryRuleEntityMoveMultiplier
+entryRuleEntityMoveMultiplier returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getEntityMoveMultiplierRule()); }
+	iv_ruleEntityMoveMultiplier=ruleEntityMoveMultiplier
+	{ $current=$iv_ruleEntityMoveMultiplier.current; }
+	EOF;
+
+// Rule EntityMoveMultiplier
+ruleEntityMoveMultiplier returns [EObject current=null]
+@init {
+	enterRule();
+}
+@after {
+	leaveRule();
+}:
+	(
+		(
+			(
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getEntityMoveMultiplierRule());
+					}
+				}
+				otherlv_0=RULE_ID
+				{
+					newLeafNode(otherlv_0, grammarAccess.getEntityMoveMultiplierAccess().getAttributeAttributeCrossReference_0_0());
+				}
+			)
+		)
+		otherlv_1='*'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getEntityMoveMultiplierAccess().getAsteriskKeyword_1());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getEntityMoveMultiplierAccess().getMultiplierSumParserRuleCall_2_0());
+				}
+				lv_multiplier_2_0=ruleSum
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getEntityMoveMultiplierRule());
+					}
+					set(
+						$current,
+						"multiplier",
+						lv_multiplier_2_0,
+						"smitey.Rpgindividual.Sum");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
 	)
 ;
 

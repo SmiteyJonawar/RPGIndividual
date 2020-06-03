@@ -846,7 +846,7 @@ public interface RpgindividualPackage extends EPackage
   int ENTITY_MOVES = 22;
 
   /**
-   * The feature id for the '<em><b>Move</b></em>' reference list.
+   * The feature id for the '<em><b>Move</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -864,6 +864,80 @@ public interface RpgindividualPackage extends EPackage
   int ENTITY_MOVES_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link smitey.rpgindividual.impl.EntityMoveModifierImpl <em>Entity Move Modifier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see smitey.rpgindividual.impl.EntityMoveModifierImpl
+   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntityMoveModifier()
+   * @generated
+   */
+  int ENTITY_MOVE_MODIFIER = 23;
+
+  /**
+   * The feature id for the '<em><b>Move Name</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MODIFIER__MOVE_NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Move Modification</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MODIFIER__MOVE_MODIFICATION = 1;
+
+  /**
+   * The number of structural features of the '<em>Entity Move Modifier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MODIFIER_FEATURE_COUNT = 2;
+
+  /**
+   * The meta object id for the '{@link smitey.rpgindividual.impl.EntityMoveMultiplierImpl <em>Entity Move Multiplier</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see smitey.rpgindividual.impl.EntityMoveMultiplierImpl
+   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntityMoveMultiplier()
+   * @generated
+   */
+  int ENTITY_MOVE_MULTIPLIER = 24;
+
+  /**
+   * The feature id for the '<em><b>Attribute</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MULTIPLIER__ATTRIBUTE = 0;
+
+  /**
+   * The feature id for the '<em><b>Multiplier</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MULTIPLIER__MULTIPLIER = 1;
+
+  /**
+   * The number of structural features of the '<em>Entity Move Multiplier</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_MOVE_MULTIPLIER_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.TeamsImpl <em>Teams</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -871,7 +945,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getTeams()
    * @generated
    */
-  int TEAMS = 23;
+  int TEAMS = 25;
 
   /**
    * The feature id for the '<em><b>Team</b></em>' containment reference list.
@@ -899,7 +973,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getTeam()
    * @generated
    */
-  int TEAM = 24;
+  int TEAM = 26;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -936,7 +1010,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMembers()
    * @generated
    */
-  int MEMBERS = 25;
+  int MEMBERS = 27;
 
   /**
    * The feature id for the '<em><b>Entity</b></em>' reference list.
@@ -964,7 +1038,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRequire()
    * @generated
    */
-  int REQUIRE = 26;
+  int REQUIRE = 28;
 
   /**
    * The feature id for the '<em><b>Log</b></em>' containment reference.
@@ -992,7 +1066,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getProposition()
    * @generated
    */
-  int PROPOSITION = 27;
+  int PROPOSITION = 29;
 
   /**
    * The number of structural features of the '<em>Proposition</em>' class.
@@ -1011,7 +1085,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNumberComparing()
    * @generated
    */
-  int NUMBER_COMPARING = 28;
+  int NUMBER_COMPARING = 30;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1057,7 +1131,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getComparator()
    * @generated
    */
-  int COMPARATOR = 29;
+  int COMPARATOR = 31;
 
   /**
    * The number of structural features of the '<em>Comparator</em>' class.
@@ -1076,7 +1150,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSum()
    * @generated
    */
-  int SUM = 30;
+  int SUM = 32;
 
   /**
    * The number of structural features of the '<em>Sum</em>' class.
@@ -1095,7 +1169,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 31;
+  int MULTIPLY = 33;
 
   /**
    * The number of structural features of the '<em>Multiply</em>' class.
@@ -1114,7 +1188,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAtomicNumber()
    * @generated
    */
-  int ATOMIC_NUMBER = 32;
+  int ATOMIC_NUMBER = 34;
 
   /**
    * The number of structural features of the '<em>Atomic Number</em>' class.
@@ -1133,7 +1207,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getActualNumbers()
    * @generated
    */
-  int ACTUAL_NUMBERS = 33;
+  int ACTUAL_NUMBERS = 35;
 
   /**
    * The number of structural features of the '<em>Actual Numbers</em>' class.
@@ -1152,7 +1226,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNameAttribute()
    * @generated
    */
-  int NAME_ATTRIBUTE = 34;
+  int NAME_ATTRIBUTE = 36;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -1189,7 +1263,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getIntNum()
    * @generated
    */
-  int INT_NUM = 35;
+  int INT_NUM = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1217,7 +1291,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getFloatNum()
    * @generated
    */
-  int FLOAT_NUM = 36;
+  int FLOAT_NUM = 38;
 
   /**
    * The feature id for the '<em><b>I</b></em>' attribute.
@@ -1254,7 +1328,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getOr()
    * @generated
    */
-  int OR = 37;
+  int OR = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1291,7 +1365,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAnd()
    * @generated
    */
-  int AND = 38;
+  int AND = 40;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1328,7 +1402,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmaller()
    * @generated
    */
-  int SMALLER = 39;
+  int SMALLER = 41;
 
   /**
    * The number of structural features of the '<em>Smaller</em>' class.
@@ -1347,7 +1421,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmallerEq()
    * @generated
    */
-  int SMALLER_EQ = 40;
+  int SMALLER_EQ = 42;
 
   /**
    * The number of structural features of the '<em>Smaller Eq</em>' class.
@@ -1366,7 +1440,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEq()
    * @generated
    */
-  int EQ = 41;
+  int EQ = 43;
 
   /**
    * The number of structural features of the '<em>Eq</em>' class.
@@ -1385,7 +1459,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBiggerEq()
    * @generated
    */
-  int BIGGER_EQ = 42;
+  int BIGGER_EQ = 44;
 
   /**
    * The number of structural features of the '<em>Bigger Eq</em>' class.
@@ -1404,7 +1478,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBigger()
    * @generated
    */
-  int BIGGER = 43;
+  int BIGGER = 45;
 
   /**
    * The number of structural features of the '<em>Bigger</em>' class.
@@ -1423,7 +1497,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNEq()
    * @generated
    */
-  int NEQ = 44;
+  int NEQ = 46;
 
   /**
    * The number of structural features of the '<em>NEq</em>' class.
@@ -1442,7 +1516,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAdd()
    * @generated
    */
-  int ADD = 45;
+  int ADD = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1479,7 +1553,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSub()
    * @generated
    */
-  int SUB = 46;
+  int SUB = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1516,7 +1590,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMult()
    * @generated
    */
-  int MULT = 47;
+  int MULT = 49;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1553,7 +1627,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 48;
+  int DIV = 50;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2254,15 +2328,79 @@ public interface RpgindividualPackage extends EPackage
   EClass getEntityMoves();
 
   /**
-   * Returns the meta object for the reference list '{@link smitey.rpgindividual.EntityMoves#getMove <em>Move</em>}'.
+   * Returns the meta object for the containment reference list '{@link smitey.rpgindividual.EntityMoves#getMove <em>Move</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference list '<em>Move</em>'.
+   * @return the meta object for the containment reference list '<em>Move</em>'.
    * @see smitey.rpgindividual.EntityMoves#getMove()
    * @see #getEntityMoves()
    * @generated
    */
   EReference getEntityMoves_Move();
+
+  /**
+   * Returns the meta object for class '{@link smitey.rpgindividual.EntityMoveModifier <em>Entity Move Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Move Modifier</em>'.
+   * @see smitey.rpgindividual.EntityMoveModifier
+   * @generated
+   */
+  EClass getEntityMoveModifier();
+
+  /**
+   * Returns the meta object for the reference '{@link smitey.rpgindividual.EntityMoveModifier#getMoveName <em>Move Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Move Name</em>'.
+   * @see smitey.rpgindividual.EntityMoveModifier#getMoveName()
+   * @see #getEntityMoveModifier()
+   * @generated
+   */
+  EReference getEntityMoveModifier_MoveName();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link smitey.rpgindividual.EntityMoveModifier#getMoveModification <em>Move Modification</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Move Modification</em>'.
+   * @see smitey.rpgindividual.EntityMoveModifier#getMoveModification()
+   * @see #getEntityMoveModifier()
+   * @generated
+   */
+  EReference getEntityMoveModifier_MoveModification();
+
+  /**
+   * Returns the meta object for class '{@link smitey.rpgindividual.EntityMoveMultiplier <em>Entity Move Multiplier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Entity Move Multiplier</em>'.
+   * @see smitey.rpgindividual.EntityMoveMultiplier
+   * @generated
+   */
+  EClass getEntityMoveMultiplier();
+
+  /**
+   * Returns the meta object for the reference '{@link smitey.rpgindividual.EntityMoveMultiplier#getAttribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Attribute</em>'.
+   * @see smitey.rpgindividual.EntityMoveMultiplier#getAttribute()
+   * @see #getEntityMoveMultiplier()
+   * @generated
+   */
+  EReference getEntityMoveMultiplier_Attribute();
+
+  /**
+   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.EntityMoveMultiplier#getMultiplier <em>Multiplier</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Multiplier</em>'.
+   * @see smitey.rpgindividual.EntityMoveMultiplier#getMultiplier()
+   * @see #getEntityMoveMultiplier()
+   * @generated
+   */
+  EReference getEntityMoveMultiplier_Multiplier();
 
   /**
    * Returns the meta object for class '{@link smitey.rpgindividual.Teams <em>Teams</em>}'.
@@ -3373,12 +3511,64 @@ public interface RpgindividualPackage extends EPackage
     EClass ENTITY_MOVES = eINSTANCE.getEntityMoves();
 
     /**
-     * The meta object literal for the '<em><b>Move</b></em>' reference list feature.
+     * The meta object literal for the '<em><b>Move</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference ENTITY_MOVES__MOVE = eINSTANCE.getEntityMoves_Move();
+
+    /**
+     * The meta object literal for the '{@link smitey.rpgindividual.impl.EntityMoveModifierImpl <em>Entity Move Modifier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see smitey.rpgindividual.impl.EntityMoveModifierImpl
+     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntityMoveModifier()
+     * @generated
+     */
+    EClass ENTITY_MOVE_MODIFIER = eINSTANCE.getEntityMoveModifier();
+
+    /**
+     * The meta object literal for the '<em><b>Move Name</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_MOVE_MODIFIER__MOVE_NAME = eINSTANCE.getEntityMoveModifier_MoveName();
+
+    /**
+     * The meta object literal for the '<em><b>Move Modification</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_MOVE_MODIFIER__MOVE_MODIFICATION = eINSTANCE.getEntityMoveModifier_MoveModification();
+
+    /**
+     * The meta object literal for the '{@link smitey.rpgindividual.impl.EntityMoveMultiplierImpl <em>Entity Move Multiplier</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see smitey.rpgindividual.impl.EntityMoveMultiplierImpl
+     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEntityMoveMultiplier()
+     * @generated
+     */
+    EClass ENTITY_MOVE_MULTIPLIER = eINSTANCE.getEntityMoveMultiplier();
+
+    /**
+     * The meta object literal for the '<em><b>Attribute</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_MOVE_MULTIPLIER__ATTRIBUTE = eINSTANCE.getEntityMoveMultiplier_Attribute();
+
+    /**
+     * The meta object literal for the '<em><b>Multiplier</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_MOVE_MULTIPLIER__MULTIPLIER = eINSTANCE.getEntityMoveMultiplier_Multiplier();
 
     /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.TeamsImpl <em>Teams</em>}' class.

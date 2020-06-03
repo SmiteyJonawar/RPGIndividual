@@ -89,7 +89,15 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Entity/eMoves"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//EntityMoves">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoves/move"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoves/move"/>
+    </genClasses>
+    <genClasses ecoreClass="Rpgindividual.ecore#//EntityMoveModifier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoveModifier/moveName"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoveModifier/moveModification"/>
+    </genClasses>
+    <genClasses ecoreClass="Rpgindividual.ecore#//EntityMoveMultiplier">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoveMultiplier/attribute"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//EntityMoveMultiplier/multiplier"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//Teams">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Teams/team"/>

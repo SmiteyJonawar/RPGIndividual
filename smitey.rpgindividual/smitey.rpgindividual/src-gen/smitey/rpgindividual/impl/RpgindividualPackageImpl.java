@@ -29,6 +29,8 @@ import smitey.rpgindividual.Effect;
 import smitey.rpgindividual.Effects;
 import smitey.rpgindividual.Entities;
 import smitey.rpgindividual.Entity;
+import smitey.rpgindividual.EntityMoveModifier;
+import smitey.rpgindividual.EntityMoveMultiplier;
 import smitey.rpgindividual.EntityMoves;
 import smitey.rpgindividual.Eq;
 import smitey.rpgindividual.FloatNum;
@@ -230,6 +232,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   private EClass entityMovesEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entityMoveModifierEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entityMoveMultiplierEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1186,6 +1202,72 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
+  public EClass getEntityMoveModifier()
+  {
+    return entityMoveModifierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntityMoveModifier_MoveName()
+  {
+    return (EReference)entityMoveModifierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntityMoveModifier_MoveModification()
+  {
+    return (EReference)entityMoveModifierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EClass getEntityMoveMultiplier()
+  {
+    return entityMoveMultiplierEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntityMoveMultiplier_Attribute()
+  {
+    return (EReference)entityMoveMultiplierEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getEntityMoveMultiplier_Multiplier()
+  {
+    return (EReference)entityMoveMultiplierEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EClass getTeams()
   {
     return teamsEClass;
@@ -1859,6 +1941,14 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     entityMovesEClass = createEClass(ENTITY_MOVES);
     createEReference(entityMovesEClass, ENTITY_MOVES__MOVE);
 
+    entityMoveModifierEClass = createEClass(ENTITY_MOVE_MODIFIER);
+    createEReference(entityMoveModifierEClass, ENTITY_MOVE_MODIFIER__MOVE_NAME);
+    createEReference(entityMoveModifierEClass, ENTITY_MOVE_MODIFIER__MOVE_MODIFICATION);
+
+    entityMoveMultiplierEClass = createEClass(ENTITY_MOVE_MULTIPLIER);
+    createEReference(entityMoveMultiplierEClass, ENTITY_MOVE_MULTIPLIER__ATTRIBUTE);
+    createEReference(entityMoveMultiplierEClass, ENTITY_MOVE_MULTIPLIER__MULTIPLIER);
+
     teamsEClass = createEClass(TEAMS);
     createEReference(teamsEClass, TEAMS__TEAM);
 
@@ -2081,7 +2171,15 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getEntity_EMoves(), this.getEntityMoves(), null, "eMoves", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityMovesEClass, EntityMoves.class, "EntityMoves", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getEntityMoves_Move(), this.getMove(), null, "move", null, 0, -1, EntityMoves.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityMoves_Move(), this.getEntityMoveModifier(), null, "move", null, 0, -1, EntityMoves.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entityMoveModifierEClass, EntityMoveModifier.class, "EntityMoveModifier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntityMoveModifier_MoveName(), this.getMove(), null, "moveName", null, 0, 1, EntityMoveModifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityMoveModifier_MoveModification(), this.getEntityMoveMultiplier(), null, "moveModification", null, 0, -1, EntityMoveModifier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(entityMoveMultiplierEClass, EntityMoveMultiplier.class, "EntityMoveMultiplier", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntityMoveMultiplier_Attribute(), this.getAttribute(), null, "attribute", null, 0, 1, EntityMoveMultiplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEntityMoveMultiplier_Multiplier(), this.getSum(), null, "multiplier", null, 0, 1, EntityMoveMultiplier.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(teamsEClass, Teams.class, "Teams", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getTeams_Team(), this.getTeam(), null, "team", null, 0, -1, Teams.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

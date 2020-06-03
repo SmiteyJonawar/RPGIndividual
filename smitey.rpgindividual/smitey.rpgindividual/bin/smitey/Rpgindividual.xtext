@@ -18,21 +18,9 @@ Effect:
 	'effect' MoveE
 ;
 
-/*
-Buff:
-	'buff' name=ID rule=Rule
-;
-*/
-
 MoveE:
 	'move' name=ID rule=Rule
 ;
-
-/*
-AfterE:
-	'after' name=ID rule=Rule
-;
-*/
 
 Attributes:
 	'attributes' attribute+=Attribute+
@@ -73,19 +61,8 @@ Move:
 ;
 
 MEffect:
-	'effect' 'move' moveEName=[MoveE]
+	'effect' moveEName=[MoveE]
 ;
-
-/* 
-BEffect:
-	'effect' 'buff' buffEName=[Buff]
-;
-
-
-AEffect:
-	'effect' 'after' afterEName=[AfterE]
-;
-*/
 
 EType:
 	'type' type=[Type]
@@ -116,7 +93,15 @@ Entity:
 ;
 
 EntityMoves:
-	'move' move+=[Move]+
+	'move' move+=EntityMoveModifier+
+;
+
+EntityMoveModifier:
+	moveName=[Move]'('moveModification+=EntityMoveMultiplier*')'
+;
+
+EntityMoveMultiplier:
+	attribute=[Attribute] "*" multiplier=Sum
 ;
 
 Teams:

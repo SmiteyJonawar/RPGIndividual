@@ -28,6 +28,8 @@ import smitey.rpgindividual.EType;
 import smitey.rpgindividual.Effects;
 import smitey.rpgindividual.Entities;
 import smitey.rpgindividual.Entity;
+import smitey.rpgindividual.EntityMoveModifier;
+import smitey.rpgindividual.EntityMoveMultiplier;
 import smitey.rpgindividual.EntityMoves;
 import smitey.rpgindividual.Eq;
 import smitey.rpgindividual.FloatNum;
@@ -113,6 +115,12 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				return; 
 			case RpgindividualPackage.ENTITY:
 				sequence_Entity(context, (Entity) semanticObject); 
+				return; 
+			case RpgindividualPackage.ENTITY_MOVE_MODIFIER:
+				sequence_EntityMoveModifier(context, (EntityMoveModifier) semanticObject); 
+				return; 
+			case RpgindividualPackage.ENTITY_MOVE_MULTIPLIER:
+				sequence_EntityMoveMultiplier(context, (EntityMoveMultiplier) semanticObject); 
 				return; 
 			case RpgindividualPackage.ENTITY_MOVES:
 				sequence_EntityMoves(context, (EntityMoves) semanticObject); 
@@ -420,10 +428,43 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Contexts:
+	 *     EntityMoveModifier returns EntityMoveModifier
+	 *
+	 * Constraint:
+	 *     (moveName=[Move|ID] moveModification+=EntityMoveMultiplier*)
+	 */
+	protected void sequence_EntityMoveModifier(ISerializationContext context, EntityMoveModifier semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     EntityMoveMultiplier returns EntityMoveMultiplier
+	 *
+	 * Constraint:
+	 *     (attribute=[Attribute|ID] multiplier=Sum)
+	 */
+	protected void sequence_EntityMoveMultiplier(ISerializationContext context, EntityMoveMultiplier semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.ENTITY_MOVE_MULTIPLIER__ATTRIBUTE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.ENTITY_MOVE_MULTIPLIER__ATTRIBUTE));
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.ENTITY_MOVE_MULTIPLIER__MULTIPLIER) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.ENTITY_MOVE_MULTIPLIER__MULTIPLIER));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEntityMoveMultiplierAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.ENTITY_MOVE_MULTIPLIER__ATTRIBUTE, false));
+		feeder.accept(grammarAccess.getEntityMoveMultiplierAccess().getMultiplierSumParserRuleCall_2_0(), semanticObject.getMultiplier());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     EntityMoves returns EntityMoves
 	 *
 	 * Constraint:
-	 *     move+=[Move|ID]+
+	 *     move+=EntityMoveModifier+
 	 */
 	protected void sequence_EntityMoves(ISerializationContext context, EntityMoves semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -544,7 +585,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_2_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME, false));
+		feeder.accept(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_1_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME, false));
 		feeder.finish();
 	}
 	

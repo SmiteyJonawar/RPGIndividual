@@ -231,6 +231,24 @@ public interface RpgindividualFactory extends EFactory
   EntityMoves createEntityMoves();
 
   /**
+   * Returns a new object of class '<em>Entity Move Modifier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Move Modifier</em>'.
+   * @generated
+   */
+  EntityMoveModifier createEntityMoveModifier();
+
+  /**
+   * Returns a new object of class '<em>Entity Move Multiplier</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Move Multiplier</em>'.
+   * @generated
+   */
+  EntityMoveMultiplier createEntityMoveMultiplier();
+
+  /**
    * Returns a new object of class '<em>Teams</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

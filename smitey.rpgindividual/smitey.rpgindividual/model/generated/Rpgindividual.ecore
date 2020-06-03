@@ -105,8 +105,18 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="EntityMoves">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="move" unique="false" upperBound="-1"
-        eType="#//Move"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="move" upperBound="-1" eType="#//EntityMoveModifier"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityMoveModifier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moveName" eType="#//Move"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="moveModification" upperBound="-1"
+        eType="#//EntityMoveMultiplier" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="EntityMoveMultiplier">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="attribute" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="multiplier" eType="#//Sum"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Teams" eSuperTypes="#//Declaration">
     <eStructuralFeatures xsi:type="ecore:EReference" name="team" upperBound="-1" eType="#//Team"

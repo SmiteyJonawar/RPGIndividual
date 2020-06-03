@@ -191,6 +191,16 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
         return createEntityMovesAdapter();
       }
       @Override
+      public Adapter caseEntityMoveModifier(EntityMoveModifier object)
+      {
+        return createEntityMoveModifierAdapter();
+      }
+      @Override
+      public Adapter caseEntityMoveMultiplier(EntityMoveMultiplier object)
+      {
+        return createEntityMoveMultiplierAdapter();
+      }
+      @Override
       public Adapter caseTeams(Teams object)
       {
         return createTeamsAdapter();
@@ -683,6 +693,36 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEntityMovesAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.EntityMoveModifier <em>Entity Move Modifier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see smitey.rpgindividual.EntityMoveModifier
+   * @generated
+   */
+  public Adapter createEntityMoveModifierAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.EntityMoveMultiplier <em>Entity Move Multiplier</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see smitey.rpgindividual.EntityMoveMultiplier
+   * @generated
+   */
+  public Adapter createEntityMoveMultiplierAdapter()
   {
     return null;
   }

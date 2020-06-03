@@ -5,16 +5,20 @@ package smitey.rpgindividual.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
+import smitey.rpgindividual.EntityMoveModifier;
 import smitey.rpgindividual.EntityMoves;
-import smitey.rpgindividual.Move;
 import smitey.rpgindividual.RpgindividualPackage;
 
 /**
@@ -33,14 +37,14 @@ import smitey.rpgindividual.RpgindividualPackage;
 public class EntityMovesImpl extends MinimalEObjectImpl.Container implements EntityMoves
 {
   /**
-   * The cached value of the '{@link #getMove() <em>Move</em>}' reference list.
+   * The cached value of the '{@link #getMove() <em>Move</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMove()
    * @generated
    * @ordered
    */
-  protected EList<Move> move;
+  protected EList<EntityMoveModifier> move;
 
   /**
    * <!-- begin-user-doc -->
@@ -69,13 +73,29 @@ public class EntityMovesImpl extends MinimalEObjectImpl.Container implements Ent
    * @generated
    */
   @Override
-  public EList<Move> getMove()
+  public EList<EntityMoveModifier> getMove()
   {
     if (move == null)
     {
-      move = new EObjectResolvingEList<Move>(Move.class, this, RpgindividualPackage.ENTITY_MOVES__MOVE);
+      move = new EObjectContainmentEList<EntityMoveModifier>(EntityMoveModifier.class, this, RpgindividualPackage.ENTITY_MOVES__MOVE);
     }
     return move;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case RpgindividualPackage.ENTITY_MOVES__MOVE:
+        return ((InternalEList<?>)getMove()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -107,7 +127,7 @@ public class EntityMovesImpl extends MinimalEObjectImpl.Container implements Ent
     {
       case RpgindividualPackage.ENTITY_MOVES__MOVE:
         getMove().clear();
-        getMove().addAll((Collection<? extends Move>)newValue);
+        getMove().addAll((Collection<? extends EntityMoveModifier>)newValue);
         return;
     }
     super.eSet(featureID, newValue);

@@ -88,6 +88,8 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
       case RpgindividualPackage.DEATH: return createDeath();
       case RpgindividualPackage.ENTITY: return createEntity();
       case RpgindividualPackage.ENTITY_MOVES: return createEntityMoves();
+      case RpgindividualPackage.ENTITY_MOVE_MODIFIER: return createEntityMoveModifier();
+      case RpgindividualPackage.ENTITY_MOVE_MULTIPLIER: return createEntityMoveMultiplier();
       case RpgindividualPackage.TEAMS: return createTeams();
       case RpgindividualPackage.TEAM: return createTeam();
       case RpgindividualPackage.MEMBERS: return createMembers();
@@ -393,6 +395,30 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
   {
     EntityMovesImpl entityMoves = new EntityMovesImpl();
     return entityMoves;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntityMoveModifier createEntityMoveModifier()
+  {
+    EntityMoveModifierImpl entityMoveModifier = new EntityMoveModifierImpl();
+    return entityMoveModifier;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EntityMoveMultiplier createEntityMoveMultiplier()
+  {
+    EntityMoveMultiplierImpl entityMoveMultiplier = new EntityMoveMultiplierImpl();
+    return entityMoveMultiplier;
   }
 
   /**
