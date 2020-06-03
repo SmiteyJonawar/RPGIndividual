@@ -13,7 +13,7 @@ package smitey.rpgindividual;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link smitey.rpgindividual.Death#getReq <em>Req</em>}</li>
+ *   <li>{@link smitey.rpgindividual.Death#getLog <em>Log</em>}</li>
  * </ul>
  *
  * @see smitey.rpgindividual.RpgindividualPackage#getDeath()
@@ -23,25 +23,25 @@ package smitey.rpgindividual;
 public interface Death extends Declaration
 {
   /**
-   * Returns the value of the '<em><b>Req</b></em>' containment reference.
+   * Returns the value of the '<em><b>Log</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Req</em>' containment reference.
-   * @see #setReq(Require)
-   * @see smitey.rpgindividual.RpgindividualPackage#getDeath_Req()
+   * @return the value of the '<em>Log</em>' containment reference.
+   * @see #setLog(Proposition)
+   * @see smitey.rpgindividual.RpgindividualPackage#getDeath_Log()
    * @model containment="true"
    * @generated
    */
-  Require getReq();
+  Proposition getLog();
 
   /**
-   * Sets the value of the '{@link smitey.rpgindividual.Death#getReq <em>Req</em>}' containment reference.
+   * Sets the value of the '{@link smitey.rpgindividual.Death#getLog <em>Log</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Req</em>' containment reference.
-   * @see #getReq()
+   * @param value the new value of the '<em>Log</em>' containment reference.
+   * @see #getLog()
    * @generated
    */
-  void setReq(Require value);
+  void setLog(Proposition value);
 
 } // Death

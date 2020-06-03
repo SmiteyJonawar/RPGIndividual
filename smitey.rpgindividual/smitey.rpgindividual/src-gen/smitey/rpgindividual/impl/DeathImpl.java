@@ -12,7 +12,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import smitey.rpgindividual.Death;
-import smitey.rpgindividual.Require;
+import smitey.rpgindividual.Proposition;
 import smitey.rpgindividual.RpgindividualPackage;
 
 /**
@@ -23,7 +23,7 @@ import smitey.rpgindividual.RpgindividualPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link smitey.rpgindividual.impl.DeathImpl#getReq <em>Req</em>}</li>
+ *   <li>{@link smitey.rpgindividual.impl.DeathImpl#getLog <em>Log</em>}</li>
  * </ul>
  *
  * @generated
@@ -31,14 +31,14 @@ import smitey.rpgindividual.RpgindividualPackage;
 public class DeathImpl extends DeclarationImpl implements Death
 {
   /**
-   * The cached value of the '{@link #getReq() <em>Req</em>}' containment reference.
+   * The cached value of the '{@link #getLog() <em>Log</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getReq()
+   * @see #getLog()
    * @generated
    * @ordered
    */
-  protected Require req;
+  protected Proposition log;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,9 +67,9 @@ public class DeathImpl extends DeclarationImpl implements Death
    * @generated
    */
   @Override
-  public Require getReq()
+  public Proposition getLog()
   {
-    return req;
+    return log;
   }
 
   /**
@@ -77,13 +77,13 @@ public class DeathImpl extends DeclarationImpl implements Death
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetReq(Require newReq, NotificationChain msgs)
+  public NotificationChain basicSetLog(Proposition newLog, NotificationChain msgs)
   {
-    Require oldReq = req;
-    req = newReq;
+    Proposition oldLog = log;
+    log = newLog;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RpgindividualPackage.DEATH__REQ, oldReq, newReq);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RpgindividualPackage.DEATH__LOG, oldLog, newLog);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -95,20 +95,20 @@ public class DeathImpl extends DeclarationImpl implements Death
    * @generated
    */
   @Override
-  public void setReq(Require newReq)
+  public void setLog(Proposition newLog)
   {
-    if (newReq != req)
+    if (newLog != log)
     {
       NotificationChain msgs = null;
-      if (req != null)
-        msgs = ((InternalEObject)req).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.DEATH__REQ, null, msgs);
-      if (newReq != null)
-        msgs = ((InternalEObject)newReq).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.DEATH__REQ, null, msgs);
-      msgs = basicSetReq(newReq, msgs);
+      if (log != null)
+        msgs = ((InternalEObject)log).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.DEATH__LOG, null, msgs);
+      if (newLog != null)
+        msgs = ((InternalEObject)newLog).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.DEATH__LOG, null, msgs);
+      msgs = basicSetLog(newLog, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.DEATH__REQ, newReq, newReq));
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.DEATH__LOG, newLog, newLog));
   }
 
   /**
@@ -121,8 +121,8 @@ public class DeathImpl extends DeclarationImpl implements Death
   {
     switch (featureID)
     {
-      case RpgindividualPackage.DEATH__REQ:
-        return basicSetReq(null, msgs);
+      case RpgindividualPackage.DEATH__LOG:
+        return basicSetLog(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -137,8 +137,8 @@ public class DeathImpl extends DeclarationImpl implements Death
   {
     switch (featureID)
     {
-      case RpgindividualPackage.DEATH__REQ:
-        return getReq();
+      case RpgindividualPackage.DEATH__LOG:
+        return getLog();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -153,8 +153,8 @@ public class DeathImpl extends DeclarationImpl implements Death
   {
     switch (featureID)
     {
-      case RpgindividualPackage.DEATH__REQ:
-        setReq((Require)newValue);
+      case RpgindividualPackage.DEATH__LOG:
+        setLog((Proposition)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -170,8 +170,8 @@ public class DeathImpl extends DeclarationImpl implements Death
   {
     switch (featureID)
     {
-      case RpgindividualPackage.DEATH__REQ:
-        setReq((Require)null);
+      case RpgindividualPackage.DEATH__LOG:
+        setLog((Proposition)null);
         return;
     }
     super.eUnset(featureID);
@@ -187,8 +187,8 @@ public class DeathImpl extends DeclarationImpl implements Death
   {
     switch (featureID)
     {
-      case RpgindividualPackage.DEATH__REQ:
-        return req != null;
+      case RpgindividualPackage.DEATH__LOG:
+        return log != null;
     }
     return super.eIsSet(featureID);
   }

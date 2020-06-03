@@ -85,7 +85,7 @@ Entities:
 ;
 
 Death:
-	'death' req=Require
+	'death' 'when' log=ORcondition
 ;
 
 Entity:
@@ -114,10 +114,6 @@ Team:
 
 Members:
 	'members' entity+=[Entity]+
-;
-
-Require:
-	'require' log=ORcondition
 ;
 
 ORcondition returns Proposition:

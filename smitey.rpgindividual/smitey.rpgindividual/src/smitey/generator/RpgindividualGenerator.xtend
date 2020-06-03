@@ -12,7 +12,6 @@ import smitey.rpgindividual.Entity
 import smitey.rpgindividual.Moves
 import smitey.rpgindividual.Locations
 import smitey.rpgindividual.Death
-import smitey.rpgindividual.Require
 import smitey.rpgindividual.Or
 import smitey.rpgindividual.And
 import smitey.rpgindividual.Add
@@ -103,7 +102,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 					userEntityData.put(aData.getAttributeName(), aData.getNumber());
 				}
 				try{
-					return «death.req.new_re»;
+					return «death.log.new_logic»;
 				} catch(NullPointerException e){
 					System.out.println("The target seems to be invincible.");
 					return false;
@@ -785,10 +784,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 		}
 		
 		'''
-	}
-	
-	def CharSequence new_re(Require req){
-		req.log.new_logic
 	}
 	
 	def generateComp(Comparator op) {

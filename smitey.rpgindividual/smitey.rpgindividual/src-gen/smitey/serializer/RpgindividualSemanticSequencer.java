@@ -47,7 +47,6 @@ import smitey.rpgindividual.NameAttribute;
 import smitey.rpgindividual.NumberComparing;
 import smitey.rpgindividual.Or;
 import smitey.rpgindividual.Relations;
-import smitey.rpgindividual.Require;
 import smitey.rpgindividual.RpgindividualPackage;
 import smitey.rpgindividual.Rule;
 import smitey.rpgindividual.Smaller;
@@ -172,9 +171,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				return; 
 			case RpgindividualPackage.RELATIONS:
 				sequence_Relations(context, (Relations) semanticObject); 
-				return; 
-			case RpgindividualPackage.REQUIRE:
-				sequence_Require(context, (Require) semanticObject); 
 				return; 
 			case RpgindividualPackage.RULE:
 				sequence_Rule(context, (Rule) semanticObject); 
@@ -369,15 +365,15 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Death returns Death
 	 *
 	 * Constraint:
-	 *     req=Require
+	 *     log=ORcondition
 	 */
 	protected void sequence_Death(ISerializationContext context, Death semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.DEATH__REQ) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.DEATH__REQ));
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.DEATH__LOG) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.DEATH__LOG));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getDeathAccess().getReqRequireParserRuleCall_1_0(), semanticObject.getReq());
+		feeder.accept(grammarAccess.getDeathAccess().getLogORconditionParserRuleCall_2_0(), semanticObject.getLog());
 		feeder.finish();
 	}
 	
@@ -793,24 +789,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_Relations(ISerializationContext context, Relations semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Require returns Require
-	 *
-	 * Constraint:
-	 *     log=ORcondition
-	 */
-	protected void sequence_Require(ISerializationContext context, Require semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.REQUIRE__LOG) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.REQUIRE__LOG));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getRequireAccess().getLogORconditionParserRuleCall_1_0(), semanticObject.getLog());
-		feeder.finish();
 	}
 	
 	

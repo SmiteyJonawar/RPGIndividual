@@ -50,7 +50,6 @@ import smitey.rpgindividual.NumberComparing;
 import smitey.rpgindividual.Or;
 import smitey.rpgindividual.Proposition;
 import smitey.rpgindividual.Relations;
-import smitey.rpgindividual.Require;
 import smitey.rpgindividual.RpgindividualFactory;
 import smitey.rpgindividual.RpgindividualPackage;
 import smitey.rpgindividual.Rule;
@@ -267,13 +266,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   private EClass membersEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass requireEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1114,7 +1106,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getDeath_Req()
+  public EReference getDeath_Log()
   {
     return (EReference)deathEClass.getEStructuralFeatures().get(0);
   }
@@ -1337,28 +1329,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
   public EReference getMembers_Entity()
   {
     return (EReference)membersEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EClass getRequire()
-  {
-    return requireEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public EReference getRequire_Log()
-  {
-    return (EReference)requireEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1930,7 +1900,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     createEReference(entitiesEClass, ENTITIES__ENTITY);
 
     deathEClass = createEClass(DEATH);
-    createEReference(deathEClass, DEATH__REQ);
+    createEReference(deathEClass, DEATH__LOG);
 
     entityEClass = createEClass(ENTITY);
     createEAttribute(entityEClass, ENTITY__NAME);
@@ -1958,9 +1928,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
 
     membersEClass = createEClass(MEMBERS);
     createEReference(membersEClass, MEMBERS__ENTITY);
-
-    requireEClass = createEClass(REQUIRE);
-    createEReference(requireEClass, REQUIRE__LOG);
 
     propositionEClass = createEClass(PROPOSITION);
 
@@ -2162,7 +2129,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getEntities_Entity(), this.getEntity(), null, "entity", null, 0, -1, Entities.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(deathEClass, Death.class, "Death", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getDeath_Req(), this.getRequire(), null, "req", null, 0, 1, Death.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getDeath_Log(), this.getProposition(), null, "log", null, 0, 1, Death.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEntity_Name(), ecorePackage.getEString(), "name", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2190,9 +2157,6 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
 
     initEClass(membersEClass, Members.class, "Members", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMembers_Entity(), this.getEntity(), null, "entity", null, 0, -1, Members.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(requireEClass, Require.class, "Require", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getRequire_Log(), this.getProposition(), null, "log", null, 0, 1, Require.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(propositionEClass, Proposition.class, "Proposition", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

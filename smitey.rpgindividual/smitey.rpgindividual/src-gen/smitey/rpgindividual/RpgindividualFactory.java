@@ -276,15 +276,6 @@ public interface RpgindividualFactory extends EFactory
   Members createMembers();
 
   /**
-   * Returns a new object of class '<em>Require</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Require</em>'.
-   * @generated
-   */
-  Require createRequire();
-
-  /**
    * Returns a new object of class '<em>Proposition</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

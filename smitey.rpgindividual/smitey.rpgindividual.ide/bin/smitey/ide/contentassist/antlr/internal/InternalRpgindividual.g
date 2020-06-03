@@ -749,31 +749,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleRequire
-entryRuleRequire
-:
-{ before(grammarAccess.getRequireRule()); }
-	 ruleRequire
-{ after(grammarAccess.getRequireRule()); } 
-	 EOF 
-;
-
-// Rule Require
-ruleRequire 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getRequireAccess().getGroup()); }
-		(rule__Require__Group__0)
-		{ after(grammarAccess.getRequireAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleORcondition
 entryRuleORcondition
 :
@@ -3150,6 +3125,7 @@ rule__Death__Group__1
 	}
 :
 	rule__Death__Group__1__Impl
+	rule__Death__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -3161,9 +3137,35 @@ rule__Death__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getDeathAccess().getReqAssignment_1()); }
-	(rule__Death__ReqAssignment_1)
-	{ after(grammarAccess.getDeathAccess().getReqAssignment_1()); }
+	{ before(grammarAccess.getDeathAccess().getWhenKeyword_1()); }
+	'when'
+	{ after(grammarAccess.getDeathAccess().getWhenKeyword_1()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Death__Group__2
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__Death__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Death__Group__2__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getDeathAccess().getLogAssignment_2()); }
+	(rule__Death__LogAssignment_2)
+	{ after(grammarAccess.getDeathAccess().getLogAssignment_2()); }
 )
 ;
 finally {
@@ -3752,60 +3754,6 @@ rule__Members__Group__1__Impl
 		(rule__Members__EntityAssignment_1)*
 		{ after(grammarAccess.getMembersAccess().getEntityAssignment_1()); }
 	)
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__Require__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Require__Group__0__Impl
-	rule__Require__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Require__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getRequireAccess().getRequireKeyword_0()); }
-	'require'
-	{ after(grammarAccess.getRequireAccess().getRequireKeyword_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Require__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__Require__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Require__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getRequireAccess().getLogAssignment_1()); }
-	(rule__Require__LogAssignment_1)
-	{ after(grammarAccess.getRequireAccess().getLogAssignment_1()); }
 )
 ;
 finally {
@@ -5701,15 +5649,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Death__ReqAssignment_1
+rule__Death__LogAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getDeathAccess().getReqRequireParserRuleCall_1_0()); }
-		ruleRequire
-		{ after(grammarAccess.getDeathAccess().getReqRequireParserRuleCall_1_0()); }
+		{ before(grammarAccess.getDeathAccess().getLogORconditionParserRuleCall_2_0()); }
+		ruleORcondition
+		{ after(grammarAccess.getDeathAccess().getLogORconditionParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -5917,21 +5865,6 @@ rule__Members__EntityAssignment_1
 			{ after(grammarAccess.getMembersAccess().getEntityEntityIDTerminalRuleCall_1_0_1()); }
 		)
 		{ after(grammarAccess.getMembersAccess().getEntityEntityCrossReference_1_0()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__Require__LogAssignment_1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	(
-		{ before(grammarAccess.getRequireAccess().getLogORconditionParserRuleCall_1_0()); }
-		ruleORcondition
-		{ after(grammarAccess.getRequireAccess().getLogORconditionParserRuleCall_1_0()); }
 	)
 ;
 finally {

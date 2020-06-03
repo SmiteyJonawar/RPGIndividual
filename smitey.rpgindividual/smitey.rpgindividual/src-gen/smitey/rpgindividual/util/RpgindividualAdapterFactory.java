@@ -216,11 +216,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
         return createMembersAdapter();
       }
       @Override
-      public Adapter caseRequire(Require object)
-      {
-        return createRequireAdapter();
-      }
-      @Override
       public Adapter caseProposition(Proposition object)
       {
         return createPropositionAdapter();
@@ -768,21 +763,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMembersAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.Require <em>Require</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.Require
-   * @generated
-   */
-  public Adapter createRequireAdapter()
   {
     return null;
   }

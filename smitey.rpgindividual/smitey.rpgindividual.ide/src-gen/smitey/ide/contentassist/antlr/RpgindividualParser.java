@@ -71,7 +71,6 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTeamsAccess().getGroup(), "rule__Teams__Group__0");
 			builder.put(grammarAccess.getTeamAccess().getGroup(), "rule__Team__Group__0");
 			builder.put(grammarAccess.getMembersAccess().getGroup(), "rule__Members__Group__0");
-			builder.put(grammarAccess.getRequireAccess().getGroup(), "rule__Require__Group__0");
 			builder.put(grammarAccess.getORconditionAccess().getGroup(), "rule__ORcondition__Group__0");
 			builder.put(grammarAccess.getORconditionAccess().getGroup_1(), "rule__ORcondition__Group_1__0");
 			builder.put(grammarAccess.getANDconditionAccess().getGroup(), "rule__ANDcondition__Group__0");
@@ -129,7 +128,7 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRuleAccess().getTargetAttAssignment_2(), "rule__Rule__TargetAttAssignment_2");
 			builder.put(grammarAccess.getRuleAccess().getSumAssignment_4(), "rule__Rule__SumAssignment_4");
 			builder.put(grammarAccess.getEntitiesAccess().getEntityAssignment_1(), "rule__Entities__EntityAssignment_1");
-			builder.put(grammarAccess.getDeathAccess().getReqAssignment_1(), "rule__Death__ReqAssignment_1");
+			builder.put(grammarAccess.getDeathAccess().getLogAssignment_2(), "rule__Death__LogAssignment_2");
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");
 			builder.put(grammarAccess.getEntityAccess().getETypeAssignment_2(), "rule__Entity__ETypeAssignment_2");
 			builder.put(grammarAccess.getEntityAccess().getAttAssignment_3(), "rule__Entity__AttAssignment_3");
@@ -143,7 +142,6 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getTeamAccess().getNameAssignment_1(), "rule__Team__NameAssignment_1");
 			builder.put(grammarAccess.getTeamAccess().getMembersAssignment_2(), "rule__Team__MembersAssignment_2");
 			builder.put(grammarAccess.getMembersAccess().getEntityAssignment_1(), "rule__Members__EntityAssignment_1");
-			builder.put(grammarAccess.getRequireAccess().getLogAssignment_1(), "rule__Require__LogAssignment_1");
 			builder.put(grammarAccess.getORconditionAccess().getRightAssignment_1_2(), "rule__ORcondition__RightAssignment_1_2");
 			builder.put(grammarAccess.getANDconditionAccess().getRightAssignment_1_2(), "rule__ANDcondition__RightAssignment_1_2");
 			builder.put(grammarAccess.getNumberComparingAccess().getLeftAssignment_0(), "rule__NumberComparing__LeftAssignment_0");

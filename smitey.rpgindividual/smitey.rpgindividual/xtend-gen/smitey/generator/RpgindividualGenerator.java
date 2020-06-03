@@ -45,7 +45,6 @@ import smitey.rpgindividual.NumberComparing;
 import smitey.rpgindividual.Or;
 import smitey.rpgindividual.Proposition;
 import smitey.rpgindividual.Relations;
-import smitey.rpgindividual.Require;
 import smitey.rpgindividual.Smaller;
 import smitey.rpgindividual.SmallerEq;
 import smitey.rpgindividual.Sub;
@@ -183,8 +182,8 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("return ");
-    CharSequence _new_re = this.new_re(death.getReq());
-    _builder.append(_new_re, "\t\t\t");
+    CharSequence _new_logic = this.new_logic(death.getLog());
+    _builder.append(_new_logic, "\t\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
@@ -1609,10 +1608,6 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.newLine();
     return _builder;
-  }
-  
-  public CharSequence new_re(final Require req) {
-    return this.new_logic(req.getLog());
   }
   
   public String generateComp(final Comparator op) {

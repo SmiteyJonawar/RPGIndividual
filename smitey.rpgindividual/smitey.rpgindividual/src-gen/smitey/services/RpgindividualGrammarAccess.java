@@ -716,24 +716,28 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Death");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cDeathKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cReqAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cReqRequireParserRuleCall_1_0 = (RuleCall)cReqAssignment_1.eContents().get(0);
+		private final Keyword cWhenKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLogAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLogORconditionParserRuleCall_2_0 = (RuleCall)cLogAssignment_2.eContents().get(0);
 		
 		//Death:
-		//	'death' req=Require;
+		//	'death' 'when' log=ORcondition;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'death' req=Require
+		//'death' 'when' log=ORcondition
 		public Group getGroup() { return cGroup; }
 		
 		//'death'
 		public Keyword getDeathKeyword_0() { return cDeathKeyword_0; }
 		
-		//req=Require
-		public Assignment getReqAssignment_1() { return cReqAssignment_1; }
+		//'when'
+		public Keyword getWhenKeyword_1() { return cWhenKeyword_1; }
 		
-		//Require
-		public RuleCall getReqRequireParserRuleCall_1_0() { return cReqRequireParserRuleCall_1_0; }
+		//log=ORcondition
+		public Assignment getLogAssignment_2() { return cLogAssignment_2; }
+		
+		//ORcondition
+		public RuleCall getLogORconditionParserRuleCall_2_0() { return cLogORconditionParserRuleCall_2_0; }
 	}
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Entity");
@@ -959,29 +963,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//ID
 		public RuleCall getEntityEntityIDTerminalRuleCall_1_0_1() { return cEntityEntityIDTerminalRuleCall_1_0_1; }
-	}
-	public class RequireElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Require");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cRequireKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cLogAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cLogORconditionParserRuleCall_1_0 = (RuleCall)cLogAssignment_1.eContents().get(0);
-		
-		//Require:
-		//	'require' log=ORcondition;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'require' log=ORcondition
-		public Group getGroup() { return cGroup; }
-		
-		//'require'
-		public Keyword getRequireKeyword_0() { return cRequireKeyword_0; }
-		
-		//log=ORcondition
-		public Assignment getLogAssignment_1() { return cLogAssignment_1; }
-		
-		//ORcondition
-		public RuleCall getLogORconditionParserRuleCall_1_0() { return cLogORconditionParserRuleCall_1_0; }
 	}
 	public class ORconditionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.ORcondition");
@@ -1495,7 +1476,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	private final TeamsElements pTeams;
 	private final TeamElements pTeam;
 	private final MembersElements pMembers;
-	private final RequireElements pRequire;
 	private final ORconditionElements pORcondition;
 	private final ANDconditionElements pANDcondition;
 	private final StatementElements pStatement;
@@ -1548,7 +1528,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		this.pTeams = new TeamsElements();
 		this.pTeam = new TeamElements();
 		this.pMembers = new MembersElements();
-		this.pRequire = new RequireElements();
 		this.pORcondition = new ORconditionElements();
 		this.pANDcondition = new ANDconditionElements();
 		this.pStatement = new StatementElements();
@@ -1793,7 +1772,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Death:
-	//	'death' req=Require;
+	//	'death' 'when' log=ORcondition;
 	public DeathElements getDeathAccess() {
 		return pDeath;
 	}
@@ -1870,16 +1849,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getMembersRule() {
 		return getMembersAccess().getRule();
-	}
-	
-	//Require:
-	//	'require' log=ORcondition;
-	public RequireElements getRequireAccess() {
-		return pRequire;
-	}
-	
-	public ParserRule getRequireRule() {
-		return getRequireAccess().getRule();
 	}
 	
 	//ORcondition Proposition:

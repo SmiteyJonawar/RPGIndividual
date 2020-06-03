@@ -93,7 +93,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
       case RpgindividualPackage.TEAMS: return createTeams();
       case RpgindividualPackage.TEAM: return createTeam();
       case RpgindividualPackage.MEMBERS: return createMembers();
-      case RpgindividualPackage.REQUIRE: return createRequire();
       case RpgindividualPackage.PROPOSITION: return createProposition();
       case RpgindividualPackage.NUMBER_COMPARING: return createNumberComparing();
       case RpgindividualPackage.COMPARATOR: return createComparator();
@@ -455,18 +454,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
   {
     MembersImpl members = new MembersImpl();
     return members;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public Require createRequire()
-  {
-    RequireImpl require = new RequireImpl();
-    return require;
   }
 
   /**

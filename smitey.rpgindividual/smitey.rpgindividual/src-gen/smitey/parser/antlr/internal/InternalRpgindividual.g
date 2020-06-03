@@ -1243,21 +1243,25 @@ ruleDeath returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getDeathAccess().getDeathKeyword_0());
 		}
+		otherlv_1='when'
+		{
+			newLeafNode(otherlv_1, grammarAccess.getDeathAccess().getWhenKeyword_1());
+		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getDeathAccess().getReqRequireParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getDeathAccess().getLogORconditionParserRuleCall_2_0());
 				}
-				lv_req_1_0=ruleRequire
+				lv_log_2_0=ruleORcondition
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getDeathRule());
 					}
 					set(
 						$current,
-						"req",
-						lv_req_1_0,
-						"smitey.Rpgindividual.Require");
+						"log",
+						lv_log_2_0,
+						"smitey.Rpgindividual.ORcondition");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -1654,48 +1658,6 @@ ruleMembers returns [EObject current=null]
 				}
 			)
 		)+
-	)
-;
-
-// Entry rule entryRuleRequire
-entryRuleRequire returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getRequireRule()); }
-	iv_ruleRequire=ruleRequire
-	{ $current=$iv_ruleRequire.current; }
-	EOF;
-
-// Rule Require
-ruleRequire returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='require'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getRequireAccess().getRequireKeyword_0());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getRequireAccess().getLogORconditionParserRuleCall_1_0());
-				}
-				lv_log_1_0=ruleORcondition
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getRequireRule());
-					}
-					set(
-						$current,
-						"log",
-						lv_log_1_0,
-						"smitey.Rpgindividual.ORcondition");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
 	)
 ;
 

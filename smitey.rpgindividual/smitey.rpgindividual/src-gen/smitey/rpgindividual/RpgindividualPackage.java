@@ -763,13 +763,13 @@ public interface RpgindividualPackage extends EPackage
   int DEATH = 20;
 
   /**
-   * The feature id for the '<em><b>Req</b></em>' containment reference.
+   * The feature id for the '<em><b>Log</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DEATH__REQ = DECLARATION_FEATURE_COUNT + 0;
+  int DEATH__LOG = DECLARATION_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Death</em>' class.
@@ -1031,34 +1031,6 @@ public interface RpgindividualPackage extends EPackage
   int MEMBERS_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link smitey.rpgindividual.impl.RequireImpl <em>Require</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see smitey.rpgindividual.impl.RequireImpl
-   * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRequire()
-   * @generated
-   */
-  int REQUIRE = 28;
-
-  /**
-   * The feature id for the '<em><b>Log</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRE__LOG = 0;
-
-  /**
-   * The number of structural features of the '<em>Require</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int REQUIRE_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.PropositionImpl <em>Proposition</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1066,7 +1038,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getProposition()
    * @generated
    */
-  int PROPOSITION = 29;
+  int PROPOSITION = 28;
 
   /**
    * The number of structural features of the '<em>Proposition</em>' class.
@@ -1085,7 +1057,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNumberComparing()
    * @generated
    */
-  int NUMBER_COMPARING = 30;
+  int NUMBER_COMPARING = 29;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1131,7 +1103,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getComparator()
    * @generated
    */
-  int COMPARATOR = 31;
+  int COMPARATOR = 30;
 
   /**
    * The number of structural features of the '<em>Comparator</em>' class.
@@ -1150,7 +1122,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSum()
    * @generated
    */
-  int SUM = 32;
+  int SUM = 31;
 
   /**
    * The number of structural features of the '<em>Sum</em>' class.
@@ -1169,7 +1141,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMultiply()
    * @generated
    */
-  int MULTIPLY = 33;
+  int MULTIPLY = 32;
 
   /**
    * The number of structural features of the '<em>Multiply</em>' class.
@@ -1188,7 +1160,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAtomicNumber()
    * @generated
    */
-  int ATOMIC_NUMBER = 34;
+  int ATOMIC_NUMBER = 33;
 
   /**
    * The number of structural features of the '<em>Atomic Number</em>' class.
@@ -1207,7 +1179,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getActualNumbers()
    * @generated
    */
-  int ACTUAL_NUMBERS = 35;
+  int ACTUAL_NUMBERS = 34;
 
   /**
    * The number of structural features of the '<em>Actual Numbers</em>' class.
@@ -1226,7 +1198,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNameAttribute()
    * @generated
    */
-  int NAME_ATTRIBUTE = 36;
+  int NAME_ATTRIBUTE = 35;
 
   /**
    * The feature id for the '<em><b>Target</b></em>' attribute.
@@ -1263,7 +1235,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getIntNum()
    * @generated
    */
-  int INT_NUM = 37;
+  int INT_NUM = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1291,7 +1263,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getFloatNum()
    * @generated
    */
-  int FLOAT_NUM = 38;
+  int FLOAT_NUM = 37;
 
   /**
    * The feature id for the '<em><b>I</b></em>' attribute.
@@ -1328,7 +1300,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getOr()
    * @generated
    */
-  int OR = 39;
+  int OR = 38;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1365,7 +1337,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAnd()
    * @generated
    */
-  int AND = 40;
+  int AND = 39;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1402,7 +1374,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmaller()
    * @generated
    */
-  int SMALLER = 41;
+  int SMALLER = 40;
 
   /**
    * The number of structural features of the '<em>Smaller</em>' class.
@@ -1421,7 +1393,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSmallerEq()
    * @generated
    */
-  int SMALLER_EQ = 42;
+  int SMALLER_EQ = 41;
 
   /**
    * The number of structural features of the '<em>Smaller Eq</em>' class.
@@ -1440,7 +1412,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getEq()
    * @generated
    */
-  int EQ = 43;
+  int EQ = 42;
 
   /**
    * The number of structural features of the '<em>Eq</em>' class.
@@ -1459,7 +1431,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBiggerEq()
    * @generated
    */
-  int BIGGER_EQ = 44;
+  int BIGGER_EQ = 43;
 
   /**
    * The number of structural features of the '<em>Bigger Eq</em>' class.
@@ -1478,7 +1450,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getBigger()
    * @generated
    */
-  int BIGGER = 45;
+  int BIGGER = 44;
 
   /**
    * The number of structural features of the '<em>Bigger</em>' class.
@@ -1497,7 +1469,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getNEq()
    * @generated
    */
-  int NEQ = 46;
+  int NEQ = 45;
 
   /**
    * The number of structural features of the '<em>NEq</em>' class.
@@ -1516,7 +1488,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getAdd()
    * @generated
    */
-  int ADD = 47;
+  int ADD = 46;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1553,7 +1525,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getSub()
    * @generated
    */
-  int SUB = 48;
+  int SUB = 47;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1590,7 +1562,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getMult()
    * @generated
    */
-  int MULT = 49;
+  int MULT = 48;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -1627,7 +1599,7 @@ public interface RpgindividualPackage extends EPackage
    * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getDiv()
    * @generated
    */
-  int DIV = 50;
+  int DIV = 49;
 
   /**
    * The feature id for the '<em><b>Left</b></em>' containment reference.
@@ -2253,15 +2225,15 @@ public interface RpgindividualPackage extends EPackage
   EClass getDeath();
 
   /**
-   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Death#getReq <em>Req</em>}'.
+   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Death#getLog <em>Log</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Req</em>'.
-   * @see smitey.rpgindividual.Death#getReq()
+   * @return the meta object for the containment reference '<em>Log</em>'.
+   * @see smitey.rpgindividual.Death#getLog()
    * @see #getDeath()
    * @generated
    */
-  EReference getDeath_Req();
+  EReference getDeath_Log();
 
   /**
    * Returns the meta object for class '{@link smitey.rpgindividual.Entity <em>Entity</em>}'.
@@ -2475,27 +2447,6 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    */
   EReference getMembers_Entity();
-
-  /**
-   * Returns the meta object for class '{@link smitey.rpgindividual.Require <em>Require</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Require</em>'.
-   * @see smitey.rpgindividual.Require
-   * @generated
-   */
-  EClass getRequire();
-
-  /**
-   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Require#getLog <em>Log</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Log</em>'.
-   * @see smitey.rpgindividual.Require#getLog()
-   * @see #getRequire()
-   * @generated
-   */
-  EReference getRequire_Log();
 
   /**
    * Returns the meta object for class '{@link smitey.rpgindividual.Proposition <em>Proposition</em>}'.
@@ -3451,12 +3402,12 @@ public interface RpgindividualPackage extends EPackage
     EClass DEATH = eINSTANCE.getDeath();
 
     /**
-     * The meta object literal for the '<em><b>Req</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Log</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DEATH__REQ = eINSTANCE.getDeath_Req();
+    EReference DEATH__LOG = eINSTANCE.getDeath_Log();
 
     /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.EntityImpl <em>Entity</em>}' class.
@@ -3631,24 +3582,6 @@ public interface RpgindividualPackage extends EPackage
      * @generated
      */
     EReference MEMBERS__ENTITY = eINSTANCE.getMembers_Entity();
-
-    /**
-     * The meta object literal for the '{@link smitey.rpgindividual.impl.RequireImpl <em>Require</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see smitey.rpgindividual.impl.RequireImpl
-     * @see smitey.rpgindividual.impl.RpgindividualPackageImpl#getRequire()
-     * @generated
-     */
-    EClass REQUIRE = eINSTANCE.getRequire();
-
-    /**
-     * The meta object literal for the '<em><b>Log</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference REQUIRE__LOG = eINSTANCE.getRequire_Log();
 
     /**
      * The meta object literal for the '{@link smitey.rpgindividual.impl.PropositionImpl <em>Proposition</em>}' class.

@@ -92,7 +92,7 @@
         eType="#//Entity" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Death" eSuperTypes="#//Declaration">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="req" eType="#//Require"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="log" eType="#//Proposition"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entity">
@@ -130,10 +130,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="Members">
     <eStructuralFeatures xsi:type="ecore:EReference" name="entity" unique="false"
         upperBound="-1" eType="#//Entity"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Require">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="log" eType="#//Proposition"
-        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Proposition"/>
   <eClassifiers xsi:type="ecore:EClass" name="NumberComparing" eSuperTypes="#//Proposition">
