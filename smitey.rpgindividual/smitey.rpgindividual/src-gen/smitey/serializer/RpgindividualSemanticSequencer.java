@@ -614,8 +614,8 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MOVE_E__RULE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
+		feeder.accept(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0(), semanticObject.getRule());
 		feeder.finish();
 	}
 	

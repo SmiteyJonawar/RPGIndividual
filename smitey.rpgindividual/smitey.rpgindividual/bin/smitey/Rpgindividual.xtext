@@ -19,7 +19,7 @@ Effect:
 ;
 
 MoveE:
-	'move' name=ID rule=Rule
+	name=ID rule=Rule
 ;
 
 Attributes:
@@ -122,7 +122,6 @@ ORcondition returns Proposition:
 
 ANDcondition returns Proposition:
 	Statement ('AND'{And.left=current} right=Statement)*
-	
 ;
 
 Statement returns Proposition:

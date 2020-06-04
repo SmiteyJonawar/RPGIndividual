@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalRpgindividualParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'User'", "'Enemy'", "'Float'", "'Integer'", "'game'", "'effects'", "'effect'", "'move'", "'attributes'", "'attribute'", "'location'", "'opponents'", "'relations'", "'type'", "'<'", "','", "'moves'", "'is'", "'if'", "'then'", "'entities'", "'death'", "'when'", "'entity'", "'('", "')'", "'*'", "'teams'", "'team'", "'members'", "'OR'", "'AND'", "'<='", "'=='", "'>='", "'>'", "'!='", "'+'", "'-'", "'/'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_INT", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'User'", "'Enemy'", "'Float'", "'Integer'", "'game'", "'effects'", "'effect'", "'attributes'", "'attribute'", "'location'", "'opponents'", "'relations'", "'type'", "'<'", "','", "'moves'", "'move'", "'is'", "'if'", "'then'", "'entities'", "'death'", "'when'", "'entity'", "'('", "')'", "'*'", "'teams'", "'team'", "'members'", "'OR'", "'AND'", "'<='", "'=='", "'>='", "'>'", "'!='", "'+'", "'-'", "'/'", "'.'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -3353,17 +3353,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             // InternalRpgindividual.g:1106:1: ( ( ruleLocations ) | ( ruleRelations ) | ( ruleMoves ) | ( ruleEntities ) | ( ruleTeams ) | ( ruleDeath ) | ( ruleAttributes ) | ( ruleEffects ) )
             int alt1=8;
             switch ( input.LA(1) ) {
-            case 21:
+            case 20:
                 {
                 alt1=1;
                 }
                 break;
-            case 23:
+            case 22:
                 {
                 alt1=2;
                 }
                 break;
-            case 27:
+            case 26:
                 {
                 alt1=3;
                 }
@@ -3383,7 +3383,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
                 alt1=6;
                 }
                 break;
-            case 19:
+            case 18:
                 {
                 alt1=7;
                 }
@@ -3756,7 +3756,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             // InternalRpgindividual.g:1205:1: ( ( ( rule__Comparator__Group_0__0 ) ) | ( ( rule__Comparator__Group_1__0 ) ) | ( ( rule__Comparator__Group_2__0 ) ) | ( ( rule__Comparator__Group_3__0 ) ) | ( ( rule__Comparator__Group_4__0 ) ) | ( ( rule__Comparator__Group_5__0 ) ) )
             int alt4=6;
             switch ( input.LA(1) ) {
-            case 25:
+            case 24:
                 {
                 alt4=1;
                 }
@@ -4236,11 +4236,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             if ( (LA8_0==RULE_INT) ) {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==51) ) {
-                    alt8=1;
-                }
-                else if ( (LA8_1==EOF||LA8_1==RULE_ID||(LA8_1>=16 && LA8_1<=21)||LA8_1==23||LA8_1==25||LA8_1==27||(LA8_1>=30 && LA8_1<=32)||(LA8_1>=36 && LA8_1<=38)||(LA8_1>=41 && LA8_1<=50)) ) {
+                if ( (LA8_1==EOF||LA8_1==RULE_ID||(LA8_1>=16 && LA8_1<=20)||LA8_1==22||LA8_1==24||(LA8_1>=26 && LA8_1<=27)||(LA8_1>=30 && LA8_1<=32)||(LA8_1>=36 && LA8_1<=38)||(LA8_1>=41 && LA8_1<=50)) ) {
                     alt8=2;
+                }
+                else if ( (LA8_1==51) ) {
+                    alt8=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -4666,7 +4666,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
                 int alt11=2;
                 int LA11_0 = input.LA(1);
 
-                if ( (LA11_0==16||LA11_0==19||LA11_0==21||LA11_0==23||LA11_0==27||(LA11_0>=31 && LA11_0<=32)||LA11_0==38) ) {
+                if ( (LA11_0==16||LA11_0==18||LA11_0==20||LA11_0==22||LA11_0==26||(LA11_0>=31 && LA11_0<=32)||LA11_0==38) ) {
                     alt11=1;
                 }
 
@@ -4919,7 +4919,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             // InternalRpgindividual.g:1518:1: ( rule__Effect__Group__0__Impl rule__Effect__Group__1 )
             // InternalRpgindividual.g:1519:2: rule__Effect__Group__0__Impl rule__Effect__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_3);
             rule__Effect__Group__0__Impl();
 
             state._fsp--;
@@ -5068,7 +5068,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             // InternalRpgindividual.g:1572:1: ( rule__MoveE__Group__0__Impl rule__MoveE__Group__1 )
             // InternalRpgindividual.g:1573:2: rule__MoveE__Group__0__Impl rule__MoveE__Group__1
             {
-            pushFollow(FOLLOW_3);
+            pushFollow(FOLLOW_8);
             rule__MoveE__Group__0__Impl();
 
             state._fsp--;
@@ -5097,21 +5097,31 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MoveE__Group__0__Impl"
-    // InternalRpgindividual.g:1580:1: rule__MoveE__Group__0__Impl : ( 'move' ) ;
+    // InternalRpgindividual.g:1580:1: rule__MoveE__Group__0__Impl : ( ( rule__MoveE__NameAssignment_0 ) ) ;
     public final void rule__MoveE__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1584:1: ( ( 'move' ) )
-            // InternalRpgindividual.g:1585:1: ( 'move' )
+            // InternalRpgindividual.g:1584:1: ( ( ( rule__MoveE__NameAssignment_0 ) ) )
+            // InternalRpgindividual.g:1585:1: ( ( rule__MoveE__NameAssignment_0 ) )
             {
-            // InternalRpgindividual.g:1585:1: ( 'move' )
-            // InternalRpgindividual.g:1586:2: 'move'
+            // InternalRpgindividual.g:1585:1: ( ( rule__MoveE__NameAssignment_0 ) )
+            // InternalRpgindividual.g:1586:2: ( rule__MoveE__NameAssignment_0 )
             {
-             before(grammarAccess.getMoveEAccess().getMoveKeyword_0()); 
-            match(input,18,FOLLOW_2); 
-             after(grammarAccess.getMoveEAccess().getMoveKeyword_0()); 
+             before(grammarAccess.getMoveEAccess().getNameAssignment_0()); 
+            // InternalRpgindividual.g:1587:2: ( rule__MoveE__NameAssignment_0 )
+            // InternalRpgindividual.g:1587:3: rule__MoveE__NameAssignment_0
+            {
+            pushFollow(FOLLOW_2);
+            rule__MoveE__NameAssignment_0();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getMoveEAccess().getNameAssignment_0()); 
 
             }
 
@@ -5134,22 +5144,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MoveE__Group__1"
-    // InternalRpgindividual.g:1595:1: rule__MoveE__Group__1 : rule__MoveE__Group__1__Impl rule__MoveE__Group__2 ;
+    // InternalRpgindividual.g:1595:1: rule__MoveE__Group__1 : rule__MoveE__Group__1__Impl ;
     public final void rule__MoveE__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1599:1: ( rule__MoveE__Group__1__Impl rule__MoveE__Group__2 )
-            // InternalRpgindividual.g:1600:2: rule__MoveE__Group__1__Impl rule__MoveE__Group__2
+            // InternalRpgindividual.g:1599:1: ( rule__MoveE__Group__1__Impl )
+            // InternalRpgindividual.g:1600:2: rule__MoveE__Group__1__Impl
             {
-            pushFollow(FOLLOW_9);
-            rule__MoveE__Group__1__Impl();
-
-            state._fsp--;
-
             pushFollow(FOLLOW_2);
-            rule__MoveE__Group__2();
+            rule__MoveE__Group__1__Impl();
 
             state._fsp--;
 
@@ -5172,31 +5177,31 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MoveE__Group__1__Impl"
-    // InternalRpgindividual.g:1607:1: rule__MoveE__Group__1__Impl : ( ( rule__MoveE__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:1606:1: rule__MoveE__Group__1__Impl : ( ( rule__MoveE__RuleAssignment_1 ) ) ;
     public final void rule__MoveE__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1611:1: ( ( ( rule__MoveE__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:1612:1: ( ( rule__MoveE__NameAssignment_1 ) )
+            // InternalRpgindividual.g:1610:1: ( ( ( rule__MoveE__RuleAssignment_1 ) ) )
+            // InternalRpgindividual.g:1611:1: ( ( rule__MoveE__RuleAssignment_1 ) )
             {
-            // InternalRpgindividual.g:1612:1: ( ( rule__MoveE__NameAssignment_1 ) )
-            // InternalRpgindividual.g:1613:2: ( rule__MoveE__NameAssignment_1 )
+            // InternalRpgindividual.g:1611:1: ( ( rule__MoveE__RuleAssignment_1 ) )
+            // InternalRpgindividual.g:1612:2: ( rule__MoveE__RuleAssignment_1 )
             {
-             before(grammarAccess.getMoveEAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:1614:2: ( rule__MoveE__NameAssignment_1 )
-            // InternalRpgindividual.g:1614:3: rule__MoveE__NameAssignment_1
+             before(grammarAccess.getMoveEAccess().getRuleAssignment_1()); 
+            // InternalRpgindividual.g:1613:2: ( rule__MoveE__RuleAssignment_1 )
+            // InternalRpgindividual.g:1613:3: rule__MoveE__RuleAssignment_1
             {
             pushFollow(FOLLOW_2);
-            rule__MoveE__NameAssignment_1();
+            rule__MoveE__RuleAssignment_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getMoveEAccess().getNameAssignment_1()); 
+             after(grammarAccess.getMoveEAccess().getRuleAssignment_1()); 
 
             }
 
@@ -5218,97 +5223,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__MoveE__Group__1__Impl"
 
 
-    // $ANTLR start "rule__MoveE__Group__2"
-    // InternalRpgindividual.g:1622:1: rule__MoveE__Group__2 : rule__MoveE__Group__2__Impl ;
-    public final void rule__MoveE__Group__2() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRpgindividual.g:1626:1: ( rule__MoveE__Group__2__Impl )
-            // InternalRpgindividual.g:1627:2: rule__MoveE__Group__2__Impl
-            {
-            pushFollow(FOLLOW_2);
-            rule__MoveE__Group__2__Impl();
-
-            state._fsp--;
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MoveE__Group__2"
-
-
-    // $ANTLR start "rule__MoveE__Group__2__Impl"
-    // InternalRpgindividual.g:1633:1: rule__MoveE__Group__2__Impl : ( ( rule__MoveE__RuleAssignment_2 ) ) ;
-    public final void rule__MoveE__Group__2__Impl() throws RecognitionException {
-
-        		int stackSize = keepStackSize();
-        	
-        try {
-            // InternalRpgindividual.g:1637:1: ( ( ( rule__MoveE__RuleAssignment_2 ) ) )
-            // InternalRpgindividual.g:1638:1: ( ( rule__MoveE__RuleAssignment_2 ) )
-            {
-            // InternalRpgindividual.g:1638:1: ( ( rule__MoveE__RuleAssignment_2 ) )
-            // InternalRpgindividual.g:1639:2: ( rule__MoveE__RuleAssignment_2 )
-            {
-             before(grammarAccess.getMoveEAccess().getRuleAssignment_2()); 
-            // InternalRpgindividual.g:1640:2: ( rule__MoveE__RuleAssignment_2 )
-            // InternalRpgindividual.g:1640:3: rule__MoveE__RuleAssignment_2
-            {
-            pushFollow(FOLLOW_2);
-            rule__MoveE__RuleAssignment_2();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getMoveEAccess().getRuleAssignment_2()); 
-
-            }
-
-
-            }
-
-        }
-        catch (RecognitionException re) {
-            reportError(re);
-            recover(input,re);
-        }
-        finally {
-
-            	restoreStackSize(stackSize);
-
-        }
-        return ;
-    }
-    // $ANTLR end "rule__MoveE__Group__2__Impl"
-
-
     // $ANTLR start "rule__Attributes__Group__0"
-    // InternalRpgindividual.g:1649:1: rule__Attributes__Group__0 : rule__Attributes__Group__0__Impl rule__Attributes__Group__1 ;
+    // InternalRpgindividual.g:1622:1: rule__Attributes__Group__0 : rule__Attributes__Group__0__Impl rule__Attributes__Group__1 ;
     public final void rule__Attributes__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1653:1: ( rule__Attributes__Group__0__Impl rule__Attributes__Group__1 )
-            // InternalRpgindividual.g:1654:2: rule__Attributes__Group__0__Impl rule__Attributes__Group__1
+            // InternalRpgindividual.g:1626:1: ( rule__Attributes__Group__0__Impl rule__Attributes__Group__1 )
+            // InternalRpgindividual.g:1627:2: rule__Attributes__Group__0__Impl rule__Attributes__Group__1
             {
-            pushFollow(FOLLOW_10);
+            pushFollow(FOLLOW_9);
             rule__Attributes__Group__0__Impl();
 
             state._fsp--;
@@ -5337,20 +5262,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attributes__Group__0__Impl"
-    // InternalRpgindividual.g:1661:1: rule__Attributes__Group__0__Impl : ( 'attributes' ) ;
+    // InternalRpgindividual.g:1634:1: rule__Attributes__Group__0__Impl : ( 'attributes' ) ;
     public final void rule__Attributes__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1665:1: ( ( 'attributes' ) )
-            // InternalRpgindividual.g:1666:1: ( 'attributes' )
+            // InternalRpgindividual.g:1638:1: ( ( 'attributes' ) )
+            // InternalRpgindividual.g:1639:1: ( 'attributes' )
             {
-            // InternalRpgindividual.g:1666:1: ( 'attributes' )
-            // InternalRpgindividual.g:1667:2: 'attributes'
+            // InternalRpgindividual.g:1639:1: ( 'attributes' )
+            // InternalRpgindividual.g:1640:2: 'attributes'
             {
              before(grammarAccess.getAttributesAccess().getAttributesKeyword_0()); 
-            match(input,19,FOLLOW_2); 
+            match(input,18,FOLLOW_2); 
              after(grammarAccess.getAttributesAccess().getAttributesKeyword_0()); 
 
             }
@@ -5374,14 +5299,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attributes__Group__1"
-    // InternalRpgindividual.g:1676:1: rule__Attributes__Group__1 : rule__Attributes__Group__1__Impl ;
+    // InternalRpgindividual.g:1649:1: rule__Attributes__Group__1 : rule__Attributes__Group__1__Impl ;
     public final void rule__Attributes__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1680:1: ( rule__Attributes__Group__1__Impl )
-            // InternalRpgindividual.g:1681:2: rule__Attributes__Group__1__Impl
+            // InternalRpgindividual.g:1653:1: ( rule__Attributes__Group__1__Impl )
+            // InternalRpgindividual.g:1654:2: rule__Attributes__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attributes__Group__1__Impl();
@@ -5407,26 +5332,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attributes__Group__1__Impl"
-    // InternalRpgindividual.g:1687:1: rule__Attributes__Group__1__Impl : ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:1660:1: rule__Attributes__Group__1__Impl : ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) ) ;
     public final void rule__Attributes__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1691:1: ( ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:1692:1: ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) )
+            // InternalRpgindividual.g:1664:1: ( ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:1665:1: ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:1692:1: ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) )
-            // InternalRpgindividual.g:1693:2: ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* )
+            // InternalRpgindividual.g:1665:1: ( ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* ) )
+            // InternalRpgindividual.g:1666:2: ( ( rule__Attributes__AttributeAssignment_1 ) ) ( ( rule__Attributes__AttributeAssignment_1 )* )
             {
-            // InternalRpgindividual.g:1693:2: ( ( rule__Attributes__AttributeAssignment_1 ) )
-            // InternalRpgindividual.g:1694:3: ( rule__Attributes__AttributeAssignment_1 )
+            // InternalRpgindividual.g:1666:2: ( ( rule__Attributes__AttributeAssignment_1 ) )
+            // InternalRpgindividual.g:1667:3: ( rule__Attributes__AttributeAssignment_1 )
             {
              before(grammarAccess.getAttributesAccess().getAttributeAssignment_1()); 
-            // InternalRpgindividual.g:1695:3: ( rule__Attributes__AttributeAssignment_1 )
-            // InternalRpgindividual.g:1695:4: rule__Attributes__AttributeAssignment_1
+            // InternalRpgindividual.g:1668:3: ( rule__Attributes__AttributeAssignment_1 )
+            // InternalRpgindividual.g:1668:4: rule__Attributes__AttributeAssignment_1
             {
-            pushFollow(FOLLOW_11);
+            pushFollow(FOLLOW_10);
             rule__Attributes__AttributeAssignment_1();
 
             state._fsp--;
@@ -5438,26 +5363,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:1698:2: ( ( rule__Attributes__AttributeAssignment_1 )* )
-            // InternalRpgindividual.g:1699:3: ( rule__Attributes__AttributeAssignment_1 )*
+            // InternalRpgindividual.g:1671:2: ( ( rule__Attributes__AttributeAssignment_1 )* )
+            // InternalRpgindividual.g:1672:3: ( rule__Attributes__AttributeAssignment_1 )*
             {
              before(grammarAccess.getAttributesAccess().getAttributeAssignment_1()); 
-            // InternalRpgindividual.g:1700:3: ( rule__Attributes__AttributeAssignment_1 )*
+            // InternalRpgindividual.g:1673:3: ( rule__Attributes__AttributeAssignment_1 )*
             loop13:
             do {
                 int alt13=2;
                 int LA13_0 = input.LA(1);
 
-                if ( (LA13_0==20) ) {
+                if ( (LA13_0==19) ) {
                     alt13=1;
                 }
 
 
                 switch (alt13) {
             	case 1 :
-            	    // InternalRpgindividual.g:1700:4: rule__Attributes__AttributeAssignment_1
+            	    // InternalRpgindividual.g:1673:4: rule__Attributes__AttributeAssignment_1
             	    {
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_10);
             	    rule__Attributes__AttributeAssignment_1();
 
             	    state._fsp--;
@@ -5497,14 +5422,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__0"
-    // InternalRpgindividual.g:1710:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
+    // InternalRpgindividual.g:1683:1: rule__Attribute__Group__0 : rule__Attribute__Group__0__Impl rule__Attribute__Group__1 ;
     public final void rule__Attribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1714:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
-            // InternalRpgindividual.g:1715:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
+            // InternalRpgindividual.g:1687:1: ( rule__Attribute__Group__0__Impl rule__Attribute__Group__1 )
+            // InternalRpgindividual.g:1688:2: rule__Attribute__Group__0__Impl rule__Attribute__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Attribute__Group__0__Impl();
@@ -5535,20 +5460,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__0__Impl"
-    // InternalRpgindividual.g:1722:1: rule__Attribute__Group__0__Impl : ( 'attribute' ) ;
+    // InternalRpgindividual.g:1695:1: rule__Attribute__Group__0__Impl : ( 'attribute' ) ;
     public final void rule__Attribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1726:1: ( ( 'attribute' ) )
-            // InternalRpgindividual.g:1727:1: ( 'attribute' )
+            // InternalRpgindividual.g:1699:1: ( ( 'attribute' ) )
+            // InternalRpgindividual.g:1700:1: ( 'attribute' )
             {
-            // InternalRpgindividual.g:1727:1: ( 'attribute' )
-            // InternalRpgindividual.g:1728:2: 'attribute'
+            // InternalRpgindividual.g:1700:1: ( 'attribute' )
+            // InternalRpgindividual.g:1701:2: 'attribute'
             {
              before(grammarAccess.getAttributeAccess().getAttributeKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAttributeAccess().getAttributeKeyword_0()); 
 
             }
@@ -5572,16 +5497,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__1"
-    // InternalRpgindividual.g:1737:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
+    // InternalRpgindividual.g:1710:1: rule__Attribute__Group__1 : rule__Attribute__Group__1__Impl rule__Attribute__Group__2 ;
     public final void rule__Attribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1741:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
-            // InternalRpgindividual.g:1742:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
+            // InternalRpgindividual.g:1714:1: ( rule__Attribute__Group__1__Impl rule__Attribute__Group__2 )
+            // InternalRpgindividual.g:1715:2: rule__Attribute__Group__1__Impl rule__Attribute__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__Attribute__Group__1__Impl();
 
             state._fsp--;
@@ -5610,21 +5535,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__1__Impl"
-    // InternalRpgindividual.g:1749:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:1722:1: rule__Attribute__Group__1__Impl : ( ( rule__Attribute__NameAssignment_1 ) ) ;
     public final void rule__Attribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1753:1: ( ( ( rule__Attribute__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:1754:1: ( ( rule__Attribute__NameAssignment_1 ) )
+            // InternalRpgindividual.g:1726:1: ( ( ( rule__Attribute__NameAssignment_1 ) ) )
+            // InternalRpgindividual.g:1727:1: ( ( rule__Attribute__NameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:1754:1: ( ( rule__Attribute__NameAssignment_1 ) )
-            // InternalRpgindividual.g:1755:2: ( rule__Attribute__NameAssignment_1 )
+            // InternalRpgindividual.g:1727:1: ( ( rule__Attribute__NameAssignment_1 ) )
+            // InternalRpgindividual.g:1728:2: ( rule__Attribute__NameAssignment_1 )
             {
              before(grammarAccess.getAttributeAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:1756:2: ( rule__Attribute__NameAssignment_1 )
-            // InternalRpgindividual.g:1756:3: rule__Attribute__NameAssignment_1
+            // InternalRpgindividual.g:1729:2: ( rule__Attribute__NameAssignment_1 )
+            // InternalRpgindividual.g:1729:3: rule__Attribute__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__NameAssignment_1();
@@ -5657,14 +5582,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__2"
-    // InternalRpgindividual.g:1764:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl ;
+    // InternalRpgindividual.g:1737:1: rule__Attribute__Group__2 : rule__Attribute__Group__2__Impl ;
     public final void rule__Attribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1768:1: ( rule__Attribute__Group__2__Impl )
-            // InternalRpgindividual.g:1769:2: rule__Attribute__Group__2__Impl
+            // InternalRpgindividual.g:1741:1: ( rule__Attribute__Group__2__Impl )
+            // InternalRpgindividual.g:1742:2: rule__Attribute__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__Group__2__Impl();
@@ -5690,21 +5615,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__Group__2__Impl"
-    // InternalRpgindividual.g:1775:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__AValAssignment_2 ) ) ;
+    // InternalRpgindividual.g:1748:1: rule__Attribute__Group__2__Impl : ( ( rule__Attribute__AValAssignment_2 ) ) ;
     public final void rule__Attribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1779:1: ( ( ( rule__Attribute__AValAssignment_2 ) ) )
-            // InternalRpgindividual.g:1780:1: ( ( rule__Attribute__AValAssignment_2 ) )
+            // InternalRpgindividual.g:1752:1: ( ( ( rule__Attribute__AValAssignment_2 ) ) )
+            // InternalRpgindividual.g:1753:1: ( ( rule__Attribute__AValAssignment_2 ) )
             {
-            // InternalRpgindividual.g:1780:1: ( ( rule__Attribute__AValAssignment_2 ) )
-            // InternalRpgindividual.g:1781:2: ( rule__Attribute__AValAssignment_2 )
+            // InternalRpgindividual.g:1753:1: ( ( rule__Attribute__AValAssignment_2 ) )
+            // InternalRpgindividual.g:1754:2: ( rule__Attribute__AValAssignment_2 )
             {
              before(grammarAccess.getAttributeAccess().getAValAssignment_2()); 
-            // InternalRpgindividual.g:1782:2: ( rule__Attribute__AValAssignment_2 )
-            // InternalRpgindividual.g:1782:3: rule__Attribute__AValAssignment_2
+            // InternalRpgindividual.g:1755:2: ( rule__Attribute__AValAssignment_2 )
+            // InternalRpgindividual.g:1755:3: rule__Attribute__AValAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Attribute__AValAssignment_2();
@@ -5737,14 +5662,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Locations__Group__0"
-    // InternalRpgindividual.g:1791:1: rule__Locations__Group__0 : rule__Locations__Group__0__Impl rule__Locations__Group__1 ;
+    // InternalRpgindividual.g:1764:1: rule__Locations__Group__0 : rule__Locations__Group__0__Impl rule__Locations__Group__1 ;
     public final void rule__Locations__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1795:1: ( rule__Locations__Group__0__Impl rule__Locations__Group__1 )
-            // InternalRpgindividual.g:1796:2: rule__Locations__Group__0__Impl rule__Locations__Group__1
+            // InternalRpgindividual.g:1768:1: ( rule__Locations__Group__0__Impl rule__Locations__Group__1 )
+            // InternalRpgindividual.g:1769:2: rule__Locations__Group__0__Impl rule__Locations__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Locations__Group__0__Impl();
@@ -5775,20 +5700,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Locations__Group__0__Impl"
-    // InternalRpgindividual.g:1803:1: rule__Locations__Group__0__Impl : ( 'location' ) ;
+    // InternalRpgindividual.g:1776:1: rule__Locations__Group__0__Impl : ( 'location' ) ;
     public final void rule__Locations__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1807:1: ( ( 'location' ) )
-            // InternalRpgindividual.g:1808:1: ( 'location' )
+            // InternalRpgindividual.g:1780:1: ( ( 'location' ) )
+            // InternalRpgindividual.g:1781:1: ( 'location' )
             {
-            // InternalRpgindividual.g:1808:1: ( 'location' )
-            // InternalRpgindividual.g:1809:2: 'location'
+            // InternalRpgindividual.g:1781:1: ( 'location' )
+            // InternalRpgindividual.g:1782:2: 'location'
             {
              before(grammarAccess.getLocationsAccess().getLocationKeyword_0()); 
-            match(input,21,FOLLOW_2); 
+            match(input,20,FOLLOW_2); 
              after(grammarAccess.getLocationsAccess().getLocationKeyword_0()); 
 
             }
@@ -5812,14 +5737,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Locations__Group__1"
-    // InternalRpgindividual.g:1818:1: rule__Locations__Group__1 : rule__Locations__Group__1__Impl ;
+    // InternalRpgindividual.g:1791:1: rule__Locations__Group__1 : rule__Locations__Group__1__Impl ;
     public final void rule__Locations__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1822:1: ( rule__Locations__Group__1__Impl )
-            // InternalRpgindividual.g:1823:2: rule__Locations__Group__1__Impl
+            // InternalRpgindividual.g:1795:1: ( rule__Locations__Group__1__Impl )
+            // InternalRpgindividual.g:1796:2: rule__Locations__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Locations__Group__1__Impl();
@@ -5845,26 +5770,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Locations__Group__1__Impl"
-    // InternalRpgindividual.g:1829:1: rule__Locations__Group__1__Impl : ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:1802:1: rule__Locations__Group__1__Impl : ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) ) ;
     public final void rule__Locations__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1833:1: ( ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:1834:1: ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) )
+            // InternalRpgindividual.g:1806:1: ( ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:1807:1: ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:1834:1: ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) )
-            // InternalRpgindividual.g:1835:2: ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* )
+            // InternalRpgindividual.g:1807:1: ( ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* ) )
+            // InternalRpgindividual.g:1808:2: ( ( rule__Locations__LocAssignment_1 ) ) ( ( rule__Locations__LocAssignment_1 )* )
             {
-            // InternalRpgindividual.g:1835:2: ( ( rule__Locations__LocAssignment_1 ) )
-            // InternalRpgindividual.g:1836:3: ( rule__Locations__LocAssignment_1 )
+            // InternalRpgindividual.g:1808:2: ( ( rule__Locations__LocAssignment_1 ) )
+            // InternalRpgindividual.g:1809:3: ( rule__Locations__LocAssignment_1 )
             {
              before(grammarAccess.getLocationsAccess().getLocAssignment_1()); 
-            // InternalRpgindividual.g:1837:3: ( rule__Locations__LocAssignment_1 )
-            // InternalRpgindividual.g:1837:4: rule__Locations__LocAssignment_1
+            // InternalRpgindividual.g:1810:3: ( rule__Locations__LocAssignment_1 )
+            // InternalRpgindividual.g:1810:4: rule__Locations__LocAssignment_1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_12);
             rule__Locations__LocAssignment_1();
 
             state._fsp--;
@@ -5876,11 +5801,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:1840:2: ( ( rule__Locations__LocAssignment_1 )* )
-            // InternalRpgindividual.g:1841:3: ( rule__Locations__LocAssignment_1 )*
+            // InternalRpgindividual.g:1813:2: ( ( rule__Locations__LocAssignment_1 )* )
+            // InternalRpgindividual.g:1814:3: ( rule__Locations__LocAssignment_1 )*
             {
              before(grammarAccess.getLocationsAccess().getLocAssignment_1()); 
-            // InternalRpgindividual.g:1842:3: ( rule__Locations__LocAssignment_1 )*
+            // InternalRpgindividual.g:1815:3: ( rule__Locations__LocAssignment_1 )*
             loop14:
             do {
                 int alt14=2;
@@ -5893,9 +5818,9 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt14) {
             	case 1 :
-            	    // InternalRpgindividual.g:1842:4: rule__Locations__LocAssignment_1
+            	    // InternalRpgindividual.g:1815:4: rule__Locations__LocAssignment_1
             	    {
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_12);
             	    rule__Locations__LocAssignment_1();
 
             	    state._fsp--;
@@ -5935,16 +5860,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__0"
-    // InternalRpgindividual.g:1852:1: rule__Loc__Group__0 : rule__Loc__Group__0__Impl rule__Loc__Group__1 ;
+    // InternalRpgindividual.g:1825:1: rule__Loc__Group__0 : rule__Loc__Group__0__Impl rule__Loc__Group__1 ;
     public final void rule__Loc__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1856:1: ( rule__Loc__Group__0__Impl rule__Loc__Group__1 )
-            // InternalRpgindividual.g:1857:2: rule__Loc__Group__0__Impl rule__Loc__Group__1
+            // InternalRpgindividual.g:1829:1: ( rule__Loc__Group__0__Impl rule__Loc__Group__1 )
+            // InternalRpgindividual.g:1830:2: rule__Loc__Group__0__Impl rule__Loc__Group__1
             {
-            pushFollow(FOLLOW_14);
+            pushFollow(FOLLOW_13);
             rule__Loc__Group__0__Impl();
 
             state._fsp--;
@@ -5973,21 +5898,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__0__Impl"
-    // InternalRpgindividual.g:1864:1: rule__Loc__Group__0__Impl : ( ( rule__Loc__NameAssignment_0 ) ) ;
+    // InternalRpgindividual.g:1837:1: rule__Loc__Group__0__Impl : ( ( rule__Loc__NameAssignment_0 ) ) ;
     public final void rule__Loc__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1868:1: ( ( ( rule__Loc__NameAssignment_0 ) ) )
-            // InternalRpgindividual.g:1869:1: ( ( rule__Loc__NameAssignment_0 ) )
+            // InternalRpgindividual.g:1841:1: ( ( ( rule__Loc__NameAssignment_0 ) ) )
+            // InternalRpgindividual.g:1842:1: ( ( rule__Loc__NameAssignment_0 ) )
             {
-            // InternalRpgindividual.g:1869:1: ( ( rule__Loc__NameAssignment_0 ) )
-            // InternalRpgindividual.g:1870:2: ( rule__Loc__NameAssignment_0 )
+            // InternalRpgindividual.g:1842:1: ( ( rule__Loc__NameAssignment_0 ) )
+            // InternalRpgindividual.g:1843:2: ( rule__Loc__NameAssignment_0 )
             {
              before(grammarAccess.getLocAccess().getNameAssignment_0()); 
-            // InternalRpgindividual.g:1871:2: ( rule__Loc__NameAssignment_0 )
-            // InternalRpgindividual.g:1871:3: rule__Loc__NameAssignment_0
+            // InternalRpgindividual.g:1844:2: ( rule__Loc__NameAssignment_0 )
+            // InternalRpgindividual.g:1844:3: rule__Loc__NameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__Loc__NameAssignment_0();
@@ -6020,14 +5945,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__1"
-    // InternalRpgindividual.g:1879:1: rule__Loc__Group__1 : rule__Loc__Group__1__Impl rule__Loc__Group__2 ;
+    // InternalRpgindividual.g:1852:1: rule__Loc__Group__1 : rule__Loc__Group__1__Impl rule__Loc__Group__2 ;
     public final void rule__Loc__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1883:1: ( rule__Loc__Group__1__Impl rule__Loc__Group__2 )
-            // InternalRpgindividual.g:1884:2: rule__Loc__Group__1__Impl rule__Loc__Group__2
+            // InternalRpgindividual.g:1856:1: ( rule__Loc__Group__1__Impl rule__Loc__Group__2 )
+            // InternalRpgindividual.g:1857:2: rule__Loc__Group__1__Impl rule__Loc__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Loc__Group__1__Impl();
@@ -6058,20 +5983,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__1__Impl"
-    // InternalRpgindividual.g:1891:1: rule__Loc__Group__1__Impl : ( 'opponents' ) ;
+    // InternalRpgindividual.g:1864:1: rule__Loc__Group__1__Impl : ( 'opponents' ) ;
     public final void rule__Loc__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1895:1: ( ( 'opponents' ) )
-            // InternalRpgindividual.g:1896:1: ( 'opponents' )
+            // InternalRpgindividual.g:1868:1: ( ( 'opponents' ) )
+            // InternalRpgindividual.g:1869:1: ( 'opponents' )
             {
-            // InternalRpgindividual.g:1896:1: ( 'opponents' )
-            // InternalRpgindividual.g:1897:2: 'opponents'
+            // InternalRpgindividual.g:1869:1: ( 'opponents' )
+            // InternalRpgindividual.g:1870:2: 'opponents'
             {
              before(grammarAccess.getLocAccess().getOpponentsKeyword_1()); 
-            match(input,22,FOLLOW_2); 
+            match(input,21,FOLLOW_2); 
              after(grammarAccess.getLocAccess().getOpponentsKeyword_1()); 
 
             }
@@ -6095,14 +6020,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__2"
-    // InternalRpgindividual.g:1906:1: rule__Loc__Group__2 : rule__Loc__Group__2__Impl ;
+    // InternalRpgindividual.g:1879:1: rule__Loc__Group__2 : rule__Loc__Group__2__Impl ;
     public final void rule__Loc__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1910:1: ( rule__Loc__Group__2__Impl )
-            // InternalRpgindividual.g:1911:2: rule__Loc__Group__2__Impl
+            // InternalRpgindividual.g:1883:1: ( rule__Loc__Group__2__Impl )
+            // InternalRpgindividual.g:1884:2: rule__Loc__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Loc__Group__2__Impl();
@@ -6128,21 +6053,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__Group__2__Impl"
-    // InternalRpgindividual.g:1917:1: rule__Loc__Group__2__Impl : ( ( rule__Loc__TeamAssignment_2 ) ) ;
+    // InternalRpgindividual.g:1890:1: rule__Loc__Group__2__Impl : ( ( rule__Loc__TeamAssignment_2 ) ) ;
     public final void rule__Loc__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1921:1: ( ( ( rule__Loc__TeamAssignment_2 ) ) )
-            // InternalRpgindividual.g:1922:1: ( ( rule__Loc__TeamAssignment_2 ) )
+            // InternalRpgindividual.g:1894:1: ( ( ( rule__Loc__TeamAssignment_2 ) ) )
+            // InternalRpgindividual.g:1895:1: ( ( rule__Loc__TeamAssignment_2 ) )
             {
-            // InternalRpgindividual.g:1922:1: ( ( rule__Loc__TeamAssignment_2 ) )
-            // InternalRpgindividual.g:1923:2: ( rule__Loc__TeamAssignment_2 )
+            // InternalRpgindividual.g:1895:1: ( ( rule__Loc__TeamAssignment_2 ) )
+            // InternalRpgindividual.g:1896:2: ( rule__Loc__TeamAssignment_2 )
             {
              before(grammarAccess.getLocAccess().getTeamAssignment_2()); 
-            // InternalRpgindividual.g:1924:2: ( rule__Loc__TeamAssignment_2 )
-            // InternalRpgindividual.g:1924:3: rule__Loc__TeamAssignment_2
+            // InternalRpgindividual.g:1897:2: ( rule__Loc__TeamAssignment_2 )
+            // InternalRpgindividual.g:1897:3: rule__Loc__TeamAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Loc__TeamAssignment_2();
@@ -6175,16 +6100,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Relations__Group__0"
-    // InternalRpgindividual.g:1933:1: rule__Relations__Group__0 : rule__Relations__Group__0__Impl rule__Relations__Group__1 ;
+    // InternalRpgindividual.g:1906:1: rule__Relations__Group__0 : rule__Relations__Group__0__Impl rule__Relations__Group__1 ;
     public final void rule__Relations__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1937:1: ( rule__Relations__Group__0__Impl rule__Relations__Group__1 )
-            // InternalRpgindividual.g:1938:2: rule__Relations__Group__0__Impl rule__Relations__Group__1
+            // InternalRpgindividual.g:1910:1: ( rule__Relations__Group__0__Impl rule__Relations__Group__1 )
+            // InternalRpgindividual.g:1911:2: rule__Relations__Group__0__Impl rule__Relations__Group__1
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__Relations__Group__0__Impl();
 
             state._fsp--;
@@ -6213,20 +6138,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Relations__Group__0__Impl"
-    // InternalRpgindividual.g:1945:1: rule__Relations__Group__0__Impl : ( 'relations' ) ;
+    // InternalRpgindividual.g:1918:1: rule__Relations__Group__0__Impl : ( 'relations' ) ;
     public final void rule__Relations__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1949:1: ( ( 'relations' ) )
-            // InternalRpgindividual.g:1950:1: ( 'relations' )
+            // InternalRpgindividual.g:1922:1: ( ( 'relations' ) )
+            // InternalRpgindividual.g:1923:1: ( 'relations' )
             {
-            // InternalRpgindividual.g:1950:1: ( 'relations' )
-            // InternalRpgindividual.g:1951:2: 'relations'
+            // InternalRpgindividual.g:1923:1: ( 'relations' )
+            // InternalRpgindividual.g:1924:2: 'relations'
             {
              before(grammarAccess.getRelationsAccess().getRelationsKeyword_0()); 
-            match(input,23,FOLLOW_2); 
+            match(input,22,FOLLOW_2); 
              after(grammarAccess.getRelationsAccess().getRelationsKeyword_0()); 
 
             }
@@ -6250,14 +6175,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Relations__Group__1"
-    // InternalRpgindividual.g:1960:1: rule__Relations__Group__1 : rule__Relations__Group__1__Impl ;
+    // InternalRpgindividual.g:1933:1: rule__Relations__Group__1 : rule__Relations__Group__1__Impl ;
     public final void rule__Relations__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1964:1: ( rule__Relations__Group__1__Impl )
-            // InternalRpgindividual.g:1965:2: rule__Relations__Group__1__Impl
+            // InternalRpgindividual.g:1937:1: ( rule__Relations__Group__1__Impl )
+            // InternalRpgindividual.g:1938:2: rule__Relations__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Relations__Group__1__Impl();
@@ -6283,26 +6208,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Relations__Group__1__Impl"
-    // InternalRpgindividual.g:1971:1: rule__Relations__Group__1__Impl : ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:1944:1: rule__Relations__Group__1__Impl : ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) ) ;
     public final void rule__Relations__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1975:1: ( ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:1976:1: ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) )
+            // InternalRpgindividual.g:1948:1: ( ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:1949:1: ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:1976:1: ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) )
-            // InternalRpgindividual.g:1977:2: ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* )
+            // InternalRpgindividual.g:1949:1: ( ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* ) )
+            // InternalRpgindividual.g:1950:2: ( ( rule__Relations__TypeAssignment_1 ) ) ( ( rule__Relations__TypeAssignment_1 )* )
             {
-            // InternalRpgindividual.g:1977:2: ( ( rule__Relations__TypeAssignment_1 ) )
-            // InternalRpgindividual.g:1978:3: ( rule__Relations__TypeAssignment_1 )
+            // InternalRpgindividual.g:1950:2: ( ( rule__Relations__TypeAssignment_1 ) )
+            // InternalRpgindividual.g:1951:3: ( rule__Relations__TypeAssignment_1 )
             {
              before(grammarAccess.getRelationsAccess().getTypeAssignment_1()); 
-            // InternalRpgindividual.g:1979:3: ( rule__Relations__TypeAssignment_1 )
-            // InternalRpgindividual.g:1979:4: rule__Relations__TypeAssignment_1
+            // InternalRpgindividual.g:1952:3: ( rule__Relations__TypeAssignment_1 )
+            // InternalRpgindividual.g:1952:4: rule__Relations__TypeAssignment_1
             {
-            pushFollow(FOLLOW_16);
+            pushFollow(FOLLOW_15);
             rule__Relations__TypeAssignment_1();
 
             state._fsp--;
@@ -6314,26 +6239,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:1982:2: ( ( rule__Relations__TypeAssignment_1 )* )
-            // InternalRpgindividual.g:1983:3: ( rule__Relations__TypeAssignment_1 )*
+            // InternalRpgindividual.g:1955:2: ( ( rule__Relations__TypeAssignment_1 )* )
+            // InternalRpgindividual.g:1956:3: ( rule__Relations__TypeAssignment_1 )*
             {
              before(grammarAccess.getRelationsAccess().getTypeAssignment_1()); 
-            // InternalRpgindividual.g:1984:3: ( rule__Relations__TypeAssignment_1 )*
+            // InternalRpgindividual.g:1957:3: ( rule__Relations__TypeAssignment_1 )*
             loop15:
             do {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( (LA15_0==24) ) {
+                if ( (LA15_0==23) ) {
                     alt15=1;
                 }
 
 
                 switch (alt15) {
             	case 1 :
-            	    // InternalRpgindividual.g:1984:4: rule__Relations__TypeAssignment_1
+            	    // InternalRpgindividual.g:1957:4: rule__Relations__TypeAssignment_1
             	    {
-            	    pushFollow(FOLLOW_16);
+            	    pushFollow(FOLLOW_15);
             	    rule__Relations__TypeAssignment_1();
 
             	    state._fsp--;
@@ -6373,14 +6298,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__0"
-    // InternalRpgindividual.g:1994:1: rule__Type__Group__0 : rule__Type__Group__0__Impl rule__Type__Group__1 ;
+    // InternalRpgindividual.g:1967:1: rule__Type__Group__0 : rule__Type__Group__0__Impl rule__Type__Group__1 ;
     public final void rule__Type__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:1998:1: ( rule__Type__Group__0__Impl rule__Type__Group__1 )
-            // InternalRpgindividual.g:1999:2: rule__Type__Group__0__Impl rule__Type__Group__1
+            // InternalRpgindividual.g:1971:1: ( rule__Type__Group__0__Impl rule__Type__Group__1 )
+            // InternalRpgindividual.g:1972:2: rule__Type__Group__0__Impl rule__Type__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Type__Group__0__Impl();
@@ -6411,20 +6336,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__0__Impl"
-    // InternalRpgindividual.g:2006:1: rule__Type__Group__0__Impl : ( 'type' ) ;
+    // InternalRpgindividual.g:1979:1: rule__Type__Group__0__Impl : ( 'type' ) ;
     public final void rule__Type__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2010:1: ( ( 'type' ) )
-            // InternalRpgindividual.g:2011:1: ( 'type' )
+            // InternalRpgindividual.g:1983:1: ( ( 'type' ) )
+            // InternalRpgindividual.g:1984:1: ( 'type' )
             {
-            // InternalRpgindividual.g:2011:1: ( 'type' )
-            // InternalRpgindividual.g:2012:2: 'type'
+            // InternalRpgindividual.g:1984:1: ( 'type' )
+            // InternalRpgindividual.g:1985:2: 'type'
             {
              before(grammarAccess.getTypeAccess().getTypeKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getTypeAccess().getTypeKeyword_0()); 
 
             }
@@ -6448,14 +6373,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__1"
-    // InternalRpgindividual.g:2021:1: rule__Type__Group__1 : rule__Type__Group__1__Impl rule__Type__Group__2 ;
+    // InternalRpgindividual.g:1994:1: rule__Type__Group__1 : rule__Type__Group__1__Impl rule__Type__Group__2 ;
     public final void rule__Type__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2025:1: ( rule__Type__Group__1__Impl rule__Type__Group__2 )
-            // InternalRpgindividual.g:2026:2: rule__Type__Group__1__Impl rule__Type__Group__2
+            // InternalRpgindividual.g:1998:1: ( rule__Type__Group__1__Impl rule__Type__Group__2 )
+            // InternalRpgindividual.g:1999:2: rule__Type__Group__1__Impl rule__Type__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Type__Group__1__Impl();
@@ -6486,21 +6411,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__1__Impl"
-    // InternalRpgindividual.g:2033:1: rule__Type__Group__1__Impl : ( ( rule__Type__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2006:1: rule__Type__Group__1__Impl : ( ( rule__Type__NameAssignment_1 ) ) ;
     public final void rule__Type__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2037:1: ( ( ( rule__Type__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:2038:1: ( ( rule__Type__NameAssignment_1 ) )
+            // InternalRpgindividual.g:2010:1: ( ( ( rule__Type__NameAssignment_1 ) ) )
+            // InternalRpgindividual.g:2011:1: ( ( rule__Type__NameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2038:1: ( ( rule__Type__NameAssignment_1 ) )
-            // InternalRpgindividual.g:2039:2: ( rule__Type__NameAssignment_1 )
+            // InternalRpgindividual.g:2011:1: ( ( rule__Type__NameAssignment_1 ) )
+            // InternalRpgindividual.g:2012:2: ( rule__Type__NameAssignment_1 )
             {
              before(grammarAccess.getTypeAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:2040:2: ( rule__Type__NameAssignment_1 )
-            // InternalRpgindividual.g:2040:3: rule__Type__NameAssignment_1
+            // InternalRpgindividual.g:2013:2: ( rule__Type__NameAssignment_1 )
+            // InternalRpgindividual.g:2013:3: rule__Type__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Type__NameAssignment_1();
@@ -6533,14 +6458,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__2"
-    // InternalRpgindividual.g:2048:1: rule__Type__Group__2 : rule__Type__Group__2__Impl ;
+    // InternalRpgindividual.g:2021:1: rule__Type__Group__2 : rule__Type__Group__2__Impl ;
     public final void rule__Type__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2052:1: ( rule__Type__Group__2__Impl )
-            // InternalRpgindividual.g:2053:2: rule__Type__Group__2__Impl
+            // InternalRpgindividual.g:2025:1: ( rule__Type__Group__2__Impl )
+            // InternalRpgindividual.g:2026:2: rule__Type__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Type__Group__2__Impl();
@@ -6566,20 +6491,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__Group__2__Impl"
-    // InternalRpgindividual.g:2059:1: rule__Type__Group__2__Impl : ( ( rule__Type__TExpressionAssignment_2 )? ) ;
+    // InternalRpgindividual.g:2032:1: rule__Type__Group__2__Impl : ( ( rule__Type__TExpressionAssignment_2 )? ) ;
     public final void rule__Type__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2063:1: ( ( ( rule__Type__TExpressionAssignment_2 )? ) )
-            // InternalRpgindividual.g:2064:1: ( ( rule__Type__TExpressionAssignment_2 )? )
+            // InternalRpgindividual.g:2036:1: ( ( ( rule__Type__TExpressionAssignment_2 )? ) )
+            // InternalRpgindividual.g:2037:1: ( ( rule__Type__TExpressionAssignment_2 )? )
             {
-            // InternalRpgindividual.g:2064:1: ( ( rule__Type__TExpressionAssignment_2 )? )
-            // InternalRpgindividual.g:2065:2: ( rule__Type__TExpressionAssignment_2 )?
+            // InternalRpgindividual.g:2037:1: ( ( rule__Type__TExpressionAssignment_2 )? )
+            // InternalRpgindividual.g:2038:2: ( rule__Type__TExpressionAssignment_2 )?
             {
              before(grammarAccess.getTypeAccess().getTExpressionAssignment_2()); 
-            // InternalRpgindividual.g:2066:2: ( rule__Type__TExpressionAssignment_2 )?
+            // InternalRpgindividual.g:2039:2: ( rule__Type__TExpressionAssignment_2 )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -6588,7 +6513,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             }
             switch (alt16) {
                 case 1 :
-                    // InternalRpgindividual.g:2066:3: rule__Type__TExpressionAssignment_2
+                    // InternalRpgindividual.g:2039:3: rule__Type__TExpressionAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__Type__TExpressionAssignment_2();
@@ -6624,16 +6549,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__0"
-    // InternalRpgindividual.g:2075:1: rule__TypeExpression__Group__0 : rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1 ;
+    // InternalRpgindividual.g:2048:1: rule__TypeExpression__Group__0 : rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1 ;
     public final void rule__TypeExpression__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2079:1: ( rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1 )
-            // InternalRpgindividual.g:2080:2: rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1
+            // InternalRpgindividual.g:2052:1: ( rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1 )
+            // InternalRpgindividual.g:2053:2: rule__TypeExpression__Group__0__Impl rule__TypeExpression__Group__1
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__TypeExpression__Group__0__Impl();
 
             state._fsp--;
@@ -6662,21 +6587,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__0__Impl"
-    // InternalRpgindividual.g:2087:1: rule__TypeExpression__Group__0__Impl : ( ( rule__TypeExpression__StrongAssignment_0 ) ) ;
+    // InternalRpgindividual.g:2060:1: rule__TypeExpression__Group__0__Impl : ( ( rule__TypeExpression__StrongAssignment_0 ) ) ;
     public final void rule__TypeExpression__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2091:1: ( ( ( rule__TypeExpression__StrongAssignment_0 ) ) )
-            // InternalRpgindividual.g:2092:1: ( ( rule__TypeExpression__StrongAssignment_0 ) )
+            // InternalRpgindividual.g:2064:1: ( ( ( rule__TypeExpression__StrongAssignment_0 ) ) )
+            // InternalRpgindividual.g:2065:1: ( ( rule__TypeExpression__StrongAssignment_0 ) )
             {
-            // InternalRpgindividual.g:2092:1: ( ( rule__TypeExpression__StrongAssignment_0 ) )
-            // InternalRpgindividual.g:2093:2: ( rule__TypeExpression__StrongAssignment_0 )
+            // InternalRpgindividual.g:2065:1: ( ( rule__TypeExpression__StrongAssignment_0 ) )
+            // InternalRpgindividual.g:2066:2: ( rule__TypeExpression__StrongAssignment_0 )
             {
              before(grammarAccess.getTypeExpressionAccess().getStrongAssignment_0()); 
-            // InternalRpgindividual.g:2094:2: ( rule__TypeExpression__StrongAssignment_0 )
-            // InternalRpgindividual.g:2094:3: rule__TypeExpression__StrongAssignment_0
+            // InternalRpgindividual.g:2067:2: ( rule__TypeExpression__StrongAssignment_0 )
+            // InternalRpgindividual.g:2067:3: rule__TypeExpression__StrongAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__StrongAssignment_0();
@@ -6709,16 +6634,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__1"
-    // InternalRpgindividual.g:2102:1: rule__TypeExpression__Group__1 : rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2 ;
+    // InternalRpgindividual.g:2075:1: rule__TypeExpression__Group__1 : rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2 ;
     public final void rule__TypeExpression__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2106:1: ( rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2 )
-            // InternalRpgindividual.g:2107:2: rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2
+            // InternalRpgindividual.g:2079:1: ( rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2 )
+            // InternalRpgindividual.g:2080:2: rule__TypeExpression__Group__1__Impl rule__TypeExpression__Group__2
             {
-            pushFollow(FOLLOW_17);
+            pushFollow(FOLLOW_16);
             rule__TypeExpression__Group__1__Impl();
 
             state._fsp--;
@@ -6747,35 +6672,35 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__1__Impl"
-    // InternalRpgindividual.g:2114:1: rule__TypeExpression__Group__1__Impl : ( ( rule__TypeExpression__Group_1__0 )* ) ;
+    // InternalRpgindividual.g:2087:1: rule__TypeExpression__Group__1__Impl : ( ( rule__TypeExpression__Group_1__0 )* ) ;
     public final void rule__TypeExpression__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2118:1: ( ( ( rule__TypeExpression__Group_1__0 )* ) )
-            // InternalRpgindividual.g:2119:1: ( ( rule__TypeExpression__Group_1__0 )* )
+            // InternalRpgindividual.g:2091:1: ( ( ( rule__TypeExpression__Group_1__0 )* ) )
+            // InternalRpgindividual.g:2092:1: ( ( rule__TypeExpression__Group_1__0 )* )
             {
-            // InternalRpgindividual.g:2119:1: ( ( rule__TypeExpression__Group_1__0 )* )
-            // InternalRpgindividual.g:2120:2: ( rule__TypeExpression__Group_1__0 )*
+            // InternalRpgindividual.g:2092:1: ( ( rule__TypeExpression__Group_1__0 )* )
+            // InternalRpgindividual.g:2093:2: ( rule__TypeExpression__Group_1__0 )*
             {
              before(grammarAccess.getTypeExpressionAccess().getGroup_1()); 
-            // InternalRpgindividual.g:2121:2: ( rule__TypeExpression__Group_1__0 )*
+            // InternalRpgindividual.g:2094:2: ( rule__TypeExpression__Group_1__0 )*
             loop17:
             do {
                 int alt17=2;
                 int LA17_0 = input.LA(1);
 
-                if ( (LA17_0==26) ) {
+                if ( (LA17_0==25) ) {
                     alt17=1;
                 }
 
 
                 switch (alt17) {
             	case 1 :
-            	    // InternalRpgindividual.g:2121:3: rule__TypeExpression__Group_1__0
+            	    // InternalRpgindividual.g:2094:3: rule__TypeExpression__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_17);
             	    rule__TypeExpression__Group_1__0();
 
             	    state._fsp--;
@@ -6812,14 +6737,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__2"
-    // InternalRpgindividual.g:2129:1: rule__TypeExpression__Group__2 : rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3 ;
+    // InternalRpgindividual.g:2102:1: rule__TypeExpression__Group__2 : rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3 ;
     public final void rule__TypeExpression__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2133:1: ( rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3 )
-            // InternalRpgindividual.g:2134:2: rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3
+            // InternalRpgindividual.g:2106:1: ( rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3 )
+            // InternalRpgindividual.g:2107:2: rule__TypeExpression__Group__2__Impl rule__TypeExpression__Group__3
             {
             pushFollow(FOLLOW_3);
             rule__TypeExpression__Group__2__Impl();
@@ -6850,20 +6775,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__2__Impl"
-    // InternalRpgindividual.g:2141:1: rule__TypeExpression__Group__2__Impl : ( '<' ) ;
+    // InternalRpgindividual.g:2114:1: rule__TypeExpression__Group__2__Impl : ( '<' ) ;
     public final void rule__TypeExpression__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2145:1: ( ( '<' ) )
-            // InternalRpgindividual.g:2146:1: ( '<' )
+            // InternalRpgindividual.g:2118:1: ( ( '<' ) )
+            // InternalRpgindividual.g:2119:1: ( '<' )
             {
-            // InternalRpgindividual.g:2146:1: ( '<' )
-            // InternalRpgindividual.g:2147:2: '<'
+            // InternalRpgindividual.g:2119:1: ( '<' )
+            // InternalRpgindividual.g:2120:2: '<'
             {
              before(grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_2()); 
-            match(input,25,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_2()); 
 
             }
@@ -6887,16 +6812,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__3"
-    // InternalRpgindividual.g:2156:1: rule__TypeExpression__Group__3 : rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4 ;
+    // InternalRpgindividual.g:2129:1: rule__TypeExpression__Group__3 : rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4 ;
     public final void rule__TypeExpression__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2160:1: ( rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4 )
-            // InternalRpgindividual.g:2161:2: rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4
+            // InternalRpgindividual.g:2133:1: ( rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4 )
+            // InternalRpgindividual.g:2134:2: rule__TypeExpression__Group__3__Impl rule__TypeExpression__Group__4
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__TypeExpression__Group__3__Impl();
 
             state._fsp--;
@@ -6925,21 +6850,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__3__Impl"
-    // InternalRpgindividual.g:2168:1: rule__TypeExpression__Group__3__Impl : ( ( rule__TypeExpression__CurrentTAssignment_3 ) ) ;
+    // InternalRpgindividual.g:2141:1: rule__TypeExpression__Group__3__Impl : ( ( rule__TypeExpression__CurrentTAssignment_3 ) ) ;
     public final void rule__TypeExpression__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2172:1: ( ( ( rule__TypeExpression__CurrentTAssignment_3 ) ) )
-            // InternalRpgindividual.g:2173:1: ( ( rule__TypeExpression__CurrentTAssignment_3 ) )
+            // InternalRpgindividual.g:2145:1: ( ( ( rule__TypeExpression__CurrentTAssignment_3 ) ) )
+            // InternalRpgindividual.g:2146:1: ( ( rule__TypeExpression__CurrentTAssignment_3 ) )
             {
-            // InternalRpgindividual.g:2173:1: ( ( rule__TypeExpression__CurrentTAssignment_3 ) )
-            // InternalRpgindividual.g:2174:2: ( rule__TypeExpression__CurrentTAssignment_3 )
+            // InternalRpgindividual.g:2146:1: ( ( rule__TypeExpression__CurrentTAssignment_3 ) )
+            // InternalRpgindividual.g:2147:2: ( rule__TypeExpression__CurrentTAssignment_3 )
             {
              before(grammarAccess.getTypeExpressionAccess().getCurrentTAssignment_3()); 
-            // InternalRpgindividual.g:2175:2: ( rule__TypeExpression__CurrentTAssignment_3 )
-            // InternalRpgindividual.g:2175:3: rule__TypeExpression__CurrentTAssignment_3
+            // InternalRpgindividual.g:2148:2: ( rule__TypeExpression__CurrentTAssignment_3 )
+            // InternalRpgindividual.g:2148:3: rule__TypeExpression__CurrentTAssignment_3
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__CurrentTAssignment_3();
@@ -6972,14 +6897,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__4"
-    // InternalRpgindividual.g:2183:1: rule__TypeExpression__Group__4 : rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5 ;
+    // InternalRpgindividual.g:2156:1: rule__TypeExpression__Group__4 : rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5 ;
     public final void rule__TypeExpression__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2187:1: ( rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5 )
-            // InternalRpgindividual.g:2188:2: rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5
+            // InternalRpgindividual.g:2160:1: ( rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5 )
+            // InternalRpgindividual.g:2161:2: rule__TypeExpression__Group__4__Impl rule__TypeExpression__Group__5
             {
             pushFollow(FOLLOW_3);
             rule__TypeExpression__Group__4__Impl();
@@ -7010,20 +6935,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__4__Impl"
-    // InternalRpgindividual.g:2195:1: rule__TypeExpression__Group__4__Impl : ( '<' ) ;
+    // InternalRpgindividual.g:2168:1: rule__TypeExpression__Group__4__Impl : ( '<' ) ;
     public final void rule__TypeExpression__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2199:1: ( ( '<' ) )
-            // InternalRpgindividual.g:2200:1: ( '<' )
+            // InternalRpgindividual.g:2172:1: ( ( '<' ) )
+            // InternalRpgindividual.g:2173:1: ( '<' )
             {
-            // InternalRpgindividual.g:2200:1: ( '<' )
-            // InternalRpgindividual.g:2201:2: '<'
+            // InternalRpgindividual.g:2173:1: ( '<' )
+            // InternalRpgindividual.g:2174:2: '<'
             {
              before(grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_4()); 
-            match(input,25,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_4()); 
 
             }
@@ -7047,16 +6972,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__5"
-    // InternalRpgindividual.g:2210:1: rule__TypeExpression__Group__5 : rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6 ;
+    // InternalRpgindividual.g:2183:1: rule__TypeExpression__Group__5 : rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6 ;
     public final void rule__TypeExpression__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2214:1: ( rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6 )
-            // InternalRpgindividual.g:2215:2: rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6
+            // InternalRpgindividual.g:2187:1: ( rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6 )
+            // InternalRpgindividual.g:2188:2: rule__TypeExpression__Group__5__Impl rule__TypeExpression__Group__6
             {
-            pushFollow(FOLLOW_20);
+            pushFollow(FOLLOW_19);
             rule__TypeExpression__Group__5__Impl();
 
             state._fsp--;
@@ -7085,21 +7010,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__5__Impl"
-    // InternalRpgindividual.g:2222:1: rule__TypeExpression__Group__5__Impl : ( ( rule__TypeExpression__WeakAssignment_5 ) ) ;
+    // InternalRpgindividual.g:2195:1: rule__TypeExpression__Group__5__Impl : ( ( rule__TypeExpression__WeakAssignment_5 ) ) ;
     public final void rule__TypeExpression__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2226:1: ( ( ( rule__TypeExpression__WeakAssignment_5 ) ) )
-            // InternalRpgindividual.g:2227:1: ( ( rule__TypeExpression__WeakAssignment_5 ) )
+            // InternalRpgindividual.g:2199:1: ( ( ( rule__TypeExpression__WeakAssignment_5 ) ) )
+            // InternalRpgindividual.g:2200:1: ( ( rule__TypeExpression__WeakAssignment_5 ) )
             {
-            // InternalRpgindividual.g:2227:1: ( ( rule__TypeExpression__WeakAssignment_5 ) )
-            // InternalRpgindividual.g:2228:2: ( rule__TypeExpression__WeakAssignment_5 )
+            // InternalRpgindividual.g:2200:1: ( ( rule__TypeExpression__WeakAssignment_5 ) )
+            // InternalRpgindividual.g:2201:2: ( rule__TypeExpression__WeakAssignment_5 )
             {
              before(grammarAccess.getTypeExpressionAccess().getWeakAssignment_5()); 
-            // InternalRpgindividual.g:2229:2: ( rule__TypeExpression__WeakAssignment_5 )
-            // InternalRpgindividual.g:2229:3: rule__TypeExpression__WeakAssignment_5
+            // InternalRpgindividual.g:2202:2: ( rule__TypeExpression__WeakAssignment_5 )
+            // InternalRpgindividual.g:2202:3: rule__TypeExpression__WeakAssignment_5
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__WeakAssignment_5();
@@ -7132,14 +7057,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__6"
-    // InternalRpgindividual.g:2237:1: rule__TypeExpression__Group__6 : rule__TypeExpression__Group__6__Impl ;
+    // InternalRpgindividual.g:2210:1: rule__TypeExpression__Group__6 : rule__TypeExpression__Group__6__Impl ;
     public final void rule__TypeExpression__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2241:1: ( rule__TypeExpression__Group__6__Impl )
-            // InternalRpgindividual.g:2242:2: rule__TypeExpression__Group__6__Impl
+            // InternalRpgindividual.g:2214:1: ( rule__TypeExpression__Group__6__Impl )
+            // InternalRpgindividual.g:2215:2: rule__TypeExpression__Group__6__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__Group__6__Impl();
@@ -7165,35 +7090,35 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group__6__Impl"
-    // InternalRpgindividual.g:2248:1: rule__TypeExpression__Group__6__Impl : ( ( rule__TypeExpression__Group_6__0 )* ) ;
+    // InternalRpgindividual.g:2221:1: rule__TypeExpression__Group__6__Impl : ( ( rule__TypeExpression__Group_6__0 )* ) ;
     public final void rule__TypeExpression__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2252:1: ( ( ( rule__TypeExpression__Group_6__0 )* ) )
-            // InternalRpgindividual.g:2253:1: ( ( rule__TypeExpression__Group_6__0 )* )
+            // InternalRpgindividual.g:2225:1: ( ( ( rule__TypeExpression__Group_6__0 )* ) )
+            // InternalRpgindividual.g:2226:1: ( ( rule__TypeExpression__Group_6__0 )* )
             {
-            // InternalRpgindividual.g:2253:1: ( ( rule__TypeExpression__Group_6__0 )* )
-            // InternalRpgindividual.g:2254:2: ( rule__TypeExpression__Group_6__0 )*
+            // InternalRpgindividual.g:2226:1: ( ( rule__TypeExpression__Group_6__0 )* )
+            // InternalRpgindividual.g:2227:2: ( rule__TypeExpression__Group_6__0 )*
             {
              before(grammarAccess.getTypeExpressionAccess().getGroup_6()); 
-            // InternalRpgindividual.g:2255:2: ( rule__TypeExpression__Group_6__0 )*
+            // InternalRpgindividual.g:2228:2: ( rule__TypeExpression__Group_6__0 )*
             loop18:
             do {
                 int alt18=2;
                 int LA18_0 = input.LA(1);
 
-                if ( (LA18_0==26) ) {
+                if ( (LA18_0==25) ) {
                     alt18=1;
                 }
 
 
                 switch (alt18) {
             	case 1 :
-            	    // InternalRpgindividual.g:2255:3: rule__TypeExpression__Group_6__0
+            	    // InternalRpgindividual.g:2228:3: rule__TypeExpression__Group_6__0
             	    {
-            	    pushFollow(FOLLOW_18);
+            	    pushFollow(FOLLOW_17);
             	    rule__TypeExpression__Group_6__0();
 
             	    state._fsp--;
@@ -7230,14 +7155,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_1__0"
-    // InternalRpgindividual.g:2264:1: rule__TypeExpression__Group_1__0 : rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1 ;
+    // InternalRpgindividual.g:2237:1: rule__TypeExpression__Group_1__0 : rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1 ;
     public final void rule__TypeExpression__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2268:1: ( rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1 )
-            // InternalRpgindividual.g:2269:2: rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1
+            // InternalRpgindividual.g:2241:1: ( rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1 )
+            // InternalRpgindividual.g:2242:2: rule__TypeExpression__Group_1__0__Impl rule__TypeExpression__Group_1__1
             {
             pushFollow(FOLLOW_3);
             rule__TypeExpression__Group_1__0__Impl();
@@ -7268,20 +7193,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_1__0__Impl"
-    // InternalRpgindividual.g:2276:1: rule__TypeExpression__Group_1__0__Impl : ( ',' ) ;
+    // InternalRpgindividual.g:2249:1: rule__TypeExpression__Group_1__0__Impl : ( ',' ) ;
     public final void rule__TypeExpression__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2280:1: ( ( ',' ) )
-            // InternalRpgindividual.g:2281:1: ( ',' )
+            // InternalRpgindividual.g:2253:1: ( ( ',' ) )
+            // InternalRpgindividual.g:2254:1: ( ',' )
             {
-            // InternalRpgindividual.g:2281:1: ( ',' )
-            // InternalRpgindividual.g:2282:2: ','
+            // InternalRpgindividual.g:2254:1: ( ',' )
+            // InternalRpgindividual.g:2255:2: ','
             {
              before(grammarAccess.getTypeExpressionAccess().getCommaKeyword_1_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getTypeExpressionAccess().getCommaKeyword_1_0()); 
 
             }
@@ -7305,14 +7230,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_1__1"
-    // InternalRpgindividual.g:2291:1: rule__TypeExpression__Group_1__1 : rule__TypeExpression__Group_1__1__Impl ;
+    // InternalRpgindividual.g:2264:1: rule__TypeExpression__Group_1__1 : rule__TypeExpression__Group_1__1__Impl ;
     public final void rule__TypeExpression__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2295:1: ( rule__TypeExpression__Group_1__1__Impl )
-            // InternalRpgindividual.g:2296:2: rule__TypeExpression__Group_1__1__Impl
+            // InternalRpgindividual.g:2268:1: ( rule__TypeExpression__Group_1__1__Impl )
+            // InternalRpgindividual.g:2269:2: rule__TypeExpression__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__Group_1__1__Impl();
@@ -7338,21 +7263,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_1__1__Impl"
-    // InternalRpgindividual.g:2302:1: rule__TypeExpression__Group_1__1__Impl : ( ( rule__TypeExpression__Strong2Assignment_1_1 ) ) ;
+    // InternalRpgindividual.g:2275:1: rule__TypeExpression__Group_1__1__Impl : ( ( rule__TypeExpression__Strong2Assignment_1_1 ) ) ;
     public final void rule__TypeExpression__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2306:1: ( ( ( rule__TypeExpression__Strong2Assignment_1_1 ) ) )
-            // InternalRpgindividual.g:2307:1: ( ( rule__TypeExpression__Strong2Assignment_1_1 ) )
+            // InternalRpgindividual.g:2279:1: ( ( ( rule__TypeExpression__Strong2Assignment_1_1 ) ) )
+            // InternalRpgindividual.g:2280:1: ( ( rule__TypeExpression__Strong2Assignment_1_1 ) )
             {
-            // InternalRpgindividual.g:2307:1: ( ( rule__TypeExpression__Strong2Assignment_1_1 ) )
-            // InternalRpgindividual.g:2308:2: ( rule__TypeExpression__Strong2Assignment_1_1 )
+            // InternalRpgindividual.g:2280:1: ( ( rule__TypeExpression__Strong2Assignment_1_1 ) )
+            // InternalRpgindividual.g:2281:2: ( rule__TypeExpression__Strong2Assignment_1_1 )
             {
              before(grammarAccess.getTypeExpressionAccess().getStrong2Assignment_1_1()); 
-            // InternalRpgindividual.g:2309:2: ( rule__TypeExpression__Strong2Assignment_1_1 )
-            // InternalRpgindividual.g:2309:3: rule__TypeExpression__Strong2Assignment_1_1
+            // InternalRpgindividual.g:2282:2: ( rule__TypeExpression__Strong2Assignment_1_1 )
+            // InternalRpgindividual.g:2282:3: rule__TypeExpression__Strong2Assignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__Strong2Assignment_1_1();
@@ -7385,14 +7310,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_6__0"
-    // InternalRpgindividual.g:2318:1: rule__TypeExpression__Group_6__0 : rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1 ;
+    // InternalRpgindividual.g:2291:1: rule__TypeExpression__Group_6__0 : rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1 ;
     public final void rule__TypeExpression__Group_6__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2322:1: ( rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1 )
-            // InternalRpgindividual.g:2323:2: rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1
+            // InternalRpgindividual.g:2295:1: ( rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1 )
+            // InternalRpgindividual.g:2296:2: rule__TypeExpression__Group_6__0__Impl rule__TypeExpression__Group_6__1
             {
             pushFollow(FOLLOW_3);
             rule__TypeExpression__Group_6__0__Impl();
@@ -7423,20 +7348,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_6__0__Impl"
-    // InternalRpgindividual.g:2330:1: rule__TypeExpression__Group_6__0__Impl : ( ',' ) ;
+    // InternalRpgindividual.g:2303:1: rule__TypeExpression__Group_6__0__Impl : ( ',' ) ;
     public final void rule__TypeExpression__Group_6__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2334:1: ( ( ',' ) )
-            // InternalRpgindividual.g:2335:1: ( ',' )
+            // InternalRpgindividual.g:2307:1: ( ( ',' ) )
+            // InternalRpgindividual.g:2308:1: ( ',' )
             {
-            // InternalRpgindividual.g:2335:1: ( ',' )
-            // InternalRpgindividual.g:2336:2: ','
+            // InternalRpgindividual.g:2308:1: ( ',' )
+            // InternalRpgindividual.g:2309:2: ','
             {
              before(grammarAccess.getTypeExpressionAccess().getCommaKeyword_6_0()); 
-            match(input,26,FOLLOW_2); 
+            match(input,25,FOLLOW_2); 
              after(grammarAccess.getTypeExpressionAccess().getCommaKeyword_6_0()); 
 
             }
@@ -7460,14 +7385,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_6__1"
-    // InternalRpgindividual.g:2345:1: rule__TypeExpression__Group_6__1 : rule__TypeExpression__Group_6__1__Impl ;
+    // InternalRpgindividual.g:2318:1: rule__TypeExpression__Group_6__1 : rule__TypeExpression__Group_6__1__Impl ;
     public final void rule__TypeExpression__Group_6__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2349:1: ( rule__TypeExpression__Group_6__1__Impl )
-            // InternalRpgindividual.g:2350:2: rule__TypeExpression__Group_6__1__Impl
+            // InternalRpgindividual.g:2322:1: ( rule__TypeExpression__Group_6__1__Impl )
+            // InternalRpgindividual.g:2323:2: rule__TypeExpression__Group_6__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__Group_6__1__Impl();
@@ -7493,21 +7418,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Group_6__1__Impl"
-    // InternalRpgindividual.g:2356:1: rule__TypeExpression__Group_6__1__Impl : ( ( rule__TypeExpression__Weak2Assignment_6_1 ) ) ;
+    // InternalRpgindividual.g:2329:1: rule__TypeExpression__Group_6__1__Impl : ( ( rule__TypeExpression__Weak2Assignment_6_1 ) ) ;
     public final void rule__TypeExpression__Group_6__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2360:1: ( ( ( rule__TypeExpression__Weak2Assignment_6_1 ) ) )
-            // InternalRpgindividual.g:2361:1: ( ( rule__TypeExpression__Weak2Assignment_6_1 ) )
+            // InternalRpgindividual.g:2333:1: ( ( ( rule__TypeExpression__Weak2Assignment_6_1 ) ) )
+            // InternalRpgindividual.g:2334:1: ( ( rule__TypeExpression__Weak2Assignment_6_1 ) )
             {
-            // InternalRpgindividual.g:2361:1: ( ( rule__TypeExpression__Weak2Assignment_6_1 ) )
-            // InternalRpgindividual.g:2362:2: ( rule__TypeExpression__Weak2Assignment_6_1 )
+            // InternalRpgindividual.g:2334:1: ( ( rule__TypeExpression__Weak2Assignment_6_1 ) )
+            // InternalRpgindividual.g:2335:2: ( rule__TypeExpression__Weak2Assignment_6_1 )
             {
              before(grammarAccess.getTypeExpressionAccess().getWeak2Assignment_6_1()); 
-            // InternalRpgindividual.g:2363:2: ( rule__TypeExpression__Weak2Assignment_6_1 )
-            // InternalRpgindividual.g:2363:3: rule__TypeExpression__Weak2Assignment_6_1
+            // InternalRpgindividual.g:2336:2: ( rule__TypeExpression__Weak2Assignment_6_1 )
+            // InternalRpgindividual.g:2336:3: rule__TypeExpression__Weak2Assignment_6_1
             {
             pushFollow(FOLLOW_2);
             rule__TypeExpression__Weak2Assignment_6_1();
@@ -7540,16 +7465,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Moves__Group__0"
-    // InternalRpgindividual.g:2372:1: rule__Moves__Group__0 : rule__Moves__Group__0__Impl rule__Moves__Group__1 ;
+    // InternalRpgindividual.g:2345:1: rule__Moves__Group__0 : rule__Moves__Group__0__Impl rule__Moves__Group__1 ;
     public final void rule__Moves__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2376:1: ( rule__Moves__Group__0__Impl rule__Moves__Group__1 )
-            // InternalRpgindividual.g:2377:2: rule__Moves__Group__0__Impl rule__Moves__Group__1
+            // InternalRpgindividual.g:2349:1: ( rule__Moves__Group__0__Impl rule__Moves__Group__1 )
+            // InternalRpgindividual.g:2350:2: rule__Moves__Group__0__Impl rule__Moves__Group__1
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_20);
             rule__Moves__Group__0__Impl();
 
             state._fsp--;
@@ -7578,20 +7503,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Moves__Group__0__Impl"
-    // InternalRpgindividual.g:2384:1: rule__Moves__Group__0__Impl : ( 'moves' ) ;
+    // InternalRpgindividual.g:2357:1: rule__Moves__Group__0__Impl : ( 'moves' ) ;
     public final void rule__Moves__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2388:1: ( ( 'moves' ) )
-            // InternalRpgindividual.g:2389:1: ( 'moves' )
+            // InternalRpgindividual.g:2361:1: ( ( 'moves' ) )
+            // InternalRpgindividual.g:2362:1: ( 'moves' )
             {
-            // InternalRpgindividual.g:2389:1: ( 'moves' )
-            // InternalRpgindividual.g:2390:2: 'moves'
+            // InternalRpgindividual.g:2362:1: ( 'moves' )
+            // InternalRpgindividual.g:2363:2: 'moves'
             {
              before(grammarAccess.getMovesAccess().getMovesKeyword_0()); 
-            match(input,27,FOLLOW_2); 
+            match(input,26,FOLLOW_2); 
              after(grammarAccess.getMovesAccess().getMovesKeyword_0()); 
 
             }
@@ -7615,14 +7540,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Moves__Group__1"
-    // InternalRpgindividual.g:2399:1: rule__Moves__Group__1 : rule__Moves__Group__1__Impl ;
+    // InternalRpgindividual.g:2372:1: rule__Moves__Group__1 : rule__Moves__Group__1__Impl ;
     public final void rule__Moves__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2403:1: ( rule__Moves__Group__1__Impl )
-            // InternalRpgindividual.g:2404:2: rule__Moves__Group__1__Impl
+            // InternalRpgindividual.g:2376:1: ( rule__Moves__Group__1__Impl )
+            // InternalRpgindividual.g:2377:2: rule__Moves__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Moves__Group__1__Impl();
@@ -7648,24 +7573,24 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Moves__Group__1__Impl"
-    // InternalRpgindividual.g:2410:1: rule__Moves__Group__1__Impl : ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:2383:1: rule__Moves__Group__1__Impl : ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) ) ;
     public final void rule__Moves__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2414:1: ( ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:2415:1: ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) )
+            // InternalRpgindividual.g:2387:1: ( ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:2388:1: ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:2415:1: ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) )
-            // InternalRpgindividual.g:2416:2: ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* )
+            // InternalRpgindividual.g:2388:1: ( ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* ) )
+            // InternalRpgindividual.g:2389:2: ( ( rule__Moves__MoveAssignment_1 ) ) ( ( rule__Moves__MoveAssignment_1 )* )
             {
-            // InternalRpgindividual.g:2416:2: ( ( rule__Moves__MoveAssignment_1 ) )
-            // InternalRpgindividual.g:2417:3: ( rule__Moves__MoveAssignment_1 )
+            // InternalRpgindividual.g:2389:2: ( ( rule__Moves__MoveAssignment_1 ) )
+            // InternalRpgindividual.g:2390:3: ( rule__Moves__MoveAssignment_1 )
             {
              before(grammarAccess.getMovesAccess().getMoveAssignment_1()); 
-            // InternalRpgindividual.g:2418:3: ( rule__Moves__MoveAssignment_1 )
-            // InternalRpgindividual.g:2418:4: rule__Moves__MoveAssignment_1
+            // InternalRpgindividual.g:2391:3: ( rule__Moves__MoveAssignment_1 )
+            // InternalRpgindividual.g:2391:4: rule__Moves__MoveAssignment_1
             {
             pushFollow(FOLLOW_21);
             rule__Moves__MoveAssignment_1();
@@ -7679,24 +7604,24 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:2421:2: ( ( rule__Moves__MoveAssignment_1 )* )
-            // InternalRpgindividual.g:2422:3: ( rule__Moves__MoveAssignment_1 )*
+            // InternalRpgindividual.g:2394:2: ( ( rule__Moves__MoveAssignment_1 )* )
+            // InternalRpgindividual.g:2395:3: ( rule__Moves__MoveAssignment_1 )*
             {
              before(grammarAccess.getMovesAccess().getMoveAssignment_1()); 
-            // InternalRpgindividual.g:2423:3: ( rule__Moves__MoveAssignment_1 )*
+            // InternalRpgindividual.g:2396:3: ( rule__Moves__MoveAssignment_1 )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( (LA19_0==18) ) {
+                if ( (LA19_0==27) ) {
                     alt19=1;
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // InternalRpgindividual.g:2423:4: rule__Moves__MoveAssignment_1
+            	    // InternalRpgindividual.g:2396:4: rule__Moves__MoveAssignment_1
             	    {
             	    pushFollow(FOLLOW_21);
             	    rule__Moves__MoveAssignment_1();
@@ -7738,14 +7663,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__0"
-    // InternalRpgindividual.g:2433:1: rule__Move__Group__0 : rule__Move__Group__0__Impl rule__Move__Group__1 ;
+    // InternalRpgindividual.g:2406:1: rule__Move__Group__0 : rule__Move__Group__0__Impl rule__Move__Group__1 ;
     public final void rule__Move__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2437:1: ( rule__Move__Group__0__Impl rule__Move__Group__1 )
-            // InternalRpgindividual.g:2438:2: rule__Move__Group__0__Impl rule__Move__Group__1
+            // InternalRpgindividual.g:2410:1: ( rule__Move__Group__0__Impl rule__Move__Group__1 )
+            // InternalRpgindividual.g:2411:2: rule__Move__Group__0__Impl rule__Move__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Move__Group__0__Impl();
@@ -7776,20 +7701,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__0__Impl"
-    // InternalRpgindividual.g:2445:1: rule__Move__Group__0__Impl : ( 'move' ) ;
+    // InternalRpgindividual.g:2418:1: rule__Move__Group__0__Impl : ( 'move' ) ;
     public final void rule__Move__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2449:1: ( ( 'move' ) )
-            // InternalRpgindividual.g:2450:1: ( 'move' )
+            // InternalRpgindividual.g:2422:1: ( ( 'move' ) )
+            // InternalRpgindividual.g:2423:1: ( 'move' )
             {
-            // InternalRpgindividual.g:2450:1: ( 'move' )
-            // InternalRpgindividual.g:2451:2: 'move'
+            // InternalRpgindividual.g:2423:1: ( 'move' )
+            // InternalRpgindividual.g:2424:2: 'move'
             {
              before(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getMoveAccess().getMoveKeyword_0()); 
 
             }
@@ -7813,16 +7738,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__1"
-    // InternalRpgindividual.g:2460:1: rule__Move__Group__1 : rule__Move__Group__1__Impl rule__Move__Group__2 ;
+    // InternalRpgindividual.g:2433:1: rule__Move__Group__1 : rule__Move__Group__1__Impl rule__Move__Group__2 ;
     public final void rule__Move__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2464:1: ( rule__Move__Group__1__Impl rule__Move__Group__2 )
-            // InternalRpgindividual.g:2465:2: rule__Move__Group__1__Impl rule__Move__Group__2
+            // InternalRpgindividual.g:2437:1: ( rule__Move__Group__1__Impl rule__Move__Group__2 )
+            // InternalRpgindividual.g:2438:2: rule__Move__Group__1__Impl rule__Move__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__Move__Group__1__Impl();
 
             state._fsp--;
@@ -7851,21 +7776,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__1__Impl"
-    // InternalRpgindividual.g:2472:1: rule__Move__Group__1__Impl : ( ( rule__Move__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2445:1: rule__Move__Group__1__Impl : ( ( rule__Move__NameAssignment_1 ) ) ;
     public final void rule__Move__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2476:1: ( ( ( rule__Move__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:2477:1: ( ( rule__Move__NameAssignment_1 ) )
+            // InternalRpgindividual.g:2449:1: ( ( ( rule__Move__NameAssignment_1 ) ) )
+            // InternalRpgindividual.g:2450:1: ( ( rule__Move__NameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2477:1: ( ( rule__Move__NameAssignment_1 ) )
-            // InternalRpgindividual.g:2478:2: ( rule__Move__NameAssignment_1 )
+            // InternalRpgindividual.g:2450:1: ( ( rule__Move__NameAssignment_1 ) )
+            // InternalRpgindividual.g:2451:2: ( rule__Move__NameAssignment_1 )
             {
              before(grammarAccess.getMoveAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:2479:2: ( rule__Move__NameAssignment_1 )
-            // InternalRpgindividual.g:2479:3: rule__Move__NameAssignment_1
+            // InternalRpgindividual.g:2452:2: ( rule__Move__NameAssignment_1 )
+            // InternalRpgindividual.g:2452:3: rule__Move__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Move__NameAssignment_1();
@@ -7898,14 +7823,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__2"
-    // InternalRpgindividual.g:2487:1: rule__Move__Group__2 : rule__Move__Group__2__Impl rule__Move__Group__3 ;
+    // InternalRpgindividual.g:2460:1: rule__Move__Group__2 : rule__Move__Group__2__Impl rule__Move__Group__3 ;
     public final void rule__Move__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2491:1: ( rule__Move__Group__2__Impl rule__Move__Group__3 )
-            // InternalRpgindividual.g:2492:2: rule__Move__Group__2__Impl rule__Move__Group__3
+            // InternalRpgindividual.g:2464:1: ( rule__Move__Group__2__Impl rule__Move__Group__3 )
+            // InternalRpgindividual.g:2465:2: rule__Move__Group__2__Impl rule__Move__Group__3
             {
             pushFollow(FOLLOW_22);
             rule__Move__Group__2__Impl();
@@ -7936,21 +7861,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__2__Impl"
-    // InternalRpgindividual.g:2499:1: rule__Move__Group__2__Impl : ( ( rule__Move__ETypeAssignment_2 ) ) ;
+    // InternalRpgindividual.g:2472:1: rule__Move__Group__2__Impl : ( ( rule__Move__ETypeAssignment_2 ) ) ;
     public final void rule__Move__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2503:1: ( ( ( rule__Move__ETypeAssignment_2 ) ) )
-            // InternalRpgindividual.g:2504:1: ( ( rule__Move__ETypeAssignment_2 ) )
+            // InternalRpgindividual.g:2476:1: ( ( ( rule__Move__ETypeAssignment_2 ) ) )
+            // InternalRpgindividual.g:2477:1: ( ( rule__Move__ETypeAssignment_2 ) )
             {
-            // InternalRpgindividual.g:2504:1: ( ( rule__Move__ETypeAssignment_2 ) )
-            // InternalRpgindividual.g:2505:2: ( rule__Move__ETypeAssignment_2 )
+            // InternalRpgindividual.g:2477:1: ( ( rule__Move__ETypeAssignment_2 ) )
+            // InternalRpgindividual.g:2478:2: ( rule__Move__ETypeAssignment_2 )
             {
              before(grammarAccess.getMoveAccess().getETypeAssignment_2()); 
-            // InternalRpgindividual.g:2506:2: ( rule__Move__ETypeAssignment_2 )
-            // InternalRpgindividual.g:2506:3: rule__Move__ETypeAssignment_2
+            // InternalRpgindividual.g:2479:2: ( rule__Move__ETypeAssignment_2 )
+            // InternalRpgindividual.g:2479:3: rule__Move__ETypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Move__ETypeAssignment_2();
@@ -7983,14 +7908,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__3"
-    // InternalRpgindividual.g:2514:1: rule__Move__Group__3 : rule__Move__Group__3__Impl rule__Move__Group__4 ;
+    // InternalRpgindividual.g:2487:1: rule__Move__Group__3 : rule__Move__Group__3__Impl rule__Move__Group__4 ;
     public final void rule__Move__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2518:1: ( rule__Move__Group__3__Impl rule__Move__Group__4 )
-            // InternalRpgindividual.g:2519:2: rule__Move__Group__3__Impl rule__Move__Group__4
+            // InternalRpgindividual.g:2491:1: ( rule__Move__Group__3__Impl rule__Move__Group__4 )
+            // InternalRpgindividual.g:2492:2: rule__Move__Group__3__Impl rule__Move__Group__4
             {
             pushFollow(FOLLOW_22);
             rule__Move__Group__3__Impl();
@@ -8021,35 +7946,35 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__3__Impl"
-    // InternalRpgindividual.g:2526:1: rule__Move__Group__3__Impl : ( ( rule__Move__AttAssignment_3 )* ) ;
+    // InternalRpgindividual.g:2499:1: rule__Move__Group__3__Impl : ( ( rule__Move__AttAssignment_3 )* ) ;
     public final void rule__Move__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2530:1: ( ( ( rule__Move__AttAssignment_3 )* ) )
-            // InternalRpgindividual.g:2531:1: ( ( rule__Move__AttAssignment_3 )* )
+            // InternalRpgindividual.g:2503:1: ( ( ( rule__Move__AttAssignment_3 )* ) )
+            // InternalRpgindividual.g:2504:1: ( ( rule__Move__AttAssignment_3 )* )
             {
-            // InternalRpgindividual.g:2531:1: ( ( rule__Move__AttAssignment_3 )* )
-            // InternalRpgindividual.g:2532:2: ( rule__Move__AttAssignment_3 )*
+            // InternalRpgindividual.g:2504:1: ( ( rule__Move__AttAssignment_3 )* )
+            // InternalRpgindividual.g:2505:2: ( rule__Move__AttAssignment_3 )*
             {
              before(grammarAccess.getMoveAccess().getAttAssignment_3()); 
-            // InternalRpgindividual.g:2533:2: ( rule__Move__AttAssignment_3 )*
+            // InternalRpgindividual.g:2506:2: ( rule__Move__AttAssignment_3 )*
             loop20:
             do {
                 int alt20=2;
                 int LA20_0 = input.LA(1);
 
-                if ( (LA20_0==20) ) {
+                if ( (LA20_0==19) ) {
                     alt20=1;
                 }
 
 
                 switch (alt20) {
             	case 1 :
-            	    // InternalRpgindividual.g:2533:3: rule__Move__AttAssignment_3
+            	    // InternalRpgindividual.g:2506:3: rule__Move__AttAssignment_3
             	    {
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_10);
             	    rule__Move__AttAssignment_3();
 
             	    state._fsp--;
@@ -8086,14 +8011,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__4"
-    // InternalRpgindividual.g:2541:1: rule__Move__Group__4 : rule__Move__Group__4__Impl ;
+    // InternalRpgindividual.g:2514:1: rule__Move__Group__4 : rule__Move__Group__4__Impl ;
     public final void rule__Move__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2545:1: ( rule__Move__Group__4__Impl )
-            // InternalRpgindividual.g:2546:2: rule__Move__Group__4__Impl
+            // InternalRpgindividual.g:2518:1: ( rule__Move__Group__4__Impl )
+            // InternalRpgindividual.g:2519:2: rule__Move__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Move__Group__4__Impl();
@@ -8119,24 +8044,24 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__Group__4__Impl"
-    // InternalRpgindividual.g:2552:1: rule__Move__Group__4__Impl : ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) ) ;
+    // InternalRpgindividual.g:2525:1: rule__Move__Group__4__Impl : ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) ) ;
     public final void rule__Move__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2556:1: ( ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) ) )
-            // InternalRpgindividual.g:2557:1: ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) )
+            // InternalRpgindividual.g:2529:1: ( ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) ) )
+            // InternalRpgindividual.g:2530:1: ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) )
             {
-            // InternalRpgindividual.g:2557:1: ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) )
-            // InternalRpgindividual.g:2558:2: ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* )
+            // InternalRpgindividual.g:2530:1: ( ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* ) )
+            // InternalRpgindividual.g:2531:2: ( ( rule__Move__MEffectAssignment_4 ) ) ( ( rule__Move__MEffectAssignment_4 )* )
             {
-            // InternalRpgindividual.g:2558:2: ( ( rule__Move__MEffectAssignment_4 ) )
-            // InternalRpgindividual.g:2559:3: ( rule__Move__MEffectAssignment_4 )
+            // InternalRpgindividual.g:2531:2: ( ( rule__Move__MEffectAssignment_4 ) )
+            // InternalRpgindividual.g:2532:3: ( rule__Move__MEffectAssignment_4 )
             {
              before(grammarAccess.getMoveAccess().getMEffectAssignment_4()); 
-            // InternalRpgindividual.g:2560:3: ( rule__Move__MEffectAssignment_4 )
-            // InternalRpgindividual.g:2560:4: rule__Move__MEffectAssignment_4
+            // InternalRpgindividual.g:2533:3: ( rule__Move__MEffectAssignment_4 )
+            // InternalRpgindividual.g:2533:4: rule__Move__MEffectAssignment_4
             {
             pushFollow(FOLLOW_23);
             rule__Move__MEffectAssignment_4();
@@ -8150,11 +8075,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:2563:2: ( ( rule__Move__MEffectAssignment_4 )* )
-            // InternalRpgindividual.g:2564:3: ( rule__Move__MEffectAssignment_4 )*
+            // InternalRpgindividual.g:2536:2: ( ( rule__Move__MEffectAssignment_4 )* )
+            // InternalRpgindividual.g:2537:3: ( rule__Move__MEffectAssignment_4 )*
             {
              before(grammarAccess.getMoveAccess().getMEffectAssignment_4()); 
-            // InternalRpgindividual.g:2565:3: ( rule__Move__MEffectAssignment_4 )*
+            // InternalRpgindividual.g:2538:3: ( rule__Move__MEffectAssignment_4 )*
             loop21:
             do {
                 int alt21=2;
@@ -8167,7 +8092,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt21) {
             	case 1 :
-            	    // InternalRpgindividual.g:2565:4: rule__Move__MEffectAssignment_4
+            	    // InternalRpgindividual.g:2538:4: rule__Move__MEffectAssignment_4
             	    {
             	    pushFollow(FOLLOW_23);
             	    rule__Move__MEffectAssignment_4();
@@ -8209,14 +8134,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MEffect__Group__0"
-    // InternalRpgindividual.g:2575:1: rule__MEffect__Group__0 : rule__MEffect__Group__0__Impl rule__MEffect__Group__1 ;
+    // InternalRpgindividual.g:2548:1: rule__MEffect__Group__0 : rule__MEffect__Group__0__Impl rule__MEffect__Group__1 ;
     public final void rule__MEffect__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2579:1: ( rule__MEffect__Group__0__Impl rule__MEffect__Group__1 )
-            // InternalRpgindividual.g:2580:2: rule__MEffect__Group__0__Impl rule__MEffect__Group__1
+            // InternalRpgindividual.g:2552:1: ( rule__MEffect__Group__0__Impl rule__MEffect__Group__1 )
+            // InternalRpgindividual.g:2553:2: rule__MEffect__Group__0__Impl rule__MEffect__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__MEffect__Group__0__Impl();
@@ -8247,17 +8172,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MEffect__Group__0__Impl"
-    // InternalRpgindividual.g:2587:1: rule__MEffect__Group__0__Impl : ( 'effect' ) ;
+    // InternalRpgindividual.g:2560:1: rule__MEffect__Group__0__Impl : ( 'effect' ) ;
     public final void rule__MEffect__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2591:1: ( ( 'effect' ) )
-            // InternalRpgindividual.g:2592:1: ( 'effect' )
+            // InternalRpgindividual.g:2564:1: ( ( 'effect' ) )
+            // InternalRpgindividual.g:2565:1: ( 'effect' )
             {
-            // InternalRpgindividual.g:2592:1: ( 'effect' )
-            // InternalRpgindividual.g:2593:2: 'effect'
+            // InternalRpgindividual.g:2565:1: ( 'effect' )
+            // InternalRpgindividual.g:2566:2: 'effect'
             {
              before(grammarAccess.getMEffectAccess().getEffectKeyword_0()); 
             match(input,17,FOLLOW_2); 
@@ -8284,14 +8209,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MEffect__Group__1"
-    // InternalRpgindividual.g:2602:1: rule__MEffect__Group__1 : rule__MEffect__Group__1__Impl ;
+    // InternalRpgindividual.g:2575:1: rule__MEffect__Group__1 : rule__MEffect__Group__1__Impl ;
     public final void rule__MEffect__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2606:1: ( rule__MEffect__Group__1__Impl )
-            // InternalRpgindividual.g:2607:2: rule__MEffect__Group__1__Impl
+            // InternalRpgindividual.g:2579:1: ( rule__MEffect__Group__1__Impl )
+            // InternalRpgindividual.g:2580:2: rule__MEffect__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__MEffect__Group__1__Impl();
@@ -8317,21 +8242,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MEffect__Group__1__Impl"
-    // InternalRpgindividual.g:2613:1: rule__MEffect__Group__1__Impl : ( ( rule__MEffect__MoveENameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2586:1: rule__MEffect__Group__1__Impl : ( ( rule__MEffect__MoveENameAssignment_1 ) ) ;
     public final void rule__MEffect__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2617:1: ( ( ( rule__MEffect__MoveENameAssignment_1 ) ) )
-            // InternalRpgindividual.g:2618:1: ( ( rule__MEffect__MoveENameAssignment_1 ) )
+            // InternalRpgindividual.g:2590:1: ( ( ( rule__MEffect__MoveENameAssignment_1 ) ) )
+            // InternalRpgindividual.g:2591:1: ( ( rule__MEffect__MoveENameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2618:1: ( ( rule__MEffect__MoveENameAssignment_1 ) )
-            // InternalRpgindividual.g:2619:2: ( rule__MEffect__MoveENameAssignment_1 )
+            // InternalRpgindividual.g:2591:1: ( ( rule__MEffect__MoveENameAssignment_1 ) )
+            // InternalRpgindividual.g:2592:2: ( rule__MEffect__MoveENameAssignment_1 )
             {
              before(grammarAccess.getMEffectAccess().getMoveENameAssignment_1()); 
-            // InternalRpgindividual.g:2620:2: ( rule__MEffect__MoveENameAssignment_1 )
-            // InternalRpgindividual.g:2620:3: rule__MEffect__MoveENameAssignment_1
+            // InternalRpgindividual.g:2593:2: ( rule__MEffect__MoveENameAssignment_1 )
+            // InternalRpgindividual.g:2593:3: rule__MEffect__MoveENameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__MEffect__MoveENameAssignment_1();
@@ -8364,14 +8289,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EType__Group__0"
-    // InternalRpgindividual.g:2629:1: rule__EType__Group__0 : rule__EType__Group__0__Impl rule__EType__Group__1 ;
+    // InternalRpgindividual.g:2602:1: rule__EType__Group__0 : rule__EType__Group__0__Impl rule__EType__Group__1 ;
     public final void rule__EType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2633:1: ( rule__EType__Group__0__Impl rule__EType__Group__1 )
-            // InternalRpgindividual.g:2634:2: rule__EType__Group__0__Impl rule__EType__Group__1
+            // InternalRpgindividual.g:2606:1: ( rule__EType__Group__0__Impl rule__EType__Group__1 )
+            // InternalRpgindividual.g:2607:2: rule__EType__Group__0__Impl rule__EType__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__EType__Group__0__Impl();
@@ -8402,20 +8327,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EType__Group__0__Impl"
-    // InternalRpgindividual.g:2641:1: rule__EType__Group__0__Impl : ( 'type' ) ;
+    // InternalRpgindividual.g:2614:1: rule__EType__Group__0__Impl : ( 'type' ) ;
     public final void rule__EType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2645:1: ( ( 'type' ) )
-            // InternalRpgindividual.g:2646:1: ( 'type' )
+            // InternalRpgindividual.g:2618:1: ( ( 'type' ) )
+            // InternalRpgindividual.g:2619:1: ( 'type' )
             {
-            // InternalRpgindividual.g:2646:1: ( 'type' )
-            // InternalRpgindividual.g:2647:2: 'type'
+            // InternalRpgindividual.g:2619:1: ( 'type' )
+            // InternalRpgindividual.g:2620:2: 'type'
             {
              before(grammarAccess.getETypeAccess().getTypeKeyword_0()); 
-            match(input,24,FOLLOW_2); 
+            match(input,23,FOLLOW_2); 
              after(grammarAccess.getETypeAccess().getTypeKeyword_0()); 
 
             }
@@ -8439,14 +8364,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EType__Group__1"
-    // InternalRpgindividual.g:2656:1: rule__EType__Group__1 : rule__EType__Group__1__Impl ;
+    // InternalRpgindividual.g:2629:1: rule__EType__Group__1 : rule__EType__Group__1__Impl ;
     public final void rule__EType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2660:1: ( rule__EType__Group__1__Impl )
-            // InternalRpgindividual.g:2661:2: rule__EType__Group__1__Impl
+            // InternalRpgindividual.g:2633:1: ( rule__EType__Group__1__Impl )
+            // InternalRpgindividual.g:2634:2: rule__EType__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EType__Group__1__Impl();
@@ -8472,21 +8397,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EType__Group__1__Impl"
-    // InternalRpgindividual.g:2667:1: rule__EType__Group__1__Impl : ( ( rule__EType__TypeAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2640:1: rule__EType__Group__1__Impl : ( ( rule__EType__TypeAssignment_1 ) ) ;
     public final void rule__EType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2671:1: ( ( ( rule__EType__TypeAssignment_1 ) ) )
-            // InternalRpgindividual.g:2672:1: ( ( rule__EType__TypeAssignment_1 ) )
+            // InternalRpgindividual.g:2644:1: ( ( ( rule__EType__TypeAssignment_1 ) ) )
+            // InternalRpgindividual.g:2645:1: ( ( rule__EType__TypeAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2672:1: ( ( rule__EType__TypeAssignment_1 ) )
-            // InternalRpgindividual.g:2673:2: ( rule__EType__TypeAssignment_1 )
+            // InternalRpgindividual.g:2645:1: ( ( rule__EType__TypeAssignment_1 ) )
+            // InternalRpgindividual.g:2646:2: ( rule__EType__TypeAssignment_1 )
             {
              before(grammarAccess.getETypeAccess().getTypeAssignment_1()); 
-            // InternalRpgindividual.g:2674:2: ( rule__EType__TypeAssignment_1 )
-            // InternalRpgindividual.g:2674:3: rule__EType__TypeAssignment_1
+            // InternalRpgindividual.g:2647:2: ( rule__EType__TypeAssignment_1 )
+            // InternalRpgindividual.g:2647:3: rule__EType__TypeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__EType__TypeAssignment_1();
@@ -8519,14 +8444,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__Group__0"
-    // InternalRpgindividual.g:2683:1: rule__AttributeValues__Group__0 : rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1 ;
+    // InternalRpgindividual.g:2656:1: rule__AttributeValues__Group__0 : rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1 ;
     public final void rule__AttributeValues__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2687:1: ( rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1 )
-            // InternalRpgindividual.g:2688:2: rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1
+            // InternalRpgindividual.g:2660:1: ( rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1 )
+            // InternalRpgindividual.g:2661:2: rule__AttributeValues__Group__0__Impl rule__AttributeValues__Group__1
             {
             pushFollow(FOLLOW_24);
             rule__AttributeValues__Group__0__Impl();
@@ -8557,17 +8482,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__Group__0__Impl"
-    // InternalRpgindividual.g:2695:1: rule__AttributeValues__Group__0__Impl : ( 'is' ) ;
+    // InternalRpgindividual.g:2668:1: rule__AttributeValues__Group__0__Impl : ( 'is' ) ;
     public final void rule__AttributeValues__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2699:1: ( ( 'is' ) )
-            // InternalRpgindividual.g:2700:1: ( 'is' )
+            // InternalRpgindividual.g:2672:1: ( ( 'is' ) )
+            // InternalRpgindividual.g:2673:1: ( 'is' )
             {
-            // InternalRpgindividual.g:2700:1: ( 'is' )
-            // InternalRpgindividual.g:2701:2: 'is'
+            // InternalRpgindividual.g:2673:1: ( 'is' )
+            // InternalRpgindividual.g:2674:2: 'is'
             {
              before(grammarAccess.getAttributeValuesAccess().getIsKeyword_0()); 
             match(input,28,FOLLOW_2); 
@@ -8594,14 +8519,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__Group__1"
-    // InternalRpgindividual.g:2710:1: rule__AttributeValues__Group__1 : rule__AttributeValues__Group__1__Impl ;
+    // InternalRpgindividual.g:2683:1: rule__AttributeValues__Group__1 : rule__AttributeValues__Group__1__Impl ;
     public final void rule__AttributeValues__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2714:1: ( rule__AttributeValues__Group__1__Impl )
-            // InternalRpgindividual.g:2715:2: rule__AttributeValues__Group__1__Impl
+            // InternalRpgindividual.g:2687:1: ( rule__AttributeValues__Group__1__Impl )
+            // InternalRpgindividual.g:2688:2: rule__AttributeValues__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AttributeValues__Group__1__Impl();
@@ -8627,21 +8552,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__Group__1__Impl"
-    // InternalRpgindividual.g:2721:1: rule__AttributeValues__Group__1__Impl : ( ( rule__AttributeValues__Alternatives_1 ) ) ;
+    // InternalRpgindividual.g:2694:1: rule__AttributeValues__Group__1__Impl : ( ( rule__AttributeValues__Alternatives_1 ) ) ;
     public final void rule__AttributeValues__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2725:1: ( ( ( rule__AttributeValues__Alternatives_1 ) ) )
-            // InternalRpgindividual.g:2726:1: ( ( rule__AttributeValues__Alternatives_1 ) )
+            // InternalRpgindividual.g:2698:1: ( ( ( rule__AttributeValues__Alternatives_1 ) ) )
+            // InternalRpgindividual.g:2699:1: ( ( rule__AttributeValues__Alternatives_1 ) )
             {
-            // InternalRpgindividual.g:2726:1: ( ( rule__AttributeValues__Alternatives_1 ) )
-            // InternalRpgindividual.g:2727:2: ( rule__AttributeValues__Alternatives_1 )
+            // InternalRpgindividual.g:2699:1: ( ( rule__AttributeValues__Alternatives_1 ) )
+            // InternalRpgindividual.g:2700:2: ( rule__AttributeValues__Alternatives_1 )
             {
              before(grammarAccess.getAttributeValuesAccess().getAlternatives_1()); 
-            // InternalRpgindividual.g:2728:2: ( rule__AttributeValues__Alternatives_1 )
-            // InternalRpgindividual.g:2728:3: rule__AttributeValues__Alternatives_1
+            // InternalRpgindividual.g:2701:2: ( rule__AttributeValues__Alternatives_1 )
+            // InternalRpgindividual.g:2701:3: rule__AttributeValues__Alternatives_1
             {
             pushFollow(FOLLOW_2);
             rule__AttributeValues__Alternatives_1();
@@ -8674,14 +8599,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__0"
-    // InternalRpgindividual.g:2737:1: rule__AltAttribute__Group__0 : rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1 ;
+    // InternalRpgindividual.g:2710:1: rule__AltAttribute__Group__0 : rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1 ;
     public final void rule__AltAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2741:1: ( rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1 )
-            // InternalRpgindividual.g:2742:2: rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1
+            // InternalRpgindividual.g:2714:1: ( rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1 )
+            // InternalRpgindividual.g:2715:2: rule__AltAttribute__Group__0__Impl rule__AltAttribute__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__AltAttribute__Group__0__Impl();
@@ -8712,20 +8637,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__0__Impl"
-    // InternalRpgindividual.g:2749:1: rule__AltAttribute__Group__0__Impl : ( 'attribute' ) ;
+    // InternalRpgindividual.g:2722:1: rule__AltAttribute__Group__0__Impl : ( 'attribute' ) ;
     public final void rule__AltAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2753:1: ( ( 'attribute' ) )
-            // InternalRpgindividual.g:2754:1: ( 'attribute' )
+            // InternalRpgindividual.g:2726:1: ( ( 'attribute' ) )
+            // InternalRpgindividual.g:2727:1: ( 'attribute' )
             {
-            // InternalRpgindividual.g:2754:1: ( 'attribute' )
-            // InternalRpgindividual.g:2755:2: 'attribute'
+            // InternalRpgindividual.g:2727:1: ( 'attribute' )
+            // InternalRpgindividual.g:2728:2: 'attribute'
             {
              before(grammarAccess.getAltAttributeAccess().getAttributeKeyword_0()); 
-            match(input,20,FOLLOW_2); 
+            match(input,19,FOLLOW_2); 
              after(grammarAccess.getAltAttributeAccess().getAttributeKeyword_0()); 
 
             }
@@ -8749,16 +8674,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__1"
-    // InternalRpgindividual.g:2764:1: rule__AltAttribute__Group__1 : rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2 ;
+    // InternalRpgindividual.g:2737:1: rule__AltAttribute__Group__1 : rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2 ;
     public final void rule__AltAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2768:1: ( rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2 )
-            // InternalRpgindividual.g:2769:2: rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2
+            // InternalRpgindividual.g:2741:1: ( rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2 )
+            // InternalRpgindividual.g:2742:2: rule__AltAttribute__Group__1__Impl rule__AltAttribute__Group__2
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__AltAttribute__Group__1__Impl();
 
             state._fsp--;
@@ -8787,21 +8712,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__1__Impl"
-    // InternalRpgindividual.g:2776:1: rule__AltAttribute__Group__1__Impl : ( ( rule__AltAttribute__AttributeAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2749:1: rule__AltAttribute__Group__1__Impl : ( ( rule__AltAttribute__AttributeAssignment_1 ) ) ;
     public final void rule__AltAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2780:1: ( ( ( rule__AltAttribute__AttributeAssignment_1 ) ) )
-            // InternalRpgindividual.g:2781:1: ( ( rule__AltAttribute__AttributeAssignment_1 ) )
+            // InternalRpgindividual.g:2753:1: ( ( ( rule__AltAttribute__AttributeAssignment_1 ) ) )
+            // InternalRpgindividual.g:2754:1: ( ( rule__AltAttribute__AttributeAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2781:1: ( ( rule__AltAttribute__AttributeAssignment_1 ) )
-            // InternalRpgindividual.g:2782:2: ( rule__AltAttribute__AttributeAssignment_1 )
+            // InternalRpgindividual.g:2754:1: ( ( rule__AltAttribute__AttributeAssignment_1 ) )
+            // InternalRpgindividual.g:2755:2: ( rule__AltAttribute__AttributeAssignment_1 )
             {
              before(grammarAccess.getAltAttributeAccess().getAttributeAssignment_1()); 
-            // InternalRpgindividual.g:2783:2: ( rule__AltAttribute__AttributeAssignment_1 )
-            // InternalRpgindividual.g:2783:3: rule__AltAttribute__AttributeAssignment_1
+            // InternalRpgindividual.g:2756:2: ( rule__AltAttribute__AttributeAssignment_1 )
+            // InternalRpgindividual.g:2756:3: rule__AltAttribute__AttributeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__AltAttribute__AttributeAssignment_1();
@@ -8834,14 +8759,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__2"
-    // InternalRpgindividual.g:2791:1: rule__AltAttribute__Group__2 : rule__AltAttribute__Group__2__Impl ;
+    // InternalRpgindividual.g:2764:1: rule__AltAttribute__Group__2 : rule__AltAttribute__Group__2__Impl ;
     public final void rule__AltAttribute__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2795:1: ( rule__AltAttribute__Group__2__Impl )
-            // InternalRpgindividual.g:2796:2: rule__AltAttribute__Group__2__Impl
+            // InternalRpgindividual.g:2768:1: ( rule__AltAttribute__Group__2__Impl )
+            // InternalRpgindividual.g:2769:2: rule__AltAttribute__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__AltAttribute__Group__2__Impl();
@@ -8867,20 +8792,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__Group__2__Impl"
-    // InternalRpgindividual.g:2802:1: rule__AltAttribute__Group__2__Impl : ( ( rule__AltAttribute__AvAssignment_2 )? ) ;
+    // InternalRpgindividual.g:2775:1: rule__AltAttribute__Group__2__Impl : ( ( rule__AltAttribute__AvAssignment_2 )? ) ;
     public final void rule__AltAttribute__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2806:1: ( ( ( rule__AltAttribute__AvAssignment_2 )? ) )
-            // InternalRpgindividual.g:2807:1: ( ( rule__AltAttribute__AvAssignment_2 )? )
+            // InternalRpgindividual.g:2779:1: ( ( ( rule__AltAttribute__AvAssignment_2 )? ) )
+            // InternalRpgindividual.g:2780:1: ( ( rule__AltAttribute__AvAssignment_2 )? )
             {
-            // InternalRpgindividual.g:2807:1: ( ( rule__AltAttribute__AvAssignment_2 )? )
-            // InternalRpgindividual.g:2808:2: ( rule__AltAttribute__AvAssignment_2 )?
+            // InternalRpgindividual.g:2780:1: ( ( rule__AltAttribute__AvAssignment_2 )? )
+            // InternalRpgindividual.g:2781:2: ( rule__AltAttribute__AvAssignment_2 )?
             {
              before(grammarAccess.getAltAttributeAccess().getAvAssignment_2()); 
-            // InternalRpgindividual.g:2809:2: ( rule__AltAttribute__AvAssignment_2 )?
+            // InternalRpgindividual.g:2782:2: ( rule__AltAttribute__AvAssignment_2 )?
             int alt22=2;
             int LA22_0 = input.LA(1);
 
@@ -8889,7 +8814,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             }
             switch (alt22) {
                 case 1 :
-                    // InternalRpgindividual.g:2809:3: rule__AltAttribute__AvAssignment_2
+                    // InternalRpgindividual.g:2782:3: rule__AltAttribute__AvAssignment_2
                     {
                     pushFollow(FOLLOW_2);
                     rule__AltAttribute__AvAssignment_2();
@@ -8925,16 +8850,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__0"
-    // InternalRpgindividual.g:2818:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
+    // InternalRpgindividual.g:2791:1: rule__Rule__Group__0 : rule__Rule__Group__0__Impl rule__Rule__Group__1 ;
     public final void rule__Rule__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2822:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
-            // InternalRpgindividual.g:2823:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
+            // InternalRpgindividual.g:2795:1: ( rule__Rule__Group__0__Impl rule__Rule__Group__1 )
+            // InternalRpgindividual.g:2796:2: rule__Rule__Group__0__Impl rule__Rule__Group__1
             {
-            pushFollow(FOLLOW_9);
+            pushFollow(FOLLOW_8);
             rule__Rule__Group__0__Impl();
 
             state._fsp--;
@@ -8963,20 +8888,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__0__Impl"
-    // InternalRpgindividual.g:2830:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__Group_0__0 )? ) ;
+    // InternalRpgindividual.g:2803:1: rule__Rule__Group__0__Impl : ( ( rule__Rule__Group_0__0 )? ) ;
     public final void rule__Rule__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2834:1: ( ( ( rule__Rule__Group_0__0 )? ) )
-            // InternalRpgindividual.g:2835:1: ( ( rule__Rule__Group_0__0 )? )
+            // InternalRpgindividual.g:2807:1: ( ( ( rule__Rule__Group_0__0 )? ) )
+            // InternalRpgindividual.g:2808:1: ( ( rule__Rule__Group_0__0 )? )
             {
-            // InternalRpgindividual.g:2835:1: ( ( rule__Rule__Group_0__0 )? )
-            // InternalRpgindividual.g:2836:2: ( rule__Rule__Group_0__0 )?
+            // InternalRpgindividual.g:2808:1: ( ( rule__Rule__Group_0__0 )? )
+            // InternalRpgindividual.g:2809:2: ( rule__Rule__Group_0__0 )?
             {
              before(grammarAccess.getRuleAccess().getGroup_0()); 
-            // InternalRpgindividual.g:2837:2: ( rule__Rule__Group_0__0 )?
+            // InternalRpgindividual.g:2810:2: ( rule__Rule__Group_0__0 )?
             int alt23=2;
             int LA23_0 = input.LA(1);
 
@@ -8985,7 +8910,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
             }
             switch (alt23) {
                 case 1 :
-                    // InternalRpgindividual.g:2837:3: rule__Rule__Group_0__0
+                    // InternalRpgindividual.g:2810:3: rule__Rule__Group_0__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__Rule__Group_0__0();
@@ -9021,14 +8946,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__1"
-    // InternalRpgindividual.g:2845:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
+    // InternalRpgindividual.g:2818:1: rule__Rule__Group__1 : rule__Rule__Group__1__Impl rule__Rule__Group__2 ;
     public final void rule__Rule__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2849:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
-            // InternalRpgindividual.g:2850:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
+            // InternalRpgindividual.g:2822:1: ( rule__Rule__Group__1__Impl rule__Rule__Group__2 )
+            // InternalRpgindividual.g:2823:2: rule__Rule__Group__1__Impl rule__Rule__Group__2
             {
             pushFollow(FOLLOW_3);
             rule__Rule__Group__1__Impl();
@@ -9059,21 +8984,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__1__Impl"
-    // InternalRpgindividual.g:2857:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__TargetThenAssignment_1 ) ) ;
+    // InternalRpgindividual.g:2830:1: rule__Rule__Group__1__Impl : ( ( rule__Rule__TargetThenAssignment_1 ) ) ;
     public final void rule__Rule__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2861:1: ( ( ( rule__Rule__TargetThenAssignment_1 ) ) )
-            // InternalRpgindividual.g:2862:1: ( ( rule__Rule__TargetThenAssignment_1 ) )
+            // InternalRpgindividual.g:2834:1: ( ( ( rule__Rule__TargetThenAssignment_1 ) ) )
+            // InternalRpgindividual.g:2835:1: ( ( rule__Rule__TargetThenAssignment_1 ) )
             {
-            // InternalRpgindividual.g:2862:1: ( ( rule__Rule__TargetThenAssignment_1 ) )
-            // InternalRpgindividual.g:2863:2: ( rule__Rule__TargetThenAssignment_1 )
+            // InternalRpgindividual.g:2835:1: ( ( rule__Rule__TargetThenAssignment_1 ) )
+            // InternalRpgindividual.g:2836:2: ( rule__Rule__TargetThenAssignment_1 )
             {
              before(grammarAccess.getRuleAccess().getTargetThenAssignment_1()); 
-            // InternalRpgindividual.g:2864:2: ( rule__Rule__TargetThenAssignment_1 )
-            // InternalRpgindividual.g:2864:3: rule__Rule__TargetThenAssignment_1
+            // InternalRpgindividual.g:2837:2: ( rule__Rule__TargetThenAssignment_1 )
+            // InternalRpgindividual.g:2837:3: rule__Rule__TargetThenAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Rule__TargetThenAssignment_1();
@@ -9106,16 +9031,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__2"
-    // InternalRpgindividual.g:2872:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
+    // InternalRpgindividual.g:2845:1: rule__Rule__Group__2 : rule__Rule__Group__2__Impl rule__Rule__Group__3 ;
     public final void rule__Rule__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2876:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
-            // InternalRpgindividual.g:2877:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
+            // InternalRpgindividual.g:2849:1: ( rule__Rule__Group__2__Impl rule__Rule__Group__3 )
+            // InternalRpgindividual.g:2850:2: rule__Rule__Group__2__Impl rule__Rule__Group__3
             {
-            pushFollow(FOLLOW_12);
+            pushFollow(FOLLOW_11);
             rule__Rule__Group__2__Impl();
 
             state._fsp--;
@@ -9144,21 +9069,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__2__Impl"
-    // InternalRpgindividual.g:2884:1: rule__Rule__Group__2__Impl : ( ( rule__Rule__TargetAttAssignment_2 ) ) ;
+    // InternalRpgindividual.g:2857:1: rule__Rule__Group__2__Impl : ( ( rule__Rule__TargetAttAssignment_2 ) ) ;
     public final void rule__Rule__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2888:1: ( ( ( rule__Rule__TargetAttAssignment_2 ) ) )
-            // InternalRpgindividual.g:2889:1: ( ( rule__Rule__TargetAttAssignment_2 ) )
+            // InternalRpgindividual.g:2861:1: ( ( ( rule__Rule__TargetAttAssignment_2 ) ) )
+            // InternalRpgindividual.g:2862:1: ( ( rule__Rule__TargetAttAssignment_2 ) )
             {
-            // InternalRpgindividual.g:2889:1: ( ( rule__Rule__TargetAttAssignment_2 ) )
-            // InternalRpgindividual.g:2890:2: ( rule__Rule__TargetAttAssignment_2 )
+            // InternalRpgindividual.g:2862:1: ( ( rule__Rule__TargetAttAssignment_2 ) )
+            // InternalRpgindividual.g:2863:2: ( rule__Rule__TargetAttAssignment_2 )
             {
              before(grammarAccess.getRuleAccess().getTargetAttAssignment_2()); 
-            // InternalRpgindividual.g:2891:2: ( rule__Rule__TargetAttAssignment_2 )
-            // InternalRpgindividual.g:2891:3: rule__Rule__TargetAttAssignment_2
+            // InternalRpgindividual.g:2864:2: ( rule__Rule__TargetAttAssignment_2 )
+            // InternalRpgindividual.g:2864:3: rule__Rule__TargetAttAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Rule__TargetAttAssignment_2();
@@ -9191,14 +9116,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__3"
-    // InternalRpgindividual.g:2899:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
+    // InternalRpgindividual.g:2872:1: rule__Rule__Group__3 : rule__Rule__Group__3__Impl rule__Rule__Group__4 ;
     public final void rule__Rule__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2903:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
-            // InternalRpgindividual.g:2904:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
+            // InternalRpgindividual.g:2876:1: ( rule__Rule__Group__3__Impl rule__Rule__Group__4 )
+            // InternalRpgindividual.g:2877:2: rule__Rule__Group__3__Impl rule__Rule__Group__4
             {
             pushFollow(FOLLOW_25);
             rule__Rule__Group__3__Impl();
@@ -9229,17 +9154,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__3__Impl"
-    // InternalRpgindividual.g:2911:1: rule__Rule__Group__3__Impl : ( 'is' ) ;
+    // InternalRpgindividual.g:2884:1: rule__Rule__Group__3__Impl : ( 'is' ) ;
     public final void rule__Rule__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2915:1: ( ( 'is' ) )
-            // InternalRpgindividual.g:2916:1: ( 'is' )
+            // InternalRpgindividual.g:2888:1: ( ( 'is' ) )
+            // InternalRpgindividual.g:2889:1: ( 'is' )
             {
-            // InternalRpgindividual.g:2916:1: ( 'is' )
-            // InternalRpgindividual.g:2917:2: 'is'
+            // InternalRpgindividual.g:2889:1: ( 'is' )
+            // InternalRpgindividual.g:2890:2: 'is'
             {
              before(grammarAccess.getRuleAccess().getIsKeyword_3()); 
             match(input,28,FOLLOW_2); 
@@ -9266,14 +9191,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__4"
-    // InternalRpgindividual.g:2926:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl ;
+    // InternalRpgindividual.g:2899:1: rule__Rule__Group__4 : rule__Rule__Group__4__Impl ;
     public final void rule__Rule__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2930:1: ( rule__Rule__Group__4__Impl )
-            // InternalRpgindividual.g:2931:2: rule__Rule__Group__4__Impl
+            // InternalRpgindividual.g:2903:1: ( rule__Rule__Group__4__Impl )
+            // InternalRpgindividual.g:2904:2: rule__Rule__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group__4__Impl();
@@ -9299,21 +9224,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group__4__Impl"
-    // InternalRpgindividual.g:2937:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__SumAssignment_4 ) ) ;
+    // InternalRpgindividual.g:2910:1: rule__Rule__Group__4__Impl : ( ( rule__Rule__SumAssignment_4 ) ) ;
     public final void rule__Rule__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2941:1: ( ( ( rule__Rule__SumAssignment_4 ) ) )
-            // InternalRpgindividual.g:2942:1: ( ( rule__Rule__SumAssignment_4 ) )
+            // InternalRpgindividual.g:2914:1: ( ( ( rule__Rule__SumAssignment_4 ) ) )
+            // InternalRpgindividual.g:2915:1: ( ( rule__Rule__SumAssignment_4 ) )
             {
-            // InternalRpgindividual.g:2942:1: ( ( rule__Rule__SumAssignment_4 ) )
-            // InternalRpgindividual.g:2943:2: ( rule__Rule__SumAssignment_4 )
+            // InternalRpgindividual.g:2915:1: ( ( rule__Rule__SumAssignment_4 ) )
+            // InternalRpgindividual.g:2916:2: ( rule__Rule__SumAssignment_4 )
             {
              before(grammarAccess.getRuleAccess().getSumAssignment_4()); 
-            // InternalRpgindividual.g:2944:2: ( rule__Rule__SumAssignment_4 )
-            // InternalRpgindividual.g:2944:3: rule__Rule__SumAssignment_4
+            // InternalRpgindividual.g:2917:2: ( rule__Rule__SumAssignment_4 )
+            // InternalRpgindividual.g:2917:3: rule__Rule__SumAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Rule__SumAssignment_4();
@@ -9346,14 +9271,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__0"
-    // InternalRpgindividual.g:2953:1: rule__Rule__Group_0__0 : rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 ;
+    // InternalRpgindividual.g:2926:1: rule__Rule__Group_0__0 : rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 ;
     public final void rule__Rule__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2957:1: ( rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 )
-            // InternalRpgindividual.g:2958:2: rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1
+            // InternalRpgindividual.g:2930:1: ( rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1 )
+            // InternalRpgindividual.g:2931:2: rule__Rule__Group_0__0__Impl rule__Rule__Group_0__1
             {
             pushFollow(FOLLOW_26);
             rule__Rule__Group_0__0__Impl();
@@ -9384,17 +9309,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__0__Impl"
-    // InternalRpgindividual.g:2965:1: rule__Rule__Group_0__0__Impl : ( 'if' ) ;
+    // InternalRpgindividual.g:2938:1: rule__Rule__Group_0__0__Impl : ( 'if' ) ;
     public final void rule__Rule__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2969:1: ( ( 'if' ) )
-            // InternalRpgindividual.g:2970:1: ( 'if' )
+            // InternalRpgindividual.g:2942:1: ( ( 'if' ) )
+            // InternalRpgindividual.g:2943:1: ( 'if' )
             {
-            // InternalRpgindividual.g:2970:1: ( 'if' )
-            // InternalRpgindividual.g:2971:2: 'if'
+            // InternalRpgindividual.g:2943:1: ( 'if' )
+            // InternalRpgindividual.g:2944:2: 'if'
             {
              before(grammarAccess.getRuleAccess().getIfKeyword_0_0()); 
             match(input,29,FOLLOW_2); 
@@ -9421,14 +9346,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__1"
-    // InternalRpgindividual.g:2980:1: rule__Rule__Group_0__1 : rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2 ;
+    // InternalRpgindividual.g:2953:1: rule__Rule__Group_0__1 : rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2 ;
     public final void rule__Rule__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2984:1: ( rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2 )
-            // InternalRpgindividual.g:2985:2: rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2
+            // InternalRpgindividual.g:2957:1: ( rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2 )
+            // InternalRpgindividual.g:2958:2: rule__Rule__Group_0__1__Impl rule__Rule__Group_0__2
             {
             pushFollow(FOLLOW_27);
             rule__Rule__Group_0__1__Impl();
@@ -9459,21 +9384,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__1__Impl"
-    // InternalRpgindividual.g:2992:1: rule__Rule__Group_0__1__Impl : ( ( rule__Rule__OrAssignment_0_1 ) ) ;
+    // InternalRpgindividual.g:2965:1: rule__Rule__Group_0__1__Impl : ( ( rule__Rule__OrAssignment_0_1 ) ) ;
     public final void rule__Rule__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:2996:1: ( ( ( rule__Rule__OrAssignment_0_1 ) ) )
-            // InternalRpgindividual.g:2997:1: ( ( rule__Rule__OrAssignment_0_1 ) )
+            // InternalRpgindividual.g:2969:1: ( ( ( rule__Rule__OrAssignment_0_1 ) ) )
+            // InternalRpgindividual.g:2970:1: ( ( rule__Rule__OrAssignment_0_1 ) )
             {
-            // InternalRpgindividual.g:2997:1: ( ( rule__Rule__OrAssignment_0_1 ) )
-            // InternalRpgindividual.g:2998:2: ( rule__Rule__OrAssignment_0_1 )
+            // InternalRpgindividual.g:2970:1: ( ( rule__Rule__OrAssignment_0_1 ) )
+            // InternalRpgindividual.g:2971:2: ( rule__Rule__OrAssignment_0_1 )
             {
              before(grammarAccess.getRuleAccess().getOrAssignment_0_1()); 
-            // InternalRpgindividual.g:2999:2: ( rule__Rule__OrAssignment_0_1 )
-            // InternalRpgindividual.g:2999:3: rule__Rule__OrAssignment_0_1
+            // InternalRpgindividual.g:2972:2: ( rule__Rule__OrAssignment_0_1 )
+            // InternalRpgindividual.g:2972:3: rule__Rule__OrAssignment_0_1
             {
             pushFollow(FOLLOW_2);
             rule__Rule__OrAssignment_0_1();
@@ -9506,14 +9431,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__2"
-    // InternalRpgindividual.g:3007:1: rule__Rule__Group_0__2 : rule__Rule__Group_0__2__Impl ;
+    // InternalRpgindividual.g:2980:1: rule__Rule__Group_0__2 : rule__Rule__Group_0__2__Impl ;
     public final void rule__Rule__Group_0__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3011:1: ( rule__Rule__Group_0__2__Impl )
-            // InternalRpgindividual.g:3012:2: rule__Rule__Group_0__2__Impl
+            // InternalRpgindividual.g:2984:1: ( rule__Rule__Group_0__2__Impl )
+            // InternalRpgindividual.g:2985:2: rule__Rule__Group_0__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Rule__Group_0__2__Impl();
@@ -9539,17 +9464,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__Group_0__2__Impl"
-    // InternalRpgindividual.g:3018:1: rule__Rule__Group_0__2__Impl : ( 'then' ) ;
+    // InternalRpgindividual.g:2991:1: rule__Rule__Group_0__2__Impl : ( 'then' ) ;
     public final void rule__Rule__Group_0__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3022:1: ( ( 'then' ) )
-            // InternalRpgindividual.g:3023:1: ( 'then' )
+            // InternalRpgindividual.g:2995:1: ( ( 'then' ) )
+            // InternalRpgindividual.g:2996:1: ( 'then' )
             {
-            // InternalRpgindividual.g:3023:1: ( 'then' )
-            // InternalRpgindividual.g:3024:2: 'then'
+            // InternalRpgindividual.g:2996:1: ( 'then' )
+            // InternalRpgindividual.g:2997:2: 'then'
             {
              before(grammarAccess.getRuleAccess().getThenKeyword_0_2()); 
             match(input,30,FOLLOW_2); 
@@ -9576,14 +9501,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entities__Group__0"
-    // InternalRpgindividual.g:3034:1: rule__Entities__Group__0 : rule__Entities__Group__0__Impl rule__Entities__Group__1 ;
+    // InternalRpgindividual.g:3007:1: rule__Entities__Group__0 : rule__Entities__Group__0__Impl rule__Entities__Group__1 ;
     public final void rule__Entities__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3038:1: ( rule__Entities__Group__0__Impl rule__Entities__Group__1 )
-            // InternalRpgindividual.g:3039:2: rule__Entities__Group__0__Impl rule__Entities__Group__1
+            // InternalRpgindividual.g:3011:1: ( rule__Entities__Group__0__Impl rule__Entities__Group__1 )
+            // InternalRpgindividual.g:3012:2: rule__Entities__Group__0__Impl rule__Entities__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__Entities__Group__0__Impl();
@@ -9614,17 +9539,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entities__Group__0__Impl"
-    // InternalRpgindividual.g:3046:1: rule__Entities__Group__0__Impl : ( 'entities' ) ;
+    // InternalRpgindividual.g:3019:1: rule__Entities__Group__0__Impl : ( 'entities' ) ;
     public final void rule__Entities__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3050:1: ( ( 'entities' ) )
-            // InternalRpgindividual.g:3051:1: ( 'entities' )
+            // InternalRpgindividual.g:3023:1: ( ( 'entities' ) )
+            // InternalRpgindividual.g:3024:1: ( 'entities' )
             {
-            // InternalRpgindividual.g:3051:1: ( 'entities' )
-            // InternalRpgindividual.g:3052:2: 'entities'
+            // InternalRpgindividual.g:3024:1: ( 'entities' )
+            // InternalRpgindividual.g:3025:2: 'entities'
             {
              before(grammarAccess.getEntitiesAccess().getEntitiesKeyword_0()); 
             match(input,31,FOLLOW_2); 
@@ -9651,14 +9576,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entities__Group__1"
-    // InternalRpgindividual.g:3061:1: rule__Entities__Group__1 : rule__Entities__Group__1__Impl ;
+    // InternalRpgindividual.g:3034:1: rule__Entities__Group__1 : rule__Entities__Group__1__Impl ;
     public final void rule__Entities__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3065:1: ( rule__Entities__Group__1__Impl )
-            // InternalRpgindividual.g:3066:2: rule__Entities__Group__1__Impl
+            // InternalRpgindividual.g:3038:1: ( rule__Entities__Group__1__Impl )
+            // InternalRpgindividual.g:3039:2: rule__Entities__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entities__Group__1__Impl();
@@ -9684,24 +9609,24 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entities__Group__1__Impl"
-    // InternalRpgindividual.g:3072:1: rule__Entities__Group__1__Impl : ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:3045:1: rule__Entities__Group__1__Impl : ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) ) ;
     public final void rule__Entities__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3076:1: ( ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:3077:1: ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) )
+            // InternalRpgindividual.g:3049:1: ( ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:3050:1: ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:3077:1: ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) )
-            // InternalRpgindividual.g:3078:2: ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* )
+            // InternalRpgindividual.g:3050:1: ( ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* ) )
+            // InternalRpgindividual.g:3051:2: ( ( rule__Entities__EntityAssignment_1 ) ) ( ( rule__Entities__EntityAssignment_1 )* )
             {
-            // InternalRpgindividual.g:3078:2: ( ( rule__Entities__EntityAssignment_1 ) )
-            // InternalRpgindividual.g:3079:3: ( rule__Entities__EntityAssignment_1 )
+            // InternalRpgindividual.g:3051:2: ( ( rule__Entities__EntityAssignment_1 ) )
+            // InternalRpgindividual.g:3052:3: ( rule__Entities__EntityAssignment_1 )
             {
              before(grammarAccess.getEntitiesAccess().getEntityAssignment_1()); 
-            // InternalRpgindividual.g:3080:3: ( rule__Entities__EntityAssignment_1 )
-            // InternalRpgindividual.g:3080:4: rule__Entities__EntityAssignment_1
+            // InternalRpgindividual.g:3053:3: ( rule__Entities__EntityAssignment_1 )
+            // InternalRpgindividual.g:3053:4: rule__Entities__EntityAssignment_1
             {
             pushFollow(FOLLOW_29);
             rule__Entities__EntityAssignment_1();
@@ -9715,11 +9640,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:3083:2: ( ( rule__Entities__EntityAssignment_1 )* )
-            // InternalRpgindividual.g:3084:3: ( rule__Entities__EntityAssignment_1 )*
+            // InternalRpgindividual.g:3056:2: ( ( rule__Entities__EntityAssignment_1 )* )
+            // InternalRpgindividual.g:3057:3: ( rule__Entities__EntityAssignment_1 )*
             {
              before(grammarAccess.getEntitiesAccess().getEntityAssignment_1()); 
-            // InternalRpgindividual.g:3085:3: ( rule__Entities__EntityAssignment_1 )*
+            // InternalRpgindividual.g:3058:3: ( rule__Entities__EntityAssignment_1 )*
             loop24:
             do {
                 int alt24=2;
@@ -9732,7 +9657,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt24) {
             	case 1 :
-            	    // InternalRpgindividual.g:3085:4: rule__Entities__EntityAssignment_1
+            	    // InternalRpgindividual.g:3058:4: rule__Entities__EntityAssignment_1
             	    {
             	    pushFollow(FOLLOW_29);
             	    rule__Entities__EntityAssignment_1();
@@ -9774,14 +9699,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__0"
-    // InternalRpgindividual.g:3095:1: rule__Death__Group__0 : rule__Death__Group__0__Impl rule__Death__Group__1 ;
+    // InternalRpgindividual.g:3068:1: rule__Death__Group__0 : rule__Death__Group__0__Impl rule__Death__Group__1 ;
     public final void rule__Death__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3099:1: ( rule__Death__Group__0__Impl rule__Death__Group__1 )
-            // InternalRpgindividual.g:3100:2: rule__Death__Group__0__Impl rule__Death__Group__1
+            // InternalRpgindividual.g:3072:1: ( rule__Death__Group__0__Impl rule__Death__Group__1 )
+            // InternalRpgindividual.g:3073:2: rule__Death__Group__0__Impl rule__Death__Group__1
             {
             pushFollow(FOLLOW_30);
             rule__Death__Group__0__Impl();
@@ -9812,17 +9737,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__0__Impl"
-    // InternalRpgindividual.g:3107:1: rule__Death__Group__0__Impl : ( 'death' ) ;
+    // InternalRpgindividual.g:3080:1: rule__Death__Group__0__Impl : ( 'death' ) ;
     public final void rule__Death__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3111:1: ( ( 'death' ) )
-            // InternalRpgindividual.g:3112:1: ( 'death' )
+            // InternalRpgindividual.g:3084:1: ( ( 'death' ) )
+            // InternalRpgindividual.g:3085:1: ( 'death' )
             {
-            // InternalRpgindividual.g:3112:1: ( 'death' )
-            // InternalRpgindividual.g:3113:2: 'death'
+            // InternalRpgindividual.g:3085:1: ( 'death' )
+            // InternalRpgindividual.g:3086:2: 'death'
             {
              before(grammarAccess.getDeathAccess().getDeathKeyword_0()); 
             match(input,32,FOLLOW_2); 
@@ -9849,14 +9774,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__1"
-    // InternalRpgindividual.g:3122:1: rule__Death__Group__1 : rule__Death__Group__1__Impl rule__Death__Group__2 ;
+    // InternalRpgindividual.g:3095:1: rule__Death__Group__1 : rule__Death__Group__1__Impl rule__Death__Group__2 ;
     public final void rule__Death__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3126:1: ( rule__Death__Group__1__Impl rule__Death__Group__2 )
-            // InternalRpgindividual.g:3127:2: rule__Death__Group__1__Impl rule__Death__Group__2
+            // InternalRpgindividual.g:3099:1: ( rule__Death__Group__1__Impl rule__Death__Group__2 )
+            // InternalRpgindividual.g:3100:2: rule__Death__Group__1__Impl rule__Death__Group__2
             {
             pushFollow(FOLLOW_26);
             rule__Death__Group__1__Impl();
@@ -9887,17 +9812,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__1__Impl"
-    // InternalRpgindividual.g:3134:1: rule__Death__Group__1__Impl : ( 'when' ) ;
+    // InternalRpgindividual.g:3107:1: rule__Death__Group__1__Impl : ( 'when' ) ;
     public final void rule__Death__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3138:1: ( ( 'when' ) )
-            // InternalRpgindividual.g:3139:1: ( 'when' )
+            // InternalRpgindividual.g:3111:1: ( ( 'when' ) )
+            // InternalRpgindividual.g:3112:1: ( 'when' )
             {
-            // InternalRpgindividual.g:3139:1: ( 'when' )
-            // InternalRpgindividual.g:3140:2: 'when'
+            // InternalRpgindividual.g:3112:1: ( 'when' )
+            // InternalRpgindividual.g:3113:2: 'when'
             {
              before(grammarAccess.getDeathAccess().getWhenKeyword_1()); 
             match(input,33,FOLLOW_2); 
@@ -9924,14 +9849,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__2"
-    // InternalRpgindividual.g:3149:1: rule__Death__Group__2 : rule__Death__Group__2__Impl ;
+    // InternalRpgindividual.g:3122:1: rule__Death__Group__2 : rule__Death__Group__2__Impl ;
     public final void rule__Death__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3153:1: ( rule__Death__Group__2__Impl )
-            // InternalRpgindividual.g:3154:2: rule__Death__Group__2__Impl
+            // InternalRpgindividual.g:3126:1: ( rule__Death__Group__2__Impl )
+            // InternalRpgindividual.g:3127:2: rule__Death__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Death__Group__2__Impl();
@@ -9957,21 +9882,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__Group__2__Impl"
-    // InternalRpgindividual.g:3160:1: rule__Death__Group__2__Impl : ( ( rule__Death__LogAssignment_2 ) ) ;
+    // InternalRpgindividual.g:3133:1: rule__Death__Group__2__Impl : ( ( rule__Death__LogAssignment_2 ) ) ;
     public final void rule__Death__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3164:1: ( ( ( rule__Death__LogAssignment_2 ) ) )
-            // InternalRpgindividual.g:3165:1: ( ( rule__Death__LogAssignment_2 ) )
+            // InternalRpgindividual.g:3137:1: ( ( ( rule__Death__LogAssignment_2 ) ) )
+            // InternalRpgindividual.g:3138:1: ( ( rule__Death__LogAssignment_2 ) )
             {
-            // InternalRpgindividual.g:3165:1: ( ( rule__Death__LogAssignment_2 ) )
-            // InternalRpgindividual.g:3166:2: ( rule__Death__LogAssignment_2 )
+            // InternalRpgindividual.g:3138:1: ( ( rule__Death__LogAssignment_2 ) )
+            // InternalRpgindividual.g:3139:2: ( rule__Death__LogAssignment_2 )
             {
              before(grammarAccess.getDeathAccess().getLogAssignment_2()); 
-            // InternalRpgindividual.g:3167:2: ( rule__Death__LogAssignment_2 )
-            // InternalRpgindividual.g:3167:3: rule__Death__LogAssignment_2
+            // InternalRpgindividual.g:3140:2: ( rule__Death__LogAssignment_2 )
+            // InternalRpgindividual.g:3140:3: rule__Death__LogAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Death__LogAssignment_2();
@@ -10004,14 +9929,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__0"
-    // InternalRpgindividual.g:3176:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
+    // InternalRpgindividual.g:3149:1: rule__Entity__Group__0 : rule__Entity__Group__0__Impl rule__Entity__Group__1 ;
     public final void rule__Entity__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3180:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
-            // InternalRpgindividual.g:3181:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
+            // InternalRpgindividual.g:3153:1: ( rule__Entity__Group__0__Impl rule__Entity__Group__1 )
+            // InternalRpgindividual.g:3154:2: rule__Entity__Group__0__Impl rule__Entity__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Entity__Group__0__Impl();
@@ -10042,17 +9967,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__0__Impl"
-    // InternalRpgindividual.g:3188:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
+    // InternalRpgindividual.g:3161:1: rule__Entity__Group__0__Impl : ( 'entity' ) ;
     public final void rule__Entity__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3192:1: ( ( 'entity' ) )
-            // InternalRpgindividual.g:3193:1: ( 'entity' )
+            // InternalRpgindividual.g:3165:1: ( ( 'entity' ) )
+            // InternalRpgindividual.g:3166:1: ( 'entity' )
             {
-            // InternalRpgindividual.g:3193:1: ( 'entity' )
-            // InternalRpgindividual.g:3194:2: 'entity'
+            // InternalRpgindividual.g:3166:1: ( 'entity' )
+            // InternalRpgindividual.g:3167:2: 'entity'
             {
              before(grammarAccess.getEntityAccess().getEntityKeyword_0()); 
             match(input,34,FOLLOW_2); 
@@ -10079,16 +10004,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__1"
-    // InternalRpgindividual.g:3203:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
+    // InternalRpgindividual.g:3176:1: rule__Entity__Group__1 : rule__Entity__Group__1__Impl rule__Entity__Group__2 ;
     public final void rule__Entity__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3207:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
-            // InternalRpgindividual.g:3208:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
+            // InternalRpgindividual.g:3180:1: ( rule__Entity__Group__1__Impl rule__Entity__Group__2 )
+            // InternalRpgindividual.g:3181:2: rule__Entity__Group__1__Impl rule__Entity__Group__2
             {
-            pushFollow(FOLLOW_15);
+            pushFollow(FOLLOW_14);
             rule__Entity__Group__1__Impl();
 
             state._fsp--;
@@ -10117,21 +10042,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__1__Impl"
-    // InternalRpgindividual.g:3215:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:3188:1: rule__Entity__Group__1__Impl : ( ( rule__Entity__NameAssignment_1 ) ) ;
     public final void rule__Entity__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3219:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:3220:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalRpgindividual.g:3192:1: ( ( ( rule__Entity__NameAssignment_1 ) ) )
+            // InternalRpgindividual.g:3193:1: ( ( rule__Entity__NameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:3220:1: ( ( rule__Entity__NameAssignment_1 ) )
-            // InternalRpgindividual.g:3221:2: ( rule__Entity__NameAssignment_1 )
+            // InternalRpgindividual.g:3193:1: ( ( rule__Entity__NameAssignment_1 ) )
+            // InternalRpgindividual.g:3194:2: ( rule__Entity__NameAssignment_1 )
             {
              before(grammarAccess.getEntityAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:3222:2: ( rule__Entity__NameAssignment_1 )
-            // InternalRpgindividual.g:3222:3: rule__Entity__NameAssignment_1
+            // InternalRpgindividual.g:3195:2: ( rule__Entity__NameAssignment_1 )
+            // InternalRpgindividual.g:3195:3: rule__Entity__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Entity__NameAssignment_1();
@@ -10164,14 +10089,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__2"
-    // InternalRpgindividual.g:3230:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
+    // InternalRpgindividual.g:3203:1: rule__Entity__Group__2 : rule__Entity__Group__2__Impl rule__Entity__Group__3 ;
     public final void rule__Entity__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3234:1: ( rule__Entity__Group__2__Impl rule__Entity__Group__3 )
-            // InternalRpgindividual.g:3235:2: rule__Entity__Group__2__Impl rule__Entity__Group__3
+            // InternalRpgindividual.g:3207:1: ( rule__Entity__Group__2__Impl rule__Entity__Group__3 )
+            // InternalRpgindividual.g:3208:2: rule__Entity__Group__2__Impl rule__Entity__Group__3
             {
             pushFollow(FOLLOW_31);
             rule__Entity__Group__2__Impl();
@@ -10202,21 +10127,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__2__Impl"
-    // InternalRpgindividual.g:3242:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__ETypeAssignment_2 ) ) ;
+    // InternalRpgindividual.g:3215:1: rule__Entity__Group__2__Impl : ( ( rule__Entity__ETypeAssignment_2 ) ) ;
     public final void rule__Entity__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3246:1: ( ( ( rule__Entity__ETypeAssignment_2 ) ) )
-            // InternalRpgindividual.g:3247:1: ( ( rule__Entity__ETypeAssignment_2 ) )
+            // InternalRpgindividual.g:3219:1: ( ( ( rule__Entity__ETypeAssignment_2 ) ) )
+            // InternalRpgindividual.g:3220:1: ( ( rule__Entity__ETypeAssignment_2 ) )
             {
-            // InternalRpgindividual.g:3247:1: ( ( rule__Entity__ETypeAssignment_2 ) )
-            // InternalRpgindividual.g:3248:2: ( rule__Entity__ETypeAssignment_2 )
+            // InternalRpgindividual.g:3220:1: ( ( rule__Entity__ETypeAssignment_2 ) )
+            // InternalRpgindividual.g:3221:2: ( rule__Entity__ETypeAssignment_2 )
             {
              before(grammarAccess.getEntityAccess().getETypeAssignment_2()); 
-            // InternalRpgindividual.g:3249:2: ( rule__Entity__ETypeAssignment_2 )
-            // InternalRpgindividual.g:3249:3: rule__Entity__ETypeAssignment_2
+            // InternalRpgindividual.g:3222:2: ( rule__Entity__ETypeAssignment_2 )
+            // InternalRpgindividual.g:3222:3: rule__Entity__ETypeAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Entity__ETypeAssignment_2();
@@ -10249,14 +10174,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__3"
-    // InternalRpgindividual.g:3257:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
+    // InternalRpgindividual.g:3230:1: rule__Entity__Group__3 : rule__Entity__Group__3__Impl rule__Entity__Group__4 ;
     public final void rule__Entity__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3261:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
-            // InternalRpgindividual.g:3262:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
+            // InternalRpgindividual.g:3234:1: ( rule__Entity__Group__3__Impl rule__Entity__Group__4 )
+            // InternalRpgindividual.g:3235:2: rule__Entity__Group__3__Impl rule__Entity__Group__4
             {
             pushFollow(FOLLOW_31);
             rule__Entity__Group__3__Impl();
@@ -10287,35 +10212,35 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__3__Impl"
-    // InternalRpgindividual.g:3269:1: rule__Entity__Group__3__Impl : ( ( rule__Entity__AttAssignment_3 )* ) ;
+    // InternalRpgindividual.g:3242:1: rule__Entity__Group__3__Impl : ( ( rule__Entity__AttAssignment_3 )* ) ;
     public final void rule__Entity__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3273:1: ( ( ( rule__Entity__AttAssignment_3 )* ) )
-            // InternalRpgindividual.g:3274:1: ( ( rule__Entity__AttAssignment_3 )* )
+            // InternalRpgindividual.g:3246:1: ( ( ( rule__Entity__AttAssignment_3 )* ) )
+            // InternalRpgindividual.g:3247:1: ( ( rule__Entity__AttAssignment_3 )* )
             {
-            // InternalRpgindividual.g:3274:1: ( ( rule__Entity__AttAssignment_3 )* )
-            // InternalRpgindividual.g:3275:2: ( rule__Entity__AttAssignment_3 )*
+            // InternalRpgindividual.g:3247:1: ( ( rule__Entity__AttAssignment_3 )* )
+            // InternalRpgindividual.g:3248:2: ( rule__Entity__AttAssignment_3 )*
             {
              before(grammarAccess.getEntityAccess().getAttAssignment_3()); 
-            // InternalRpgindividual.g:3276:2: ( rule__Entity__AttAssignment_3 )*
+            // InternalRpgindividual.g:3249:2: ( rule__Entity__AttAssignment_3 )*
             loop25:
             do {
                 int alt25=2;
                 int LA25_0 = input.LA(1);
 
-                if ( (LA25_0==20) ) {
+                if ( (LA25_0==19) ) {
                     alt25=1;
                 }
 
 
                 switch (alt25) {
             	case 1 :
-            	    // InternalRpgindividual.g:3276:3: rule__Entity__AttAssignment_3
+            	    // InternalRpgindividual.g:3249:3: rule__Entity__AttAssignment_3
             	    {
-            	    pushFollow(FOLLOW_11);
+            	    pushFollow(FOLLOW_10);
             	    rule__Entity__AttAssignment_3();
 
             	    state._fsp--;
@@ -10352,14 +10277,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__4"
-    // InternalRpgindividual.g:3284:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl ;
+    // InternalRpgindividual.g:3257:1: rule__Entity__Group__4 : rule__Entity__Group__4__Impl ;
     public final void rule__Entity__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3288:1: ( rule__Entity__Group__4__Impl )
-            // InternalRpgindividual.g:3289:2: rule__Entity__Group__4__Impl
+            // InternalRpgindividual.g:3261:1: ( rule__Entity__Group__4__Impl )
+            // InternalRpgindividual.g:3262:2: rule__Entity__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Entity__Group__4__Impl();
@@ -10385,21 +10310,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__Group__4__Impl"
-    // InternalRpgindividual.g:3295:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__EMovesAssignment_4 ) ) ;
+    // InternalRpgindividual.g:3268:1: rule__Entity__Group__4__Impl : ( ( rule__Entity__EMovesAssignment_4 ) ) ;
     public final void rule__Entity__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3299:1: ( ( ( rule__Entity__EMovesAssignment_4 ) ) )
-            // InternalRpgindividual.g:3300:1: ( ( rule__Entity__EMovesAssignment_4 ) )
+            // InternalRpgindividual.g:3272:1: ( ( ( rule__Entity__EMovesAssignment_4 ) ) )
+            // InternalRpgindividual.g:3273:1: ( ( rule__Entity__EMovesAssignment_4 ) )
             {
-            // InternalRpgindividual.g:3300:1: ( ( rule__Entity__EMovesAssignment_4 ) )
-            // InternalRpgindividual.g:3301:2: ( rule__Entity__EMovesAssignment_4 )
+            // InternalRpgindividual.g:3273:1: ( ( rule__Entity__EMovesAssignment_4 ) )
+            // InternalRpgindividual.g:3274:2: ( rule__Entity__EMovesAssignment_4 )
             {
              before(grammarAccess.getEntityAccess().getEMovesAssignment_4()); 
-            // InternalRpgindividual.g:3302:2: ( rule__Entity__EMovesAssignment_4 )
-            // InternalRpgindividual.g:3302:3: rule__Entity__EMovesAssignment_4
+            // InternalRpgindividual.g:3275:2: ( rule__Entity__EMovesAssignment_4 )
+            // InternalRpgindividual.g:3275:3: rule__Entity__EMovesAssignment_4
             {
             pushFollow(FOLLOW_2);
             rule__Entity__EMovesAssignment_4();
@@ -10432,14 +10357,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoves__Group__0"
-    // InternalRpgindividual.g:3311:1: rule__EntityMoves__Group__0 : rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1 ;
+    // InternalRpgindividual.g:3284:1: rule__EntityMoves__Group__0 : rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1 ;
     public final void rule__EntityMoves__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3315:1: ( rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1 )
-            // InternalRpgindividual.g:3316:2: rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1
+            // InternalRpgindividual.g:3288:1: ( rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1 )
+            // InternalRpgindividual.g:3289:2: rule__EntityMoves__Group__0__Impl rule__EntityMoves__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__EntityMoves__Group__0__Impl();
@@ -10470,20 +10395,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoves__Group__0__Impl"
-    // InternalRpgindividual.g:3323:1: rule__EntityMoves__Group__0__Impl : ( 'move' ) ;
+    // InternalRpgindividual.g:3296:1: rule__EntityMoves__Group__0__Impl : ( 'move' ) ;
     public final void rule__EntityMoves__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3327:1: ( ( 'move' ) )
-            // InternalRpgindividual.g:3328:1: ( 'move' )
+            // InternalRpgindividual.g:3300:1: ( ( 'move' ) )
+            // InternalRpgindividual.g:3301:1: ( 'move' )
             {
-            // InternalRpgindividual.g:3328:1: ( 'move' )
-            // InternalRpgindividual.g:3329:2: 'move'
+            // InternalRpgindividual.g:3301:1: ( 'move' )
+            // InternalRpgindividual.g:3302:2: 'move'
             {
              before(grammarAccess.getEntityMovesAccess().getMoveKeyword_0()); 
-            match(input,18,FOLLOW_2); 
+            match(input,27,FOLLOW_2); 
              after(grammarAccess.getEntityMovesAccess().getMoveKeyword_0()); 
 
             }
@@ -10507,14 +10432,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoves__Group__1"
-    // InternalRpgindividual.g:3338:1: rule__EntityMoves__Group__1 : rule__EntityMoves__Group__1__Impl ;
+    // InternalRpgindividual.g:3311:1: rule__EntityMoves__Group__1 : rule__EntityMoves__Group__1__Impl ;
     public final void rule__EntityMoves__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3342:1: ( rule__EntityMoves__Group__1__Impl )
-            // InternalRpgindividual.g:3343:2: rule__EntityMoves__Group__1__Impl
+            // InternalRpgindividual.g:3315:1: ( rule__EntityMoves__Group__1__Impl )
+            // InternalRpgindividual.g:3316:2: rule__EntityMoves__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoves__Group__1__Impl();
@@ -10540,26 +10465,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoves__Group__1__Impl"
-    // InternalRpgindividual.g:3349:1: rule__EntityMoves__Group__1__Impl : ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:3322:1: rule__EntityMoves__Group__1__Impl : ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) ) ;
     public final void rule__EntityMoves__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3353:1: ( ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:3354:1: ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) )
+            // InternalRpgindividual.g:3326:1: ( ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:3327:1: ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:3354:1: ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) )
-            // InternalRpgindividual.g:3355:2: ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* )
+            // InternalRpgindividual.g:3327:1: ( ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* ) )
+            // InternalRpgindividual.g:3328:2: ( ( rule__EntityMoves__MoveAssignment_1 ) ) ( ( rule__EntityMoves__MoveAssignment_1 )* )
             {
-            // InternalRpgindividual.g:3355:2: ( ( rule__EntityMoves__MoveAssignment_1 ) )
-            // InternalRpgindividual.g:3356:3: ( rule__EntityMoves__MoveAssignment_1 )
+            // InternalRpgindividual.g:3328:2: ( ( rule__EntityMoves__MoveAssignment_1 ) )
+            // InternalRpgindividual.g:3329:3: ( rule__EntityMoves__MoveAssignment_1 )
             {
              before(grammarAccess.getEntityMovesAccess().getMoveAssignment_1()); 
-            // InternalRpgindividual.g:3357:3: ( rule__EntityMoves__MoveAssignment_1 )
-            // InternalRpgindividual.g:3357:4: rule__EntityMoves__MoveAssignment_1
+            // InternalRpgindividual.g:3330:3: ( rule__EntityMoves__MoveAssignment_1 )
+            // InternalRpgindividual.g:3330:4: rule__EntityMoves__MoveAssignment_1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_12);
             rule__EntityMoves__MoveAssignment_1();
 
             state._fsp--;
@@ -10571,11 +10496,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:3360:2: ( ( rule__EntityMoves__MoveAssignment_1 )* )
-            // InternalRpgindividual.g:3361:3: ( rule__EntityMoves__MoveAssignment_1 )*
+            // InternalRpgindividual.g:3333:2: ( ( rule__EntityMoves__MoveAssignment_1 )* )
+            // InternalRpgindividual.g:3334:3: ( rule__EntityMoves__MoveAssignment_1 )*
             {
              before(grammarAccess.getEntityMovesAccess().getMoveAssignment_1()); 
-            // InternalRpgindividual.g:3362:3: ( rule__EntityMoves__MoveAssignment_1 )*
+            // InternalRpgindividual.g:3335:3: ( rule__EntityMoves__MoveAssignment_1 )*
             loop26:
             do {
                 int alt26=2;
@@ -10588,9 +10513,9 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt26) {
             	case 1 :
-            	    // InternalRpgindividual.g:3362:4: rule__EntityMoves__MoveAssignment_1
+            	    // InternalRpgindividual.g:3335:4: rule__EntityMoves__MoveAssignment_1
             	    {
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_12);
             	    rule__EntityMoves__MoveAssignment_1();
 
             	    state._fsp--;
@@ -10630,14 +10555,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__0"
-    // InternalRpgindividual.g:3372:1: rule__EntityMoveModifier__Group__0 : rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1 ;
+    // InternalRpgindividual.g:3345:1: rule__EntityMoveModifier__Group__0 : rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1 ;
     public final void rule__EntityMoveModifier__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3376:1: ( rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1 )
-            // InternalRpgindividual.g:3377:2: rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1
+            // InternalRpgindividual.g:3349:1: ( rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1 )
+            // InternalRpgindividual.g:3350:2: rule__EntityMoveModifier__Group__0__Impl rule__EntityMoveModifier__Group__1
             {
             pushFollow(FOLLOW_32);
             rule__EntityMoveModifier__Group__0__Impl();
@@ -10668,21 +10593,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__0__Impl"
-    // InternalRpgindividual.g:3384:1: rule__EntityMoveModifier__Group__0__Impl : ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) ) ;
+    // InternalRpgindividual.g:3357:1: rule__EntityMoveModifier__Group__0__Impl : ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) ) ;
     public final void rule__EntityMoveModifier__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3388:1: ( ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) ) )
-            // InternalRpgindividual.g:3389:1: ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) )
+            // InternalRpgindividual.g:3361:1: ( ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) ) )
+            // InternalRpgindividual.g:3362:1: ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) )
             {
-            // InternalRpgindividual.g:3389:1: ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) )
-            // InternalRpgindividual.g:3390:2: ( rule__EntityMoveModifier__MoveNameAssignment_0 )
+            // InternalRpgindividual.g:3362:1: ( ( rule__EntityMoveModifier__MoveNameAssignment_0 ) )
+            // InternalRpgindividual.g:3363:2: ( rule__EntityMoveModifier__MoveNameAssignment_0 )
             {
              before(grammarAccess.getEntityMoveModifierAccess().getMoveNameAssignment_0()); 
-            // InternalRpgindividual.g:3391:2: ( rule__EntityMoveModifier__MoveNameAssignment_0 )
-            // InternalRpgindividual.g:3391:3: rule__EntityMoveModifier__MoveNameAssignment_0
+            // InternalRpgindividual.g:3364:2: ( rule__EntityMoveModifier__MoveNameAssignment_0 )
+            // InternalRpgindividual.g:3364:3: rule__EntityMoveModifier__MoveNameAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoveModifier__MoveNameAssignment_0();
@@ -10715,14 +10640,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__1"
-    // InternalRpgindividual.g:3399:1: rule__EntityMoveModifier__Group__1 : rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2 ;
+    // InternalRpgindividual.g:3372:1: rule__EntityMoveModifier__Group__1 : rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2 ;
     public final void rule__EntityMoveModifier__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3403:1: ( rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2 )
-            // InternalRpgindividual.g:3404:2: rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2
+            // InternalRpgindividual.g:3376:1: ( rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2 )
+            // InternalRpgindividual.g:3377:2: rule__EntityMoveModifier__Group__1__Impl rule__EntityMoveModifier__Group__2
             {
             pushFollow(FOLLOW_33);
             rule__EntityMoveModifier__Group__1__Impl();
@@ -10753,17 +10678,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__1__Impl"
-    // InternalRpgindividual.g:3411:1: rule__EntityMoveModifier__Group__1__Impl : ( '(' ) ;
+    // InternalRpgindividual.g:3384:1: rule__EntityMoveModifier__Group__1__Impl : ( '(' ) ;
     public final void rule__EntityMoveModifier__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3415:1: ( ( '(' ) )
-            // InternalRpgindividual.g:3416:1: ( '(' )
+            // InternalRpgindividual.g:3388:1: ( ( '(' ) )
+            // InternalRpgindividual.g:3389:1: ( '(' )
             {
-            // InternalRpgindividual.g:3416:1: ( '(' )
-            // InternalRpgindividual.g:3417:2: '('
+            // InternalRpgindividual.g:3389:1: ( '(' )
+            // InternalRpgindividual.g:3390:2: '('
             {
              before(grammarAccess.getEntityMoveModifierAccess().getLeftParenthesisKeyword_1()); 
             match(input,35,FOLLOW_2); 
@@ -10790,14 +10715,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__2"
-    // InternalRpgindividual.g:3426:1: rule__EntityMoveModifier__Group__2 : rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3 ;
+    // InternalRpgindividual.g:3399:1: rule__EntityMoveModifier__Group__2 : rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3 ;
     public final void rule__EntityMoveModifier__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3430:1: ( rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3 )
-            // InternalRpgindividual.g:3431:2: rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3
+            // InternalRpgindividual.g:3403:1: ( rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3 )
+            // InternalRpgindividual.g:3404:2: rule__EntityMoveModifier__Group__2__Impl rule__EntityMoveModifier__Group__3
             {
             pushFollow(FOLLOW_33);
             rule__EntityMoveModifier__Group__2__Impl();
@@ -10828,20 +10753,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__2__Impl"
-    // InternalRpgindividual.g:3438:1: rule__EntityMoveModifier__Group__2__Impl : ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* ) ;
+    // InternalRpgindividual.g:3411:1: rule__EntityMoveModifier__Group__2__Impl : ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* ) ;
     public final void rule__EntityMoveModifier__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3442:1: ( ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* ) )
-            // InternalRpgindividual.g:3443:1: ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* )
+            // InternalRpgindividual.g:3415:1: ( ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* ) )
+            // InternalRpgindividual.g:3416:1: ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* )
             {
-            // InternalRpgindividual.g:3443:1: ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* )
-            // InternalRpgindividual.g:3444:2: ( rule__EntityMoveModifier__MoveModificationAssignment_2 )*
+            // InternalRpgindividual.g:3416:1: ( ( rule__EntityMoveModifier__MoveModificationAssignment_2 )* )
+            // InternalRpgindividual.g:3417:2: ( rule__EntityMoveModifier__MoveModificationAssignment_2 )*
             {
              before(grammarAccess.getEntityMoveModifierAccess().getMoveModificationAssignment_2()); 
-            // InternalRpgindividual.g:3445:2: ( rule__EntityMoveModifier__MoveModificationAssignment_2 )*
+            // InternalRpgindividual.g:3418:2: ( rule__EntityMoveModifier__MoveModificationAssignment_2 )*
             loop27:
             do {
                 int alt27=2;
@@ -10854,9 +10779,9 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt27) {
             	case 1 :
-            	    // InternalRpgindividual.g:3445:3: rule__EntityMoveModifier__MoveModificationAssignment_2
+            	    // InternalRpgindividual.g:3418:3: rule__EntityMoveModifier__MoveModificationAssignment_2
             	    {
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_12);
             	    rule__EntityMoveModifier__MoveModificationAssignment_2();
 
             	    state._fsp--;
@@ -10893,14 +10818,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__3"
-    // InternalRpgindividual.g:3453:1: rule__EntityMoveModifier__Group__3 : rule__EntityMoveModifier__Group__3__Impl ;
+    // InternalRpgindividual.g:3426:1: rule__EntityMoveModifier__Group__3 : rule__EntityMoveModifier__Group__3__Impl ;
     public final void rule__EntityMoveModifier__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3457:1: ( rule__EntityMoveModifier__Group__3__Impl )
-            // InternalRpgindividual.g:3458:2: rule__EntityMoveModifier__Group__3__Impl
+            // InternalRpgindividual.g:3430:1: ( rule__EntityMoveModifier__Group__3__Impl )
+            // InternalRpgindividual.g:3431:2: rule__EntityMoveModifier__Group__3__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoveModifier__Group__3__Impl();
@@ -10926,17 +10851,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__Group__3__Impl"
-    // InternalRpgindividual.g:3464:1: rule__EntityMoveModifier__Group__3__Impl : ( ')' ) ;
+    // InternalRpgindividual.g:3437:1: rule__EntityMoveModifier__Group__3__Impl : ( ')' ) ;
     public final void rule__EntityMoveModifier__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3468:1: ( ( ')' ) )
-            // InternalRpgindividual.g:3469:1: ( ')' )
+            // InternalRpgindividual.g:3441:1: ( ( ')' ) )
+            // InternalRpgindividual.g:3442:1: ( ')' )
             {
-            // InternalRpgindividual.g:3469:1: ( ')' )
-            // InternalRpgindividual.g:3470:2: ')'
+            // InternalRpgindividual.g:3442:1: ( ')' )
+            // InternalRpgindividual.g:3443:2: ')'
             {
              before(grammarAccess.getEntityMoveModifierAccess().getRightParenthesisKeyword_3()); 
             match(input,36,FOLLOW_2); 
@@ -10963,14 +10888,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__0"
-    // InternalRpgindividual.g:3480:1: rule__EntityMoveMultiplier__Group__0 : rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1 ;
+    // InternalRpgindividual.g:3453:1: rule__EntityMoveMultiplier__Group__0 : rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1 ;
     public final void rule__EntityMoveMultiplier__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3484:1: ( rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1 )
-            // InternalRpgindividual.g:3485:2: rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1
+            // InternalRpgindividual.g:3457:1: ( rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1 )
+            // InternalRpgindividual.g:3458:2: rule__EntityMoveMultiplier__Group__0__Impl rule__EntityMoveMultiplier__Group__1
             {
             pushFollow(FOLLOW_34);
             rule__EntityMoveMultiplier__Group__0__Impl();
@@ -11001,21 +10926,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__0__Impl"
-    // InternalRpgindividual.g:3492:1: rule__EntityMoveMultiplier__Group__0__Impl : ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) ) ;
+    // InternalRpgindividual.g:3465:1: rule__EntityMoveMultiplier__Group__0__Impl : ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) ) ;
     public final void rule__EntityMoveMultiplier__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3496:1: ( ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) ) )
-            // InternalRpgindividual.g:3497:1: ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) )
+            // InternalRpgindividual.g:3469:1: ( ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) ) )
+            // InternalRpgindividual.g:3470:1: ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) )
             {
-            // InternalRpgindividual.g:3497:1: ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) )
-            // InternalRpgindividual.g:3498:2: ( rule__EntityMoveMultiplier__AttributeAssignment_0 )
+            // InternalRpgindividual.g:3470:1: ( ( rule__EntityMoveMultiplier__AttributeAssignment_0 ) )
+            // InternalRpgindividual.g:3471:2: ( rule__EntityMoveMultiplier__AttributeAssignment_0 )
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getAttributeAssignment_0()); 
-            // InternalRpgindividual.g:3499:2: ( rule__EntityMoveMultiplier__AttributeAssignment_0 )
-            // InternalRpgindividual.g:3499:3: rule__EntityMoveMultiplier__AttributeAssignment_0
+            // InternalRpgindividual.g:3472:2: ( rule__EntityMoveMultiplier__AttributeAssignment_0 )
+            // InternalRpgindividual.g:3472:3: rule__EntityMoveMultiplier__AttributeAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoveMultiplier__AttributeAssignment_0();
@@ -11048,14 +10973,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__1"
-    // InternalRpgindividual.g:3507:1: rule__EntityMoveMultiplier__Group__1 : rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2 ;
+    // InternalRpgindividual.g:3480:1: rule__EntityMoveMultiplier__Group__1 : rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2 ;
     public final void rule__EntityMoveMultiplier__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3511:1: ( rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2 )
-            // InternalRpgindividual.g:3512:2: rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2
+            // InternalRpgindividual.g:3484:1: ( rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2 )
+            // InternalRpgindividual.g:3485:2: rule__EntityMoveMultiplier__Group__1__Impl rule__EntityMoveMultiplier__Group__2
             {
             pushFollow(FOLLOW_25);
             rule__EntityMoveMultiplier__Group__1__Impl();
@@ -11086,17 +11011,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__1__Impl"
-    // InternalRpgindividual.g:3519:1: rule__EntityMoveMultiplier__Group__1__Impl : ( '*' ) ;
+    // InternalRpgindividual.g:3492:1: rule__EntityMoveMultiplier__Group__1__Impl : ( '*' ) ;
     public final void rule__EntityMoveMultiplier__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3523:1: ( ( '*' ) )
-            // InternalRpgindividual.g:3524:1: ( '*' )
+            // InternalRpgindividual.g:3496:1: ( ( '*' ) )
+            // InternalRpgindividual.g:3497:1: ( '*' )
             {
-            // InternalRpgindividual.g:3524:1: ( '*' )
-            // InternalRpgindividual.g:3525:2: '*'
+            // InternalRpgindividual.g:3497:1: ( '*' )
+            // InternalRpgindividual.g:3498:2: '*'
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getAsteriskKeyword_1()); 
             match(input,37,FOLLOW_2); 
@@ -11123,14 +11048,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__2"
-    // InternalRpgindividual.g:3534:1: rule__EntityMoveMultiplier__Group__2 : rule__EntityMoveMultiplier__Group__2__Impl ;
+    // InternalRpgindividual.g:3507:1: rule__EntityMoveMultiplier__Group__2 : rule__EntityMoveMultiplier__Group__2__Impl ;
     public final void rule__EntityMoveMultiplier__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3538:1: ( rule__EntityMoveMultiplier__Group__2__Impl )
-            // InternalRpgindividual.g:3539:2: rule__EntityMoveMultiplier__Group__2__Impl
+            // InternalRpgindividual.g:3511:1: ( rule__EntityMoveMultiplier__Group__2__Impl )
+            // InternalRpgindividual.g:3512:2: rule__EntityMoveMultiplier__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoveMultiplier__Group__2__Impl();
@@ -11156,21 +11081,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__Group__2__Impl"
-    // InternalRpgindividual.g:3545:1: rule__EntityMoveMultiplier__Group__2__Impl : ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) ) ;
+    // InternalRpgindividual.g:3518:1: rule__EntityMoveMultiplier__Group__2__Impl : ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) ) ;
     public final void rule__EntityMoveMultiplier__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3549:1: ( ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) ) )
-            // InternalRpgindividual.g:3550:1: ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) )
+            // InternalRpgindividual.g:3522:1: ( ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) ) )
+            // InternalRpgindividual.g:3523:1: ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) )
             {
-            // InternalRpgindividual.g:3550:1: ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) )
-            // InternalRpgindividual.g:3551:2: ( rule__EntityMoveMultiplier__MultiplierAssignment_2 )
+            // InternalRpgindividual.g:3523:1: ( ( rule__EntityMoveMultiplier__MultiplierAssignment_2 ) )
+            // InternalRpgindividual.g:3524:2: ( rule__EntityMoveMultiplier__MultiplierAssignment_2 )
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getMultiplierAssignment_2()); 
-            // InternalRpgindividual.g:3552:2: ( rule__EntityMoveMultiplier__MultiplierAssignment_2 )
-            // InternalRpgindividual.g:3552:3: rule__EntityMoveMultiplier__MultiplierAssignment_2
+            // InternalRpgindividual.g:3525:2: ( rule__EntityMoveMultiplier__MultiplierAssignment_2 )
+            // InternalRpgindividual.g:3525:3: rule__EntityMoveMultiplier__MultiplierAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__EntityMoveMultiplier__MultiplierAssignment_2();
@@ -11203,14 +11128,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Teams__Group__0"
-    // InternalRpgindividual.g:3561:1: rule__Teams__Group__0 : rule__Teams__Group__0__Impl rule__Teams__Group__1 ;
+    // InternalRpgindividual.g:3534:1: rule__Teams__Group__0 : rule__Teams__Group__0__Impl rule__Teams__Group__1 ;
     public final void rule__Teams__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3565:1: ( rule__Teams__Group__0__Impl rule__Teams__Group__1 )
-            // InternalRpgindividual.g:3566:2: rule__Teams__Group__0__Impl rule__Teams__Group__1
+            // InternalRpgindividual.g:3538:1: ( rule__Teams__Group__0__Impl rule__Teams__Group__1 )
+            // InternalRpgindividual.g:3539:2: rule__Teams__Group__0__Impl rule__Teams__Group__1
             {
             pushFollow(FOLLOW_35);
             rule__Teams__Group__0__Impl();
@@ -11241,17 +11166,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Teams__Group__0__Impl"
-    // InternalRpgindividual.g:3573:1: rule__Teams__Group__0__Impl : ( 'teams' ) ;
+    // InternalRpgindividual.g:3546:1: rule__Teams__Group__0__Impl : ( 'teams' ) ;
     public final void rule__Teams__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3577:1: ( ( 'teams' ) )
-            // InternalRpgindividual.g:3578:1: ( 'teams' )
+            // InternalRpgindividual.g:3550:1: ( ( 'teams' ) )
+            // InternalRpgindividual.g:3551:1: ( 'teams' )
             {
-            // InternalRpgindividual.g:3578:1: ( 'teams' )
-            // InternalRpgindividual.g:3579:2: 'teams'
+            // InternalRpgindividual.g:3551:1: ( 'teams' )
+            // InternalRpgindividual.g:3552:2: 'teams'
             {
              before(grammarAccess.getTeamsAccess().getTeamsKeyword_0()); 
             match(input,38,FOLLOW_2); 
@@ -11278,14 +11203,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Teams__Group__1"
-    // InternalRpgindividual.g:3588:1: rule__Teams__Group__1 : rule__Teams__Group__1__Impl ;
+    // InternalRpgindividual.g:3561:1: rule__Teams__Group__1 : rule__Teams__Group__1__Impl ;
     public final void rule__Teams__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3592:1: ( rule__Teams__Group__1__Impl )
-            // InternalRpgindividual.g:3593:2: rule__Teams__Group__1__Impl
+            // InternalRpgindividual.g:3565:1: ( rule__Teams__Group__1__Impl )
+            // InternalRpgindividual.g:3566:2: rule__Teams__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Teams__Group__1__Impl();
@@ -11311,24 +11236,24 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Teams__Group__1__Impl"
-    // InternalRpgindividual.g:3599:1: rule__Teams__Group__1__Impl : ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:3572:1: rule__Teams__Group__1__Impl : ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) ) ;
     public final void rule__Teams__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3603:1: ( ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:3604:1: ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) )
+            // InternalRpgindividual.g:3576:1: ( ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:3577:1: ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:3604:1: ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) )
-            // InternalRpgindividual.g:3605:2: ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* )
+            // InternalRpgindividual.g:3577:1: ( ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* ) )
+            // InternalRpgindividual.g:3578:2: ( ( rule__Teams__TeamAssignment_1 ) ) ( ( rule__Teams__TeamAssignment_1 )* )
             {
-            // InternalRpgindividual.g:3605:2: ( ( rule__Teams__TeamAssignment_1 ) )
-            // InternalRpgindividual.g:3606:3: ( rule__Teams__TeamAssignment_1 )
+            // InternalRpgindividual.g:3578:2: ( ( rule__Teams__TeamAssignment_1 ) )
+            // InternalRpgindividual.g:3579:3: ( rule__Teams__TeamAssignment_1 )
             {
              before(grammarAccess.getTeamsAccess().getTeamAssignment_1()); 
-            // InternalRpgindividual.g:3607:3: ( rule__Teams__TeamAssignment_1 )
-            // InternalRpgindividual.g:3607:4: rule__Teams__TeamAssignment_1
+            // InternalRpgindividual.g:3580:3: ( rule__Teams__TeamAssignment_1 )
+            // InternalRpgindividual.g:3580:4: rule__Teams__TeamAssignment_1
             {
             pushFollow(FOLLOW_36);
             rule__Teams__TeamAssignment_1();
@@ -11342,11 +11267,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:3610:2: ( ( rule__Teams__TeamAssignment_1 )* )
-            // InternalRpgindividual.g:3611:3: ( rule__Teams__TeamAssignment_1 )*
+            // InternalRpgindividual.g:3583:2: ( ( rule__Teams__TeamAssignment_1 )* )
+            // InternalRpgindividual.g:3584:3: ( rule__Teams__TeamAssignment_1 )*
             {
              before(grammarAccess.getTeamsAccess().getTeamAssignment_1()); 
-            // InternalRpgindividual.g:3612:3: ( rule__Teams__TeamAssignment_1 )*
+            // InternalRpgindividual.g:3585:3: ( rule__Teams__TeamAssignment_1 )*
             loop28:
             do {
                 int alt28=2;
@@ -11359,7 +11284,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt28) {
             	case 1 :
-            	    // InternalRpgindividual.g:3612:4: rule__Teams__TeamAssignment_1
+            	    // InternalRpgindividual.g:3585:4: rule__Teams__TeamAssignment_1
             	    {
             	    pushFollow(FOLLOW_36);
             	    rule__Teams__TeamAssignment_1();
@@ -11401,14 +11326,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__0"
-    // InternalRpgindividual.g:3622:1: rule__Team__Group__0 : rule__Team__Group__0__Impl rule__Team__Group__1 ;
+    // InternalRpgindividual.g:3595:1: rule__Team__Group__0 : rule__Team__Group__0__Impl rule__Team__Group__1 ;
     public final void rule__Team__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3626:1: ( rule__Team__Group__0__Impl rule__Team__Group__1 )
-            // InternalRpgindividual.g:3627:2: rule__Team__Group__0__Impl rule__Team__Group__1
+            // InternalRpgindividual.g:3599:1: ( rule__Team__Group__0__Impl rule__Team__Group__1 )
+            // InternalRpgindividual.g:3600:2: rule__Team__Group__0__Impl rule__Team__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Team__Group__0__Impl();
@@ -11439,17 +11364,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__0__Impl"
-    // InternalRpgindividual.g:3634:1: rule__Team__Group__0__Impl : ( 'team' ) ;
+    // InternalRpgindividual.g:3607:1: rule__Team__Group__0__Impl : ( 'team' ) ;
     public final void rule__Team__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3638:1: ( ( 'team' ) )
-            // InternalRpgindividual.g:3639:1: ( 'team' )
+            // InternalRpgindividual.g:3611:1: ( ( 'team' ) )
+            // InternalRpgindividual.g:3612:1: ( 'team' )
             {
-            // InternalRpgindividual.g:3639:1: ( 'team' )
-            // InternalRpgindividual.g:3640:2: 'team'
+            // InternalRpgindividual.g:3612:1: ( 'team' )
+            // InternalRpgindividual.g:3613:2: 'team'
             {
              before(grammarAccess.getTeamAccess().getTeamKeyword_0()); 
             match(input,39,FOLLOW_2); 
@@ -11476,14 +11401,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__1"
-    // InternalRpgindividual.g:3649:1: rule__Team__Group__1 : rule__Team__Group__1__Impl rule__Team__Group__2 ;
+    // InternalRpgindividual.g:3622:1: rule__Team__Group__1 : rule__Team__Group__1__Impl rule__Team__Group__2 ;
     public final void rule__Team__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3653:1: ( rule__Team__Group__1__Impl rule__Team__Group__2 )
-            // InternalRpgindividual.g:3654:2: rule__Team__Group__1__Impl rule__Team__Group__2
+            // InternalRpgindividual.g:3626:1: ( rule__Team__Group__1__Impl rule__Team__Group__2 )
+            // InternalRpgindividual.g:3627:2: rule__Team__Group__1__Impl rule__Team__Group__2
             {
             pushFollow(FOLLOW_37);
             rule__Team__Group__1__Impl();
@@ -11514,21 +11439,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__1__Impl"
-    // InternalRpgindividual.g:3661:1: rule__Team__Group__1__Impl : ( ( rule__Team__NameAssignment_1 ) ) ;
+    // InternalRpgindividual.g:3634:1: rule__Team__Group__1__Impl : ( ( rule__Team__NameAssignment_1 ) ) ;
     public final void rule__Team__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3665:1: ( ( ( rule__Team__NameAssignment_1 ) ) )
-            // InternalRpgindividual.g:3666:1: ( ( rule__Team__NameAssignment_1 ) )
+            // InternalRpgindividual.g:3638:1: ( ( ( rule__Team__NameAssignment_1 ) ) )
+            // InternalRpgindividual.g:3639:1: ( ( rule__Team__NameAssignment_1 ) )
             {
-            // InternalRpgindividual.g:3666:1: ( ( rule__Team__NameAssignment_1 ) )
-            // InternalRpgindividual.g:3667:2: ( rule__Team__NameAssignment_1 )
+            // InternalRpgindividual.g:3639:1: ( ( rule__Team__NameAssignment_1 ) )
+            // InternalRpgindividual.g:3640:2: ( rule__Team__NameAssignment_1 )
             {
              before(grammarAccess.getTeamAccess().getNameAssignment_1()); 
-            // InternalRpgindividual.g:3668:2: ( rule__Team__NameAssignment_1 )
-            // InternalRpgindividual.g:3668:3: rule__Team__NameAssignment_1
+            // InternalRpgindividual.g:3641:2: ( rule__Team__NameAssignment_1 )
+            // InternalRpgindividual.g:3641:3: rule__Team__NameAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__Team__NameAssignment_1();
@@ -11561,14 +11486,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__2"
-    // InternalRpgindividual.g:3676:1: rule__Team__Group__2 : rule__Team__Group__2__Impl ;
+    // InternalRpgindividual.g:3649:1: rule__Team__Group__2 : rule__Team__Group__2__Impl ;
     public final void rule__Team__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3680:1: ( rule__Team__Group__2__Impl )
-            // InternalRpgindividual.g:3681:2: rule__Team__Group__2__Impl
+            // InternalRpgindividual.g:3653:1: ( rule__Team__Group__2__Impl )
+            // InternalRpgindividual.g:3654:2: rule__Team__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Team__Group__2__Impl();
@@ -11594,21 +11519,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__Group__2__Impl"
-    // InternalRpgindividual.g:3687:1: rule__Team__Group__2__Impl : ( ( rule__Team__MembersAssignment_2 ) ) ;
+    // InternalRpgindividual.g:3660:1: rule__Team__Group__2__Impl : ( ( rule__Team__MembersAssignment_2 ) ) ;
     public final void rule__Team__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3691:1: ( ( ( rule__Team__MembersAssignment_2 ) ) )
-            // InternalRpgindividual.g:3692:1: ( ( rule__Team__MembersAssignment_2 ) )
+            // InternalRpgindividual.g:3664:1: ( ( ( rule__Team__MembersAssignment_2 ) ) )
+            // InternalRpgindividual.g:3665:1: ( ( rule__Team__MembersAssignment_2 ) )
             {
-            // InternalRpgindividual.g:3692:1: ( ( rule__Team__MembersAssignment_2 ) )
-            // InternalRpgindividual.g:3693:2: ( rule__Team__MembersAssignment_2 )
+            // InternalRpgindividual.g:3665:1: ( ( rule__Team__MembersAssignment_2 ) )
+            // InternalRpgindividual.g:3666:2: ( rule__Team__MembersAssignment_2 )
             {
              before(grammarAccess.getTeamAccess().getMembersAssignment_2()); 
-            // InternalRpgindividual.g:3694:2: ( rule__Team__MembersAssignment_2 )
-            // InternalRpgindividual.g:3694:3: rule__Team__MembersAssignment_2
+            // InternalRpgindividual.g:3667:2: ( rule__Team__MembersAssignment_2 )
+            // InternalRpgindividual.g:3667:3: rule__Team__MembersAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__Team__MembersAssignment_2();
@@ -11641,14 +11566,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Members__Group__0"
-    // InternalRpgindividual.g:3703:1: rule__Members__Group__0 : rule__Members__Group__0__Impl rule__Members__Group__1 ;
+    // InternalRpgindividual.g:3676:1: rule__Members__Group__0 : rule__Members__Group__0__Impl rule__Members__Group__1 ;
     public final void rule__Members__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3707:1: ( rule__Members__Group__0__Impl rule__Members__Group__1 )
-            // InternalRpgindividual.g:3708:2: rule__Members__Group__0__Impl rule__Members__Group__1
+            // InternalRpgindividual.g:3680:1: ( rule__Members__Group__0__Impl rule__Members__Group__1 )
+            // InternalRpgindividual.g:3681:2: rule__Members__Group__0__Impl rule__Members__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__Members__Group__0__Impl();
@@ -11679,17 +11604,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Members__Group__0__Impl"
-    // InternalRpgindividual.g:3715:1: rule__Members__Group__0__Impl : ( 'members' ) ;
+    // InternalRpgindividual.g:3688:1: rule__Members__Group__0__Impl : ( 'members' ) ;
     public final void rule__Members__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3719:1: ( ( 'members' ) )
-            // InternalRpgindividual.g:3720:1: ( 'members' )
+            // InternalRpgindividual.g:3692:1: ( ( 'members' ) )
+            // InternalRpgindividual.g:3693:1: ( 'members' )
             {
-            // InternalRpgindividual.g:3720:1: ( 'members' )
-            // InternalRpgindividual.g:3721:2: 'members'
+            // InternalRpgindividual.g:3693:1: ( 'members' )
+            // InternalRpgindividual.g:3694:2: 'members'
             {
              before(grammarAccess.getMembersAccess().getMembersKeyword_0()); 
             match(input,40,FOLLOW_2); 
@@ -11716,14 +11641,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Members__Group__1"
-    // InternalRpgindividual.g:3730:1: rule__Members__Group__1 : rule__Members__Group__1__Impl ;
+    // InternalRpgindividual.g:3703:1: rule__Members__Group__1 : rule__Members__Group__1__Impl ;
     public final void rule__Members__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3734:1: ( rule__Members__Group__1__Impl )
-            // InternalRpgindividual.g:3735:2: rule__Members__Group__1__Impl
+            // InternalRpgindividual.g:3707:1: ( rule__Members__Group__1__Impl )
+            // InternalRpgindividual.g:3708:2: rule__Members__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Members__Group__1__Impl();
@@ -11749,26 +11674,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Members__Group__1__Impl"
-    // InternalRpgindividual.g:3741:1: rule__Members__Group__1__Impl : ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) ) ;
+    // InternalRpgindividual.g:3714:1: rule__Members__Group__1__Impl : ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) ) ;
     public final void rule__Members__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3745:1: ( ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) ) )
-            // InternalRpgindividual.g:3746:1: ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) )
+            // InternalRpgindividual.g:3718:1: ( ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) ) )
+            // InternalRpgindividual.g:3719:1: ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) )
             {
-            // InternalRpgindividual.g:3746:1: ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) )
-            // InternalRpgindividual.g:3747:2: ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* )
+            // InternalRpgindividual.g:3719:1: ( ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* ) )
+            // InternalRpgindividual.g:3720:2: ( ( rule__Members__EntityAssignment_1 ) ) ( ( rule__Members__EntityAssignment_1 )* )
             {
-            // InternalRpgindividual.g:3747:2: ( ( rule__Members__EntityAssignment_1 ) )
-            // InternalRpgindividual.g:3748:3: ( rule__Members__EntityAssignment_1 )
+            // InternalRpgindividual.g:3720:2: ( ( rule__Members__EntityAssignment_1 ) )
+            // InternalRpgindividual.g:3721:3: ( rule__Members__EntityAssignment_1 )
             {
              before(grammarAccess.getMembersAccess().getEntityAssignment_1()); 
-            // InternalRpgindividual.g:3749:3: ( rule__Members__EntityAssignment_1 )
-            // InternalRpgindividual.g:3749:4: rule__Members__EntityAssignment_1
+            // InternalRpgindividual.g:3722:3: ( rule__Members__EntityAssignment_1 )
+            // InternalRpgindividual.g:3722:4: rule__Members__EntityAssignment_1
             {
-            pushFollow(FOLLOW_13);
+            pushFollow(FOLLOW_12);
             rule__Members__EntityAssignment_1();
 
             state._fsp--;
@@ -11780,11 +11705,11 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
             }
 
-            // InternalRpgindividual.g:3752:2: ( ( rule__Members__EntityAssignment_1 )* )
-            // InternalRpgindividual.g:3753:3: ( rule__Members__EntityAssignment_1 )*
+            // InternalRpgindividual.g:3725:2: ( ( rule__Members__EntityAssignment_1 )* )
+            // InternalRpgindividual.g:3726:3: ( rule__Members__EntityAssignment_1 )*
             {
              before(grammarAccess.getMembersAccess().getEntityAssignment_1()); 
-            // InternalRpgindividual.g:3754:3: ( rule__Members__EntityAssignment_1 )*
+            // InternalRpgindividual.g:3727:3: ( rule__Members__EntityAssignment_1 )*
             loop29:
             do {
                 int alt29=2;
@@ -11797,9 +11722,9 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt29) {
             	case 1 :
-            	    // InternalRpgindividual.g:3754:4: rule__Members__EntityAssignment_1
+            	    // InternalRpgindividual.g:3727:4: rule__Members__EntityAssignment_1
             	    {
-            	    pushFollow(FOLLOW_13);
+            	    pushFollow(FOLLOW_12);
             	    rule__Members__EntityAssignment_1();
 
             	    state._fsp--;
@@ -11839,14 +11764,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group__0"
-    // InternalRpgindividual.g:3764:1: rule__ORcondition__Group__0 : rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1 ;
+    // InternalRpgindividual.g:3737:1: rule__ORcondition__Group__0 : rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1 ;
     public final void rule__ORcondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3768:1: ( rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1 )
-            // InternalRpgindividual.g:3769:2: rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1
+            // InternalRpgindividual.g:3741:1: ( rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1 )
+            // InternalRpgindividual.g:3742:2: rule__ORcondition__Group__0__Impl rule__ORcondition__Group__1
             {
             pushFollow(FOLLOW_38);
             rule__ORcondition__Group__0__Impl();
@@ -11877,17 +11802,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group__0__Impl"
-    // InternalRpgindividual.g:3776:1: rule__ORcondition__Group__0__Impl : ( ruleANDcondition ) ;
+    // InternalRpgindividual.g:3749:1: rule__ORcondition__Group__0__Impl : ( ruleANDcondition ) ;
     public final void rule__ORcondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3780:1: ( ( ruleANDcondition ) )
-            // InternalRpgindividual.g:3781:1: ( ruleANDcondition )
+            // InternalRpgindividual.g:3753:1: ( ( ruleANDcondition ) )
+            // InternalRpgindividual.g:3754:1: ( ruleANDcondition )
             {
-            // InternalRpgindividual.g:3781:1: ( ruleANDcondition )
-            // InternalRpgindividual.g:3782:2: ruleANDcondition
+            // InternalRpgindividual.g:3754:1: ( ruleANDcondition )
+            // InternalRpgindividual.g:3755:2: ruleANDcondition
             {
              before(grammarAccess.getORconditionAccess().getANDconditionParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -11918,14 +11843,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group__1"
-    // InternalRpgindividual.g:3791:1: rule__ORcondition__Group__1 : rule__ORcondition__Group__1__Impl ;
+    // InternalRpgindividual.g:3764:1: rule__ORcondition__Group__1 : rule__ORcondition__Group__1__Impl ;
     public final void rule__ORcondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3795:1: ( rule__ORcondition__Group__1__Impl )
-            // InternalRpgindividual.g:3796:2: rule__ORcondition__Group__1__Impl
+            // InternalRpgindividual.g:3768:1: ( rule__ORcondition__Group__1__Impl )
+            // InternalRpgindividual.g:3769:2: rule__ORcondition__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ORcondition__Group__1__Impl();
@@ -11951,20 +11876,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group__1__Impl"
-    // InternalRpgindividual.g:3802:1: rule__ORcondition__Group__1__Impl : ( ( rule__ORcondition__Group_1__0 )* ) ;
+    // InternalRpgindividual.g:3775:1: rule__ORcondition__Group__1__Impl : ( ( rule__ORcondition__Group_1__0 )* ) ;
     public final void rule__ORcondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3806:1: ( ( ( rule__ORcondition__Group_1__0 )* ) )
-            // InternalRpgindividual.g:3807:1: ( ( rule__ORcondition__Group_1__0 )* )
+            // InternalRpgindividual.g:3779:1: ( ( ( rule__ORcondition__Group_1__0 )* ) )
+            // InternalRpgindividual.g:3780:1: ( ( rule__ORcondition__Group_1__0 )* )
             {
-            // InternalRpgindividual.g:3807:1: ( ( rule__ORcondition__Group_1__0 )* )
-            // InternalRpgindividual.g:3808:2: ( rule__ORcondition__Group_1__0 )*
+            // InternalRpgindividual.g:3780:1: ( ( rule__ORcondition__Group_1__0 )* )
+            // InternalRpgindividual.g:3781:2: ( rule__ORcondition__Group_1__0 )*
             {
              before(grammarAccess.getORconditionAccess().getGroup_1()); 
-            // InternalRpgindividual.g:3809:2: ( rule__ORcondition__Group_1__0 )*
+            // InternalRpgindividual.g:3782:2: ( rule__ORcondition__Group_1__0 )*
             loop30:
             do {
                 int alt30=2;
@@ -11977,7 +11902,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt30) {
             	case 1 :
-            	    // InternalRpgindividual.g:3809:3: rule__ORcondition__Group_1__0
+            	    // InternalRpgindividual.g:3782:3: rule__ORcondition__Group_1__0
             	    {
             	    pushFollow(FOLLOW_39);
             	    rule__ORcondition__Group_1__0();
@@ -12016,14 +11941,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__0"
-    // InternalRpgindividual.g:3818:1: rule__ORcondition__Group_1__0 : rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1 ;
+    // InternalRpgindividual.g:3791:1: rule__ORcondition__Group_1__0 : rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1 ;
     public final void rule__ORcondition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3822:1: ( rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1 )
-            // InternalRpgindividual.g:3823:2: rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1
+            // InternalRpgindividual.g:3795:1: ( rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1 )
+            // InternalRpgindividual.g:3796:2: rule__ORcondition__Group_1__0__Impl rule__ORcondition__Group_1__1
             {
             pushFollow(FOLLOW_26);
             rule__ORcondition__Group_1__0__Impl();
@@ -12054,17 +11979,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__0__Impl"
-    // InternalRpgindividual.g:3830:1: rule__ORcondition__Group_1__0__Impl : ( 'OR' ) ;
+    // InternalRpgindividual.g:3803:1: rule__ORcondition__Group_1__0__Impl : ( 'OR' ) ;
     public final void rule__ORcondition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3834:1: ( ( 'OR' ) )
-            // InternalRpgindividual.g:3835:1: ( 'OR' )
+            // InternalRpgindividual.g:3807:1: ( ( 'OR' ) )
+            // InternalRpgindividual.g:3808:1: ( 'OR' )
             {
-            // InternalRpgindividual.g:3835:1: ( 'OR' )
-            // InternalRpgindividual.g:3836:2: 'OR'
+            // InternalRpgindividual.g:3808:1: ( 'OR' )
+            // InternalRpgindividual.g:3809:2: 'OR'
             {
              before(grammarAccess.getORconditionAccess().getORKeyword_1_0()); 
             match(input,41,FOLLOW_2); 
@@ -12091,14 +12016,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__1"
-    // InternalRpgindividual.g:3845:1: rule__ORcondition__Group_1__1 : rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2 ;
+    // InternalRpgindividual.g:3818:1: rule__ORcondition__Group_1__1 : rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2 ;
     public final void rule__ORcondition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3849:1: ( rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2 )
-            // InternalRpgindividual.g:3850:2: rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2
+            // InternalRpgindividual.g:3822:1: ( rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2 )
+            // InternalRpgindividual.g:3823:2: rule__ORcondition__Group_1__1__Impl rule__ORcondition__Group_1__2
             {
             pushFollow(FOLLOW_26);
             rule__ORcondition__Group_1__1__Impl();
@@ -12129,21 +12054,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__1__Impl"
-    // InternalRpgindividual.g:3857:1: rule__ORcondition__Group_1__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:3830:1: rule__ORcondition__Group_1__1__Impl : ( () ) ;
     public final void rule__ORcondition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3861:1: ( ( () ) )
-            // InternalRpgindividual.g:3862:1: ( () )
+            // InternalRpgindividual.g:3834:1: ( ( () ) )
+            // InternalRpgindividual.g:3835:1: ( () )
             {
-            // InternalRpgindividual.g:3862:1: ( () )
-            // InternalRpgindividual.g:3863:2: ()
+            // InternalRpgindividual.g:3835:1: ( () )
+            // InternalRpgindividual.g:3836:2: ()
             {
              before(grammarAccess.getORconditionAccess().getOrLeftAction_1_1()); 
-            // InternalRpgindividual.g:3864:2: ()
-            // InternalRpgindividual.g:3864:3: 
+            // InternalRpgindividual.g:3837:2: ()
+            // InternalRpgindividual.g:3837:3: 
             {
             }
 
@@ -12166,14 +12091,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__2"
-    // InternalRpgindividual.g:3872:1: rule__ORcondition__Group_1__2 : rule__ORcondition__Group_1__2__Impl ;
+    // InternalRpgindividual.g:3845:1: rule__ORcondition__Group_1__2 : rule__ORcondition__Group_1__2__Impl ;
     public final void rule__ORcondition__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3876:1: ( rule__ORcondition__Group_1__2__Impl )
-            // InternalRpgindividual.g:3877:2: rule__ORcondition__Group_1__2__Impl
+            // InternalRpgindividual.g:3849:1: ( rule__ORcondition__Group_1__2__Impl )
+            // InternalRpgindividual.g:3850:2: rule__ORcondition__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ORcondition__Group_1__2__Impl();
@@ -12199,21 +12124,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__Group_1__2__Impl"
-    // InternalRpgindividual.g:3883:1: rule__ORcondition__Group_1__2__Impl : ( ( rule__ORcondition__RightAssignment_1_2 ) ) ;
+    // InternalRpgindividual.g:3856:1: rule__ORcondition__Group_1__2__Impl : ( ( rule__ORcondition__RightAssignment_1_2 ) ) ;
     public final void rule__ORcondition__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3887:1: ( ( ( rule__ORcondition__RightAssignment_1_2 ) ) )
-            // InternalRpgindividual.g:3888:1: ( ( rule__ORcondition__RightAssignment_1_2 ) )
+            // InternalRpgindividual.g:3860:1: ( ( ( rule__ORcondition__RightAssignment_1_2 ) ) )
+            // InternalRpgindividual.g:3861:1: ( ( rule__ORcondition__RightAssignment_1_2 ) )
             {
-            // InternalRpgindividual.g:3888:1: ( ( rule__ORcondition__RightAssignment_1_2 ) )
-            // InternalRpgindividual.g:3889:2: ( rule__ORcondition__RightAssignment_1_2 )
+            // InternalRpgindividual.g:3861:1: ( ( rule__ORcondition__RightAssignment_1_2 ) )
+            // InternalRpgindividual.g:3862:2: ( rule__ORcondition__RightAssignment_1_2 )
             {
              before(grammarAccess.getORconditionAccess().getRightAssignment_1_2()); 
-            // InternalRpgindividual.g:3890:2: ( rule__ORcondition__RightAssignment_1_2 )
-            // InternalRpgindividual.g:3890:3: rule__ORcondition__RightAssignment_1_2
+            // InternalRpgindividual.g:3863:2: ( rule__ORcondition__RightAssignment_1_2 )
+            // InternalRpgindividual.g:3863:3: rule__ORcondition__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__ORcondition__RightAssignment_1_2();
@@ -12246,14 +12171,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group__0"
-    // InternalRpgindividual.g:3899:1: rule__ANDcondition__Group__0 : rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1 ;
+    // InternalRpgindividual.g:3872:1: rule__ANDcondition__Group__0 : rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1 ;
     public final void rule__ANDcondition__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3903:1: ( rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1 )
-            // InternalRpgindividual.g:3904:2: rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1
+            // InternalRpgindividual.g:3876:1: ( rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1 )
+            // InternalRpgindividual.g:3877:2: rule__ANDcondition__Group__0__Impl rule__ANDcondition__Group__1
             {
             pushFollow(FOLLOW_40);
             rule__ANDcondition__Group__0__Impl();
@@ -12284,17 +12209,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group__0__Impl"
-    // InternalRpgindividual.g:3911:1: rule__ANDcondition__Group__0__Impl : ( ruleStatement ) ;
+    // InternalRpgindividual.g:3884:1: rule__ANDcondition__Group__0__Impl : ( ruleStatement ) ;
     public final void rule__ANDcondition__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3915:1: ( ( ruleStatement ) )
-            // InternalRpgindividual.g:3916:1: ( ruleStatement )
+            // InternalRpgindividual.g:3888:1: ( ( ruleStatement ) )
+            // InternalRpgindividual.g:3889:1: ( ruleStatement )
             {
-            // InternalRpgindividual.g:3916:1: ( ruleStatement )
-            // InternalRpgindividual.g:3917:2: ruleStatement
+            // InternalRpgindividual.g:3889:1: ( ruleStatement )
+            // InternalRpgindividual.g:3890:2: ruleStatement
             {
              before(grammarAccess.getANDconditionAccess().getStatementParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -12325,14 +12250,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group__1"
-    // InternalRpgindividual.g:3926:1: rule__ANDcondition__Group__1 : rule__ANDcondition__Group__1__Impl ;
+    // InternalRpgindividual.g:3899:1: rule__ANDcondition__Group__1 : rule__ANDcondition__Group__1__Impl ;
     public final void rule__ANDcondition__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3930:1: ( rule__ANDcondition__Group__1__Impl )
-            // InternalRpgindividual.g:3931:2: rule__ANDcondition__Group__1__Impl
+            // InternalRpgindividual.g:3903:1: ( rule__ANDcondition__Group__1__Impl )
+            // InternalRpgindividual.g:3904:2: rule__ANDcondition__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ANDcondition__Group__1__Impl();
@@ -12358,20 +12283,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group__1__Impl"
-    // InternalRpgindividual.g:3937:1: rule__ANDcondition__Group__1__Impl : ( ( rule__ANDcondition__Group_1__0 )* ) ;
+    // InternalRpgindividual.g:3910:1: rule__ANDcondition__Group__1__Impl : ( ( rule__ANDcondition__Group_1__0 )* ) ;
     public final void rule__ANDcondition__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3941:1: ( ( ( rule__ANDcondition__Group_1__0 )* ) )
-            // InternalRpgindividual.g:3942:1: ( ( rule__ANDcondition__Group_1__0 )* )
+            // InternalRpgindividual.g:3914:1: ( ( ( rule__ANDcondition__Group_1__0 )* ) )
+            // InternalRpgindividual.g:3915:1: ( ( rule__ANDcondition__Group_1__0 )* )
             {
-            // InternalRpgindividual.g:3942:1: ( ( rule__ANDcondition__Group_1__0 )* )
-            // InternalRpgindividual.g:3943:2: ( rule__ANDcondition__Group_1__0 )*
+            // InternalRpgindividual.g:3915:1: ( ( rule__ANDcondition__Group_1__0 )* )
+            // InternalRpgindividual.g:3916:2: ( rule__ANDcondition__Group_1__0 )*
             {
              before(grammarAccess.getANDconditionAccess().getGroup_1()); 
-            // InternalRpgindividual.g:3944:2: ( rule__ANDcondition__Group_1__0 )*
+            // InternalRpgindividual.g:3917:2: ( rule__ANDcondition__Group_1__0 )*
             loop31:
             do {
                 int alt31=2;
@@ -12384,7 +12309,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt31) {
             	case 1 :
-            	    // InternalRpgindividual.g:3944:3: rule__ANDcondition__Group_1__0
+            	    // InternalRpgindividual.g:3917:3: rule__ANDcondition__Group_1__0
             	    {
             	    pushFollow(FOLLOW_41);
             	    rule__ANDcondition__Group_1__0();
@@ -12423,14 +12348,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__0"
-    // InternalRpgindividual.g:3953:1: rule__ANDcondition__Group_1__0 : rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1 ;
+    // InternalRpgindividual.g:3926:1: rule__ANDcondition__Group_1__0 : rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1 ;
     public final void rule__ANDcondition__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3957:1: ( rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1 )
-            // InternalRpgindividual.g:3958:2: rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1
+            // InternalRpgindividual.g:3930:1: ( rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1 )
+            // InternalRpgindividual.g:3931:2: rule__ANDcondition__Group_1__0__Impl rule__ANDcondition__Group_1__1
             {
             pushFollow(FOLLOW_26);
             rule__ANDcondition__Group_1__0__Impl();
@@ -12461,17 +12386,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__0__Impl"
-    // InternalRpgindividual.g:3965:1: rule__ANDcondition__Group_1__0__Impl : ( 'AND' ) ;
+    // InternalRpgindividual.g:3938:1: rule__ANDcondition__Group_1__0__Impl : ( 'AND' ) ;
     public final void rule__ANDcondition__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3969:1: ( ( 'AND' ) )
-            // InternalRpgindividual.g:3970:1: ( 'AND' )
+            // InternalRpgindividual.g:3942:1: ( ( 'AND' ) )
+            // InternalRpgindividual.g:3943:1: ( 'AND' )
             {
-            // InternalRpgindividual.g:3970:1: ( 'AND' )
-            // InternalRpgindividual.g:3971:2: 'AND'
+            // InternalRpgindividual.g:3943:1: ( 'AND' )
+            // InternalRpgindividual.g:3944:2: 'AND'
             {
              before(grammarAccess.getANDconditionAccess().getANDKeyword_1_0()); 
             match(input,42,FOLLOW_2); 
@@ -12498,14 +12423,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__1"
-    // InternalRpgindividual.g:3980:1: rule__ANDcondition__Group_1__1 : rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2 ;
+    // InternalRpgindividual.g:3953:1: rule__ANDcondition__Group_1__1 : rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2 ;
     public final void rule__ANDcondition__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3984:1: ( rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2 )
-            // InternalRpgindividual.g:3985:2: rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2
+            // InternalRpgindividual.g:3957:1: ( rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2 )
+            // InternalRpgindividual.g:3958:2: rule__ANDcondition__Group_1__1__Impl rule__ANDcondition__Group_1__2
             {
             pushFollow(FOLLOW_26);
             rule__ANDcondition__Group_1__1__Impl();
@@ -12536,21 +12461,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__1__Impl"
-    // InternalRpgindividual.g:3992:1: rule__ANDcondition__Group_1__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:3965:1: rule__ANDcondition__Group_1__1__Impl : ( () ) ;
     public final void rule__ANDcondition__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:3996:1: ( ( () ) )
-            // InternalRpgindividual.g:3997:1: ( () )
+            // InternalRpgindividual.g:3969:1: ( ( () ) )
+            // InternalRpgindividual.g:3970:1: ( () )
             {
-            // InternalRpgindividual.g:3997:1: ( () )
-            // InternalRpgindividual.g:3998:2: ()
+            // InternalRpgindividual.g:3970:1: ( () )
+            // InternalRpgindividual.g:3971:2: ()
             {
              before(grammarAccess.getANDconditionAccess().getAndLeftAction_1_1()); 
-            // InternalRpgindividual.g:3999:2: ()
-            // InternalRpgindividual.g:3999:3: 
+            // InternalRpgindividual.g:3972:2: ()
+            // InternalRpgindividual.g:3972:3: 
             {
             }
 
@@ -12573,14 +12498,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__2"
-    // InternalRpgindividual.g:4007:1: rule__ANDcondition__Group_1__2 : rule__ANDcondition__Group_1__2__Impl ;
+    // InternalRpgindividual.g:3980:1: rule__ANDcondition__Group_1__2 : rule__ANDcondition__Group_1__2__Impl ;
     public final void rule__ANDcondition__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4011:1: ( rule__ANDcondition__Group_1__2__Impl )
-            // InternalRpgindividual.g:4012:2: rule__ANDcondition__Group_1__2__Impl
+            // InternalRpgindividual.g:3984:1: ( rule__ANDcondition__Group_1__2__Impl )
+            // InternalRpgindividual.g:3985:2: rule__ANDcondition__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__ANDcondition__Group_1__2__Impl();
@@ -12606,21 +12531,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__Group_1__2__Impl"
-    // InternalRpgindividual.g:4018:1: rule__ANDcondition__Group_1__2__Impl : ( ( rule__ANDcondition__RightAssignment_1_2 ) ) ;
+    // InternalRpgindividual.g:3991:1: rule__ANDcondition__Group_1__2__Impl : ( ( rule__ANDcondition__RightAssignment_1_2 ) ) ;
     public final void rule__ANDcondition__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4022:1: ( ( ( rule__ANDcondition__RightAssignment_1_2 ) ) )
-            // InternalRpgindividual.g:4023:1: ( ( rule__ANDcondition__RightAssignment_1_2 ) )
+            // InternalRpgindividual.g:3995:1: ( ( ( rule__ANDcondition__RightAssignment_1_2 ) ) )
+            // InternalRpgindividual.g:3996:1: ( ( rule__ANDcondition__RightAssignment_1_2 ) )
             {
-            // InternalRpgindividual.g:4023:1: ( ( rule__ANDcondition__RightAssignment_1_2 ) )
-            // InternalRpgindividual.g:4024:2: ( rule__ANDcondition__RightAssignment_1_2 )
+            // InternalRpgindividual.g:3996:1: ( ( rule__ANDcondition__RightAssignment_1_2 ) )
+            // InternalRpgindividual.g:3997:2: ( rule__ANDcondition__RightAssignment_1_2 )
             {
              before(grammarAccess.getANDconditionAccess().getRightAssignment_1_2()); 
-            // InternalRpgindividual.g:4025:2: ( rule__ANDcondition__RightAssignment_1_2 )
-            // InternalRpgindividual.g:4025:3: rule__ANDcondition__RightAssignment_1_2
+            // InternalRpgindividual.g:3998:2: ( rule__ANDcondition__RightAssignment_1_2 )
+            // InternalRpgindividual.g:3998:3: rule__ANDcondition__RightAssignment_1_2
             {
             pushFollow(FOLLOW_2);
             rule__ANDcondition__RightAssignment_1_2();
@@ -12653,14 +12578,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__0"
-    // InternalRpgindividual.g:4034:1: rule__Statement__Group_1__0 : rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 ;
+    // InternalRpgindividual.g:4007:1: rule__Statement__Group_1__0 : rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 ;
     public final void rule__Statement__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4038:1: ( rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 )
-            // InternalRpgindividual.g:4039:2: rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1
+            // InternalRpgindividual.g:4011:1: ( rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1 )
+            // InternalRpgindividual.g:4012:2: rule__Statement__Group_1__0__Impl rule__Statement__Group_1__1
             {
             pushFollow(FOLLOW_26);
             rule__Statement__Group_1__0__Impl();
@@ -12691,17 +12616,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__0__Impl"
-    // InternalRpgindividual.g:4046:1: rule__Statement__Group_1__0__Impl : ( '(' ) ;
+    // InternalRpgindividual.g:4019:1: rule__Statement__Group_1__0__Impl : ( '(' ) ;
     public final void rule__Statement__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4050:1: ( ( '(' ) )
-            // InternalRpgindividual.g:4051:1: ( '(' )
+            // InternalRpgindividual.g:4023:1: ( ( '(' ) )
+            // InternalRpgindividual.g:4024:1: ( '(' )
             {
-            // InternalRpgindividual.g:4051:1: ( '(' )
-            // InternalRpgindividual.g:4052:2: '('
+            // InternalRpgindividual.g:4024:1: ( '(' )
+            // InternalRpgindividual.g:4025:2: '('
             {
              before(grammarAccess.getStatementAccess().getLeftParenthesisKeyword_1_0()); 
             match(input,35,FOLLOW_2); 
@@ -12728,14 +12653,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__1"
-    // InternalRpgindividual.g:4061:1: rule__Statement__Group_1__1 : rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2 ;
+    // InternalRpgindividual.g:4034:1: rule__Statement__Group_1__1 : rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2 ;
     public final void rule__Statement__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4065:1: ( rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2 )
-            // InternalRpgindividual.g:4066:2: rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2
+            // InternalRpgindividual.g:4038:1: ( rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2 )
+            // InternalRpgindividual.g:4039:2: rule__Statement__Group_1__1__Impl rule__Statement__Group_1__2
             {
             pushFollow(FOLLOW_42);
             rule__Statement__Group_1__1__Impl();
@@ -12766,17 +12691,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__1__Impl"
-    // InternalRpgindividual.g:4073:1: rule__Statement__Group_1__1__Impl : ( ruleORcondition ) ;
+    // InternalRpgindividual.g:4046:1: rule__Statement__Group_1__1__Impl : ( ruleORcondition ) ;
     public final void rule__Statement__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4077:1: ( ( ruleORcondition ) )
-            // InternalRpgindividual.g:4078:1: ( ruleORcondition )
+            // InternalRpgindividual.g:4050:1: ( ( ruleORcondition ) )
+            // InternalRpgindividual.g:4051:1: ( ruleORcondition )
             {
-            // InternalRpgindividual.g:4078:1: ( ruleORcondition )
-            // InternalRpgindividual.g:4079:2: ruleORcondition
+            // InternalRpgindividual.g:4051:1: ( ruleORcondition )
+            // InternalRpgindividual.g:4052:2: ruleORcondition
             {
              before(grammarAccess.getStatementAccess().getORconditionParserRuleCall_1_1()); 
             pushFollow(FOLLOW_2);
@@ -12807,14 +12732,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__2"
-    // InternalRpgindividual.g:4088:1: rule__Statement__Group_1__2 : rule__Statement__Group_1__2__Impl ;
+    // InternalRpgindividual.g:4061:1: rule__Statement__Group_1__2 : rule__Statement__Group_1__2__Impl ;
     public final void rule__Statement__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4092:1: ( rule__Statement__Group_1__2__Impl )
-            // InternalRpgindividual.g:4093:2: rule__Statement__Group_1__2__Impl
+            // InternalRpgindividual.g:4065:1: ( rule__Statement__Group_1__2__Impl )
+            // InternalRpgindividual.g:4066:2: rule__Statement__Group_1__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Statement__Group_1__2__Impl();
@@ -12840,17 +12765,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Statement__Group_1__2__Impl"
-    // InternalRpgindividual.g:4099:1: rule__Statement__Group_1__2__Impl : ( ')' ) ;
+    // InternalRpgindividual.g:4072:1: rule__Statement__Group_1__2__Impl : ( ')' ) ;
     public final void rule__Statement__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4103:1: ( ( ')' ) )
-            // InternalRpgindividual.g:4104:1: ( ')' )
+            // InternalRpgindividual.g:4076:1: ( ( ')' ) )
+            // InternalRpgindividual.g:4077:1: ( ')' )
             {
-            // InternalRpgindividual.g:4104:1: ( ')' )
-            // InternalRpgindividual.g:4105:2: ')'
+            // InternalRpgindividual.g:4077:1: ( ')' )
+            // InternalRpgindividual.g:4078:2: ')'
             {
              before(grammarAccess.getStatementAccess().getRightParenthesisKeyword_1_2()); 
             match(input,36,FOLLOW_2); 
@@ -12877,14 +12802,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__0"
-    // InternalRpgindividual.g:4115:1: rule__NumberComparing__Group__0 : rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1 ;
+    // InternalRpgindividual.g:4088:1: rule__NumberComparing__Group__0 : rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1 ;
     public final void rule__NumberComparing__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4119:1: ( rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1 )
-            // InternalRpgindividual.g:4120:2: rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1
+            // InternalRpgindividual.g:4092:1: ( rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1 )
+            // InternalRpgindividual.g:4093:2: rule__NumberComparing__Group__0__Impl rule__NumberComparing__Group__1
             {
             pushFollow(FOLLOW_43);
             rule__NumberComparing__Group__0__Impl();
@@ -12915,21 +12840,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__0__Impl"
-    // InternalRpgindividual.g:4127:1: rule__NumberComparing__Group__0__Impl : ( ( rule__NumberComparing__LeftAssignment_0 ) ) ;
+    // InternalRpgindividual.g:4100:1: rule__NumberComparing__Group__0__Impl : ( ( rule__NumberComparing__LeftAssignment_0 ) ) ;
     public final void rule__NumberComparing__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4131:1: ( ( ( rule__NumberComparing__LeftAssignment_0 ) ) )
-            // InternalRpgindividual.g:4132:1: ( ( rule__NumberComparing__LeftAssignment_0 ) )
+            // InternalRpgindividual.g:4104:1: ( ( ( rule__NumberComparing__LeftAssignment_0 ) ) )
+            // InternalRpgindividual.g:4105:1: ( ( rule__NumberComparing__LeftAssignment_0 ) )
             {
-            // InternalRpgindividual.g:4132:1: ( ( rule__NumberComparing__LeftAssignment_0 ) )
-            // InternalRpgindividual.g:4133:2: ( rule__NumberComparing__LeftAssignment_0 )
+            // InternalRpgindividual.g:4105:1: ( ( rule__NumberComparing__LeftAssignment_0 ) )
+            // InternalRpgindividual.g:4106:2: ( rule__NumberComparing__LeftAssignment_0 )
             {
              before(grammarAccess.getNumberComparingAccess().getLeftAssignment_0()); 
-            // InternalRpgindividual.g:4134:2: ( rule__NumberComparing__LeftAssignment_0 )
-            // InternalRpgindividual.g:4134:3: rule__NumberComparing__LeftAssignment_0
+            // InternalRpgindividual.g:4107:2: ( rule__NumberComparing__LeftAssignment_0 )
+            // InternalRpgindividual.g:4107:3: rule__NumberComparing__LeftAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NumberComparing__LeftAssignment_0();
@@ -12962,14 +12887,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__1"
-    // InternalRpgindividual.g:4142:1: rule__NumberComparing__Group__1 : rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2 ;
+    // InternalRpgindividual.g:4115:1: rule__NumberComparing__Group__1 : rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2 ;
     public final void rule__NumberComparing__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4146:1: ( rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2 )
-            // InternalRpgindividual.g:4147:2: rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2
+            // InternalRpgindividual.g:4119:1: ( rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2 )
+            // InternalRpgindividual.g:4120:2: rule__NumberComparing__Group__1__Impl rule__NumberComparing__Group__2
             {
             pushFollow(FOLLOW_25);
             rule__NumberComparing__Group__1__Impl();
@@ -13000,21 +12925,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__1__Impl"
-    // InternalRpgindividual.g:4154:1: rule__NumberComparing__Group__1__Impl : ( ( rule__NumberComparing__CompAssignment_1 ) ) ;
+    // InternalRpgindividual.g:4127:1: rule__NumberComparing__Group__1__Impl : ( ( rule__NumberComparing__CompAssignment_1 ) ) ;
     public final void rule__NumberComparing__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4158:1: ( ( ( rule__NumberComparing__CompAssignment_1 ) ) )
-            // InternalRpgindividual.g:4159:1: ( ( rule__NumberComparing__CompAssignment_1 ) )
+            // InternalRpgindividual.g:4131:1: ( ( ( rule__NumberComparing__CompAssignment_1 ) ) )
+            // InternalRpgindividual.g:4132:1: ( ( rule__NumberComparing__CompAssignment_1 ) )
             {
-            // InternalRpgindividual.g:4159:1: ( ( rule__NumberComparing__CompAssignment_1 ) )
-            // InternalRpgindividual.g:4160:2: ( rule__NumberComparing__CompAssignment_1 )
+            // InternalRpgindividual.g:4132:1: ( ( rule__NumberComparing__CompAssignment_1 ) )
+            // InternalRpgindividual.g:4133:2: ( rule__NumberComparing__CompAssignment_1 )
             {
              before(grammarAccess.getNumberComparingAccess().getCompAssignment_1()); 
-            // InternalRpgindividual.g:4161:2: ( rule__NumberComparing__CompAssignment_1 )
-            // InternalRpgindividual.g:4161:3: rule__NumberComparing__CompAssignment_1
+            // InternalRpgindividual.g:4134:2: ( rule__NumberComparing__CompAssignment_1 )
+            // InternalRpgindividual.g:4134:3: rule__NumberComparing__CompAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__NumberComparing__CompAssignment_1();
@@ -13047,14 +12972,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__2"
-    // InternalRpgindividual.g:4169:1: rule__NumberComparing__Group__2 : rule__NumberComparing__Group__2__Impl ;
+    // InternalRpgindividual.g:4142:1: rule__NumberComparing__Group__2 : rule__NumberComparing__Group__2__Impl ;
     public final void rule__NumberComparing__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4173:1: ( rule__NumberComparing__Group__2__Impl )
-            // InternalRpgindividual.g:4174:2: rule__NumberComparing__Group__2__Impl
+            // InternalRpgindividual.g:4146:1: ( rule__NumberComparing__Group__2__Impl )
+            // InternalRpgindividual.g:4147:2: rule__NumberComparing__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NumberComparing__Group__2__Impl();
@@ -13080,21 +13005,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__Group__2__Impl"
-    // InternalRpgindividual.g:4180:1: rule__NumberComparing__Group__2__Impl : ( ( rule__NumberComparing__RightAssignment_2 ) ) ;
+    // InternalRpgindividual.g:4153:1: rule__NumberComparing__Group__2__Impl : ( ( rule__NumberComparing__RightAssignment_2 ) ) ;
     public final void rule__NumberComparing__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4184:1: ( ( ( rule__NumberComparing__RightAssignment_2 ) ) )
-            // InternalRpgindividual.g:4185:1: ( ( rule__NumberComparing__RightAssignment_2 ) )
+            // InternalRpgindividual.g:4157:1: ( ( ( rule__NumberComparing__RightAssignment_2 ) ) )
+            // InternalRpgindividual.g:4158:1: ( ( rule__NumberComparing__RightAssignment_2 ) )
             {
-            // InternalRpgindividual.g:4185:1: ( ( rule__NumberComparing__RightAssignment_2 ) )
-            // InternalRpgindividual.g:4186:2: ( rule__NumberComparing__RightAssignment_2 )
+            // InternalRpgindividual.g:4158:1: ( ( rule__NumberComparing__RightAssignment_2 ) )
+            // InternalRpgindividual.g:4159:2: ( rule__NumberComparing__RightAssignment_2 )
             {
              before(grammarAccess.getNumberComparingAccess().getRightAssignment_2()); 
-            // InternalRpgindividual.g:4187:2: ( rule__NumberComparing__RightAssignment_2 )
-            // InternalRpgindividual.g:4187:3: rule__NumberComparing__RightAssignment_2
+            // InternalRpgindividual.g:4160:2: ( rule__NumberComparing__RightAssignment_2 )
+            // InternalRpgindividual.g:4160:3: rule__NumberComparing__RightAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__NumberComparing__RightAssignment_2();
@@ -13127,16 +13052,16 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_0__0"
-    // InternalRpgindividual.g:4196:1: rule__Comparator__Group_0__0 : rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1 ;
+    // InternalRpgindividual.g:4169:1: rule__Comparator__Group_0__0 : rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1 ;
     public final void rule__Comparator__Group_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4200:1: ( rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1 )
-            // InternalRpgindividual.g:4201:2: rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1
+            // InternalRpgindividual.g:4173:1: ( rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1 )
+            // InternalRpgindividual.g:4174:2: rule__Comparator__Group_0__0__Impl rule__Comparator__Group_0__1
             {
-            pushFollow(FOLLOW_19);
+            pushFollow(FOLLOW_18);
             rule__Comparator__Group_0__0__Impl();
 
             state._fsp--;
@@ -13165,21 +13090,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_0__0__Impl"
-    // InternalRpgindividual.g:4208:1: rule__Comparator__Group_0__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4181:1: rule__Comparator__Group_0__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4212:1: ( ( () ) )
-            // InternalRpgindividual.g:4213:1: ( () )
+            // InternalRpgindividual.g:4185:1: ( ( () ) )
+            // InternalRpgindividual.g:4186:1: ( () )
             {
-            // InternalRpgindividual.g:4213:1: ( () )
-            // InternalRpgindividual.g:4214:2: ()
+            // InternalRpgindividual.g:4186:1: ( () )
+            // InternalRpgindividual.g:4187:2: ()
             {
              before(grammarAccess.getComparatorAccess().getSmallerAction_0_0()); 
-            // InternalRpgindividual.g:4215:2: ()
-            // InternalRpgindividual.g:4215:3: 
+            // InternalRpgindividual.g:4188:2: ()
+            // InternalRpgindividual.g:4188:3: 
             {
             }
 
@@ -13202,14 +13127,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_0__1"
-    // InternalRpgindividual.g:4223:1: rule__Comparator__Group_0__1 : rule__Comparator__Group_0__1__Impl ;
+    // InternalRpgindividual.g:4196:1: rule__Comparator__Group_0__1 : rule__Comparator__Group_0__1__Impl ;
     public final void rule__Comparator__Group_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4227:1: ( rule__Comparator__Group_0__1__Impl )
-            // InternalRpgindividual.g:4228:2: rule__Comparator__Group_0__1__Impl
+            // InternalRpgindividual.g:4200:1: ( rule__Comparator__Group_0__1__Impl )
+            // InternalRpgindividual.g:4201:2: rule__Comparator__Group_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_0__1__Impl();
@@ -13235,20 +13160,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_0__1__Impl"
-    // InternalRpgindividual.g:4234:1: rule__Comparator__Group_0__1__Impl : ( '<' ) ;
+    // InternalRpgindividual.g:4207:1: rule__Comparator__Group_0__1__Impl : ( '<' ) ;
     public final void rule__Comparator__Group_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4238:1: ( ( '<' ) )
-            // InternalRpgindividual.g:4239:1: ( '<' )
+            // InternalRpgindividual.g:4211:1: ( ( '<' ) )
+            // InternalRpgindividual.g:4212:1: ( '<' )
             {
-            // InternalRpgindividual.g:4239:1: ( '<' )
-            // InternalRpgindividual.g:4240:2: '<'
+            // InternalRpgindividual.g:4212:1: ( '<' )
+            // InternalRpgindividual.g:4213:2: '<'
             {
              before(grammarAccess.getComparatorAccess().getLessThanSignKeyword_0_1()); 
-            match(input,25,FOLLOW_2); 
+            match(input,24,FOLLOW_2); 
              after(grammarAccess.getComparatorAccess().getLessThanSignKeyword_0_1()); 
 
             }
@@ -13272,14 +13197,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_1__0"
-    // InternalRpgindividual.g:4250:1: rule__Comparator__Group_1__0 : rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1 ;
+    // InternalRpgindividual.g:4223:1: rule__Comparator__Group_1__0 : rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1 ;
     public final void rule__Comparator__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4254:1: ( rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1 )
-            // InternalRpgindividual.g:4255:2: rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1
+            // InternalRpgindividual.g:4227:1: ( rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1 )
+            // InternalRpgindividual.g:4228:2: rule__Comparator__Group_1__0__Impl rule__Comparator__Group_1__1
             {
             pushFollow(FOLLOW_44);
             rule__Comparator__Group_1__0__Impl();
@@ -13310,21 +13235,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_1__0__Impl"
-    // InternalRpgindividual.g:4262:1: rule__Comparator__Group_1__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4235:1: rule__Comparator__Group_1__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4266:1: ( ( () ) )
-            // InternalRpgindividual.g:4267:1: ( () )
+            // InternalRpgindividual.g:4239:1: ( ( () ) )
+            // InternalRpgindividual.g:4240:1: ( () )
             {
-            // InternalRpgindividual.g:4267:1: ( () )
-            // InternalRpgindividual.g:4268:2: ()
+            // InternalRpgindividual.g:4240:1: ( () )
+            // InternalRpgindividual.g:4241:2: ()
             {
              before(grammarAccess.getComparatorAccess().getSmallerEqAction_1_0()); 
-            // InternalRpgindividual.g:4269:2: ()
-            // InternalRpgindividual.g:4269:3: 
+            // InternalRpgindividual.g:4242:2: ()
+            // InternalRpgindividual.g:4242:3: 
             {
             }
 
@@ -13347,14 +13272,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_1__1"
-    // InternalRpgindividual.g:4277:1: rule__Comparator__Group_1__1 : rule__Comparator__Group_1__1__Impl ;
+    // InternalRpgindividual.g:4250:1: rule__Comparator__Group_1__1 : rule__Comparator__Group_1__1__Impl ;
     public final void rule__Comparator__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4281:1: ( rule__Comparator__Group_1__1__Impl )
-            // InternalRpgindividual.g:4282:2: rule__Comparator__Group_1__1__Impl
+            // InternalRpgindividual.g:4254:1: ( rule__Comparator__Group_1__1__Impl )
+            // InternalRpgindividual.g:4255:2: rule__Comparator__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_1__1__Impl();
@@ -13380,17 +13305,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_1__1__Impl"
-    // InternalRpgindividual.g:4288:1: rule__Comparator__Group_1__1__Impl : ( '<=' ) ;
+    // InternalRpgindividual.g:4261:1: rule__Comparator__Group_1__1__Impl : ( '<=' ) ;
     public final void rule__Comparator__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4292:1: ( ( '<=' ) )
-            // InternalRpgindividual.g:4293:1: ( '<=' )
+            // InternalRpgindividual.g:4265:1: ( ( '<=' ) )
+            // InternalRpgindividual.g:4266:1: ( '<=' )
             {
-            // InternalRpgindividual.g:4293:1: ( '<=' )
-            // InternalRpgindividual.g:4294:2: '<='
+            // InternalRpgindividual.g:4266:1: ( '<=' )
+            // InternalRpgindividual.g:4267:2: '<='
             {
              before(grammarAccess.getComparatorAccess().getLessThanSignEqualsSignKeyword_1_1()); 
             match(input,43,FOLLOW_2); 
@@ -13417,14 +13342,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_2__0"
-    // InternalRpgindividual.g:4304:1: rule__Comparator__Group_2__0 : rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1 ;
+    // InternalRpgindividual.g:4277:1: rule__Comparator__Group_2__0 : rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1 ;
     public final void rule__Comparator__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4308:1: ( rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1 )
-            // InternalRpgindividual.g:4309:2: rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1
+            // InternalRpgindividual.g:4281:1: ( rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1 )
+            // InternalRpgindividual.g:4282:2: rule__Comparator__Group_2__0__Impl rule__Comparator__Group_2__1
             {
             pushFollow(FOLLOW_45);
             rule__Comparator__Group_2__0__Impl();
@@ -13455,21 +13380,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_2__0__Impl"
-    // InternalRpgindividual.g:4316:1: rule__Comparator__Group_2__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4289:1: rule__Comparator__Group_2__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4320:1: ( ( () ) )
-            // InternalRpgindividual.g:4321:1: ( () )
+            // InternalRpgindividual.g:4293:1: ( ( () ) )
+            // InternalRpgindividual.g:4294:1: ( () )
             {
-            // InternalRpgindividual.g:4321:1: ( () )
-            // InternalRpgindividual.g:4322:2: ()
+            // InternalRpgindividual.g:4294:1: ( () )
+            // InternalRpgindividual.g:4295:2: ()
             {
              before(grammarAccess.getComparatorAccess().getEqAction_2_0()); 
-            // InternalRpgindividual.g:4323:2: ()
-            // InternalRpgindividual.g:4323:3: 
+            // InternalRpgindividual.g:4296:2: ()
+            // InternalRpgindividual.g:4296:3: 
             {
             }
 
@@ -13492,14 +13417,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_2__1"
-    // InternalRpgindividual.g:4331:1: rule__Comparator__Group_2__1 : rule__Comparator__Group_2__1__Impl ;
+    // InternalRpgindividual.g:4304:1: rule__Comparator__Group_2__1 : rule__Comparator__Group_2__1__Impl ;
     public final void rule__Comparator__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4335:1: ( rule__Comparator__Group_2__1__Impl )
-            // InternalRpgindividual.g:4336:2: rule__Comparator__Group_2__1__Impl
+            // InternalRpgindividual.g:4308:1: ( rule__Comparator__Group_2__1__Impl )
+            // InternalRpgindividual.g:4309:2: rule__Comparator__Group_2__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_2__1__Impl();
@@ -13525,17 +13450,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_2__1__Impl"
-    // InternalRpgindividual.g:4342:1: rule__Comparator__Group_2__1__Impl : ( '==' ) ;
+    // InternalRpgindividual.g:4315:1: rule__Comparator__Group_2__1__Impl : ( '==' ) ;
     public final void rule__Comparator__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4346:1: ( ( '==' ) )
-            // InternalRpgindividual.g:4347:1: ( '==' )
+            // InternalRpgindividual.g:4319:1: ( ( '==' ) )
+            // InternalRpgindividual.g:4320:1: ( '==' )
             {
-            // InternalRpgindividual.g:4347:1: ( '==' )
-            // InternalRpgindividual.g:4348:2: '=='
+            // InternalRpgindividual.g:4320:1: ( '==' )
+            // InternalRpgindividual.g:4321:2: '=='
             {
              before(grammarAccess.getComparatorAccess().getEqualsSignEqualsSignKeyword_2_1()); 
             match(input,44,FOLLOW_2); 
@@ -13562,14 +13487,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_3__0"
-    // InternalRpgindividual.g:4358:1: rule__Comparator__Group_3__0 : rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1 ;
+    // InternalRpgindividual.g:4331:1: rule__Comparator__Group_3__0 : rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1 ;
     public final void rule__Comparator__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4362:1: ( rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1 )
-            // InternalRpgindividual.g:4363:2: rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1
+            // InternalRpgindividual.g:4335:1: ( rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1 )
+            // InternalRpgindividual.g:4336:2: rule__Comparator__Group_3__0__Impl rule__Comparator__Group_3__1
             {
             pushFollow(FOLLOW_46);
             rule__Comparator__Group_3__0__Impl();
@@ -13600,21 +13525,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_3__0__Impl"
-    // InternalRpgindividual.g:4370:1: rule__Comparator__Group_3__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4343:1: rule__Comparator__Group_3__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4374:1: ( ( () ) )
-            // InternalRpgindividual.g:4375:1: ( () )
+            // InternalRpgindividual.g:4347:1: ( ( () ) )
+            // InternalRpgindividual.g:4348:1: ( () )
             {
-            // InternalRpgindividual.g:4375:1: ( () )
-            // InternalRpgindividual.g:4376:2: ()
+            // InternalRpgindividual.g:4348:1: ( () )
+            // InternalRpgindividual.g:4349:2: ()
             {
              before(grammarAccess.getComparatorAccess().getBiggerEqAction_3_0()); 
-            // InternalRpgindividual.g:4377:2: ()
-            // InternalRpgindividual.g:4377:3: 
+            // InternalRpgindividual.g:4350:2: ()
+            // InternalRpgindividual.g:4350:3: 
             {
             }
 
@@ -13637,14 +13562,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_3__1"
-    // InternalRpgindividual.g:4385:1: rule__Comparator__Group_3__1 : rule__Comparator__Group_3__1__Impl ;
+    // InternalRpgindividual.g:4358:1: rule__Comparator__Group_3__1 : rule__Comparator__Group_3__1__Impl ;
     public final void rule__Comparator__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4389:1: ( rule__Comparator__Group_3__1__Impl )
-            // InternalRpgindividual.g:4390:2: rule__Comparator__Group_3__1__Impl
+            // InternalRpgindividual.g:4362:1: ( rule__Comparator__Group_3__1__Impl )
+            // InternalRpgindividual.g:4363:2: rule__Comparator__Group_3__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_3__1__Impl();
@@ -13670,17 +13595,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_3__1__Impl"
-    // InternalRpgindividual.g:4396:1: rule__Comparator__Group_3__1__Impl : ( '>=' ) ;
+    // InternalRpgindividual.g:4369:1: rule__Comparator__Group_3__1__Impl : ( '>=' ) ;
     public final void rule__Comparator__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4400:1: ( ( '>=' ) )
-            // InternalRpgindividual.g:4401:1: ( '>=' )
+            // InternalRpgindividual.g:4373:1: ( ( '>=' ) )
+            // InternalRpgindividual.g:4374:1: ( '>=' )
             {
-            // InternalRpgindividual.g:4401:1: ( '>=' )
-            // InternalRpgindividual.g:4402:2: '>='
+            // InternalRpgindividual.g:4374:1: ( '>=' )
+            // InternalRpgindividual.g:4375:2: '>='
             {
              before(grammarAccess.getComparatorAccess().getGreaterThanSignEqualsSignKeyword_3_1()); 
             match(input,45,FOLLOW_2); 
@@ -13707,14 +13632,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_4__0"
-    // InternalRpgindividual.g:4412:1: rule__Comparator__Group_4__0 : rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1 ;
+    // InternalRpgindividual.g:4385:1: rule__Comparator__Group_4__0 : rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1 ;
     public final void rule__Comparator__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4416:1: ( rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1 )
-            // InternalRpgindividual.g:4417:2: rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1
+            // InternalRpgindividual.g:4389:1: ( rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1 )
+            // InternalRpgindividual.g:4390:2: rule__Comparator__Group_4__0__Impl rule__Comparator__Group_4__1
             {
             pushFollow(FOLLOW_47);
             rule__Comparator__Group_4__0__Impl();
@@ -13745,21 +13670,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_4__0__Impl"
-    // InternalRpgindividual.g:4424:1: rule__Comparator__Group_4__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4397:1: rule__Comparator__Group_4__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4428:1: ( ( () ) )
-            // InternalRpgindividual.g:4429:1: ( () )
+            // InternalRpgindividual.g:4401:1: ( ( () ) )
+            // InternalRpgindividual.g:4402:1: ( () )
             {
-            // InternalRpgindividual.g:4429:1: ( () )
-            // InternalRpgindividual.g:4430:2: ()
+            // InternalRpgindividual.g:4402:1: ( () )
+            // InternalRpgindividual.g:4403:2: ()
             {
              before(grammarAccess.getComparatorAccess().getBiggerAction_4_0()); 
-            // InternalRpgindividual.g:4431:2: ()
-            // InternalRpgindividual.g:4431:3: 
+            // InternalRpgindividual.g:4404:2: ()
+            // InternalRpgindividual.g:4404:3: 
             {
             }
 
@@ -13782,14 +13707,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_4__1"
-    // InternalRpgindividual.g:4439:1: rule__Comparator__Group_4__1 : rule__Comparator__Group_4__1__Impl ;
+    // InternalRpgindividual.g:4412:1: rule__Comparator__Group_4__1 : rule__Comparator__Group_4__1__Impl ;
     public final void rule__Comparator__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4443:1: ( rule__Comparator__Group_4__1__Impl )
-            // InternalRpgindividual.g:4444:2: rule__Comparator__Group_4__1__Impl
+            // InternalRpgindividual.g:4416:1: ( rule__Comparator__Group_4__1__Impl )
+            // InternalRpgindividual.g:4417:2: rule__Comparator__Group_4__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_4__1__Impl();
@@ -13815,17 +13740,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_4__1__Impl"
-    // InternalRpgindividual.g:4450:1: rule__Comparator__Group_4__1__Impl : ( '>' ) ;
+    // InternalRpgindividual.g:4423:1: rule__Comparator__Group_4__1__Impl : ( '>' ) ;
     public final void rule__Comparator__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4454:1: ( ( '>' ) )
-            // InternalRpgindividual.g:4455:1: ( '>' )
+            // InternalRpgindividual.g:4427:1: ( ( '>' ) )
+            // InternalRpgindividual.g:4428:1: ( '>' )
             {
-            // InternalRpgindividual.g:4455:1: ( '>' )
-            // InternalRpgindividual.g:4456:2: '>'
+            // InternalRpgindividual.g:4428:1: ( '>' )
+            // InternalRpgindividual.g:4429:2: '>'
             {
              before(grammarAccess.getComparatorAccess().getGreaterThanSignKeyword_4_1()); 
             match(input,46,FOLLOW_2); 
@@ -13852,14 +13777,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_5__0"
-    // InternalRpgindividual.g:4466:1: rule__Comparator__Group_5__0 : rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1 ;
+    // InternalRpgindividual.g:4439:1: rule__Comparator__Group_5__0 : rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1 ;
     public final void rule__Comparator__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4470:1: ( rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1 )
-            // InternalRpgindividual.g:4471:2: rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1
+            // InternalRpgindividual.g:4443:1: ( rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1 )
+            // InternalRpgindividual.g:4444:2: rule__Comparator__Group_5__0__Impl rule__Comparator__Group_5__1
             {
             pushFollow(FOLLOW_43);
             rule__Comparator__Group_5__0__Impl();
@@ -13890,21 +13815,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_5__0__Impl"
-    // InternalRpgindividual.g:4478:1: rule__Comparator__Group_5__0__Impl : ( () ) ;
+    // InternalRpgindividual.g:4451:1: rule__Comparator__Group_5__0__Impl : ( () ) ;
     public final void rule__Comparator__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4482:1: ( ( () ) )
-            // InternalRpgindividual.g:4483:1: ( () )
+            // InternalRpgindividual.g:4455:1: ( ( () ) )
+            // InternalRpgindividual.g:4456:1: ( () )
             {
-            // InternalRpgindividual.g:4483:1: ( () )
-            // InternalRpgindividual.g:4484:2: ()
+            // InternalRpgindividual.g:4456:1: ( () )
+            // InternalRpgindividual.g:4457:2: ()
             {
              before(grammarAccess.getComparatorAccess().getNEqAction_5_0()); 
-            // InternalRpgindividual.g:4485:2: ()
-            // InternalRpgindividual.g:4485:3: 
+            // InternalRpgindividual.g:4458:2: ()
+            // InternalRpgindividual.g:4458:3: 
             {
             }
 
@@ -13927,14 +13852,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_5__1"
-    // InternalRpgindividual.g:4493:1: rule__Comparator__Group_5__1 : rule__Comparator__Group_5__1__Impl ;
+    // InternalRpgindividual.g:4466:1: rule__Comparator__Group_5__1 : rule__Comparator__Group_5__1__Impl ;
     public final void rule__Comparator__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4497:1: ( rule__Comparator__Group_5__1__Impl )
-            // InternalRpgindividual.g:4498:2: rule__Comparator__Group_5__1__Impl
+            // InternalRpgindividual.g:4470:1: ( rule__Comparator__Group_5__1__Impl )
+            // InternalRpgindividual.g:4471:2: rule__Comparator__Group_5__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Comparator__Group_5__1__Impl();
@@ -13960,17 +13885,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Comparator__Group_5__1__Impl"
-    // InternalRpgindividual.g:4504:1: rule__Comparator__Group_5__1__Impl : ( '!=' ) ;
+    // InternalRpgindividual.g:4477:1: rule__Comparator__Group_5__1__Impl : ( '!=' ) ;
     public final void rule__Comparator__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4508:1: ( ( '!=' ) )
-            // InternalRpgindividual.g:4509:1: ( '!=' )
+            // InternalRpgindividual.g:4481:1: ( ( '!=' ) )
+            // InternalRpgindividual.g:4482:1: ( '!=' )
             {
-            // InternalRpgindividual.g:4509:1: ( '!=' )
-            // InternalRpgindividual.g:4510:2: '!='
+            // InternalRpgindividual.g:4482:1: ( '!=' )
+            // InternalRpgindividual.g:4483:2: '!='
             {
              before(grammarAccess.getComparatorAccess().getExclamationMarkEqualsSignKeyword_5_1()); 
             match(input,47,FOLLOW_2); 
@@ -13997,14 +13922,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group__0"
-    // InternalRpgindividual.g:4520:1: rule__Sum__Group__0 : rule__Sum__Group__0__Impl rule__Sum__Group__1 ;
+    // InternalRpgindividual.g:4493:1: rule__Sum__Group__0 : rule__Sum__Group__0__Impl rule__Sum__Group__1 ;
     public final void rule__Sum__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4524:1: ( rule__Sum__Group__0__Impl rule__Sum__Group__1 )
-            // InternalRpgindividual.g:4525:2: rule__Sum__Group__0__Impl rule__Sum__Group__1
+            // InternalRpgindividual.g:4497:1: ( rule__Sum__Group__0__Impl rule__Sum__Group__1 )
+            // InternalRpgindividual.g:4498:2: rule__Sum__Group__0__Impl rule__Sum__Group__1
             {
             pushFollow(FOLLOW_48);
             rule__Sum__Group__0__Impl();
@@ -14035,17 +13960,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group__0__Impl"
-    // InternalRpgindividual.g:4532:1: rule__Sum__Group__0__Impl : ( ruleMultiply ) ;
+    // InternalRpgindividual.g:4505:1: rule__Sum__Group__0__Impl : ( ruleMultiply ) ;
     public final void rule__Sum__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4536:1: ( ( ruleMultiply ) )
-            // InternalRpgindividual.g:4537:1: ( ruleMultiply )
+            // InternalRpgindividual.g:4509:1: ( ( ruleMultiply ) )
+            // InternalRpgindividual.g:4510:1: ( ruleMultiply )
             {
-            // InternalRpgindividual.g:4537:1: ( ruleMultiply )
-            // InternalRpgindividual.g:4538:2: ruleMultiply
+            // InternalRpgindividual.g:4510:1: ( ruleMultiply )
+            // InternalRpgindividual.g:4511:2: ruleMultiply
             {
              before(grammarAccess.getSumAccess().getMultiplyParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -14076,14 +14001,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group__1"
-    // InternalRpgindividual.g:4547:1: rule__Sum__Group__1 : rule__Sum__Group__1__Impl ;
+    // InternalRpgindividual.g:4520:1: rule__Sum__Group__1 : rule__Sum__Group__1__Impl ;
     public final void rule__Sum__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4551:1: ( rule__Sum__Group__1__Impl )
-            // InternalRpgindividual.g:4552:2: rule__Sum__Group__1__Impl
+            // InternalRpgindividual.g:4524:1: ( rule__Sum__Group__1__Impl )
+            // InternalRpgindividual.g:4525:2: rule__Sum__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sum__Group__1__Impl();
@@ -14109,20 +14034,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group__1__Impl"
-    // InternalRpgindividual.g:4558:1: rule__Sum__Group__1__Impl : ( ( rule__Sum__Group_1__0 )* ) ;
+    // InternalRpgindividual.g:4531:1: rule__Sum__Group__1__Impl : ( ( rule__Sum__Group_1__0 )* ) ;
     public final void rule__Sum__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4562:1: ( ( ( rule__Sum__Group_1__0 )* ) )
-            // InternalRpgindividual.g:4563:1: ( ( rule__Sum__Group_1__0 )* )
+            // InternalRpgindividual.g:4535:1: ( ( ( rule__Sum__Group_1__0 )* ) )
+            // InternalRpgindividual.g:4536:1: ( ( rule__Sum__Group_1__0 )* )
             {
-            // InternalRpgindividual.g:4563:1: ( ( rule__Sum__Group_1__0 )* )
-            // InternalRpgindividual.g:4564:2: ( rule__Sum__Group_1__0 )*
+            // InternalRpgindividual.g:4536:1: ( ( rule__Sum__Group_1__0 )* )
+            // InternalRpgindividual.g:4537:2: ( rule__Sum__Group_1__0 )*
             {
              before(grammarAccess.getSumAccess().getGroup_1()); 
-            // InternalRpgindividual.g:4565:2: ( rule__Sum__Group_1__0 )*
+            // InternalRpgindividual.g:4538:2: ( rule__Sum__Group_1__0 )*
             loop32:
             do {
                 int alt32=2;
@@ -14135,7 +14060,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt32) {
             	case 1 :
-            	    // InternalRpgindividual.g:4565:3: rule__Sum__Group_1__0
+            	    // InternalRpgindividual.g:4538:3: rule__Sum__Group_1__0
             	    {
             	    pushFollow(FOLLOW_49);
             	    rule__Sum__Group_1__0();
@@ -14174,14 +14099,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1__0"
-    // InternalRpgindividual.g:4574:1: rule__Sum__Group_1__0 : rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1 ;
+    // InternalRpgindividual.g:4547:1: rule__Sum__Group_1__0 : rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1 ;
     public final void rule__Sum__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4578:1: ( rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1 )
-            // InternalRpgindividual.g:4579:2: rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1
+            // InternalRpgindividual.g:4551:1: ( rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1 )
+            // InternalRpgindividual.g:4552:2: rule__Sum__Group_1__0__Impl rule__Sum__Group_1__1
             {
             pushFollow(FOLLOW_25);
             rule__Sum__Group_1__0__Impl();
@@ -14212,21 +14137,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1__0__Impl"
-    // InternalRpgindividual.g:4586:1: rule__Sum__Group_1__0__Impl : ( ( rule__Sum__Alternatives_1_0 ) ) ;
+    // InternalRpgindividual.g:4559:1: rule__Sum__Group_1__0__Impl : ( ( rule__Sum__Alternatives_1_0 ) ) ;
     public final void rule__Sum__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4590:1: ( ( ( rule__Sum__Alternatives_1_0 ) ) )
-            // InternalRpgindividual.g:4591:1: ( ( rule__Sum__Alternatives_1_0 ) )
+            // InternalRpgindividual.g:4563:1: ( ( ( rule__Sum__Alternatives_1_0 ) ) )
+            // InternalRpgindividual.g:4564:1: ( ( rule__Sum__Alternatives_1_0 ) )
             {
-            // InternalRpgindividual.g:4591:1: ( ( rule__Sum__Alternatives_1_0 ) )
-            // InternalRpgindividual.g:4592:2: ( rule__Sum__Alternatives_1_0 )
+            // InternalRpgindividual.g:4564:1: ( ( rule__Sum__Alternatives_1_0 ) )
+            // InternalRpgindividual.g:4565:2: ( rule__Sum__Alternatives_1_0 )
             {
              before(grammarAccess.getSumAccess().getAlternatives_1_0()); 
-            // InternalRpgindividual.g:4593:2: ( rule__Sum__Alternatives_1_0 )
-            // InternalRpgindividual.g:4593:3: rule__Sum__Alternatives_1_0
+            // InternalRpgindividual.g:4566:2: ( rule__Sum__Alternatives_1_0 )
+            // InternalRpgindividual.g:4566:3: rule__Sum__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Sum__Alternatives_1_0();
@@ -14259,14 +14184,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1__1"
-    // InternalRpgindividual.g:4601:1: rule__Sum__Group_1__1 : rule__Sum__Group_1__1__Impl ;
+    // InternalRpgindividual.g:4574:1: rule__Sum__Group_1__1 : rule__Sum__Group_1__1__Impl ;
     public final void rule__Sum__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4605:1: ( rule__Sum__Group_1__1__Impl )
-            // InternalRpgindividual.g:4606:2: rule__Sum__Group_1__1__Impl
+            // InternalRpgindividual.g:4578:1: ( rule__Sum__Group_1__1__Impl )
+            // InternalRpgindividual.g:4579:2: rule__Sum__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sum__Group_1__1__Impl();
@@ -14292,21 +14217,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1__1__Impl"
-    // InternalRpgindividual.g:4612:1: rule__Sum__Group_1__1__Impl : ( ( rule__Sum__RightAssignment_1_1 ) ) ;
+    // InternalRpgindividual.g:4585:1: rule__Sum__Group_1__1__Impl : ( ( rule__Sum__RightAssignment_1_1 ) ) ;
     public final void rule__Sum__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4616:1: ( ( ( rule__Sum__RightAssignment_1_1 ) ) )
-            // InternalRpgindividual.g:4617:1: ( ( rule__Sum__RightAssignment_1_1 ) )
+            // InternalRpgindividual.g:4589:1: ( ( ( rule__Sum__RightAssignment_1_1 ) ) )
+            // InternalRpgindividual.g:4590:1: ( ( rule__Sum__RightAssignment_1_1 ) )
             {
-            // InternalRpgindividual.g:4617:1: ( ( rule__Sum__RightAssignment_1_1 ) )
-            // InternalRpgindividual.g:4618:2: ( rule__Sum__RightAssignment_1_1 )
+            // InternalRpgindividual.g:4590:1: ( ( rule__Sum__RightAssignment_1_1 ) )
+            // InternalRpgindividual.g:4591:2: ( rule__Sum__RightAssignment_1_1 )
             {
              before(grammarAccess.getSumAccess().getRightAssignment_1_1()); 
-            // InternalRpgindividual.g:4619:2: ( rule__Sum__RightAssignment_1_1 )
-            // InternalRpgindividual.g:4619:3: rule__Sum__RightAssignment_1_1
+            // InternalRpgindividual.g:4592:2: ( rule__Sum__RightAssignment_1_1 )
+            // InternalRpgindividual.g:4592:3: rule__Sum__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Sum__RightAssignment_1_1();
@@ -14339,14 +14264,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_0__0"
-    // InternalRpgindividual.g:4628:1: rule__Sum__Group_1_0_0__0 : rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1 ;
+    // InternalRpgindividual.g:4601:1: rule__Sum__Group_1_0_0__0 : rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1 ;
     public final void rule__Sum__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4632:1: ( rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1 )
-            // InternalRpgindividual.g:4633:2: rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1
+            // InternalRpgindividual.g:4605:1: ( rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1 )
+            // InternalRpgindividual.g:4606:2: rule__Sum__Group_1_0_0__0__Impl rule__Sum__Group_1_0_0__1
             {
             pushFollow(FOLLOW_1);
             rule__Sum__Group_1_0_0__0__Impl();
@@ -14377,17 +14302,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_0__0__Impl"
-    // InternalRpgindividual.g:4640:1: rule__Sum__Group_1_0_0__0__Impl : ( '+' ) ;
+    // InternalRpgindividual.g:4613:1: rule__Sum__Group_1_0_0__0__Impl : ( '+' ) ;
     public final void rule__Sum__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4644:1: ( ( '+' ) )
-            // InternalRpgindividual.g:4645:1: ( '+' )
+            // InternalRpgindividual.g:4617:1: ( ( '+' ) )
+            // InternalRpgindividual.g:4618:1: ( '+' )
             {
-            // InternalRpgindividual.g:4645:1: ( '+' )
-            // InternalRpgindividual.g:4646:2: '+'
+            // InternalRpgindividual.g:4618:1: ( '+' )
+            // InternalRpgindividual.g:4619:2: '+'
             {
              before(grammarAccess.getSumAccess().getPlusSignKeyword_1_0_0_0()); 
             match(input,48,FOLLOW_2); 
@@ -14414,14 +14339,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_0__1"
-    // InternalRpgindividual.g:4655:1: rule__Sum__Group_1_0_0__1 : rule__Sum__Group_1_0_0__1__Impl ;
+    // InternalRpgindividual.g:4628:1: rule__Sum__Group_1_0_0__1 : rule__Sum__Group_1_0_0__1__Impl ;
     public final void rule__Sum__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4659:1: ( rule__Sum__Group_1_0_0__1__Impl )
-            // InternalRpgindividual.g:4660:2: rule__Sum__Group_1_0_0__1__Impl
+            // InternalRpgindividual.g:4632:1: ( rule__Sum__Group_1_0_0__1__Impl )
+            // InternalRpgindividual.g:4633:2: rule__Sum__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sum__Group_1_0_0__1__Impl();
@@ -14447,21 +14372,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_0__1__Impl"
-    // InternalRpgindividual.g:4666:1: rule__Sum__Group_1_0_0__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:4639:1: rule__Sum__Group_1_0_0__1__Impl : ( () ) ;
     public final void rule__Sum__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4670:1: ( ( () ) )
-            // InternalRpgindividual.g:4671:1: ( () )
+            // InternalRpgindividual.g:4643:1: ( ( () ) )
+            // InternalRpgindividual.g:4644:1: ( () )
             {
-            // InternalRpgindividual.g:4671:1: ( () )
-            // InternalRpgindividual.g:4672:2: ()
+            // InternalRpgindividual.g:4644:1: ( () )
+            // InternalRpgindividual.g:4645:2: ()
             {
              before(grammarAccess.getSumAccess().getAddLeftAction_1_0_0_1()); 
-            // InternalRpgindividual.g:4673:2: ()
-            // InternalRpgindividual.g:4673:3: 
+            // InternalRpgindividual.g:4646:2: ()
+            // InternalRpgindividual.g:4646:3: 
             {
             }
 
@@ -14484,14 +14409,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_1__0"
-    // InternalRpgindividual.g:4682:1: rule__Sum__Group_1_0_1__0 : rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1 ;
+    // InternalRpgindividual.g:4655:1: rule__Sum__Group_1_0_1__0 : rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1 ;
     public final void rule__Sum__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4686:1: ( rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1 )
-            // InternalRpgindividual.g:4687:2: rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1
+            // InternalRpgindividual.g:4659:1: ( rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1 )
+            // InternalRpgindividual.g:4660:2: rule__Sum__Group_1_0_1__0__Impl rule__Sum__Group_1_0_1__1
             {
             pushFollow(FOLLOW_1);
             rule__Sum__Group_1_0_1__0__Impl();
@@ -14522,17 +14447,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_1__0__Impl"
-    // InternalRpgindividual.g:4694:1: rule__Sum__Group_1_0_1__0__Impl : ( '-' ) ;
+    // InternalRpgindividual.g:4667:1: rule__Sum__Group_1_0_1__0__Impl : ( '-' ) ;
     public final void rule__Sum__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4698:1: ( ( '-' ) )
-            // InternalRpgindividual.g:4699:1: ( '-' )
+            // InternalRpgindividual.g:4671:1: ( ( '-' ) )
+            // InternalRpgindividual.g:4672:1: ( '-' )
             {
-            // InternalRpgindividual.g:4699:1: ( '-' )
-            // InternalRpgindividual.g:4700:2: '-'
+            // InternalRpgindividual.g:4672:1: ( '-' )
+            // InternalRpgindividual.g:4673:2: '-'
             {
              before(grammarAccess.getSumAccess().getHyphenMinusKeyword_1_0_1_0()); 
             match(input,49,FOLLOW_2); 
@@ -14559,14 +14484,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_1__1"
-    // InternalRpgindividual.g:4709:1: rule__Sum__Group_1_0_1__1 : rule__Sum__Group_1_0_1__1__Impl ;
+    // InternalRpgindividual.g:4682:1: rule__Sum__Group_1_0_1__1 : rule__Sum__Group_1_0_1__1__Impl ;
     public final void rule__Sum__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4713:1: ( rule__Sum__Group_1_0_1__1__Impl )
-            // InternalRpgindividual.g:4714:2: rule__Sum__Group_1_0_1__1__Impl
+            // InternalRpgindividual.g:4686:1: ( rule__Sum__Group_1_0_1__1__Impl )
+            // InternalRpgindividual.g:4687:2: rule__Sum__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Sum__Group_1_0_1__1__Impl();
@@ -14592,21 +14517,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__Group_1_0_1__1__Impl"
-    // InternalRpgindividual.g:4720:1: rule__Sum__Group_1_0_1__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:4693:1: rule__Sum__Group_1_0_1__1__Impl : ( () ) ;
     public final void rule__Sum__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4724:1: ( ( () ) )
-            // InternalRpgindividual.g:4725:1: ( () )
+            // InternalRpgindividual.g:4697:1: ( ( () ) )
+            // InternalRpgindividual.g:4698:1: ( () )
             {
-            // InternalRpgindividual.g:4725:1: ( () )
-            // InternalRpgindividual.g:4726:2: ()
+            // InternalRpgindividual.g:4698:1: ( () )
+            // InternalRpgindividual.g:4699:2: ()
             {
              before(grammarAccess.getSumAccess().getSubLeftAction_1_0_1_1()); 
-            // InternalRpgindividual.g:4727:2: ()
-            // InternalRpgindividual.g:4727:3: 
+            // InternalRpgindividual.g:4700:2: ()
+            // InternalRpgindividual.g:4700:3: 
             {
             }
 
@@ -14629,14 +14554,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group__0"
-    // InternalRpgindividual.g:4736:1: rule__Multiply__Group__0 : rule__Multiply__Group__0__Impl rule__Multiply__Group__1 ;
+    // InternalRpgindividual.g:4709:1: rule__Multiply__Group__0 : rule__Multiply__Group__0__Impl rule__Multiply__Group__1 ;
     public final void rule__Multiply__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4740:1: ( rule__Multiply__Group__0__Impl rule__Multiply__Group__1 )
-            // InternalRpgindividual.g:4741:2: rule__Multiply__Group__0__Impl rule__Multiply__Group__1
+            // InternalRpgindividual.g:4713:1: ( rule__Multiply__Group__0__Impl rule__Multiply__Group__1 )
+            // InternalRpgindividual.g:4714:2: rule__Multiply__Group__0__Impl rule__Multiply__Group__1
             {
             pushFollow(FOLLOW_50);
             rule__Multiply__Group__0__Impl();
@@ -14667,17 +14592,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group__0__Impl"
-    // InternalRpgindividual.g:4748:1: rule__Multiply__Group__0__Impl : ( ruleAtomicNumber ) ;
+    // InternalRpgindividual.g:4721:1: rule__Multiply__Group__0__Impl : ( ruleAtomicNumber ) ;
     public final void rule__Multiply__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4752:1: ( ( ruleAtomicNumber ) )
-            // InternalRpgindividual.g:4753:1: ( ruleAtomicNumber )
+            // InternalRpgindividual.g:4725:1: ( ( ruleAtomicNumber ) )
+            // InternalRpgindividual.g:4726:1: ( ruleAtomicNumber )
             {
-            // InternalRpgindividual.g:4753:1: ( ruleAtomicNumber )
-            // InternalRpgindividual.g:4754:2: ruleAtomicNumber
+            // InternalRpgindividual.g:4726:1: ( ruleAtomicNumber )
+            // InternalRpgindividual.g:4727:2: ruleAtomicNumber
             {
              before(grammarAccess.getMultiplyAccess().getAtomicNumberParserRuleCall_0()); 
             pushFollow(FOLLOW_2);
@@ -14708,14 +14633,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group__1"
-    // InternalRpgindividual.g:4763:1: rule__Multiply__Group__1 : rule__Multiply__Group__1__Impl ;
+    // InternalRpgindividual.g:4736:1: rule__Multiply__Group__1 : rule__Multiply__Group__1__Impl ;
     public final void rule__Multiply__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4767:1: ( rule__Multiply__Group__1__Impl )
-            // InternalRpgindividual.g:4768:2: rule__Multiply__Group__1__Impl
+            // InternalRpgindividual.g:4740:1: ( rule__Multiply__Group__1__Impl )
+            // InternalRpgindividual.g:4741:2: rule__Multiply__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__Group__1__Impl();
@@ -14741,20 +14666,20 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group__1__Impl"
-    // InternalRpgindividual.g:4774:1: rule__Multiply__Group__1__Impl : ( ( rule__Multiply__Group_1__0 )* ) ;
+    // InternalRpgindividual.g:4747:1: rule__Multiply__Group__1__Impl : ( ( rule__Multiply__Group_1__0 )* ) ;
     public final void rule__Multiply__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4778:1: ( ( ( rule__Multiply__Group_1__0 )* ) )
-            // InternalRpgindividual.g:4779:1: ( ( rule__Multiply__Group_1__0 )* )
+            // InternalRpgindividual.g:4751:1: ( ( ( rule__Multiply__Group_1__0 )* ) )
+            // InternalRpgindividual.g:4752:1: ( ( rule__Multiply__Group_1__0 )* )
             {
-            // InternalRpgindividual.g:4779:1: ( ( rule__Multiply__Group_1__0 )* )
-            // InternalRpgindividual.g:4780:2: ( rule__Multiply__Group_1__0 )*
+            // InternalRpgindividual.g:4752:1: ( ( rule__Multiply__Group_1__0 )* )
+            // InternalRpgindividual.g:4753:2: ( rule__Multiply__Group_1__0 )*
             {
              before(grammarAccess.getMultiplyAccess().getGroup_1()); 
-            // InternalRpgindividual.g:4781:2: ( rule__Multiply__Group_1__0 )*
+            // InternalRpgindividual.g:4754:2: ( rule__Multiply__Group_1__0 )*
             loop33:
             do {
                 int alt33=2;
@@ -14767,7 +14692,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
                 switch (alt33) {
             	case 1 :
-            	    // InternalRpgindividual.g:4781:3: rule__Multiply__Group_1__0
+            	    // InternalRpgindividual.g:4754:3: rule__Multiply__Group_1__0
             	    {
             	    pushFollow(FOLLOW_51);
             	    rule__Multiply__Group_1__0();
@@ -14806,14 +14731,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1__0"
-    // InternalRpgindividual.g:4790:1: rule__Multiply__Group_1__0 : rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1 ;
+    // InternalRpgindividual.g:4763:1: rule__Multiply__Group_1__0 : rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1 ;
     public final void rule__Multiply__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4794:1: ( rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1 )
-            // InternalRpgindividual.g:4795:2: rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1
+            // InternalRpgindividual.g:4767:1: ( rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1 )
+            // InternalRpgindividual.g:4768:2: rule__Multiply__Group_1__0__Impl rule__Multiply__Group_1__1
             {
             pushFollow(FOLLOW_25);
             rule__Multiply__Group_1__0__Impl();
@@ -14844,21 +14769,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1__0__Impl"
-    // InternalRpgindividual.g:4802:1: rule__Multiply__Group_1__0__Impl : ( ( rule__Multiply__Alternatives_1_0 ) ) ;
+    // InternalRpgindividual.g:4775:1: rule__Multiply__Group_1__0__Impl : ( ( rule__Multiply__Alternatives_1_0 ) ) ;
     public final void rule__Multiply__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4806:1: ( ( ( rule__Multiply__Alternatives_1_0 ) ) )
-            // InternalRpgindividual.g:4807:1: ( ( rule__Multiply__Alternatives_1_0 ) )
+            // InternalRpgindividual.g:4779:1: ( ( ( rule__Multiply__Alternatives_1_0 ) ) )
+            // InternalRpgindividual.g:4780:1: ( ( rule__Multiply__Alternatives_1_0 ) )
             {
-            // InternalRpgindividual.g:4807:1: ( ( rule__Multiply__Alternatives_1_0 ) )
-            // InternalRpgindividual.g:4808:2: ( rule__Multiply__Alternatives_1_0 )
+            // InternalRpgindividual.g:4780:1: ( ( rule__Multiply__Alternatives_1_0 ) )
+            // InternalRpgindividual.g:4781:2: ( rule__Multiply__Alternatives_1_0 )
             {
              before(grammarAccess.getMultiplyAccess().getAlternatives_1_0()); 
-            // InternalRpgindividual.g:4809:2: ( rule__Multiply__Alternatives_1_0 )
-            // InternalRpgindividual.g:4809:3: rule__Multiply__Alternatives_1_0
+            // InternalRpgindividual.g:4782:2: ( rule__Multiply__Alternatives_1_0 )
+            // InternalRpgindividual.g:4782:3: rule__Multiply__Alternatives_1_0
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__Alternatives_1_0();
@@ -14891,14 +14816,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1__1"
-    // InternalRpgindividual.g:4817:1: rule__Multiply__Group_1__1 : rule__Multiply__Group_1__1__Impl ;
+    // InternalRpgindividual.g:4790:1: rule__Multiply__Group_1__1 : rule__Multiply__Group_1__1__Impl ;
     public final void rule__Multiply__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4821:1: ( rule__Multiply__Group_1__1__Impl )
-            // InternalRpgindividual.g:4822:2: rule__Multiply__Group_1__1__Impl
+            // InternalRpgindividual.g:4794:1: ( rule__Multiply__Group_1__1__Impl )
+            // InternalRpgindividual.g:4795:2: rule__Multiply__Group_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__Group_1__1__Impl();
@@ -14924,21 +14849,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1__1__Impl"
-    // InternalRpgindividual.g:4828:1: rule__Multiply__Group_1__1__Impl : ( ( rule__Multiply__RightAssignment_1_1 ) ) ;
+    // InternalRpgindividual.g:4801:1: rule__Multiply__Group_1__1__Impl : ( ( rule__Multiply__RightAssignment_1_1 ) ) ;
     public final void rule__Multiply__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4832:1: ( ( ( rule__Multiply__RightAssignment_1_1 ) ) )
-            // InternalRpgindividual.g:4833:1: ( ( rule__Multiply__RightAssignment_1_1 ) )
+            // InternalRpgindividual.g:4805:1: ( ( ( rule__Multiply__RightAssignment_1_1 ) ) )
+            // InternalRpgindividual.g:4806:1: ( ( rule__Multiply__RightAssignment_1_1 ) )
             {
-            // InternalRpgindividual.g:4833:1: ( ( rule__Multiply__RightAssignment_1_1 ) )
-            // InternalRpgindividual.g:4834:2: ( rule__Multiply__RightAssignment_1_1 )
+            // InternalRpgindividual.g:4806:1: ( ( rule__Multiply__RightAssignment_1_1 ) )
+            // InternalRpgindividual.g:4807:2: ( rule__Multiply__RightAssignment_1_1 )
             {
              before(grammarAccess.getMultiplyAccess().getRightAssignment_1_1()); 
-            // InternalRpgindividual.g:4835:2: ( rule__Multiply__RightAssignment_1_1 )
-            // InternalRpgindividual.g:4835:3: rule__Multiply__RightAssignment_1_1
+            // InternalRpgindividual.g:4808:2: ( rule__Multiply__RightAssignment_1_1 )
+            // InternalRpgindividual.g:4808:3: rule__Multiply__RightAssignment_1_1
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__RightAssignment_1_1();
@@ -14971,14 +14896,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_0__0"
-    // InternalRpgindividual.g:4844:1: rule__Multiply__Group_1_0_0__0 : rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1 ;
+    // InternalRpgindividual.g:4817:1: rule__Multiply__Group_1_0_0__0 : rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1 ;
     public final void rule__Multiply__Group_1_0_0__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4848:1: ( rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1 )
-            // InternalRpgindividual.g:4849:2: rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1
+            // InternalRpgindividual.g:4821:1: ( rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1 )
+            // InternalRpgindividual.g:4822:2: rule__Multiply__Group_1_0_0__0__Impl rule__Multiply__Group_1_0_0__1
             {
             pushFollow(FOLLOW_1);
             rule__Multiply__Group_1_0_0__0__Impl();
@@ -15009,17 +14934,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_0__0__Impl"
-    // InternalRpgindividual.g:4856:1: rule__Multiply__Group_1_0_0__0__Impl : ( '*' ) ;
+    // InternalRpgindividual.g:4829:1: rule__Multiply__Group_1_0_0__0__Impl : ( '*' ) ;
     public final void rule__Multiply__Group_1_0_0__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4860:1: ( ( '*' ) )
-            // InternalRpgindividual.g:4861:1: ( '*' )
+            // InternalRpgindividual.g:4833:1: ( ( '*' ) )
+            // InternalRpgindividual.g:4834:1: ( '*' )
             {
-            // InternalRpgindividual.g:4861:1: ( '*' )
-            // InternalRpgindividual.g:4862:2: '*'
+            // InternalRpgindividual.g:4834:1: ( '*' )
+            // InternalRpgindividual.g:4835:2: '*'
             {
              before(grammarAccess.getMultiplyAccess().getAsteriskKeyword_1_0_0_0()); 
             match(input,37,FOLLOW_2); 
@@ -15046,14 +14971,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_0__1"
-    // InternalRpgindividual.g:4871:1: rule__Multiply__Group_1_0_0__1 : rule__Multiply__Group_1_0_0__1__Impl ;
+    // InternalRpgindividual.g:4844:1: rule__Multiply__Group_1_0_0__1 : rule__Multiply__Group_1_0_0__1__Impl ;
     public final void rule__Multiply__Group_1_0_0__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4875:1: ( rule__Multiply__Group_1_0_0__1__Impl )
-            // InternalRpgindividual.g:4876:2: rule__Multiply__Group_1_0_0__1__Impl
+            // InternalRpgindividual.g:4848:1: ( rule__Multiply__Group_1_0_0__1__Impl )
+            // InternalRpgindividual.g:4849:2: rule__Multiply__Group_1_0_0__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__Group_1_0_0__1__Impl();
@@ -15079,21 +15004,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_0__1__Impl"
-    // InternalRpgindividual.g:4882:1: rule__Multiply__Group_1_0_0__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:4855:1: rule__Multiply__Group_1_0_0__1__Impl : ( () ) ;
     public final void rule__Multiply__Group_1_0_0__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4886:1: ( ( () ) )
-            // InternalRpgindividual.g:4887:1: ( () )
+            // InternalRpgindividual.g:4859:1: ( ( () ) )
+            // InternalRpgindividual.g:4860:1: ( () )
             {
-            // InternalRpgindividual.g:4887:1: ( () )
-            // InternalRpgindividual.g:4888:2: ()
+            // InternalRpgindividual.g:4860:1: ( () )
+            // InternalRpgindividual.g:4861:2: ()
             {
              before(grammarAccess.getMultiplyAccess().getMultLeftAction_1_0_0_1()); 
-            // InternalRpgindividual.g:4889:2: ()
-            // InternalRpgindividual.g:4889:3: 
+            // InternalRpgindividual.g:4862:2: ()
+            // InternalRpgindividual.g:4862:3: 
             {
             }
 
@@ -15116,14 +15041,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_1__0"
-    // InternalRpgindividual.g:4898:1: rule__Multiply__Group_1_0_1__0 : rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1 ;
+    // InternalRpgindividual.g:4871:1: rule__Multiply__Group_1_0_1__0 : rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1 ;
     public final void rule__Multiply__Group_1_0_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4902:1: ( rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1 )
-            // InternalRpgindividual.g:4903:2: rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1
+            // InternalRpgindividual.g:4875:1: ( rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1 )
+            // InternalRpgindividual.g:4876:2: rule__Multiply__Group_1_0_1__0__Impl rule__Multiply__Group_1_0_1__1
             {
             pushFollow(FOLLOW_1);
             rule__Multiply__Group_1_0_1__0__Impl();
@@ -15154,17 +15079,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_1__0__Impl"
-    // InternalRpgindividual.g:4910:1: rule__Multiply__Group_1_0_1__0__Impl : ( '/' ) ;
+    // InternalRpgindividual.g:4883:1: rule__Multiply__Group_1_0_1__0__Impl : ( '/' ) ;
     public final void rule__Multiply__Group_1_0_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4914:1: ( ( '/' ) )
-            // InternalRpgindividual.g:4915:1: ( '/' )
+            // InternalRpgindividual.g:4887:1: ( ( '/' ) )
+            // InternalRpgindividual.g:4888:1: ( '/' )
             {
-            // InternalRpgindividual.g:4915:1: ( '/' )
-            // InternalRpgindividual.g:4916:2: '/'
+            // InternalRpgindividual.g:4888:1: ( '/' )
+            // InternalRpgindividual.g:4889:2: '/'
             {
              before(grammarAccess.getMultiplyAccess().getSolidusKeyword_1_0_1_0()); 
             match(input,50,FOLLOW_2); 
@@ -15191,14 +15116,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_1__1"
-    // InternalRpgindividual.g:4925:1: rule__Multiply__Group_1_0_1__1 : rule__Multiply__Group_1_0_1__1__Impl ;
+    // InternalRpgindividual.g:4898:1: rule__Multiply__Group_1_0_1__1 : rule__Multiply__Group_1_0_1__1__Impl ;
     public final void rule__Multiply__Group_1_0_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4929:1: ( rule__Multiply__Group_1_0_1__1__Impl )
-            // InternalRpgindividual.g:4930:2: rule__Multiply__Group_1_0_1__1__Impl
+            // InternalRpgindividual.g:4902:1: ( rule__Multiply__Group_1_0_1__1__Impl )
+            // InternalRpgindividual.g:4903:2: rule__Multiply__Group_1_0_1__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__Multiply__Group_1_0_1__1__Impl();
@@ -15224,21 +15149,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__Group_1_0_1__1__Impl"
-    // InternalRpgindividual.g:4936:1: rule__Multiply__Group_1_0_1__1__Impl : ( () ) ;
+    // InternalRpgindividual.g:4909:1: rule__Multiply__Group_1_0_1__1__Impl : ( () ) ;
     public final void rule__Multiply__Group_1_0_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4940:1: ( ( () ) )
-            // InternalRpgindividual.g:4941:1: ( () )
+            // InternalRpgindividual.g:4913:1: ( ( () ) )
+            // InternalRpgindividual.g:4914:1: ( () )
             {
-            // InternalRpgindividual.g:4941:1: ( () )
-            // InternalRpgindividual.g:4942:2: ()
+            // InternalRpgindividual.g:4914:1: ( () )
+            // InternalRpgindividual.g:4915:2: ()
             {
              before(grammarAccess.getMultiplyAccess().getDivLeftAction_1_0_1_1()); 
-            // InternalRpgindividual.g:4943:2: ()
-            // InternalRpgindividual.g:4943:3: 
+            // InternalRpgindividual.g:4916:2: ()
+            // InternalRpgindividual.g:4916:3: 
             {
             }
 
@@ -15261,14 +15186,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__Group__0"
-    // InternalRpgindividual.g:4952:1: rule__NameAttribute__Group__0 : rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1 ;
+    // InternalRpgindividual.g:4925:1: rule__NameAttribute__Group__0 : rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1 ;
     public final void rule__NameAttribute__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4956:1: ( rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1 )
-            // InternalRpgindividual.g:4957:2: rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1
+            // InternalRpgindividual.g:4929:1: ( rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1 )
+            // InternalRpgindividual.g:4930:2: rule__NameAttribute__Group__0__Impl rule__NameAttribute__Group__1
             {
             pushFollow(FOLLOW_3);
             rule__NameAttribute__Group__0__Impl();
@@ -15299,21 +15224,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__Group__0__Impl"
-    // InternalRpgindividual.g:4964:1: rule__NameAttribute__Group__0__Impl : ( ( rule__NameAttribute__TargetAssignment_0 ) ) ;
+    // InternalRpgindividual.g:4937:1: rule__NameAttribute__Group__0__Impl : ( ( rule__NameAttribute__TargetAssignment_0 ) ) ;
     public final void rule__NameAttribute__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4968:1: ( ( ( rule__NameAttribute__TargetAssignment_0 ) ) )
-            // InternalRpgindividual.g:4969:1: ( ( rule__NameAttribute__TargetAssignment_0 ) )
+            // InternalRpgindividual.g:4941:1: ( ( ( rule__NameAttribute__TargetAssignment_0 ) ) )
+            // InternalRpgindividual.g:4942:1: ( ( rule__NameAttribute__TargetAssignment_0 ) )
             {
-            // InternalRpgindividual.g:4969:1: ( ( rule__NameAttribute__TargetAssignment_0 ) )
-            // InternalRpgindividual.g:4970:2: ( rule__NameAttribute__TargetAssignment_0 )
+            // InternalRpgindividual.g:4942:1: ( ( rule__NameAttribute__TargetAssignment_0 ) )
+            // InternalRpgindividual.g:4943:2: ( rule__NameAttribute__TargetAssignment_0 )
             {
              before(grammarAccess.getNameAttributeAccess().getTargetAssignment_0()); 
-            // InternalRpgindividual.g:4971:2: ( rule__NameAttribute__TargetAssignment_0 )
-            // InternalRpgindividual.g:4971:3: rule__NameAttribute__TargetAssignment_0
+            // InternalRpgindividual.g:4944:2: ( rule__NameAttribute__TargetAssignment_0 )
+            // InternalRpgindividual.g:4944:3: rule__NameAttribute__TargetAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__NameAttribute__TargetAssignment_0();
@@ -15346,14 +15271,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__Group__1"
-    // InternalRpgindividual.g:4979:1: rule__NameAttribute__Group__1 : rule__NameAttribute__Group__1__Impl ;
+    // InternalRpgindividual.g:4952:1: rule__NameAttribute__Group__1 : rule__NameAttribute__Group__1__Impl ;
     public final void rule__NameAttribute__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4983:1: ( rule__NameAttribute__Group__1__Impl )
-            // InternalRpgindividual.g:4984:2: rule__NameAttribute__Group__1__Impl
+            // InternalRpgindividual.g:4956:1: ( rule__NameAttribute__Group__1__Impl )
+            // InternalRpgindividual.g:4957:2: rule__NameAttribute__Group__1__Impl
             {
             pushFollow(FOLLOW_2);
             rule__NameAttribute__Group__1__Impl();
@@ -15379,21 +15304,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__Group__1__Impl"
-    // InternalRpgindividual.g:4990:1: rule__NameAttribute__Group__1__Impl : ( ( rule__NameAttribute__AttributeAssignment_1 ) ) ;
+    // InternalRpgindividual.g:4963:1: rule__NameAttribute__Group__1__Impl : ( ( rule__NameAttribute__AttributeAssignment_1 ) ) ;
     public final void rule__NameAttribute__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:4994:1: ( ( ( rule__NameAttribute__AttributeAssignment_1 ) ) )
-            // InternalRpgindividual.g:4995:1: ( ( rule__NameAttribute__AttributeAssignment_1 ) )
+            // InternalRpgindividual.g:4967:1: ( ( ( rule__NameAttribute__AttributeAssignment_1 ) ) )
+            // InternalRpgindividual.g:4968:1: ( ( rule__NameAttribute__AttributeAssignment_1 ) )
             {
-            // InternalRpgindividual.g:4995:1: ( ( rule__NameAttribute__AttributeAssignment_1 ) )
-            // InternalRpgindividual.g:4996:2: ( rule__NameAttribute__AttributeAssignment_1 )
+            // InternalRpgindividual.g:4968:1: ( ( rule__NameAttribute__AttributeAssignment_1 ) )
+            // InternalRpgindividual.g:4969:2: ( rule__NameAttribute__AttributeAssignment_1 )
             {
              before(grammarAccess.getNameAttributeAccess().getAttributeAssignment_1()); 
-            // InternalRpgindividual.g:4997:2: ( rule__NameAttribute__AttributeAssignment_1 )
-            // InternalRpgindividual.g:4997:3: rule__NameAttribute__AttributeAssignment_1
+            // InternalRpgindividual.g:4970:2: ( rule__NameAttribute__AttributeAssignment_1 )
+            // InternalRpgindividual.g:4970:3: rule__NameAttribute__AttributeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__NameAttribute__AttributeAssignment_1();
@@ -15426,14 +15351,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__0"
-    // InternalRpgindividual.g:5006:1: rule__FloatNum__Group__0 : rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1 ;
+    // InternalRpgindividual.g:4979:1: rule__FloatNum__Group__0 : rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1 ;
     public final void rule__FloatNum__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5010:1: ( rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1 )
-            // InternalRpgindividual.g:5011:2: rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1
+            // InternalRpgindividual.g:4983:1: ( rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1 )
+            // InternalRpgindividual.g:4984:2: rule__FloatNum__Group__0__Impl rule__FloatNum__Group__1
             {
             pushFollow(FOLLOW_52);
             rule__FloatNum__Group__0__Impl();
@@ -15464,21 +15389,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__0__Impl"
-    // InternalRpgindividual.g:5018:1: rule__FloatNum__Group__0__Impl : ( ( rule__FloatNum__IAssignment_0 ) ) ;
+    // InternalRpgindividual.g:4991:1: rule__FloatNum__Group__0__Impl : ( ( rule__FloatNum__IAssignment_0 ) ) ;
     public final void rule__FloatNum__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5022:1: ( ( ( rule__FloatNum__IAssignment_0 ) ) )
-            // InternalRpgindividual.g:5023:1: ( ( rule__FloatNum__IAssignment_0 ) )
+            // InternalRpgindividual.g:4995:1: ( ( ( rule__FloatNum__IAssignment_0 ) ) )
+            // InternalRpgindividual.g:4996:1: ( ( rule__FloatNum__IAssignment_0 ) )
             {
-            // InternalRpgindividual.g:5023:1: ( ( rule__FloatNum__IAssignment_0 ) )
-            // InternalRpgindividual.g:5024:2: ( rule__FloatNum__IAssignment_0 )
+            // InternalRpgindividual.g:4996:1: ( ( rule__FloatNum__IAssignment_0 ) )
+            // InternalRpgindividual.g:4997:2: ( rule__FloatNum__IAssignment_0 )
             {
              before(grammarAccess.getFloatNumAccess().getIAssignment_0()); 
-            // InternalRpgindividual.g:5025:2: ( rule__FloatNum__IAssignment_0 )
-            // InternalRpgindividual.g:5025:3: rule__FloatNum__IAssignment_0
+            // InternalRpgindividual.g:4998:2: ( rule__FloatNum__IAssignment_0 )
+            // InternalRpgindividual.g:4998:3: rule__FloatNum__IAssignment_0
             {
             pushFollow(FOLLOW_2);
             rule__FloatNum__IAssignment_0();
@@ -15511,14 +15436,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__1"
-    // InternalRpgindividual.g:5033:1: rule__FloatNum__Group__1 : rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2 ;
+    // InternalRpgindividual.g:5006:1: rule__FloatNum__Group__1 : rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2 ;
     public final void rule__FloatNum__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5037:1: ( rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2 )
-            // InternalRpgindividual.g:5038:2: rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2
+            // InternalRpgindividual.g:5010:1: ( rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2 )
+            // InternalRpgindividual.g:5011:2: rule__FloatNum__Group__1__Impl rule__FloatNum__Group__2
             {
             pushFollow(FOLLOW_53);
             rule__FloatNum__Group__1__Impl();
@@ -15549,17 +15474,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__1__Impl"
-    // InternalRpgindividual.g:5045:1: rule__FloatNum__Group__1__Impl : ( '.' ) ;
+    // InternalRpgindividual.g:5018:1: rule__FloatNum__Group__1__Impl : ( '.' ) ;
     public final void rule__FloatNum__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5049:1: ( ( '.' ) )
-            // InternalRpgindividual.g:5050:1: ( '.' )
+            // InternalRpgindividual.g:5022:1: ( ( '.' ) )
+            // InternalRpgindividual.g:5023:1: ( '.' )
             {
-            // InternalRpgindividual.g:5050:1: ( '.' )
-            // InternalRpgindividual.g:5051:2: '.'
+            // InternalRpgindividual.g:5023:1: ( '.' )
+            // InternalRpgindividual.g:5024:2: '.'
             {
              before(grammarAccess.getFloatNumAccess().getFullStopKeyword_1()); 
             match(input,51,FOLLOW_2); 
@@ -15586,14 +15511,14 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__2"
-    // InternalRpgindividual.g:5060:1: rule__FloatNum__Group__2 : rule__FloatNum__Group__2__Impl ;
+    // InternalRpgindividual.g:5033:1: rule__FloatNum__Group__2 : rule__FloatNum__Group__2__Impl ;
     public final void rule__FloatNum__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5064:1: ( rule__FloatNum__Group__2__Impl )
-            // InternalRpgindividual.g:5065:2: rule__FloatNum__Group__2__Impl
+            // InternalRpgindividual.g:5037:1: ( rule__FloatNum__Group__2__Impl )
+            // InternalRpgindividual.g:5038:2: rule__FloatNum__Group__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__FloatNum__Group__2__Impl();
@@ -15619,21 +15544,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__Group__2__Impl"
-    // InternalRpgindividual.g:5071:1: rule__FloatNum__Group__2__Impl : ( ( rule__FloatNum__DecimalAssignment_2 ) ) ;
+    // InternalRpgindividual.g:5044:1: rule__FloatNum__Group__2__Impl : ( ( rule__FloatNum__DecimalAssignment_2 ) ) ;
     public final void rule__FloatNum__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5075:1: ( ( ( rule__FloatNum__DecimalAssignment_2 ) ) )
-            // InternalRpgindividual.g:5076:1: ( ( rule__FloatNum__DecimalAssignment_2 ) )
+            // InternalRpgindividual.g:5048:1: ( ( ( rule__FloatNum__DecimalAssignment_2 ) ) )
+            // InternalRpgindividual.g:5049:1: ( ( rule__FloatNum__DecimalAssignment_2 ) )
             {
-            // InternalRpgindividual.g:5076:1: ( ( rule__FloatNum__DecimalAssignment_2 ) )
-            // InternalRpgindividual.g:5077:2: ( rule__FloatNum__DecimalAssignment_2 )
+            // InternalRpgindividual.g:5049:1: ( ( rule__FloatNum__DecimalAssignment_2 ) )
+            // InternalRpgindividual.g:5050:2: ( rule__FloatNum__DecimalAssignment_2 )
             {
              before(grammarAccess.getFloatNumAccess().getDecimalAssignment_2()); 
-            // InternalRpgindividual.g:5078:2: ( rule__FloatNum__DecimalAssignment_2 )
-            // InternalRpgindividual.g:5078:3: rule__FloatNum__DecimalAssignment_2
+            // InternalRpgindividual.g:5051:2: ( rule__FloatNum__DecimalAssignment_2 )
+            // InternalRpgindividual.g:5051:3: rule__FloatNum__DecimalAssignment_2
             {
             pushFollow(FOLLOW_2);
             rule__FloatNum__DecimalAssignment_2();
@@ -15666,17 +15591,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SystemRPG__NameAssignment_1"
-    // InternalRpgindividual.g:5087:1: rule__SystemRPG__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5060:1: rule__SystemRPG__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__SystemRPG__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5091:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5092:2: ( RULE_ID )
+            // InternalRpgindividual.g:5064:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5065:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5092:2: ( RULE_ID )
-            // InternalRpgindividual.g:5093:3: RULE_ID
+            // InternalRpgindividual.g:5065:2: ( RULE_ID )
+            // InternalRpgindividual.g:5066:3: RULE_ID
             {
              before(grammarAccess.getSystemRPGAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15703,17 +15628,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__SystemRPG__DeclarationsAssignment_2"
-    // InternalRpgindividual.g:5102:1: rule__SystemRPG__DeclarationsAssignment_2 : ( ruleDeclaration ) ;
+    // InternalRpgindividual.g:5075:1: rule__SystemRPG__DeclarationsAssignment_2 : ( ruleDeclaration ) ;
     public final void rule__SystemRPG__DeclarationsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5106:1: ( ( ruleDeclaration ) )
-            // InternalRpgindividual.g:5107:2: ( ruleDeclaration )
+            // InternalRpgindividual.g:5079:1: ( ( ruleDeclaration ) )
+            // InternalRpgindividual.g:5080:2: ( ruleDeclaration )
             {
-            // InternalRpgindividual.g:5107:2: ( ruleDeclaration )
-            // InternalRpgindividual.g:5108:3: ruleDeclaration
+            // InternalRpgindividual.g:5080:2: ( ruleDeclaration )
+            // InternalRpgindividual.g:5081:3: ruleDeclaration
             {
              before(grammarAccess.getSystemRPGAccess().getDeclarationsDeclarationParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15744,17 +15669,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Effects__EffectAssignment_1"
-    // InternalRpgindividual.g:5117:1: rule__Effects__EffectAssignment_1 : ( ruleEffect ) ;
+    // InternalRpgindividual.g:5090:1: rule__Effects__EffectAssignment_1 : ( ruleEffect ) ;
     public final void rule__Effects__EffectAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5121:1: ( ( ruleEffect ) )
-            // InternalRpgindividual.g:5122:2: ( ruleEffect )
+            // InternalRpgindividual.g:5094:1: ( ( ruleEffect ) )
+            // InternalRpgindividual.g:5095:2: ( ruleEffect )
             {
-            // InternalRpgindividual.g:5122:2: ( ruleEffect )
-            // InternalRpgindividual.g:5123:3: ruleEffect
+            // InternalRpgindividual.g:5095:2: ( ruleEffect )
+            // InternalRpgindividual.g:5096:3: ruleEffect
             {
              before(grammarAccess.getEffectsAccess().getEffectEffectParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15784,22 +15709,22 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
     // $ANTLR end "rule__Effects__EffectAssignment_1"
 
 
-    // $ANTLR start "rule__MoveE__NameAssignment_1"
-    // InternalRpgindividual.g:5132:1: rule__MoveE__NameAssignment_1 : ( RULE_ID ) ;
-    public final void rule__MoveE__NameAssignment_1() throws RecognitionException {
+    // $ANTLR start "rule__MoveE__NameAssignment_0"
+    // InternalRpgindividual.g:5105:1: rule__MoveE__NameAssignment_0 : ( RULE_ID ) ;
+    public final void rule__MoveE__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5136:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5137:2: ( RULE_ID )
+            // InternalRpgindividual.g:5109:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5110:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5137:2: ( RULE_ID )
-            // InternalRpgindividual.g:5138:3: RULE_ID
+            // InternalRpgindividual.g:5110:2: ( RULE_ID )
+            // InternalRpgindividual.g:5111:3: RULE_ID
             {
-             before(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_1_0()); 
+             before(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
-             after(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_1_0()); 
+             after(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0()); 
 
             }
 
@@ -15818,29 +15743,29 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__MoveE__NameAssignment_1"
+    // $ANTLR end "rule__MoveE__NameAssignment_0"
 
 
-    // $ANTLR start "rule__MoveE__RuleAssignment_2"
-    // InternalRpgindividual.g:5147:1: rule__MoveE__RuleAssignment_2 : ( ruleRule ) ;
-    public final void rule__MoveE__RuleAssignment_2() throws RecognitionException {
+    // $ANTLR start "rule__MoveE__RuleAssignment_1"
+    // InternalRpgindividual.g:5120:1: rule__MoveE__RuleAssignment_1 : ( ruleRule ) ;
+    public final void rule__MoveE__RuleAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5151:1: ( ( ruleRule ) )
-            // InternalRpgindividual.g:5152:2: ( ruleRule )
+            // InternalRpgindividual.g:5124:1: ( ( ruleRule ) )
+            // InternalRpgindividual.g:5125:2: ( ruleRule )
             {
-            // InternalRpgindividual.g:5152:2: ( ruleRule )
-            // InternalRpgindividual.g:5153:3: ruleRule
+            // InternalRpgindividual.g:5125:2: ( ruleRule )
+            // InternalRpgindividual.g:5126:3: ruleRule
             {
-             before(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_2_0()); 
+             before(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
             ruleRule();
 
             state._fsp--;
 
-             after(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_2_0()); 
+             after(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0()); 
 
             }
 
@@ -15859,21 +15784,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
         }
         return ;
     }
-    // $ANTLR end "rule__MoveE__RuleAssignment_2"
+    // $ANTLR end "rule__MoveE__RuleAssignment_1"
 
 
     // $ANTLR start "rule__Attributes__AttributeAssignment_1"
-    // InternalRpgindividual.g:5162:1: rule__Attributes__AttributeAssignment_1 : ( ruleAttribute ) ;
+    // InternalRpgindividual.g:5135:1: rule__Attributes__AttributeAssignment_1 : ( ruleAttribute ) ;
     public final void rule__Attributes__AttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5166:1: ( ( ruleAttribute ) )
-            // InternalRpgindividual.g:5167:2: ( ruleAttribute )
+            // InternalRpgindividual.g:5139:1: ( ( ruleAttribute ) )
+            // InternalRpgindividual.g:5140:2: ( ruleAttribute )
             {
-            // InternalRpgindividual.g:5167:2: ( ruleAttribute )
-            // InternalRpgindividual.g:5168:3: ruleAttribute
+            // InternalRpgindividual.g:5140:2: ( ruleAttribute )
+            // InternalRpgindividual.g:5141:3: ruleAttribute
             {
              before(grammarAccess.getAttributesAccess().getAttributeAttributeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -15904,17 +15829,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__NameAssignment_1"
-    // InternalRpgindividual.g:5177:1: rule__Attribute__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5150:1: rule__Attribute__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Attribute__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5181:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5182:2: ( RULE_ID )
+            // InternalRpgindividual.g:5154:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5155:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5182:2: ( RULE_ID )
-            // InternalRpgindividual.g:5183:3: RULE_ID
+            // InternalRpgindividual.g:5155:2: ( RULE_ID )
+            // InternalRpgindividual.g:5156:3: RULE_ID
             {
              before(grammarAccess.getAttributeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -15941,17 +15866,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Attribute__AValAssignment_2"
-    // InternalRpgindividual.g:5192:1: rule__Attribute__AValAssignment_2 : ( ruleAttributeValues ) ;
+    // InternalRpgindividual.g:5165:1: rule__Attribute__AValAssignment_2 : ( ruleAttributeValues ) ;
     public final void rule__Attribute__AValAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5196:1: ( ( ruleAttributeValues ) )
-            // InternalRpgindividual.g:5197:2: ( ruleAttributeValues )
+            // InternalRpgindividual.g:5169:1: ( ( ruleAttributeValues ) )
+            // InternalRpgindividual.g:5170:2: ( ruleAttributeValues )
             {
-            // InternalRpgindividual.g:5197:2: ( ruleAttributeValues )
-            // InternalRpgindividual.g:5198:3: ruleAttributeValues
+            // InternalRpgindividual.g:5170:2: ( ruleAttributeValues )
+            // InternalRpgindividual.g:5171:3: ruleAttributeValues
             {
              before(grammarAccess.getAttributeAccess().getAValAttributeValuesParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -15982,17 +15907,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Locations__LocAssignment_1"
-    // InternalRpgindividual.g:5207:1: rule__Locations__LocAssignment_1 : ( ruleLoc ) ;
+    // InternalRpgindividual.g:5180:1: rule__Locations__LocAssignment_1 : ( ruleLoc ) ;
     public final void rule__Locations__LocAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5211:1: ( ( ruleLoc ) )
-            // InternalRpgindividual.g:5212:2: ( ruleLoc )
+            // InternalRpgindividual.g:5184:1: ( ( ruleLoc ) )
+            // InternalRpgindividual.g:5185:2: ( ruleLoc )
             {
-            // InternalRpgindividual.g:5212:2: ( ruleLoc )
-            // InternalRpgindividual.g:5213:3: ruleLoc
+            // InternalRpgindividual.g:5185:2: ( ruleLoc )
+            // InternalRpgindividual.g:5186:3: ruleLoc
             {
              before(grammarAccess.getLocationsAccess().getLocLocParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16023,17 +15948,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__NameAssignment_0"
-    // InternalRpgindividual.g:5222:1: rule__Loc__NameAssignment_0 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5195:1: rule__Loc__NameAssignment_0 : ( RULE_ID ) ;
     public final void rule__Loc__NameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5226:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5227:2: ( RULE_ID )
+            // InternalRpgindividual.g:5199:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5200:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5227:2: ( RULE_ID )
-            // InternalRpgindividual.g:5228:3: RULE_ID
+            // InternalRpgindividual.g:5200:2: ( RULE_ID )
+            // InternalRpgindividual.g:5201:3: RULE_ID
             {
              before(grammarAccess.getLocAccess().getNameIDTerminalRuleCall_0_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16060,21 +15985,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Loc__TeamAssignment_2"
-    // InternalRpgindividual.g:5237:1: rule__Loc__TeamAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5210:1: rule__Loc__TeamAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__Loc__TeamAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5241:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5242:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5214:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5215:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5242:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5243:3: ( RULE_ID )
+            // InternalRpgindividual.g:5215:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5216:3: ( RULE_ID )
             {
              before(grammarAccess.getLocAccess().getTeamTeamCrossReference_2_0()); 
-            // InternalRpgindividual.g:5244:3: ( RULE_ID )
-            // InternalRpgindividual.g:5245:4: RULE_ID
+            // InternalRpgindividual.g:5217:3: ( RULE_ID )
+            // InternalRpgindividual.g:5218:4: RULE_ID
             {
              before(grammarAccess.getLocAccess().getTeamTeamIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16105,17 +16030,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Relations__TypeAssignment_1"
-    // InternalRpgindividual.g:5256:1: rule__Relations__TypeAssignment_1 : ( ruleType ) ;
+    // InternalRpgindividual.g:5229:1: rule__Relations__TypeAssignment_1 : ( ruleType ) ;
     public final void rule__Relations__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5260:1: ( ( ruleType ) )
-            // InternalRpgindividual.g:5261:2: ( ruleType )
+            // InternalRpgindividual.g:5233:1: ( ( ruleType ) )
+            // InternalRpgindividual.g:5234:2: ( ruleType )
             {
-            // InternalRpgindividual.g:5261:2: ( ruleType )
-            // InternalRpgindividual.g:5262:3: ruleType
+            // InternalRpgindividual.g:5234:2: ( ruleType )
+            // InternalRpgindividual.g:5235:3: ruleType
             {
              before(grammarAccess.getRelationsAccess().getTypeTypeParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16146,17 +16071,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__NameAssignment_1"
-    // InternalRpgindividual.g:5271:1: rule__Type__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5244:1: rule__Type__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Type__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5275:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5276:2: ( RULE_ID )
+            // InternalRpgindividual.g:5248:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5249:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5276:2: ( RULE_ID )
-            // InternalRpgindividual.g:5277:3: RULE_ID
+            // InternalRpgindividual.g:5249:2: ( RULE_ID )
+            // InternalRpgindividual.g:5250:3: RULE_ID
             {
              before(grammarAccess.getTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16183,17 +16108,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Type__TExpressionAssignment_2"
-    // InternalRpgindividual.g:5286:1: rule__Type__TExpressionAssignment_2 : ( ruleTypeExpression ) ;
+    // InternalRpgindividual.g:5259:1: rule__Type__TExpressionAssignment_2 : ( ruleTypeExpression ) ;
     public final void rule__Type__TExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5290:1: ( ( ruleTypeExpression ) )
-            // InternalRpgindividual.g:5291:2: ( ruleTypeExpression )
+            // InternalRpgindividual.g:5263:1: ( ( ruleTypeExpression ) )
+            // InternalRpgindividual.g:5264:2: ( ruleTypeExpression )
             {
-            // InternalRpgindividual.g:5291:2: ( ruleTypeExpression )
-            // InternalRpgindividual.g:5292:3: ruleTypeExpression
+            // InternalRpgindividual.g:5264:2: ( ruleTypeExpression )
+            // InternalRpgindividual.g:5265:3: ruleTypeExpression
             {
              before(grammarAccess.getTypeAccess().getTExpressionTypeExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16224,21 +16149,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__StrongAssignment_0"
-    // InternalRpgindividual.g:5301:1: rule__TypeExpression__StrongAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5274:1: rule__TypeExpression__StrongAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__TypeExpression__StrongAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5305:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5306:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5278:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5279:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5306:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5307:3: ( RULE_ID )
+            // InternalRpgindividual.g:5279:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5280:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeExpressionAccess().getStrongTypeCrossReference_0_0()); 
-            // InternalRpgindividual.g:5308:3: ( RULE_ID )
-            // InternalRpgindividual.g:5309:4: RULE_ID
+            // InternalRpgindividual.g:5281:3: ( RULE_ID )
+            // InternalRpgindividual.g:5282:4: RULE_ID
             {
              before(grammarAccess.getTypeExpressionAccess().getStrongTypeIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16269,21 +16194,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Strong2Assignment_1_1"
-    // InternalRpgindividual.g:5320:1: rule__TypeExpression__Strong2Assignment_1_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5293:1: rule__TypeExpression__Strong2Assignment_1_1 : ( ( RULE_ID ) ) ;
     public final void rule__TypeExpression__Strong2Assignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5324:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5325:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5297:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5298:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5325:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5326:3: ( RULE_ID )
+            // InternalRpgindividual.g:5298:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5299:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeExpressionAccess().getStrong2TypeCrossReference_1_1_0()); 
-            // InternalRpgindividual.g:5327:3: ( RULE_ID )
-            // InternalRpgindividual.g:5328:4: RULE_ID
+            // InternalRpgindividual.g:5300:3: ( RULE_ID )
+            // InternalRpgindividual.g:5301:4: RULE_ID
             {
              before(grammarAccess.getTypeExpressionAccess().getStrong2TypeIDTerminalRuleCall_1_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16314,21 +16239,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__CurrentTAssignment_3"
-    // InternalRpgindividual.g:5339:1: rule__TypeExpression__CurrentTAssignment_3 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5312:1: rule__TypeExpression__CurrentTAssignment_3 : ( ( RULE_ID ) ) ;
     public final void rule__TypeExpression__CurrentTAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5343:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5344:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5316:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5317:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5344:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5345:3: ( RULE_ID )
+            // InternalRpgindividual.g:5317:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5318:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeExpressionAccess().getCurrentTTypeCrossReference_3_0()); 
-            // InternalRpgindividual.g:5346:3: ( RULE_ID )
-            // InternalRpgindividual.g:5347:4: RULE_ID
+            // InternalRpgindividual.g:5319:3: ( RULE_ID )
+            // InternalRpgindividual.g:5320:4: RULE_ID
             {
              before(grammarAccess.getTypeExpressionAccess().getCurrentTTypeIDTerminalRuleCall_3_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16359,21 +16284,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__WeakAssignment_5"
-    // InternalRpgindividual.g:5358:1: rule__TypeExpression__WeakAssignment_5 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5331:1: rule__TypeExpression__WeakAssignment_5 : ( ( RULE_ID ) ) ;
     public final void rule__TypeExpression__WeakAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5362:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5363:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5335:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5336:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5363:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5364:3: ( RULE_ID )
+            // InternalRpgindividual.g:5336:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5337:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeExpressionAccess().getWeakTypeCrossReference_5_0()); 
-            // InternalRpgindividual.g:5365:3: ( RULE_ID )
-            // InternalRpgindividual.g:5366:4: RULE_ID
+            // InternalRpgindividual.g:5338:3: ( RULE_ID )
+            // InternalRpgindividual.g:5339:4: RULE_ID
             {
              before(grammarAccess.getTypeExpressionAccess().getWeakTypeIDTerminalRuleCall_5_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16404,21 +16329,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__TypeExpression__Weak2Assignment_6_1"
-    // InternalRpgindividual.g:5377:1: rule__TypeExpression__Weak2Assignment_6_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5350:1: rule__TypeExpression__Weak2Assignment_6_1 : ( ( RULE_ID ) ) ;
     public final void rule__TypeExpression__Weak2Assignment_6_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5381:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5382:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5354:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5355:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5382:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5383:3: ( RULE_ID )
+            // InternalRpgindividual.g:5355:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5356:3: ( RULE_ID )
             {
              before(grammarAccess.getTypeExpressionAccess().getWeak2TypeCrossReference_6_1_0()); 
-            // InternalRpgindividual.g:5384:3: ( RULE_ID )
-            // InternalRpgindividual.g:5385:4: RULE_ID
+            // InternalRpgindividual.g:5357:3: ( RULE_ID )
+            // InternalRpgindividual.g:5358:4: RULE_ID
             {
              before(grammarAccess.getTypeExpressionAccess().getWeak2TypeIDTerminalRuleCall_6_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16449,17 +16374,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Moves__MoveAssignment_1"
-    // InternalRpgindividual.g:5396:1: rule__Moves__MoveAssignment_1 : ( ruleMove ) ;
+    // InternalRpgindividual.g:5369:1: rule__Moves__MoveAssignment_1 : ( ruleMove ) ;
     public final void rule__Moves__MoveAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5400:1: ( ( ruleMove ) )
-            // InternalRpgindividual.g:5401:2: ( ruleMove )
+            // InternalRpgindividual.g:5373:1: ( ( ruleMove ) )
+            // InternalRpgindividual.g:5374:2: ( ruleMove )
             {
-            // InternalRpgindividual.g:5401:2: ( ruleMove )
-            // InternalRpgindividual.g:5402:3: ruleMove
+            // InternalRpgindividual.g:5374:2: ( ruleMove )
+            // InternalRpgindividual.g:5375:3: ruleMove
             {
              before(grammarAccess.getMovesAccess().getMoveMoveParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16490,17 +16415,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__NameAssignment_1"
-    // InternalRpgindividual.g:5411:1: rule__Move__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5384:1: rule__Move__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Move__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5415:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5416:2: ( RULE_ID )
+            // InternalRpgindividual.g:5388:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5389:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5416:2: ( RULE_ID )
-            // InternalRpgindividual.g:5417:3: RULE_ID
+            // InternalRpgindividual.g:5389:2: ( RULE_ID )
+            // InternalRpgindividual.g:5390:3: RULE_ID
             {
              before(grammarAccess.getMoveAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16527,17 +16452,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__ETypeAssignment_2"
-    // InternalRpgindividual.g:5426:1: rule__Move__ETypeAssignment_2 : ( ruleEType ) ;
+    // InternalRpgindividual.g:5399:1: rule__Move__ETypeAssignment_2 : ( ruleEType ) ;
     public final void rule__Move__ETypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5430:1: ( ( ruleEType ) )
-            // InternalRpgindividual.g:5431:2: ( ruleEType )
+            // InternalRpgindividual.g:5403:1: ( ( ruleEType ) )
+            // InternalRpgindividual.g:5404:2: ( ruleEType )
             {
-            // InternalRpgindividual.g:5431:2: ( ruleEType )
-            // InternalRpgindividual.g:5432:3: ruleEType
+            // InternalRpgindividual.g:5404:2: ( ruleEType )
+            // InternalRpgindividual.g:5405:3: ruleEType
             {
              before(grammarAccess.getMoveAccess().getETypeETypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16568,17 +16493,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__AttAssignment_3"
-    // InternalRpgindividual.g:5441:1: rule__Move__AttAssignment_3 : ( ruleAltAttribute ) ;
+    // InternalRpgindividual.g:5414:1: rule__Move__AttAssignment_3 : ( ruleAltAttribute ) ;
     public final void rule__Move__AttAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5445:1: ( ( ruleAltAttribute ) )
-            // InternalRpgindividual.g:5446:2: ( ruleAltAttribute )
+            // InternalRpgindividual.g:5418:1: ( ( ruleAltAttribute ) )
+            // InternalRpgindividual.g:5419:2: ( ruleAltAttribute )
             {
-            // InternalRpgindividual.g:5446:2: ( ruleAltAttribute )
-            // InternalRpgindividual.g:5447:3: ruleAltAttribute
+            // InternalRpgindividual.g:5419:2: ( ruleAltAttribute )
+            // InternalRpgindividual.g:5420:3: ruleAltAttribute
             {
              before(grammarAccess.getMoveAccess().getAttAltAttributeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -16609,17 +16534,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Move__MEffectAssignment_4"
-    // InternalRpgindividual.g:5456:1: rule__Move__MEffectAssignment_4 : ( ruleMEffect ) ;
+    // InternalRpgindividual.g:5429:1: rule__Move__MEffectAssignment_4 : ( ruleMEffect ) ;
     public final void rule__Move__MEffectAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5460:1: ( ( ruleMEffect ) )
-            // InternalRpgindividual.g:5461:2: ( ruleMEffect )
+            // InternalRpgindividual.g:5433:1: ( ( ruleMEffect ) )
+            // InternalRpgindividual.g:5434:2: ( ruleMEffect )
             {
-            // InternalRpgindividual.g:5461:2: ( ruleMEffect )
-            // InternalRpgindividual.g:5462:3: ruleMEffect
+            // InternalRpgindividual.g:5434:2: ( ruleMEffect )
+            // InternalRpgindividual.g:5435:3: ruleMEffect
             {
              before(grammarAccess.getMoveAccess().getMEffectMEffectParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -16650,21 +16575,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__MEffect__MoveENameAssignment_1"
-    // InternalRpgindividual.g:5471:1: rule__MEffect__MoveENameAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5444:1: rule__MEffect__MoveENameAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__MEffect__MoveENameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5475:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5476:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5448:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5449:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5476:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5477:3: ( RULE_ID )
+            // InternalRpgindividual.g:5449:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5450:3: ( RULE_ID )
             {
              before(grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_1_0()); 
-            // InternalRpgindividual.g:5478:3: ( RULE_ID )
-            // InternalRpgindividual.g:5479:4: RULE_ID
+            // InternalRpgindividual.g:5451:3: ( RULE_ID )
+            // InternalRpgindividual.g:5452:4: RULE_ID
             {
              before(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16695,21 +16620,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EType__TypeAssignment_1"
-    // InternalRpgindividual.g:5490:1: rule__EType__TypeAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5463:1: rule__EType__TypeAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__EType__TypeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5494:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5495:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5467:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5468:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5495:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5496:3: ( RULE_ID )
+            // InternalRpgindividual.g:5468:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5469:3: ( RULE_ID )
             {
              before(grammarAccess.getETypeAccess().getTypeTypeCrossReference_1_0()); 
-            // InternalRpgindividual.g:5497:3: ( RULE_ID )
-            // InternalRpgindividual.g:5498:4: RULE_ID
+            // InternalRpgindividual.g:5470:3: ( RULE_ID )
+            // InternalRpgindividual.g:5471:4: RULE_ID
             {
              before(grammarAccess.getETypeAccess().getTypeTypeIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16740,17 +16665,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__LTypesAssignment_1_0"
-    // InternalRpgindividual.g:5509:1: rule__AttributeValues__LTypesAssignment_1_0 : ( ruleLegalType ) ;
+    // InternalRpgindividual.g:5482:1: rule__AttributeValues__LTypesAssignment_1_0 : ( ruleLegalType ) ;
     public final void rule__AttributeValues__LTypesAssignment_1_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5513:1: ( ( ruleLegalType ) )
-            // InternalRpgindividual.g:5514:2: ( ruleLegalType )
+            // InternalRpgindividual.g:5486:1: ( ( ruleLegalType ) )
+            // InternalRpgindividual.g:5487:2: ( ruleLegalType )
             {
-            // InternalRpgindividual.g:5514:2: ( ruleLegalType )
-            // InternalRpgindividual.g:5515:3: ruleLegalType
+            // InternalRpgindividual.g:5487:2: ( ruleLegalType )
+            // InternalRpgindividual.g:5488:3: ruleLegalType
             {
              before(grammarAccess.getAttributeValuesAccess().getLTypesLegalTypeParserRuleCall_1_0_0()); 
             pushFollow(FOLLOW_2);
@@ -16781,17 +16706,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AttributeValues__AnAssignment_1_1"
-    // InternalRpgindividual.g:5524:1: rule__AttributeValues__AnAssignment_1_1 : ( ruleActualNumbers ) ;
+    // InternalRpgindividual.g:5497:1: rule__AttributeValues__AnAssignment_1_1 : ( ruleActualNumbers ) ;
     public final void rule__AttributeValues__AnAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5528:1: ( ( ruleActualNumbers ) )
-            // InternalRpgindividual.g:5529:2: ( ruleActualNumbers )
+            // InternalRpgindividual.g:5501:1: ( ( ruleActualNumbers ) )
+            // InternalRpgindividual.g:5502:2: ( ruleActualNumbers )
             {
-            // InternalRpgindividual.g:5529:2: ( ruleActualNumbers )
-            // InternalRpgindividual.g:5530:3: ruleActualNumbers
+            // InternalRpgindividual.g:5502:2: ( ruleActualNumbers )
+            // InternalRpgindividual.g:5503:3: ruleActualNumbers
             {
              before(grammarAccess.getAttributeValuesAccess().getAnActualNumbersParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16822,21 +16747,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__AttributeAssignment_1"
-    // InternalRpgindividual.g:5539:1: rule__AltAttribute__AttributeAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5512:1: rule__AltAttribute__AttributeAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__AltAttribute__AttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5543:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5544:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5516:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5517:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5544:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5545:3: ( RULE_ID )
+            // InternalRpgindividual.g:5517:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5518:3: ( RULE_ID )
             {
              before(grammarAccess.getAltAttributeAccess().getAttributeAttributeCrossReference_1_0()); 
-            // InternalRpgindividual.g:5546:3: ( RULE_ID )
-            // InternalRpgindividual.g:5547:4: RULE_ID
+            // InternalRpgindividual.g:5519:3: ( RULE_ID )
+            // InternalRpgindividual.g:5520:4: RULE_ID
             {
              before(grammarAccess.getAltAttributeAccess().getAttributeAttributeIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -16867,17 +16792,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__AltAttribute__AvAssignment_2"
-    // InternalRpgindividual.g:5558:1: rule__AltAttribute__AvAssignment_2 : ( ruleAttributeValues ) ;
+    // InternalRpgindividual.g:5531:1: rule__AltAttribute__AvAssignment_2 : ( ruleAttributeValues ) ;
     public final void rule__AltAttribute__AvAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5562:1: ( ( ruleAttributeValues ) )
-            // InternalRpgindividual.g:5563:2: ( ruleAttributeValues )
+            // InternalRpgindividual.g:5535:1: ( ( ruleAttributeValues ) )
+            // InternalRpgindividual.g:5536:2: ( ruleAttributeValues )
             {
-            // InternalRpgindividual.g:5563:2: ( ruleAttributeValues )
-            // InternalRpgindividual.g:5564:3: ruleAttributeValues
+            // InternalRpgindividual.g:5536:2: ( ruleAttributeValues )
+            // InternalRpgindividual.g:5537:3: ruleAttributeValues
             {
              before(grammarAccess.getAltAttributeAccess().getAvAttributeValuesParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -16908,17 +16833,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__OrAssignment_0_1"
-    // InternalRpgindividual.g:5573:1: rule__Rule__OrAssignment_0_1 : ( ruleORcondition ) ;
+    // InternalRpgindividual.g:5546:1: rule__Rule__OrAssignment_0_1 : ( ruleORcondition ) ;
     public final void rule__Rule__OrAssignment_0_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5577:1: ( ( ruleORcondition ) )
-            // InternalRpgindividual.g:5578:2: ( ruleORcondition )
+            // InternalRpgindividual.g:5550:1: ( ( ruleORcondition ) )
+            // InternalRpgindividual.g:5551:2: ( ruleORcondition )
             {
-            // InternalRpgindividual.g:5578:2: ( ruleORcondition )
-            // InternalRpgindividual.g:5579:3: ruleORcondition
+            // InternalRpgindividual.g:5551:2: ( ruleORcondition )
+            // InternalRpgindividual.g:5552:3: ruleORcondition
             {
              before(grammarAccess.getRuleAccess().getOrORconditionParserRuleCall_0_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16949,17 +16874,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__TargetThenAssignment_1"
-    // InternalRpgindividual.g:5588:1: rule__Rule__TargetThenAssignment_1 : ( ruleTarget ) ;
+    // InternalRpgindividual.g:5561:1: rule__Rule__TargetThenAssignment_1 : ( ruleTarget ) ;
     public final void rule__Rule__TargetThenAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5592:1: ( ( ruleTarget ) )
-            // InternalRpgindividual.g:5593:2: ( ruleTarget )
+            // InternalRpgindividual.g:5565:1: ( ( ruleTarget ) )
+            // InternalRpgindividual.g:5566:2: ( ruleTarget )
             {
-            // InternalRpgindividual.g:5593:2: ( ruleTarget )
-            // InternalRpgindividual.g:5594:3: ruleTarget
+            // InternalRpgindividual.g:5566:2: ( ruleTarget )
+            // InternalRpgindividual.g:5567:3: ruleTarget
             {
              before(grammarAccess.getRuleAccess().getTargetThenTargetParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -16990,21 +16915,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__TargetAttAssignment_2"
-    // InternalRpgindividual.g:5603:1: rule__Rule__TargetAttAssignment_2 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5576:1: rule__Rule__TargetAttAssignment_2 : ( ( RULE_ID ) ) ;
     public final void rule__Rule__TargetAttAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5607:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5608:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5580:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5581:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5608:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5609:3: ( RULE_ID )
+            // InternalRpgindividual.g:5581:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5582:3: ( RULE_ID )
             {
              before(grammarAccess.getRuleAccess().getTargetAttAttributeCrossReference_2_0()); 
-            // InternalRpgindividual.g:5610:3: ( RULE_ID )
-            // InternalRpgindividual.g:5611:4: RULE_ID
+            // InternalRpgindividual.g:5583:3: ( RULE_ID )
+            // InternalRpgindividual.g:5584:4: RULE_ID
             {
              before(grammarAccess.getRuleAccess().getTargetAttAttributeIDTerminalRuleCall_2_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17035,17 +16960,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Rule__SumAssignment_4"
-    // InternalRpgindividual.g:5622:1: rule__Rule__SumAssignment_4 : ( ruleSum ) ;
+    // InternalRpgindividual.g:5595:1: rule__Rule__SumAssignment_4 : ( ruleSum ) ;
     public final void rule__Rule__SumAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5626:1: ( ( ruleSum ) )
-            // InternalRpgindividual.g:5627:2: ( ruleSum )
+            // InternalRpgindividual.g:5599:1: ( ( ruleSum ) )
+            // InternalRpgindividual.g:5600:2: ( ruleSum )
             {
-            // InternalRpgindividual.g:5627:2: ( ruleSum )
-            // InternalRpgindividual.g:5628:3: ruleSum
+            // InternalRpgindividual.g:5600:2: ( ruleSum )
+            // InternalRpgindividual.g:5601:3: ruleSum
             {
              before(grammarAccess.getRuleAccess().getSumSumParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -17076,17 +17001,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entities__EntityAssignment_1"
-    // InternalRpgindividual.g:5637:1: rule__Entities__EntityAssignment_1 : ( ruleEntity ) ;
+    // InternalRpgindividual.g:5610:1: rule__Entities__EntityAssignment_1 : ( ruleEntity ) ;
     public final void rule__Entities__EntityAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5641:1: ( ( ruleEntity ) )
-            // InternalRpgindividual.g:5642:2: ( ruleEntity )
+            // InternalRpgindividual.g:5614:1: ( ( ruleEntity ) )
+            // InternalRpgindividual.g:5615:2: ( ruleEntity )
             {
-            // InternalRpgindividual.g:5642:2: ( ruleEntity )
-            // InternalRpgindividual.g:5643:3: ruleEntity
+            // InternalRpgindividual.g:5615:2: ( ruleEntity )
+            // InternalRpgindividual.g:5616:3: ruleEntity
             {
              before(grammarAccess.getEntitiesAccess().getEntityEntityParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17117,17 +17042,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Death__LogAssignment_2"
-    // InternalRpgindividual.g:5652:1: rule__Death__LogAssignment_2 : ( ruleORcondition ) ;
+    // InternalRpgindividual.g:5625:1: rule__Death__LogAssignment_2 : ( ruleORcondition ) ;
     public final void rule__Death__LogAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5656:1: ( ( ruleORcondition ) )
-            // InternalRpgindividual.g:5657:2: ( ruleORcondition )
+            // InternalRpgindividual.g:5629:1: ( ( ruleORcondition ) )
+            // InternalRpgindividual.g:5630:2: ( ruleORcondition )
             {
-            // InternalRpgindividual.g:5657:2: ( ruleORcondition )
-            // InternalRpgindividual.g:5658:3: ruleORcondition
+            // InternalRpgindividual.g:5630:2: ( ruleORcondition )
+            // InternalRpgindividual.g:5631:3: ruleORcondition
             {
              before(grammarAccess.getDeathAccess().getLogORconditionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17158,17 +17083,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__NameAssignment_1"
-    // InternalRpgindividual.g:5667:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5640:1: rule__Entity__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5671:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5672:2: ( RULE_ID )
+            // InternalRpgindividual.g:5644:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5645:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5672:2: ( RULE_ID )
-            // InternalRpgindividual.g:5673:3: RULE_ID
+            // InternalRpgindividual.g:5645:2: ( RULE_ID )
+            // InternalRpgindividual.g:5646:3: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17195,17 +17120,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__ETypeAssignment_2"
-    // InternalRpgindividual.g:5682:1: rule__Entity__ETypeAssignment_2 : ( ruleEType ) ;
+    // InternalRpgindividual.g:5655:1: rule__Entity__ETypeAssignment_2 : ( ruleEType ) ;
     public final void rule__Entity__ETypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5686:1: ( ( ruleEType ) )
-            // InternalRpgindividual.g:5687:2: ( ruleEType )
+            // InternalRpgindividual.g:5659:1: ( ( ruleEType ) )
+            // InternalRpgindividual.g:5660:2: ( ruleEType )
             {
-            // InternalRpgindividual.g:5687:2: ( ruleEType )
-            // InternalRpgindividual.g:5688:3: ruleEType
+            // InternalRpgindividual.g:5660:2: ( ruleEType )
+            // InternalRpgindividual.g:5661:3: ruleEType
             {
              before(grammarAccess.getEntityAccess().getETypeETypeParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17236,17 +17161,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__AttAssignment_3"
-    // InternalRpgindividual.g:5697:1: rule__Entity__AttAssignment_3 : ( ruleAltAttribute ) ;
+    // InternalRpgindividual.g:5670:1: rule__Entity__AttAssignment_3 : ( ruleAltAttribute ) ;
     public final void rule__Entity__AttAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5701:1: ( ( ruleAltAttribute ) )
-            // InternalRpgindividual.g:5702:2: ( ruleAltAttribute )
+            // InternalRpgindividual.g:5674:1: ( ( ruleAltAttribute ) )
+            // InternalRpgindividual.g:5675:2: ( ruleAltAttribute )
             {
-            // InternalRpgindividual.g:5702:2: ( ruleAltAttribute )
-            // InternalRpgindividual.g:5703:3: ruleAltAttribute
+            // InternalRpgindividual.g:5675:2: ( ruleAltAttribute )
+            // InternalRpgindividual.g:5676:3: ruleAltAttribute
             {
              before(grammarAccess.getEntityAccess().getAttAltAttributeParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -17277,17 +17202,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Entity__EMovesAssignment_4"
-    // InternalRpgindividual.g:5712:1: rule__Entity__EMovesAssignment_4 : ( ruleEntityMoves ) ;
+    // InternalRpgindividual.g:5685:1: rule__Entity__EMovesAssignment_4 : ( ruleEntityMoves ) ;
     public final void rule__Entity__EMovesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5716:1: ( ( ruleEntityMoves ) )
-            // InternalRpgindividual.g:5717:2: ( ruleEntityMoves )
+            // InternalRpgindividual.g:5689:1: ( ( ruleEntityMoves ) )
+            // InternalRpgindividual.g:5690:2: ( ruleEntityMoves )
             {
-            // InternalRpgindividual.g:5717:2: ( ruleEntityMoves )
-            // InternalRpgindividual.g:5718:3: ruleEntityMoves
+            // InternalRpgindividual.g:5690:2: ( ruleEntityMoves )
+            // InternalRpgindividual.g:5691:3: ruleEntityMoves
             {
              before(grammarAccess.getEntityAccess().getEMovesEntityMovesParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -17318,17 +17243,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoves__MoveAssignment_1"
-    // InternalRpgindividual.g:5727:1: rule__EntityMoves__MoveAssignment_1 : ( ruleEntityMoveModifier ) ;
+    // InternalRpgindividual.g:5700:1: rule__EntityMoves__MoveAssignment_1 : ( ruleEntityMoveModifier ) ;
     public final void rule__EntityMoves__MoveAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5731:1: ( ( ruleEntityMoveModifier ) )
-            // InternalRpgindividual.g:5732:2: ( ruleEntityMoveModifier )
+            // InternalRpgindividual.g:5704:1: ( ( ruleEntityMoveModifier ) )
+            // InternalRpgindividual.g:5705:2: ( ruleEntityMoveModifier )
             {
-            // InternalRpgindividual.g:5732:2: ( ruleEntityMoveModifier )
-            // InternalRpgindividual.g:5733:3: ruleEntityMoveModifier
+            // InternalRpgindividual.g:5705:2: ( ruleEntityMoveModifier )
+            // InternalRpgindividual.g:5706:3: ruleEntityMoveModifier
             {
              before(grammarAccess.getEntityMovesAccess().getMoveEntityMoveModifierParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17359,21 +17284,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__MoveNameAssignment_0"
-    // InternalRpgindividual.g:5742:1: rule__EntityMoveModifier__MoveNameAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5715:1: rule__EntityMoveModifier__MoveNameAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__EntityMoveModifier__MoveNameAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5746:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5747:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5719:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5720:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5747:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5748:3: ( RULE_ID )
+            // InternalRpgindividual.g:5720:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5721:3: ( RULE_ID )
             {
              before(grammarAccess.getEntityMoveModifierAccess().getMoveNameMoveCrossReference_0_0()); 
-            // InternalRpgindividual.g:5749:3: ( RULE_ID )
-            // InternalRpgindividual.g:5750:4: RULE_ID
+            // InternalRpgindividual.g:5722:3: ( RULE_ID )
+            // InternalRpgindividual.g:5723:4: RULE_ID
             {
              before(grammarAccess.getEntityMoveModifierAccess().getMoveNameMoveIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17404,17 +17329,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveModifier__MoveModificationAssignment_2"
-    // InternalRpgindividual.g:5761:1: rule__EntityMoveModifier__MoveModificationAssignment_2 : ( ruleEntityMoveMultiplier ) ;
+    // InternalRpgindividual.g:5734:1: rule__EntityMoveModifier__MoveModificationAssignment_2 : ( ruleEntityMoveMultiplier ) ;
     public final void rule__EntityMoveModifier__MoveModificationAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5765:1: ( ( ruleEntityMoveMultiplier ) )
-            // InternalRpgindividual.g:5766:2: ( ruleEntityMoveMultiplier )
+            // InternalRpgindividual.g:5738:1: ( ( ruleEntityMoveMultiplier ) )
+            // InternalRpgindividual.g:5739:2: ( ruleEntityMoveMultiplier )
             {
-            // InternalRpgindividual.g:5766:2: ( ruleEntityMoveMultiplier )
-            // InternalRpgindividual.g:5767:3: ruleEntityMoveMultiplier
+            // InternalRpgindividual.g:5739:2: ( ruleEntityMoveMultiplier )
+            // InternalRpgindividual.g:5740:3: ruleEntityMoveMultiplier
             {
              before(grammarAccess.getEntityMoveModifierAccess().getMoveModificationEntityMoveMultiplierParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17445,21 +17370,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__AttributeAssignment_0"
-    // InternalRpgindividual.g:5776:1: rule__EntityMoveMultiplier__AttributeAssignment_0 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5749:1: rule__EntityMoveMultiplier__AttributeAssignment_0 : ( ( RULE_ID ) ) ;
     public final void rule__EntityMoveMultiplier__AttributeAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5780:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5781:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5753:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5754:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5781:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5782:3: ( RULE_ID )
+            // InternalRpgindividual.g:5754:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5755:3: ( RULE_ID )
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getAttributeAttributeCrossReference_0_0()); 
-            // InternalRpgindividual.g:5783:3: ( RULE_ID )
-            // InternalRpgindividual.g:5784:4: RULE_ID
+            // InternalRpgindividual.g:5756:3: ( RULE_ID )
+            // InternalRpgindividual.g:5757:4: RULE_ID
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getAttributeAttributeIDTerminalRuleCall_0_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17490,17 +17415,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__EntityMoveMultiplier__MultiplierAssignment_2"
-    // InternalRpgindividual.g:5795:1: rule__EntityMoveMultiplier__MultiplierAssignment_2 : ( ruleSum ) ;
+    // InternalRpgindividual.g:5768:1: rule__EntityMoveMultiplier__MultiplierAssignment_2 : ( ruleSum ) ;
     public final void rule__EntityMoveMultiplier__MultiplierAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5799:1: ( ( ruleSum ) )
-            // InternalRpgindividual.g:5800:2: ( ruleSum )
+            // InternalRpgindividual.g:5772:1: ( ( ruleSum ) )
+            // InternalRpgindividual.g:5773:2: ( ruleSum )
             {
-            // InternalRpgindividual.g:5800:2: ( ruleSum )
-            // InternalRpgindividual.g:5801:3: ruleSum
+            // InternalRpgindividual.g:5773:2: ( ruleSum )
+            // InternalRpgindividual.g:5774:3: ruleSum
             {
              before(grammarAccess.getEntityMoveMultiplierAccess().getMultiplierSumParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17531,17 +17456,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Teams__TeamAssignment_1"
-    // InternalRpgindividual.g:5810:1: rule__Teams__TeamAssignment_1 : ( ruleTeam ) ;
+    // InternalRpgindividual.g:5783:1: rule__Teams__TeamAssignment_1 : ( ruleTeam ) ;
     public final void rule__Teams__TeamAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5814:1: ( ( ruleTeam ) )
-            // InternalRpgindividual.g:5815:2: ( ruleTeam )
+            // InternalRpgindividual.g:5787:1: ( ( ruleTeam ) )
+            // InternalRpgindividual.g:5788:2: ( ruleTeam )
             {
-            // InternalRpgindividual.g:5815:2: ( ruleTeam )
-            // InternalRpgindividual.g:5816:3: ruleTeam
+            // InternalRpgindividual.g:5788:2: ( ruleTeam )
+            // InternalRpgindividual.g:5789:3: ruleTeam
             {
              before(grammarAccess.getTeamsAccess().getTeamTeamParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17572,17 +17497,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__NameAssignment_1"
-    // InternalRpgindividual.g:5825:1: rule__Team__NameAssignment_1 : ( RULE_ID ) ;
+    // InternalRpgindividual.g:5798:1: rule__Team__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Team__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5829:1: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5830:2: ( RULE_ID )
+            // InternalRpgindividual.g:5802:1: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5803:2: ( RULE_ID )
             {
-            // InternalRpgindividual.g:5830:2: ( RULE_ID )
-            // InternalRpgindividual.g:5831:3: RULE_ID
+            // InternalRpgindividual.g:5803:2: ( RULE_ID )
+            // InternalRpgindividual.g:5804:3: RULE_ID
             {
              before(grammarAccess.getTeamAccess().getNameIDTerminalRuleCall_1_0()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17609,17 +17534,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Team__MembersAssignment_2"
-    // InternalRpgindividual.g:5840:1: rule__Team__MembersAssignment_2 : ( ruleMembers ) ;
+    // InternalRpgindividual.g:5813:1: rule__Team__MembersAssignment_2 : ( ruleMembers ) ;
     public final void rule__Team__MembersAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5844:1: ( ( ruleMembers ) )
-            // InternalRpgindividual.g:5845:2: ( ruleMembers )
+            // InternalRpgindividual.g:5817:1: ( ( ruleMembers ) )
+            // InternalRpgindividual.g:5818:2: ( ruleMembers )
             {
-            // InternalRpgindividual.g:5845:2: ( ruleMembers )
-            // InternalRpgindividual.g:5846:3: ruleMembers
+            // InternalRpgindividual.g:5818:2: ( ruleMembers )
+            // InternalRpgindividual.g:5819:3: ruleMembers
             {
              before(grammarAccess.getTeamAccess().getMembersMembersParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17650,21 +17575,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Members__EntityAssignment_1"
-    // InternalRpgindividual.g:5855:1: rule__Members__EntityAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5828:1: rule__Members__EntityAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__Members__EntityAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5859:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5860:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5832:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5833:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5860:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:5861:3: ( RULE_ID )
+            // InternalRpgindividual.g:5833:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5834:3: ( RULE_ID )
             {
              before(grammarAccess.getMembersAccess().getEntityEntityCrossReference_1_0()); 
-            // InternalRpgindividual.g:5862:3: ( RULE_ID )
-            // InternalRpgindividual.g:5863:4: RULE_ID
+            // InternalRpgindividual.g:5835:3: ( RULE_ID )
+            // InternalRpgindividual.g:5836:4: RULE_ID
             {
              before(grammarAccess.getMembersAccess().getEntityEntityIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -17695,17 +17620,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ORcondition__RightAssignment_1_2"
-    // InternalRpgindividual.g:5874:1: rule__ORcondition__RightAssignment_1_2 : ( ruleANDcondition ) ;
+    // InternalRpgindividual.g:5847:1: rule__ORcondition__RightAssignment_1_2 : ( ruleANDcondition ) ;
     public final void rule__ORcondition__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5878:1: ( ( ruleANDcondition ) )
-            // InternalRpgindividual.g:5879:2: ( ruleANDcondition )
+            // InternalRpgindividual.g:5851:1: ( ( ruleANDcondition ) )
+            // InternalRpgindividual.g:5852:2: ( ruleANDcondition )
             {
-            // InternalRpgindividual.g:5879:2: ( ruleANDcondition )
-            // InternalRpgindividual.g:5880:3: ruleANDcondition
+            // InternalRpgindividual.g:5852:2: ( ruleANDcondition )
+            // InternalRpgindividual.g:5853:3: ruleANDcondition
             {
              before(grammarAccess.getORconditionAccess().getRightANDconditionParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17736,17 +17661,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__ANDcondition__RightAssignment_1_2"
-    // InternalRpgindividual.g:5889:1: rule__ANDcondition__RightAssignment_1_2 : ( ruleStatement ) ;
+    // InternalRpgindividual.g:5862:1: rule__ANDcondition__RightAssignment_1_2 : ( ruleStatement ) ;
     public final void rule__ANDcondition__RightAssignment_1_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5893:1: ( ( ruleStatement ) )
-            // InternalRpgindividual.g:5894:2: ( ruleStatement )
+            // InternalRpgindividual.g:5866:1: ( ( ruleStatement ) )
+            // InternalRpgindividual.g:5867:2: ( ruleStatement )
             {
-            // InternalRpgindividual.g:5894:2: ( ruleStatement )
-            // InternalRpgindividual.g:5895:3: ruleStatement
+            // InternalRpgindividual.g:5867:2: ( ruleStatement )
+            // InternalRpgindividual.g:5868:3: ruleStatement
             {
              before(grammarAccess.getANDconditionAccess().getRightStatementParserRuleCall_1_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17777,17 +17702,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__LeftAssignment_0"
-    // InternalRpgindividual.g:5904:1: rule__NumberComparing__LeftAssignment_0 : ( ruleSum ) ;
+    // InternalRpgindividual.g:5877:1: rule__NumberComparing__LeftAssignment_0 : ( ruleSum ) ;
     public final void rule__NumberComparing__LeftAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5908:1: ( ( ruleSum ) )
-            // InternalRpgindividual.g:5909:2: ( ruleSum )
+            // InternalRpgindividual.g:5881:1: ( ( ruleSum ) )
+            // InternalRpgindividual.g:5882:2: ( ruleSum )
             {
-            // InternalRpgindividual.g:5909:2: ( ruleSum )
-            // InternalRpgindividual.g:5910:3: ruleSum
+            // InternalRpgindividual.g:5882:2: ( ruleSum )
+            // InternalRpgindividual.g:5883:3: ruleSum
             {
              before(grammarAccess.getNumberComparingAccess().getLeftSumParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -17818,17 +17743,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__CompAssignment_1"
-    // InternalRpgindividual.g:5919:1: rule__NumberComparing__CompAssignment_1 : ( ruleComparator ) ;
+    // InternalRpgindividual.g:5892:1: rule__NumberComparing__CompAssignment_1 : ( ruleComparator ) ;
     public final void rule__NumberComparing__CompAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5923:1: ( ( ruleComparator ) )
-            // InternalRpgindividual.g:5924:2: ( ruleComparator )
+            // InternalRpgindividual.g:5896:1: ( ( ruleComparator ) )
+            // InternalRpgindividual.g:5897:2: ( ruleComparator )
             {
-            // InternalRpgindividual.g:5924:2: ( ruleComparator )
-            // InternalRpgindividual.g:5925:3: ruleComparator
+            // InternalRpgindividual.g:5897:2: ( ruleComparator )
+            // InternalRpgindividual.g:5898:3: ruleComparator
             {
              before(grammarAccess.getNumberComparingAccess().getCompComparatorParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17859,17 +17784,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NumberComparing__RightAssignment_2"
-    // InternalRpgindividual.g:5934:1: rule__NumberComparing__RightAssignment_2 : ( ruleSum ) ;
+    // InternalRpgindividual.g:5907:1: rule__NumberComparing__RightAssignment_2 : ( ruleSum ) ;
     public final void rule__NumberComparing__RightAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5938:1: ( ( ruleSum ) )
-            // InternalRpgindividual.g:5939:2: ( ruleSum )
+            // InternalRpgindividual.g:5911:1: ( ( ruleSum ) )
+            // InternalRpgindividual.g:5912:2: ( ruleSum )
             {
-            // InternalRpgindividual.g:5939:2: ( ruleSum )
-            // InternalRpgindividual.g:5940:3: ruleSum
+            // InternalRpgindividual.g:5912:2: ( ruleSum )
+            // InternalRpgindividual.g:5913:3: ruleSum
             {
              before(grammarAccess.getNumberComparingAccess().getRightSumParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -17900,17 +17825,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Sum__RightAssignment_1_1"
-    // InternalRpgindividual.g:5949:1: rule__Sum__RightAssignment_1_1 : ( ruleMultiply ) ;
+    // InternalRpgindividual.g:5922:1: rule__Sum__RightAssignment_1_1 : ( ruleMultiply ) ;
     public final void rule__Sum__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5953:1: ( ( ruleMultiply ) )
-            // InternalRpgindividual.g:5954:2: ( ruleMultiply )
+            // InternalRpgindividual.g:5926:1: ( ( ruleMultiply ) )
+            // InternalRpgindividual.g:5927:2: ( ruleMultiply )
             {
-            // InternalRpgindividual.g:5954:2: ( ruleMultiply )
-            // InternalRpgindividual.g:5955:3: ruleMultiply
+            // InternalRpgindividual.g:5927:2: ( ruleMultiply )
+            // InternalRpgindividual.g:5928:3: ruleMultiply
             {
              before(grammarAccess.getSumAccess().getRightMultiplyParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17941,17 +17866,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__Multiply__RightAssignment_1_1"
-    // InternalRpgindividual.g:5964:1: rule__Multiply__RightAssignment_1_1 : ( ruleAtomicNumber ) ;
+    // InternalRpgindividual.g:5937:1: rule__Multiply__RightAssignment_1_1 : ( ruleAtomicNumber ) ;
     public final void rule__Multiply__RightAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5968:1: ( ( ruleAtomicNumber ) )
-            // InternalRpgindividual.g:5969:2: ( ruleAtomicNumber )
+            // InternalRpgindividual.g:5941:1: ( ( ruleAtomicNumber ) )
+            // InternalRpgindividual.g:5942:2: ( ruleAtomicNumber )
             {
-            // InternalRpgindividual.g:5969:2: ( ruleAtomicNumber )
-            // InternalRpgindividual.g:5970:3: ruleAtomicNumber
+            // InternalRpgindividual.g:5942:2: ( ruleAtomicNumber )
+            // InternalRpgindividual.g:5943:3: ruleAtomicNumber
             {
              before(grammarAccess.getMultiplyAccess().getRightAtomicNumberParserRuleCall_1_1_0()); 
             pushFollow(FOLLOW_2);
@@ -17982,17 +17907,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__TargetAssignment_0"
-    // InternalRpgindividual.g:5979:1: rule__NameAttribute__TargetAssignment_0 : ( ruleTarget ) ;
+    // InternalRpgindividual.g:5952:1: rule__NameAttribute__TargetAssignment_0 : ( ruleTarget ) ;
     public final void rule__NameAttribute__TargetAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5983:1: ( ( ruleTarget ) )
-            // InternalRpgindividual.g:5984:2: ( ruleTarget )
+            // InternalRpgindividual.g:5956:1: ( ( ruleTarget ) )
+            // InternalRpgindividual.g:5957:2: ( ruleTarget )
             {
-            // InternalRpgindividual.g:5984:2: ( ruleTarget )
-            // InternalRpgindividual.g:5985:3: ruleTarget
+            // InternalRpgindividual.g:5957:2: ( ruleTarget )
+            // InternalRpgindividual.g:5958:3: ruleTarget
             {
              before(grammarAccess.getNameAttributeAccess().getTargetTargetParserRuleCall_0_0()); 
             pushFollow(FOLLOW_2);
@@ -18023,21 +17948,21 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__NameAttribute__AttributeAssignment_1"
-    // InternalRpgindividual.g:5994:1: rule__NameAttribute__AttributeAssignment_1 : ( ( RULE_ID ) ) ;
+    // InternalRpgindividual.g:5967:1: rule__NameAttribute__AttributeAssignment_1 : ( ( RULE_ID ) ) ;
     public final void rule__NameAttribute__AttributeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:5998:1: ( ( ( RULE_ID ) ) )
-            // InternalRpgindividual.g:5999:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5971:1: ( ( ( RULE_ID ) ) )
+            // InternalRpgindividual.g:5972:2: ( ( RULE_ID ) )
             {
-            // InternalRpgindividual.g:5999:2: ( ( RULE_ID ) )
-            // InternalRpgindividual.g:6000:3: ( RULE_ID )
+            // InternalRpgindividual.g:5972:2: ( ( RULE_ID ) )
+            // InternalRpgindividual.g:5973:3: ( RULE_ID )
             {
              before(grammarAccess.getNameAttributeAccess().getAttributeAttributeCrossReference_1_0()); 
-            // InternalRpgindividual.g:6001:3: ( RULE_ID )
-            // InternalRpgindividual.g:6002:4: RULE_ID
+            // InternalRpgindividual.g:5974:3: ( RULE_ID )
+            // InternalRpgindividual.g:5975:4: RULE_ID
             {
              before(grammarAccess.getNameAttributeAccess().getAttributeAttributeIDTerminalRuleCall_1_0_1()); 
             match(input,RULE_ID,FOLLOW_2); 
@@ -18068,17 +17993,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__IntNum__ValueAssignment"
-    // InternalRpgindividual.g:6013:1: rule__IntNum__ValueAssignment : ( RULE_INT ) ;
+    // InternalRpgindividual.g:5986:1: rule__IntNum__ValueAssignment : ( RULE_INT ) ;
     public final void rule__IntNum__ValueAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:6017:1: ( ( RULE_INT ) )
-            // InternalRpgindividual.g:6018:2: ( RULE_INT )
+            // InternalRpgindividual.g:5990:1: ( ( RULE_INT ) )
+            // InternalRpgindividual.g:5991:2: ( RULE_INT )
             {
-            // InternalRpgindividual.g:6018:2: ( RULE_INT )
-            // InternalRpgindividual.g:6019:3: RULE_INT
+            // InternalRpgindividual.g:5991:2: ( RULE_INT )
+            // InternalRpgindividual.g:5992:3: RULE_INT
             {
              before(grammarAccess.getIntNumAccess().getValueINTTerminalRuleCall_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18105,17 +18030,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__IAssignment_0"
-    // InternalRpgindividual.g:6028:1: rule__FloatNum__IAssignment_0 : ( RULE_INT ) ;
+    // InternalRpgindividual.g:6001:1: rule__FloatNum__IAssignment_0 : ( RULE_INT ) ;
     public final void rule__FloatNum__IAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:6032:1: ( ( RULE_INT ) )
-            // InternalRpgindividual.g:6033:2: ( RULE_INT )
+            // InternalRpgindividual.g:6005:1: ( ( RULE_INT ) )
+            // InternalRpgindividual.g:6006:2: ( RULE_INT )
             {
-            // InternalRpgindividual.g:6033:2: ( RULE_INT )
-            // InternalRpgindividual.g:6034:3: RULE_INT
+            // InternalRpgindividual.g:6006:2: ( RULE_INT )
+            // InternalRpgindividual.g:6007:3: RULE_INT
             {
              before(grammarAccess.getFloatNumAccess().getIINTTerminalRuleCall_0_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18142,17 +18067,17 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
 
 
     // $ANTLR start "rule__FloatNum__DecimalAssignment_2"
-    // InternalRpgindividual.g:6043:1: rule__FloatNum__DecimalAssignment_2 : ( RULE_INT ) ;
+    // InternalRpgindividual.g:6016:1: rule__FloatNum__DecimalAssignment_2 : ( RULE_INT ) ;
     public final void rule__FloatNum__DecimalAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalRpgindividual.g:6047:1: ( ( RULE_INT ) )
-            // InternalRpgindividual.g:6048:2: ( RULE_INT )
+            // InternalRpgindividual.g:6020:1: ( ( RULE_INT ) )
+            // InternalRpgindividual.g:6021:2: ( RULE_INT )
             {
-            // InternalRpgindividual.g:6048:2: ( RULE_INT )
-            // InternalRpgindividual.g:6049:3: RULE_INT
+            // InternalRpgindividual.g:6021:2: ( RULE_INT )
+            // InternalRpgindividual.g:6022:3: RULE_INT
             {
              before(grammarAccess.getFloatNumAccess().getDecimalINTTerminalRuleCall_2_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18185,26 +18110,26 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_1 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_2 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_3 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000004188A90000L});
-    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000004188A90002L});
+    public static final BitSet FOLLOW_4 = new BitSet(new long[]{0x0000004184550000L});
+    public static final BitSet FOLLOW_5 = new BitSet(new long[]{0x0000004184550002L});
     public static final BitSet FOLLOW_6 = new BitSet(new long[]{0x0000000000020000L});
     public static final BitSet FOLLOW_7 = new BitSet(new long[]{0x0000000000020002L});
-    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000000040000L});
-    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000020001800L});
-    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000100000L});
-    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000000100002L});
-    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000000012L});
-    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
-    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000001000002L});
-    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000006000000L});
-    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000002L});
+    public static final BitSet FOLLOW_8 = new BitSet(new long[]{0x0000000020001800L});
+    public static final BitSet FOLLOW_9 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_10 = new BitSet(new long[]{0x0000000000080002L});
+    public static final BitSet FOLLOW_11 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_12 = new BitSet(new long[]{0x0000000000000012L});
+    public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000800000L});
+    public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000000800002L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000003000000L});
+    public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000002L});
+    public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000001000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x0000000002000000L});
-    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000000040002L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000000120000L});
-    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000000120002L});
+    public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000008000002L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x00000000000A0000L});
+    public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x00000000000A0002L});
     public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000000006020L});
     public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000020007820L});
     public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000820007820L});
@@ -18212,7 +18137,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000000400000000L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000400000002L});
     public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000000140000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000008080000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000800000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000001000000010L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000002000000000L});
@@ -18224,7 +18149,7 @@ public class InternalRpgindividualParser extends AbstractInternalContentAssistPa
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0000040000000002L});
     public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000F80002000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0000F80001000000L});
     public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0000100000000000L});
     public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x0000200000000000L});

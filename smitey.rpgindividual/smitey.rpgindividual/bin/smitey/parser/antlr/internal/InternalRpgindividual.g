@@ -299,15 +299,11 @@ ruleMoveE returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='move'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getMoveEAccess().getMoveKeyword_0());
-		}
 		(
 			(
-				lv_name_1_0=RULE_ID
+				lv_name_0_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_0_0, grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0());
 				}
 				{
 					if ($current==null) {
@@ -316,7 +312,7 @@ ruleMoveE returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_1_0,
+						lv_name_0_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -324,9 +320,9 @@ ruleMoveE returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_2_0());
+					newCompositeNode(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0());
 				}
-				lv_rule_2_0=ruleRule
+				lv_rule_1_0=ruleRule
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMoveERule());
@@ -334,7 +330,7 @@ ruleMoveE returns [EObject current=null]
 					set(
 						$current,
 						"rule",
-						lv_rule_2_0,
+						lv_rule_1_0,
 						"smitey.Rpgindividual.Rule");
 					afterParserOrEnumRuleCall();
 				}

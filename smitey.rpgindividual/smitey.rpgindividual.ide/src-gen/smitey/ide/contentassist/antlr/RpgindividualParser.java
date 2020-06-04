@@ -96,8 +96,8 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSystemRPGAccess().getNameAssignment_1(), "rule__SystemRPG__NameAssignment_1");
 			builder.put(grammarAccess.getSystemRPGAccess().getDeclarationsAssignment_2(), "rule__SystemRPG__DeclarationsAssignment_2");
 			builder.put(grammarAccess.getEffectsAccess().getEffectAssignment_1(), "rule__Effects__EffectAssignment_1");
-			builder.put(grammarAccess.getMoveEAccess().getNameAssignment_1(), "rule__MoveE__NameAssignment_1");
-			builder.put(grammarAccess.getMoveEAccess().getRuleAssignment_2(), "rule__MoveE__RuleAssignment_2");
+			builder.put(grammarAccess.getMoveEAccess().getNameAssignment_0(), "rule__MoveE__NameAssignment_0");
+			builder.put(grammarAccess.getMoveEAccess().getRuleAssignment_1(), "rule__MoveE__RuleAssignment_1");
 			builder.put(grammarAccess.getAttributesAccess().getAttributeAssignment_1(), "rule__Attributes__AttributeAssignment_1");
 			builder.put(grammarAccess.getAttributeAccess().getNameAssignment_1(), "rule__Attribute__NameAssignment_1");
 			builder.put(grammarAccess.getAttributeAccess().getAValAssignment_2(), "rule__Attribute__AValAssignment_2");
