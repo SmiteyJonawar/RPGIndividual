@@ -96,10 +96,14 @@ class RpgindividualGenerator extends AbstractGenerator {
 		'''
 		import java.util.*;
 		public class DeathChecker {
-			public boolean check(Entity entity){
+			public boolean check(Entity user, Entity enemy){
 				HashMap<String, Number> userEntityData = new HashMap<>();
-				for(AttributeData aData : entity.getAttributes()){
+				HashMap<String, Number> enemyEntityData = new HashMap<>();
+				for(AttributeData aData : user.getAttributes()){
 					userEntityData.put(aData.getAttributeName(), aData.getNumber());
+				}
+				for(AttributeData aData : enemy.getAttributes()){
+					enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
 				}
 				try{
 					return «death.log.new_logic»;
@@ -222,7 +226,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 							System.out.println("That's not a possible move!");
 						}
 					}
-					if(deathChecker.check(enemyEntity)){
+					if(deathChecker.check(enemyEntity, playerEntity)){
 						System.out.println(enemyEntity.getName() + " is dead!");
 						enemyEntity.setEntityState(EntityState.DEAD);
 						return;
@@ -233,7 +237,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 						
 						executeMove(move, enemyEntity.getMoveNameList().get(choosenMove), enemyEntity, playerEntity);
 						
-						if(deathChecker.check(playerEntity)){
+						if(deathChecker.check(playerEntity, enemyEntity)){
 							System.out.println("Your " + playerEntity.getName() + " is dead");
 							playerEntity.setEntityState(EntityState.DEAD);
 							
