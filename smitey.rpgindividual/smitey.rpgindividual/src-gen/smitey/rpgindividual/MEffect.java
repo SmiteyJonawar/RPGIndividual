@@ -28,12 +28,12 @@ public interface MEffect extends EObject
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the value of the '<em>Move EName</em>' reference.
-   * @see #setMoveEName(MoveE)
+   * @see #setMoveEName(Effect)
    * @see smitey.rpgindividual.RpgindividualPackage#getMEffect_MoveEName()
    * @model
    * @generated
    */
-  MoveE getMoveEName();
+  Effect getMoveEName();
 
   /**
    * Sets the value of the '{@link smitey.rpgindividual.MEffect#getMoveEName <em>Move EName</em>}' reference.
@@ -43,6 +43,6 @@ public interface MEffect extends EObject
    * @see #getMoveEName()
    * @generated
    */
-  void setMoveEName(MoveE value);
+  void setMoveEName(Effect value);
 
 } // MEffect

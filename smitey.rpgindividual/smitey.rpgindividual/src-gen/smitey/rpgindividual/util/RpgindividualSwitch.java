@@ -102,14 +102,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case RpgindividualPackage.MOVE_E:
-      {
-        MoveE moveE = (MoveE)theEObject;
-        T result = caseMoveE(moveE);
-        if (result == null) result = caseEffect(moveE);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case RpgindividualPackage.ATTRIBUTES:
       {
         Attributes attributes = (Attributes)theEObject;
@@ -528,22 +520,6 @@ public class RpgindividualSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseEffect(Effect object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Move E</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Move E</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseMoveE(MoveE object)
   {
     return null;
   }

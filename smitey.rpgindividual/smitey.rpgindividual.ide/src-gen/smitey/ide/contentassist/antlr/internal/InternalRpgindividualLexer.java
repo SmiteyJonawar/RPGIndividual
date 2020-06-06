@@ -931,10 +931,10 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6031:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // InternalRpgindividual.g:6031:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRpgindividual.g:5979:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // InternalRpgindividual.g:5979:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // InternalRpgindividual.g:6031:11: ( '^' )?
+            // InternalRpgindividual.g:5979:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -943,7 +943,7 @@ public class InternalRpgindividualLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // InternalRpgindividual.g:6031:11: '^'
+                    // InternalRpgindividual.g:5979:11: '^'
                     {
                     match('^'); 
 
@@ -961,7 +961,7 @@ public class InternalRpgindividualLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // InternalRpgindividual.g:6031:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // InternalRpgindividual.g:5979:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -1010,10 +1010,10 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6033:10: ( ( '0' .. '9' )+ )
-            // InternalRpgindividual.g:6033:12: ( '0' .. '9' )+
+            // InternalRpgindividual.g:5981:10: ( ( '0' .. '9' )+ )
+            // InternalRpgindividual.g:5981:12: ( '0' .. '9' )+
             {
-            // InternalRpgindividual.g:6033:12: ( '0' .. '9' )+
+            // InternalRpgindividual.g:5981:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -1027,7 +1027,7 @@ public class InternalRpgindividualLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // InternalRpgindividual.g:6033:13: '0' .. '9'
+            	    // InternalRpgindividual.g:5981:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -1059,10 +1059,10 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6035:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // InternalRpgindividual.g:6035:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRpgindividual.g:5983:13: ( ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // InternalRpgindividual.g:5983:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // InternalRpgindividual.g:6035:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // InternalRpgindividual.g:5983:15: ( '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -1080,10 +1080,10 @@ public class InternalRpgindividualLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // InternalRpgindividual.g:6035:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // InternalRpgindividual.g:5983:16: '\"' ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // InternalRpgindividual.g:6035:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // InternalRpgindividual.g:5983:20: ( '\\\\' . | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -1099,7 +1099,7 @@ public class InternalRpgindividualLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // InternalRpgindividual.g:6035:21: '\\\\' .
+                    	    // InternalRpgindividual.g:5983:21: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1107,7 +1107,7 @@ public class InternalRpgindividualLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRpgindividual.g:6035:28: ~ ( ( '\\\\' | '\"' ) )
+                    	    // InternalRpgindividual.g:5983:28: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1132,10 +1132,10 @@ public class InternalRpgindividualLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // InternalRpgindividual.g:6035:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // InternalRpgindividual.g:5983:48: '\\'' ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // InternalRpgindividual.g:6035:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // InternalRpgindividual.g:5983:53: ( '\\\\' . | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -1151,7 +1151,7 @@ public class InternalRpgindividualLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // InternalRpgindividual.g:6035:54: '\\\\' .
+                    	    // InternalRpgindividual.g:5983:54: '\\\\' .
                     	    {
                     	    match('\\'); 
                     	    matchAny(); 
@@ -1159,7 +1159,7 @@ public class InternalRpgindividualLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // InternalRpgindividual.g:6035:61: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // InternalRpgindividual.g:5983:61: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1202,12 +1202,12 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6037:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // InternalRpgindividual.g:6037:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // InternalRpgindividual.g:5985:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // InternalRpgindividual.g:5985:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // InternalRpgindividual.g:6037:24: ( options {greedy=false; } : . )*
+            // InternalRpgindividual.g:5985:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1232,7 +1232,7 @@ public class InternalRpgindividualLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // InternalRpgindividual.g:6037:52: .
+            	    // InternalRpgindividual.g:5985:52: .
             	    {
             	    matchAny(); 
 
@@ -1262,12 +1262,12 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6039:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // InternalRpgindividual.g:6039:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // InternalRpgindividual.g:5987:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // InternalRpgindividual.g:5987:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // InternalRpgindividual.g:6039:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // InternalRpgindividual.g:5987:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1280,7 +1280,7 @@ public class InternalRpgindividualLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // InternalRpgindividual.g:6039:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // InternalRpgindividual.g:5987:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1300,7 +1300,7 @@ public class InternalRpgindividualLexer extends Lexer {
                 }
             } while (true);
 
-            // InternalRpgindividual.g:6039:40: ( ( '\\r' )? '\\n' )?
+            // InternalRpgindividual.g:5987:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1309,9 +1309,9 @@ public class InternalRpgindividualLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // InternalRpgindividual.g:6039:41: ( '\\r' )? '\\n'
+                    // InternalRpgindividual.g:5987:41: ( '\\r' )? '\\n'
                     {
-                    // InternalRpgindividual.g:6039:41: ( '\\r' )?
+                    // InternalRpgindividual.g:5987:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1320,7 +1320,7 @@ public class InternalRpgindividualLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // InternalRpgindividual.g:6039:41: '\\r'
+                            // InternalRpgindividual.g:5987:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1352,10 +1352,10 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6041:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // InternalRpgindividual.g:6041:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRpgindividual.g:5989:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // InternalRpgindividual.g:5989:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // InternalRpgindividual.g:6041:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // InternalRpgindividual.g:5989:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1409,8 +1409,8 @@ public class InternalRpgindividualLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // InternalRpgindividual.g:6043:16: ( . )
-            // InternalRpgindividual.g:6043:18: .
+            // InternalRpgindividual.g:5991:16: ( . )
+            // InternalRpgindividual.g:5991:18: .
             {
             matchAny(); 
 

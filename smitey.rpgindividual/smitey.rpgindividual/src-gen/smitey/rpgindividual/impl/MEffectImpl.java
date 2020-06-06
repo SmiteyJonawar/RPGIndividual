@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import smitey.rpgindividual.Effect;
 import smitey.rpgindividual.MEffect;
-import smitey.rpgindividual.MoveE;
 import smitey.rpgindividual.RpgindividualPackage;
 
 /**
@@ -38,7 +38,7 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
    * @generated
    * @ordered
    */
-  protected MoveE moveEName;
+  protected Effect moveEName;
 
   /**
    * <!-- begin-user-doc -->
@@ -67,12 +67,12 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
    * @generated
    */
   @Override
-  public MoveE getMoveEName()
+  public Effect getMoveEName()
   {
     if (moveEName != null && moveEName.eIsProxy())
     {
       InternalEObject oldMoveEName = (InternalEObject)moveEName;
-      moveEName = (MoveE)eResolveProxy(oldMoveEName);
+      moveEName = (Effect)eResolveProxy(oldMoveEName);
       if (moveEName != oldMoveEName)
       {
         if (eNotificationRequired())
@@ -87,7 +87,7 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
    * <!-- end-user-doc -->
    * @generated
    */
-  public MoveE basicGetMoveEName()
+  public Effect basicGetMoveEName()
   {
     return moveEName;
   }
@@ -98,9 +98,9 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
    * @generated
    */
   @Override
-  public void setMoveEName(MoveE newMoveEName)
+  public void setMoveEName(Effect newMoveEName)
   {
-    MoveE oldMoveEName = moveEName;
+    Effect oldMoveEName = moveEName;
     moveEName = newMoveEName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.MEFFECT__MOVE_ENAME, oldMoveEName, moveEName));
@@ -134,7 +134,7 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
     switch (featureID)
     {
       case RpgindividualPackage.MEFFECT__MOVE_ENAME:
-        setMoveEName((MoveE)newValue);
+        setMoveEName((Effect)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -151,7 +151,7 @@ public class MEffectImpl extends MinimalEObjectImpl.Container implements MEffect
     switch (featureID)
     {
       case RpgindividualPackage.MEFFECT__MOVE_ENAME:
-        setMoveEName((MoveE)null);
+        setMoveEName((Effect)null);
         return;
     }
     super.eUnset(featureID);

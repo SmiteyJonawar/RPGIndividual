@@ -32,7 +32,6 @@ import smitey.rpgindividual.IntNum;
 import smitey.rpgindividual.Locations;
 import smitey.rpgindividual.MEffect;
 import smitey.rpgindividual.Move;
-import smitey.rpgindividual.MoveE;
 import smitey.rpgindividual.Moves;
 import smitey.rpgindividual.Mult;
 import smitey.rpgindividual.Multiply;
@@ -81,9 +80,9 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 		}
 	}
 	
-	public void checkEffectStartsWithCapital(MoveE buff) {
-		if (!Character.isUpperCase(buff.getName().charAt(0))) {
-			error("The name of this effect should start with a capital letter.",  RpgindividualPackage.Literals.MOVE_E__NAME, INVALID_NAME);
+	public void checkEffectStartsWithCapital(Effect effect) {
+		if (!Character.isUpperCase(effect.getName().charAt(0))) {
+			error("The name of this effect should start with a capital letter.",  RpgindividualPackage.Literals.EFFECT__NAME, INVALID_NAME);
 		}
 	}
 	
@@ -431,8 +430,7 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 				}
 			} else if (d instanceof Effects) {
 				for(Effect effect : ((Effects) d).getEffect()) {
-					MoveE moveE = (MoveE) effect;
-					effectMap.put(moveE.getName(), moveE.getRule());
+					effectMap.put(effect.getName(), effect.getRule());
 				}
 			}
 		}
@@ -450,17 +448,6 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 				ArrayList<String> rulePreArray = new ArrayList<>();
 				getAttributesFromArray(tempArray, rulePreArray);
 				preAttributesMap.put(name, rulePreArray);
-				/*
-				boolean pickNext = false;
-				for(String st : tempArray) {
-					if(pickNext) {
-						rulePreconditionAttributes.add(st);
-						pickNext = false;
-					}else if(st.equals("User") || st.equals("Enemy")) {
-						pickNext = true;
-					}
-				}
-				*/
 			}
 			
 			postAttributesList.add(rule.getTargetAtt().getName());
@@ -492,7 +479,6 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 					}
 				}
 			}
-			System.out.println(entry.getValue().size());
 			if(movesWithPossibleDeadlockEffect == entry.getValue().size()) {
 				warning("The entity: " + entityName +", only has moves containing possible limited usages, which might cause a deadlock.",
 	    				RpgindividualPackage.Literals.SYSTEM_RPG__NAME);

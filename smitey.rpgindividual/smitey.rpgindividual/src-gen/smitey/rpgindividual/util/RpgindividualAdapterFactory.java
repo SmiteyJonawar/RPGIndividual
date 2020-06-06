@@ -96,11 +96,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
         return createEffectAdapter();
       }
       @Override
-      public Adapter caseMoveE(MoveE object)
-      {
-        return createMoveEAdapter();
-      }
-      @Override
       public Adapter caseAttributes(Attributes object)
       {
         return createAttributesAdapter();
@@ -403,21 +398,6 @@ public class RpgindividualAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createEffectAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link smitey.rpgindividual.MoveE <em>Move E</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see smitey.rpgindividual.MoveE
-   * @generated
-   */
-  public Adapter createMoveEAdapter()
   {
     return null;
   }

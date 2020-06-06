@@ -60,15 +60,6 @@ public interface RpgindividualFactory extends EFactory
   Effect createEffect();
 
   /**
-   * Returns a new object of class '<em>Move E</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Move E</em>'.
-   * @generated
-   */
-  MoveE createMoveE();
-
-  /**
    * Returns a new object of class '<em>Attributes</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

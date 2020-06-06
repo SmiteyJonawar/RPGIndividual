@@ -149,31 +149,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleMoveE
-entryRuleMoveE
-:
-{ before(grammarAccess.getMoveERule()); }
-	 ruleMoveE
-{ after(grammarAccess.getMoveERule()); } 
-	 EOF 
-;
-
-// Rule MoveE
-ruleMoveE 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getMoveEAccess().getGroup()); }
-		(rule__MoveE__Group__0)
-		{ after(grammarAccess.getMoveEAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleAttributes
 entryRuleAttributes
 :
@@ -1544,6 +1519,7 @@ rule__Effect__Group__1
 	}
 :
 	rule__Effect__Group__1__Impl
+	rule__Effect__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1555,63 +1531,35 @@ rule__Effect__Group__1__Impl
 	}
 :
 (
-	{ before(grammarAccess.getEffectAccess().getMoveEParserRuleCall_1()); }
-	ruleMoveE
-	{ after(grammarAccess.getEffectAccess().getMoveEParserRuleCall_1()); }
+	{ before(grammarAccess.getEffectAccess().getNameAssignment_1()); }
+	(rule__Effect__NameAssignment_1)
+	{ after(grammarAccess.getEffectAccess().getNameAssignment_1()); }
 )
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-
-rule__MoveE__Group__0
+rule__Effect__Group__2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
-	rule__MoveE__Group__0__Impl
-	rule__MoveE__Group__1
+	rule__Effect__Group__2__Impl
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MoveE__Group__0__Impl
+rule__Effect__Group__2__Impl
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 (
-	{ before(grammarAccess.getMoveEAccess().getNameAssignment_0()); }
-	(rule__MoveE__NameAssignment_0)
-	{ after(grammarAccess.getMoveEAccess().getNameAssignment_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MoveE__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__MoveE__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__MoveE__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getMoveEAccess().getRuleAssignment_1()); }
-	(rule__MoveE__RuleAssignment_1)
-	{ after(grammarAccess.getMoveEAccess().getRuleAssignment_1()); }
+	{ before(grammarAccess.getEffectAccess().getRuleAssignment_2()); }
+	(rule__Effect__RuleAssignment_2)
+	{ after(grammarAccess.getEffectAccess().getRuleAssignment_2()); }
 )
 ;
 finally {
@@ -5102,30 +5050,30 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MoveE__NameAssignment_0
+rule__Effect__NameAssignment_1
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0()); }
+		{ before(grammarAccess.getEffectAccess().getNameIDTerminalRuleCall_1_0()); }
 		RULE_ID
-		{ after(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0()); }
+		{ after(grammarAccess.getEffectAccess().getNameIDTerminalRuleCall_1_0()); }
 	)
 ;
 finally {
 	restoreStackSize(stackSize);
 }
 
-rule__MoveE__RuleAssignment_1
+rule__Effect__RuleAssignment_2
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0()); }
+		{ before(grammarAccess.getEffectAccess().getRuleRuleParserRuleCall_2_0()); }
 		ruleRule
-		{ after(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0()); }
+		{ after(grammarAccess.getEffectAccess().getRuleRuleParserRuleCall_2_0()); }
 	)
 ;
 finally {
@@ -5447,13 +5395,13 @@ rule__MEffect__MoveENameAssignment_1
 	}
 :
 	(
-		{ before(grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_1_0()); }
+		{ before(grammarAccess.getMEffectAccess().getMoveENameEffectCrossReference_1_0()); }
 		(
-			{ before(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_1_0_1()); }
+			{ before(grammarAccess.getMEffectAccess().getMoveENameEffectIDTerminalRuleCall_1_0_1()); }
 			RULE_ID
-			{ after(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_1_0_1()); }
+			{ after(grammarAccess.getMEffectAccess().getMoveENameEffectIDTerminalRuleCall_1_0_1()); }
 		)
-		{ after(grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_1_0()); }
+		{ after(grammarAccess.getMEffectAccess().getMoveENameEffectCrossReference_1_0()); }
 	)
 ;
 finally {

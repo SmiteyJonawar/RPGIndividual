@@ -69,7 +69,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
       case RpgindividualPackage.DECLARATION: return createDeclaration();
       case RpgindividualPackage.EFFECTS: return createEffects();
       case RpgindividualPackage.EFFECT: return createEffect();
-      case RpgindividualPackage.MOVE_E: return createMoveE();
       case RpgindividualPackage.ATTRIBUTES: return createAttributes();
       case RpgindividualPackage.ATTRIBUTE: return createAttribute();
       case RpgindividualPackage.LOCATIONS: return createLocations();
@@ -166,18 +165,6 @@ public class RpgindividualFactoryImpl extends EFactoryImpl implements Rpgindivid
   {
     EffectImpl effect = new EffectImpl();
     return effect;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public MoveE createMoveE()
-  {
-    MoveEImpl moveE = new MoveEImpl();
-    return moveE;
   }
 
   /**

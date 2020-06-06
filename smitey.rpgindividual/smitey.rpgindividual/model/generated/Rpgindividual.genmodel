@@ -14,10 +14,9 @@
     <genClasses ecoreClass="Rpgindividual.ecore#//Effects">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Effects/effect"/>
     </genClasses>
-    <genClasses ecoreClass="Rpgindividual.ecore#//Effect"/>
-    <genClasses ecoreClass="Rpgindividual.ecore#//MoveE">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//MoveE/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//MoveE/rule"/>
+    <genClasses ecoreClass="Rpgindividual.ecore#//Effect">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//Effect/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Effect/rule"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//Attributes">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Attributes/attribute"/>

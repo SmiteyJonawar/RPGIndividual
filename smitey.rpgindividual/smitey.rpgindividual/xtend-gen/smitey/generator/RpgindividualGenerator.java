@@ -36,7 +36,6 @@ import smitey.rpgindividual.Loc;
 import smitey.rpgindividual.Locations;
 import smitey.rpgindividual.MEffect;
 import smitey.rpgindividual.Move;
-import smitey.rpgindividual.MoveE;
 import smitey.rpgindividual.Moves;
 import smitey.rpgindividual.Mult;
 import smitey.rpgindividual.NEq;
@@ -446,13 +445,13 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("private void executeMove(Move move, String moveName, Entity user, Entity target){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("if(!move.getMove(moveName).getMoveEffects().isEmpty()){");
+    _builder.append("if(!move.getMove(moveName).getEffects().isEmpty()){");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append("for(EffectMove moveEffect: move.getMove(moveName).getMoveEffects()){");
+    _builder.append("for(Effect effect: move.getMove(moveName).getEffects()){");
     _builder.newLine();
     _builder.append("\t\t\t\t");
-    _builder.append("moveEffect.doEffect(move, moveName, user, target);");
+    _builder.append("effect.doEffect(move, moveName, user, target);");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("}");
@@ -835,42 +834,18 @@ public class RpgindividualGenerator extends AbstractGenerator {
   }
   
   public void generateEffectFiles(final IFileSystemAccess2 fsa, final Effects effects) {
-    boolean effectBoolean = false;
+    fsa.generateFile("Effect.java", this.generateEffect());
     EList<Effect> _effect = effects.getEffect();
     for (final Effect effect : _effect) {
-      boolean _matched = false;
-      if (effect instanceof MoveE) {
-        _matched=true;
-        if ((!effectBoolean)) {
-          this.addEveryEffect(fsa);
-          effectBoolean = true;
-        }
-        String _name = ((MoveE)effect).getName();
-        String _plus = (_name + ".java");
-        fsa.generateFile(_plus, this.generateMoveEffectFile(((MoveE)effect)));
-      }
+      String _name = effect.getName();
+      String _plus = (_name + ".java");
+      fsa.generateFile(_plus, this.generateEffectFile(effect));
     }
   }
   
-  public void addEveryEffect(final IFileSystemAccess2 fsa) {
-    fsa.generateFile("EffectMove.java", this.generateEffectMove());
-  }
-  
-  /**
-   * def CharSequence generateEffectAfter(){
-   * '''
-   * public abstract class EffectAfter {
-   * public abstract boolean effectAfter(Move move, String name, Entity user, Entity enemy);
-   * public abstract Number changeAfter(Move move, String name, Entity user, Entity enemy);
-   * public abstract void doEffect(Move move, String name, Entity user, Entity enemy);
-   * }
-   * '''
-   * }
-   */
-  public CharSequence generateEffectMove() {
+  public CharSequence generateEffect() {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("public abstract class EffectMove {");
-    _builder.newLine();
+    _builder.append("public abstract class Effect {");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("public abstract boolean effectMove(Move move, String name, Entity user, Entity enemy);");
@@ -886,149 +861,14 @@ public class RpgindividualGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  /**
-   * def CharSequence generateAfterEffetFile(AfterE afterEffect){
-   * '''
-   * import java.util.*;
-   * public class «afterEffect.name» extends EffectAfter{
-   * 
-   * @Override
-   * public boolean effectAfter(Move move, String name, Entity user, Entity enemy){
-   * «IF afterEffect.rule.or !== null»
-   * HashMap<String, Number> userEntityData = new HashMap<>();
-   * HashMap<String, Number> enemyEntityData = new HashMap<>();
-   * for(AttributeData userData : user.getAttributes()){
-   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
-   * }
-   * for(AttributeData enemyData : enemy.getAttributes()){
-   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * }
-   * return «afterEffect.rule.or.new_logic»;
-   * «ELSE»
-   * return true;
-   * «ENDIF»
-   * }
-   * 
-   * @Override
-   * public Number changeAfter(Move move, String name, Entity user, Entity enemy){
-   * HashMap<String, Number> userEntityData = new HashMap<>();
-   * HashMap<String, Number> enemyEntityData = new HashMap<>();
-   * for(AttributeData userData : user.getAttributes()){
-   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
-   * }
-   * for(AttributeData enemyData : enemy.getAttributes()){
-   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * }
-   * return «afterEffect.rule.sum.new_exp»;
-   * }
-   * 
-   * 
-   * @Override
-   * public void doEffect(Move move, String name, Entity user, Entity enemy){
-   * if(effectAfter(move, name, user, enemy)){
-   * for(AttributeData aData : «afterEffect.rule.targetThen».getAttributes()){
-   * if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
-   * aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
-   * System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
-   * }
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * if(aData.getAttributeName() == "«afterEffect.rule.targetAtt.name»"){
-   * aData.setNumber(changeAfter(move, name, «afterEffect.rule.targetThen»));
-   * System.out.println(«afterEffect.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
-   * }
-   * }
-   * }
-   * }
-   * }
-   * '''
-   * }
-   * 
-   * 
-   * 
-   * def CharSequence generateBuffEffectFile(Buff buff){
-   * '''
-   * import java.util.*;
-   * public class «buff.name» extends EffectBuff{
-   * 
-   * @Override
-   * public boolean effectBuff(Move move, String name, Entity user, Entity enemy){
-   * «IF buff.rule.or !== null»
-   * HashMap<String, Number> userEntityData = new HashMap<>();
-   * HashMap<String, Number> enemyEntityData = new HashMap<>();
-   * for(AttributeData userData : user.getAttributes()){
-   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
-   * }
-   * for(AttributeData enemyData : enemy.getAttributes()){
-   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * }
-   * return «buff.rule.or.new_logic»;
-   * «ELSE»
-   * return true;
-   * «ENDIF»
-   * }
-   * 
-   * @Override
-   * public Number changeBuff(Move move, String name, Entity user, Entity enemy){
-   * HashMap<String, Number> userEntityData = new HashMap<>();
-   * HashMap<String, Number> enemyEntityData = new HashMap<>();
-   * for(AttributeData userData : user.getAttributes()){
-   * userEntityData.put(userData.getAttributeName(), userData.getNumber());
-   * }
-   * for(AttributeData enemyData : enemy.getAttributes()){
-   * enemyEntityData.put(enemyData.getAttributeName(), enemyData.getNumber());
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * userEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * enemyEntityData.put(aData.getAttributeName(), aData.getNumber());
-   * }
-   * return «buff.rule.sum.new_exp»;
-   * }
-   * 
-   * 
-   * @Override
-   * public void doEffect(Move move, String name, Entity user, Entity enemy){
-   * if(effectBuff(move, name, user, enemy)){
-   * for(AttributeData aData : «buff.rule.targetThen».getAttributes()){
-   * if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
-   * aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
-   * System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
-   * 
-   * }
-   * }
-   * for(AttributeData aData : move.getMove(name).getMoveAttributes()){
-   * if(aData.getAttributeName() == "«buff.rule.targetAtt.name»"){
-   * aData.setNumber(changeBuff(move, name, «buff.rule.targetThen»));
-   * System.out.println(«buff.rule.targetThen».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
-   * 
-   * }
-   * }
-   * }
-   * }
-   * }
-   * '''
-   * }
-   */
-  public CharSequence generateMoveEffectFile(final MoveE moveE) {
+  public CharSequence generateEffectFile(final Effect effect) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("import java.util.*;");
     _builder.newLine();
     _builder.append("public class ");
-    String _name = moveE.getName();
+    String _name = effect.getName();
     _builder.append(_name);
-    _builder.append(" extends EffectMove{");
+    _builder.append(" extends Effect{");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.newLine();
@@ -1039,7 +879,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("public boolean effectMove(Move move, String name, Entity user, Entity enemy){");
     _builder.newLine();
     {
-      Proposition _or = moveE.getRule().getOr();
+      Proposition _or = effect.getRule().getOr();
       boolean _tripleNotEquals = (_or != null);
       if (_tripleNotEquals) {
         _builder.append("\t\t");
@@ -1084,7 +924,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
         _builder.newLine();
         _builder.append("\t\t");
         _builder.append("return ");
-        CharSequence _new_logic = this.new_logic(moveE.getRule().getOr());
+        CharSequence _new_logic = this.new_logic(effect.getRule().getOr());
         _builder.append(_new_logic, "\t\t");
         _builder.append(";");
         _builder.newLineIfNotEmpty();
@@ -1143,7 +983,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append("return ");
-    CharSequence _new_exp = this.new_exp(moveE.getRule().getSum());
+    CharSequence _new_exp = this.new_exp(effect.getRule().getSum());
     _builder.append(_new_exp, "\t\t");
     _builder.append(";");
     _builder.newLineIfNotEmpty();
@@ -1163,13 +1003,13 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("for(AttributeData aData : ");
-    String _lowerCase = moveE.getRule().getTargetThen().toLowerCase();
+    String _lowerCase = effect.getRule().getTargetThen().toLowerCase();
     _builder.append(_lowerCase, "\t\t\t");
     _builder.append(".getAttributes()){");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t\t\t");
     _builder.append("if(aData.getAttributeName() == \"");
-    String _name_1 = moveE.getRule().getTargetAtt().getName();
+    String _name_1 = effect.getRule().getTargetAtt().getName();
     _builder.append(_name_1, "\t\t\t\t");
     _builder.append("\"){");
     _builder.newLineIfNotEmpty();
@@ -1178,7 +1018,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t\t\t");
     _builder.append("System.out.println(");
-    String _lowerCase_1 = moveE.getRule().getTargetThen().toLowerCase();
+    String _lowerCase_1 = effect.getRule().getTargetThen().toLowerCase();
     _builder.append(_lowerCase_1, "\t\t\t\t\t");
     _builder.append(".getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
     _builder.newLineIfNotEmpty();
@@ -1196,7 +1036,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append("if(aData.getAttributeName() == \"");
-    String _name_2 = moveE.getRule().getTargetAtt().getName();
+    String _name_2 = effect.getRule().getTargetAtt().getName();
     _builder.append(_name_2, "\t\t\t");
     _builder.append("\"){");
     _builder.newLineIfNotEmpty();
@@ -1205,7 +1045,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t\t\t");
     _builder.append("System.out.println(");
-    String _lowerCase_2 = moveE.getRule().getTargetThen().toLowerCase();
+    String _lowerCase_2 = effect.getRule().getTargetThen().toLowerCase();
     _builder.append(_lowerCase_2, "\t\t\t\t");
     _builder.append(".getName() + \"\'(s) \"  + aData.getAttributeName() + \" is now: \" + aData.getNumber());");
     _builder.newLineIfNotEmpty();
@@ -2140,7 +1980,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("private List<AttributeData> moveAttributes;");
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("private List<EffectMove> moveEffects;");
+    _builder.append("private List<Effect> effects;");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
@@ -2150,14 +1990,14 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("this.moveAttributes = new ArrayList<>();");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("this.moveEffects = new ArrayList<>();");
+    _builder.append("this.effects = new ArrayList<>();");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
     _builder.newLine();
     _builder.newLine();
     _builder.append("    ");
-    _builder.append("public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<EffectMove> moveEffects) {");
+    _builder.append("public MoveData(String moveName, String type, List<AttributeData> moveAttributes, List<Effect> effects) {");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("this.moveName = moveName;");
@@ -2169,7 +2009,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("this.moveAttributes = moveAttributes;");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("this.moveEffects = moveEffects;");
+    _builder.append("this.effects = effects;");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
@@ -2249,10 +2089,10 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public List<EffectMove> getMoveEffects(){");
+    _builder.append("public List<Effect> getEffects(){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("return this.moveEffects;");
+    _builder.append("return this.effects;");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -2262,10 +2102,10 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("\t");
     _builder.newLine();
     _builder.append("\t");
-    _builder.append("public void addMoveEffect(EffectMove moveEffect){");
+    _builder.append("public void addEffect(Effect effect){");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append("this.moveEffects.add(moveEffect);");
+    _builder.append("this.effects.add(effect);");
     _builder.newLine();
     _builder.append("\t");
     _builder.append("}");
@@ -2311,7 +2151,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
     _builder.append("public int hashCode() {");
     _builder.newLine();
     _builder.append("        ");
-    _builder.append("return Objects.hash(moveName, type, moveAttributes, moveEffects);");
+    _builder.append("return Objects.hash(moveName, type, moveAttributes, effects);");
     _builder.newLine();
     _builder.append("    ");
     _builder.append("}");
@@ -2445,7 +2285,7 @@ public class RpgindividualGenerator extends AbstractGenerator {
             {
               if ((moveEffect != null)) {
                 _builder.append("\t\t");
-                _builder.append("tempMoveData.addMoveEffect(new ");
+                _builder.append("tempMoveData.addEffect(new ");
                 String _name_3 = moveEffect.getMoveEName().getName();
                 _builder.append(_name_3, "\t\t");
                 _builder.append("());");

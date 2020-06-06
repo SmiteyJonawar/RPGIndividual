@@ -272,47 +272,20 @@ ruleEffect returns [EObject current=null]
 		{
 			newLeafNode(otherlv_0, grammarAccess.getEffectAccess().getEffectKeyword_0());
 		}
-		{
-			newCompositeNode(grammarAccess.getEffectAccess().getMoveEParserRuleCall_1());
-		}
-		this_MoveE_1=ruleMoveE
-		{
-			$current = $this_MoveE_1.current;
-			afterParserOrEnumRuleCall();
-		}
-	)
-;
-
-// Entry rule entryRuleMoveE
-entryRuleMoveE returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getMoveERule()); }
-	iv_ruleMoveE=ruleMoveE
-	{ $current=$iv_ruleMoveE.current; }
-	EOF;
-
-// Rule MoveE
-ruleMoveE returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
 		(
 			(
-				lv_name_0_0=RULE_ID
+				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_0_0, grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getEffectAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getMoveERule());
+						$current = createModelElement(grammarAccess.getEffectRule());
 					}
 					setWithLastConsumed(
 						$current,
 						"name",
-						lv_name_0_0,
+						lv_name_1_0,
 						"org.eclipse.xtext.common.Terminals.ID");
 				}
 			)
@@ -320,17 +293,17 @@ ruleMoveE returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getEffectAccess().getRuleRuleParserRuleCall_2_0());
 				}
-				lv_rule_1_0=ruleRule
+				lv_rule_2_0=ruleRule
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMoveERule());
+						$current = createModelElementForParent(grammarAccess.getEffectRule());
 					}
 					set(
 						$current,
 						"rule",
-						lv_rule_1_0,
+						lv_rule_2_0,
 						"smitey.Rpgindividual.Rule");
 					afterParserOrEnumRuleCall();
 				}
@@ -912,7 +885,7 @@ ruleMEffect returns [EObject current=null]
 				}
 				otherlv_1=RULE_ID
 				{
-					newLeafNode(otherlv_1, grammarAccess.getMEffectAccess().getMoveENameMoveECrossReference_1_0());
+					newLeafNode(otherlv_1, grammarAccess.getMEffectAccess().getMoveENameEffectCrossReference_1_0());
 				}
 			)
 		)

@@ -15,12 +15,9 @@ Effects:
 ;
 
 Effect:
-	'effect' MoveE
+	'effect' name=ID rule=Rule
 ;
 
-MoveE:
-	name=ID rule=Rule
-;
 
 Attributes:
 	'attributes' attribute+=Attribute+
@@ -61,7 +58,7 @@ Move:
 ;
 
 MEffect:
-	'effect' moveEName=[MoveE]
+	'effect' moveEName=[Effect]
 ;
 
 EType:

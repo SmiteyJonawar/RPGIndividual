@@ -25,6 +25,7 @@ import smitey.rpgindividual.BiggerEq;
 import smitey.rpgindividual.Death;
 import smitey.rpgindividual.Div;
 import smitey.rpgindividual.EType;
+import smitey.rpgindividual.Effect;
 import smitey.rpgindividual.Effects;
 import smitey.rpgindividual.Entities;
 import smitey.rpgindividual.Entity;
@@ -39,7 +40,6 @@ import smitey.rpgindividual.Locations;
 import smitey.rpgindividual.MEffect;
 import smitey.rpgindividual.Members;
 import smitey.rpgindividual.Move;
-import smitey.rpgindividual.MoveE;
 import smitey.rpgindividual.Moves;
 import smitey.rpgindividual.Mult;
 import smitey.rpgindividual.NEq;
@@ -106,6 +106,9 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 			case RpgindividualPackage.ETYPE:
 				sequence_EType(context, (EType) semanticObject); 
 				return; 
+			case RpgindividualPackage.EFFECT:
+				sequence_Effect(context, (Effect) semanticObject); 
+				return; 
 			case RpgindividualPackage.EFFECTS:
 				sequence_Effects(context, (Effects) semanticObject); 
 				return; 
@@ -147,9 +150,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				return; 
 			case RpgindividualPackage.MOVE:
 				sequence_Move(context, (Move) semanticObject); 
-				return; 
-			case RpgindividualPackage.MOVE_E:
-				sequence_MoveE(context, (MoveE) semanticObject); 
 				return; 
 			case RpgindividualPackage.MOVES:
 				sequence_Moves(context, (Moves) semanticObject); 
@@ -398,6 +398,27 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	
 	/**
 	 * Contexts:
+	 *     Effect returns Effect
+	 *
+	 * Constraint:
+	 *     (name=ID rule=Rule)
+	 */
+	protected void sequence_Effect(ISerializationContext context, Effect semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__NAME));
+			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.EFFECT__RULE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getEffectAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getEffectAccess().getRuleRuleParserRuleCall_2_0(), semanticObject.getRule());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
 	 *     Declaration returns Effects
 	 *     Effects returns Effects
 	 *
@@ -573,7 +594,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     MEffect returns MEffect
 	 *
 	 * Constraint:
-	 *     moveEName=[MoveE|ID]
+	 *     moveEName=[Effect|ID]
 	 */
 	protected void sequence_MEffect(ISerializationContext context, MEffect semanticObject) {
 		if (errorAcceptor != null) {
@@ -581,7 +602,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMEffectAccess().getMoveENameMoveEIDTerminalRuleCall_1_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME, false));
+		feeder.accept(grammarAccess.getMEffectAccess().getMoveENameEffectIDTerminalRuleCall_1_0_1(), semanticObject.eGet(RpgindividualPackage.Literals.MEFFECT__MOVE_ENAME, false));
 		feeder.finish();
 	}
 	
@@ -595,28 +616,6 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 */
 	protected void sequence_Members(ISerializationContext context, Members semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Effect returns MoveE
-	 *     MoveE returns MoveE
-	 *
-	 * Constraint:
-	 *     (name=ID rule=Rule)
-	 */
-	protected void sequence_MoveE(ISerializationContext context, MoveE semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.MOVE_E__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MOVE_E__NAME));
-			if (transientValues.isValueTransient(semanticObject, RpgindividualPackage.Literals.MOVE_E__RULE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, RpgindividualPackage.Literals.MOVE_E__RULE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getMoveEAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getMoveEAccess().getRuleRuleParserRuleCall_1_0(), semanticObject.getRule());
-		feeder.finish();
 	}
 	
 	
