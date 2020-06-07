@@ -385,18 +385,6 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 				propositionToArray(((Death) d).getLog(), al);
 				
 				getAttributesFromArray(al, deathAttributes);
-				
-				/*
-				boolean pickNext = false;
-				for(String st : al) {
-					if(pickNext) {
-						deathAttributes.add(st);
-						pickNext = false;
-					}else if(st.equals("User") || st.equals("Enemy")) {
-						pickNext = true;
-					}
-				}
-				*/
 			}
 		}
 		//Check if they are all there
