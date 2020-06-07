@@ -448,7 +448,6 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 			for(String st : entry.getValue()) {
 				if(postAttributesList.contains(st)) {
 					possibleDeadlockEffects.add(effectName);
-					System.out.println(effectName);
 				}
 			}
 		}
@@ -456,13 +455,11 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 		//check if all of an entity's moves contain a possible deadlock effect
 		for(Map.Entry<String, ArrayList<Move>> entry : entityMap.entrySet()) {
 			String entityName = entry.getKey();
-			System.out.println(entityName);
 			int movesWithPossibleDeadlockEffect = 0;
 			for(Move move : entry.getValue()) {
 				for(MEffect mEffect : move.getMEffect()) {
 					if(possibleDeadlockEffects.contains(mEffect.getMoveEName().getName())) {
 						movesWithPossibleDeadlockEffect++;
-						System.out.println(entityName + ": " + movesWithPossibleDeadlockEffect);
 						break;
 					}
 				}
