@@ -16,9 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
+ *   <li>{@link smitey.rpgindividual.TypeExpression#getRelationStrong <em>Relation Strong</em>}</li>
  *   <li>{@link smitey.rpgindividual.TypeExpression#getStrong <em>Strong</em>}</li>
  *   <li>{@link smitey.rpgindividual.TypeExpression#getStrong2 <em>Strong2</em>}</li>
- *   <li>{@link smitey.rpgindividual.TypeExpression#getCurrentT <em>Current T</em>}</li>
+ *   <li>{@link smitey.rpgindividual.TypeExpression#getRelationWeak <em>Relation Weak</em>}</li>
  *   <li>{@link smitey.rpgindividual.TypeExpression#getWeak <em>Weak</em>}</li>
  *   <li>{@link smitey.rpgindividual.TypeExpression#getWeak2 <em>Weak2</em>}</li>
  * </ul>
@@ -29,6 +30,28 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface TypeExpression extends EObject
 {
+  /**
+   * Returns the value of the '<em><b>Relation Strong</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Relation Strong</em>' containment reference.
+   * @see #setRelationStrong(FloatNum)
+   * @see smitey.rpgindividual.RpgindividualPackage#getTypeExpression_RelationStrong()
+   * @model containment="true"
+   * @generated
+   */
+  FloatNum getRelationStrong();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.TypeExpression#getRelationStrong <em>Relation Strong</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Relation Strong</em>' containment reference.
+   * @see #getRelationStrong()
+   * @generated
+   */
+  void setRelationStrong(FloatNum value);
+
   /**
    * Returns the value of the '<em><b>Strong</b></em>' reference.
    * <!-- begin-user-doc -->
@@ -64,26 +87,26 @@ public interface TypeExpression extends EObject
   EList<Type> getStrong2();
 
   /**
-   * Returns the value of the '<em><b>Current T</b></em>' reference.
+   * Returns the value of the '<em><b>Relation Weak</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Current T</em>' reference.
-   * @see #setCurrentT(Type)
-   * @see smitey.rpgindividual.RpgindividualPackage#getTypeExpression_CurrentT()
-   * @model
+   * @return the value of the '<em>Relation Weak</em>' containment reference.
+   * @see #setRelationWeak(FloatNum)
+   * @see smitey.rpgindividual.RpgindividualPackage#getTypeExpression_RelationWeak()
+   * @model containment="true"
    * @generated
    */
-  Type getCurrentT();
+  FloatNum getRelationWeak();
 
   /**
-   * Sets the value of the '{@link smitey.rpgindividual.TypeExpression#getCurrentT <em>Current T</em>}' reference.
+   * Sets the value of the '{@link smitey.rpgindividual.TypeExpression#getRelationWeak <em>Relation Weak</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Current T</em>' reference.
-   * @see #getCurrentT()
+   * @param value the new value of the '<em>Relation Weak</em>' containment reference.
+   * @see #getRelationWeak()
    * @generated
    */
-  void setCurrentT(Type value);
+  void setRelationWeak(FloatNum value);
 
   /**
    * Returns the value of the '<em><b>Weak</b></em>' reference.

@@ -6,6 +6,7 @@ package smitey.rpgindividual.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
+import smitey.rpgindividual.FloatNum;
 import smitey.rpgindividual.RpgindividualPackage;
 import smitey.rpgindividual.Type;
 import smitey.rpgindividual.TypeExpression;
@@ -29,9 +31,10 @@ import smitey.rpgindividual.TypeExpression;
  * The following features are implemented:
  * </p>
  * <ul>
+ *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getRelationStrong <em>Relation Strong</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getStrong <em>Strong</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getStrong2 <em>Strong2</em>}</li>
- *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getCurrentT <em>Current T</em>}</li>
+ *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getRelationWeak <em>Relation Weak</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getWeak <em>Weak</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.TypeExpressionImpl#getWeak2 <em>Weak2</em>}</li>
  * </ul>
@@ -40,6 +43,16 @@ import smitey.rpgindividual.TypeExpression;
  */
 public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements TypeExpression
 {
+  /**
+   * The cached value of the '{@link #getRelationStrong() <em>Relation Strong</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRelationStrong()
+   * @generated
+   * @ordered
+   */
+  protected FloatNum relationStrong;
+
   /**
    * The cached value of the '{@link #getStrong() <em>Strong</em>}' reference.
    * <!-- begin-user-doc -->
@@ -61,14 +74,14 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
   protected EList<Type> strong2;
 
   /**
-   * The cached value of the '{@link #getCurrentT() <em>Current T</em>}' reference.
+   * The cached value of the '{@link #getRelationWeak() <em>Relation Weak</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCurrentT()
+   * @see #getRelationWeak()
    * @generated
    * @ordered
    */
-  protected Type currentT;
+  protected FloatNum relationWeak;
 
   /**
    * The cached value of the '{@link #getWeak() <em>Weak</em>}' reference.
@@ -109,6 +122,56 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
   protected EClass eStaticClass()
   {
     return RpgindividualPackage.Literals.TYPE_EXPRESSION;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public FloatNum getRelationStrong()
+  {
+    return relationStrong;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetRelationStrong(FloatNum newRelationStrong, NotificationChain msgs)
+  {
+    FloatNum oldRelationStrong = relationStrong;
+    relationStrong = newRelationStrong;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG, oldRelationStrong, newRelationStrong);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setRelationStrong(FloatNum newRelationStrong)
+  {
+    if (newRelationStrong != relationStrong)
+    {
+      NotificationChain msgs = null;
+      if (relationStrong != null)
+        msgs = ((InternalEObject)relationStrong).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG, null, msgs);
+      if (newRelationStrong != null)
+        msgs = ((InternalEObject)newRelationStrong).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG, null, msgs);
+      msgs = basicSetRelationStrong(newRelationStrong, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG, newRelationStrong, newRelationStrong));
   }
 
   /**
@@ -177,19 +240,9 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public Type getCurrentT()
+  public FloatNum getRelationWeak()
   {
-    if (currentT != null && currentT.eIsProxy())
-    {
-      InternalEObject oldCurrentT = (InternalEObject)currentT;
-      currentT = (Type)eResolveProxy(oldCurrentT);
-      if (currentT != oldCurrentT)
-      {
-        if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T, oldCurrentT, currentT));
-      }
-    }
-    return currentT;
+    return relationWeak;
   }
 
   /**
@@ -197,9 +250,16 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Type basicGetCurrentT()
+  public NotificationChain basicSetRelationWeak(FloatNum newRelationWeak, NotificationChain msgs)
   {
-    return currentT;
+    FloatNum oldRelationWeak = relationWeak;
+    relationWeak = newRelationWeak;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK, oldRelationWeak, newRelationWeak);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -208,12 +268,20 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
-  public void setCurrentT(Type newCurrentT)
+  public void setRelationWeak(FloatNum newRelationWeak)
   {
-    Type oldCurrentT = currentT;
-    currentT = newCurrentT;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T, oldCurrentT, currentT));
+    if (newRelationWeak != relationWeak)
+    {
+      NotificationChain msgs = null;
+      if (relationWeak != null)
+        msgs = ((InternalEObject)relationWeak).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK, null, msgs);
+      if (newRelationWeak != null)
+        msgs = ((InternalEObject)newRelationWeak).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK, null, msgs);
+      msgs = basicSetRelationWeak(newRelationWeak, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK, newRelationWeak, newRelationWeak));
   }
 
   /**
@@ -282,18 +350,37 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG:
+        return basicSetRelationStrong(null, msgs);
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK:
+        return basicSetRelationWeak(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG:
+        return getRelationStrong();
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG:
         if (resolve) return getStrong();
         return basicGetStrong();
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG2:
         return getStrong2();
-      case RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T:
-        if (resolve) return getCurrentT();
-        return basicGetCurrentT();
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK:
+        return getRelationWeak();
       case RpgindividualPackage.TYPE_EXPRESSION__WEAK:
         if (resolve) return getWeak();
         return basicGetWeak();
@@ -314,6 +401,9 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG:
+        setRelationStrong((FloatNum)newValue);
+        return;
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG:
         setStrong((Type)newValue);
         return;
@@ -321,8 +411,8 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
         getStrong2().clear();
         getStrong2().addAll((Collection<? extends Type>)newValue);
         return;
-      case RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T:
-        setCurrentT((Type)newValue);
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK:
+        setRelationWeak((FloatNum)newValue);
         return;
       case RpgindividualPackage.TYPE_EXPRESSION__WEAK:
         setWeak((Type)newValue);
@@ -345,14 +435,17 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG:
+        setRelationStrong((FloatNum)null);
+        return;
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG:
         setStrong((Type)null);
         return;
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG2:
         getStrong2().clear();
         return;
-      case RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T:
-        setCurrentT((Type)null);
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK:
+        setRelationWeak((FloatNum)null);
         return;
       case RpgindividualPackage.TYPE_EXPRESSION__WEAK:
         setWeak((Type)null);
@@ -374,12 +467,14 @@ public class TypeExpressionImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_STRONG:
+        return relationStrong != null;
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG:
         return strong != null;
       case RpgindividualPackage.TYPE_EXPRESSION__STRONG2:
         return strong2 != null && !strong2.isEmpty();
-      case RpgindividualPackage.TYPE_EXPRESSION__CURRENT_T:
-        return currentT != null;
+      case RpgindividualPackage.TYPE_EXPRESSION__RELATION_WEAK:
+        return relationWeak != null;
       case RpgindividualPackage.TYPE_EXPRESSION__WEAK:
         return weak != null;
       case RpgindividualPackage.TYPE_EXPRESSION__WEAK2:

@@ -757,7 +757,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getTypeExpression_Strong()
+  public EReference getTypeExpression_RelationStrong()
   {
     return (EReference)typeExpressionEClass.getEStructuralFeatures().get(0);
   }
@@ -768,7 +768,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getTypeExpression_Strong2()
+  public EReference getTypeExpression_Strong()
   {
     return (EReference)typeExpressionEClass.getEStructuralFeatures().get(1);
   }
@@ -779,7 +779,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getTypeExpression_CurrentT()
+  public EReference getTypeExpression_Strong2()
   {
     return (EReference)typeExpressionEClass.getEStructuralFeatures().get(2);
   }
@@ -790,7 +790,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getTypeExpression_Weak()
+  public EReference getTypeExpression_RelationWeak()
   {
     return (EReference)typeExpressionEClass.getEStructuralFeatures().get(3);
   }
@@ -801,9 +801,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
-  public EReference getTypeExpression_Weak2()
+  public EReference getTypeExpression_Weak()
   {
     return (EReference)typeExpressionEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public EReference getTypeExpression_Weak2()
+  {
+    return (EReference)typeExpressionEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1043,9 +1054,20 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
    * @generated
    */
   @Override
+  public EAttribute getRule_Change()
+  {
+    return (EAttribute)ruleEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public EReference getRule_Sum()
   {
-    return (EReference)ruleEClass.getEStructuralFeatures().get(3);
+    return (EReference)ruleEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1840,9 +1862,10 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     createEReference(typeEClass, TYPE__TEXPRESSION);
 
     typeExpressionEClass = createEClass(TYPE_EXPRESSION);
+    createEReference(typeExpressionEClass, TYPE_EXPRESSION__RELATION_STRONG);
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__STRONG);
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__STRONG2);
-    createEReference(typeExpressionEClass, TYPE_EXPRESSION__CURRENT_T);
+    createEReference(typeExpressionEClass, TYPE_EXPRESSION__RELATION_WEAK);
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__WEAK);
     createEReference(typeExpressionEClass, TYPE_EXPRESSION__WEAK2);
 
@@ -1873,6 +1896,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     createEReference(ruleEClass, RULE__OR);
     createEAttribute(ruleEClass, RULE__TARGET_THEN);
     createEReference(ruleEClass, RULE__TARGET_ATT);
+    createEAttribute(ruleEClass, RULE__CHANGE);
     createEReference(ruleEClass, RULE__SUM);
 
     entitiesEClass = createEClass(ENTITIES);
@@ -2066,9 +2090,10 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getType_TExpression(), this.getTypeExpression(), null, "tExpression", null, 0, 1, Type.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeExpressionEClass, TypeExpression.class, "TypeExpression", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getTypeExpression_RelationStrong(), this.getFloatNum(), null, "relationStrong", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeExpression_Strong(), this.getType(), null, "strong", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeExpression_Strong2(), this.getType(), null, "strong2", null, 0, -1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getTypeExpression_CurrentT(), this.getType(), null, "currentT", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeExpression_RelationWeak(), this.getFloatNum(), null, "relationWeak", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeExpression_Weak(), this.getType(), null, "weak", null, 0, 1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getTypeExpression_Weak2(), this.getType(), null, "weak2", null, 0, -1, TypeExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2099,6 +2124,7 @@ public class RpgindividualPackageImpl extends EPackageImpl implements Rpgindivid
     initEReference(getRule_Or(), this.getProposition(), null, "or", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getRule_TargetThen(), ecorePackage.getEString(), "targetThen", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_TargetAtt(), this.getAttribute(), null, "targetAtt", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getRule_Change(), ecorePackage.getEString(), "change", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getRule_Sum(), this.getSum(), null, "sum", null, 0, 1, Rule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entitiesEClass, Entities.class, "Entities", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

@@ -29,6 +29,7 @@ import smitey.rpgindividual.Sum;
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getOr <em>Or</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getTargetThen <em>Target Then</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getTargetAtt <em>Target Att</em>}</li>
+ *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getChange <em>Change</em>}</li>
  *   <li>{@link smitey.rpgindividual.impl.RuleImpl#getSum <em>Sum</em>}</li>
  * </ul>
  *
@@ -75,6 +76,26 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @ordered
    */
   protected Attribute targetAtt;
+
+  /**
+   * The default value of the '{@link #getChange() <em>Change</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChange()
+   * @generated
+   * @ordered
+   */
+  protected static final String CHANGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getChange() <em>Change</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getChange()
+   * @generated
+   * @ordered
+   */
+  protected String change = CHANGE_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getSum() <em>Sum</em>}' containment reference.
@@ -233,6 +254,31 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
    * @generated
    */
   @Override
+  public String getChange()
+  {
+    return change;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public void setChange(String newChange)
+  {
+    String oldChange = change;
+    change = newChange;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, RpgindividualPackage.RULE__CHANGE, oldChange, change));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Sum getSum()
   {
     return sum;
@@ -312,6 +358,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case RpgindividualPackage.RULE__TARGET_ATT:
         if (resolve) return getTargetAtt();
         return basicGetTargetAtt();
+      case RpgindividualPackage.RULE__CHANGE:
+        return getChange();
       case RpgindividualPackage.RULE__SUM:
         return getSum();
     }
@@ -336,6 +384,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return;
       case RpgindividualPackage.RULE__TARGET_ATT:
         setTargetAtt((Attribute)newValue);
+        return;
+      case RpgindividualPackage.RULE__CHANGE:
+        setChange((String)newValue);
         return;
       case RpgindividualPackage.RULE__SUM:
         setSum((Sum)newValue);
@@ -363,6 +414,9 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
       case RpgindividualPackage.RULE__TARGET_ATT:
         setTargetAtt((Attribute)null);
         return;
+      case RpgindividualPackage.RULE__CHANGE:
+        setChange(CHANGE_EDEFAULT);
+        return;
       case RpgindividualPackage.RULE__SUM:
         setSum((Sum)null);
         return;
@@ -386,6 +440,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
         return TARGET_THEN_EDEFAULT == null ? targetThen != null : !TARGET_THEN_EDEFAULT.equals(targetThen);
       case RpgindividualPackage.RULE__TARGET_ATT:
         return targetAtt != null;
+      case RpgindividualPackage.RULE__CHANGE:
+        return CHANGE_EDEFAULT == null ? change != null : !CHANGE_EDEFAULT.equals(change);
       case RpgindividualPackage.RULE__SUM:
         return sum != null;
     }
@@ -405,6 +461,8 @@ public class RuleImpl extends MinimalEObjectImpl.Container implements Rule
     StringBuilder result = new StringBuilder(super.toString());
     result.append(" (targetThen: ");
     result.append(targetThen);
+    result.append(", change: ");
+    result.append(change);
     result.append(')');
     return result.toString();
   }

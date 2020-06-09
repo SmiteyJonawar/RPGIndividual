@@ -384,13 +384,22 @@ public interface RpgindividualPackage extends EPackage
   int TYPE_EXPRESSION = 10;
 
   /**
+   * The feature id for the '<em><b>Relation Strong</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE_EXPRESSION__RELATION_STRONG = 0;
+
+  /**
    * The feature id for the '<em><b>Strong</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION__STRONG = 0;
+  int TYPE_EXPRESSION__STRONG = 1;
 
   /**
    * The feature id for the '<em><b>Strong2</b></em>' reference list.
@@ -399,16 +408,16 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION__STRONG2 = 1;
+  int TYPE_EXPRESSION__STRONG2 = 2;
 
   /**
-   * The feature id for the '<em><b>Current T</b></em>' reference.
+   * The feature id for the '<em><b>Relation Weak</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION__CURRENT_T = 2;
+  int TYPE_EXPRESSION__RELATION_WEAK = 3;
 
   /**
    * The feature id for the '<em><b>Weak</b></em>' reference.
@@ -417,7 +426,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION__WEAK = 3;
+  int TYPE_EXPRESSION__WEAK = 4;
 
   /**
    * The feature id for the '<em><b>Weak2</b></em>' reference list.
@@ -426,7 +435,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION__WEAK2 = 4;
+  int TYPE_EXPRESSION__WEAK2 = 5;
 
   /**
    * The number of structural features of the '<em>Type Expression</em>' class.
@@ -435,7 +444,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int TYPE_EXPRESSION_FEATURE_COUNT = 5;
+  int TYPE_EXPRESSION_FEATURE_COUNT = 6;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.MovesImpl <em>Moves</em>}' class.
@@ -688,13 +697,22 @@ public interface RpgindividualPackage extends EPackage
   int RULE__TARGET_ATT = 2;
 
   /**
+   * The feature id for the '<em><b>Change</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int RULE__CHANGE = 3;
+
+  /**
    * The feature id for the '<em><b>Sum</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int RULE__SUM = 3;
+  int RULE__SUM = 4;
 
   /**
    * The number of structural features of the '<em>Rule</em>' class.
@@ -703,7 +721,7 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    * @ordered
    */
-  int RULE_FEATURE_COUNT = 4;
+  int RULE_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link smitey.rpgindividual.impl.EntitiesImpl <em>Entities</em>}' class.
@@ -1875,6 +1893,17 @@ public interface RpgindividualPackage extends EPackage
   EClass getTypeExpression();
 
   /**
+   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.TypeExpression#getRelationStrong <em>Relation Strong</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Relation Strong</em>'.
+   * @see smitey.rpgindividual.TypeExpression#getRelationStrong()
+   * @see #getTypeExpression()
+   * @generated
+   */
+  EReference getTypeExpression_RelationStrong();
+
+  /**
    * Returns the meta object for the reference '{@link smitey.rpgindividual.TypeExpression#getStrong <em>Strong</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1897,15 +1926,15 @@ public interface RpgindividualPackage extends EPackage
   EReference getTypeExpression_Strong2();
 
   /**
-   * Returns the meta object for the reference '{@link smitey.rpgindividual.TypeExpression#getCurrentT <em>Current T</em>}'.
+   * Returns the meta object for the containment reference '{@link smitey.rpgindividual.TypeExpression#getRelationWeak <em>Relation Weak</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Current T</em>'.
-   * @see smitey.rpgindividual.TypeExpression#getCurrentT()
+   * @return the meta object for the containment reference '<em>Relation Weak</em>'.
+   * @see smitey.rpgindividual.TypeExpression#getRelationWeak()
    * @see #getTypeExpression()
    * @generated
    */
-  EReference getTypeExpression_CurrentT();
+  EReference getTypeExpression_RelationWeak();
 
   /**
    * Returns the meta object for the reference '{@link smitey.rpgindividual.TypeExpression#getWeak <em>Weak</em>}'.
@@ -2152,6 +2181,17 @@ public interface RpgindividualPackage extends EPackage
    * @generated
    */
   EReference getRule_TargetAtt();
+
+  /**
+   * Returns the meta object for the attribute '{@link smitey.rpgindividual.Rule#getChange <em>Change</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Change</em>'.
+   * @see smitey.rpgindividual.Rule#getChange()
+   * @see #getRule()
+   * @generated
+   */
+  EAttribute getRule_Change();
 
   /**
    * Returns the meta object for the containment reference '{@link smitey.rpgindividual.Rule#getSum <em>Sum</em>}'.
@@ -3105,6 +3145,14 @@ public interface RpgindividualPackage extends EPackage
     EClass TYPE_EXPRESSION = eINSTANCE.getTypeExpression();
 
     /**
+     * The meta object literal for the '<em><b>Relation Strong</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference TYPE_EXPRESSION__RELATION_STRONG = eINSTANCE.getTypeExpression_RelationStrong();
+
+    /**
      * The meta object literal for the '<em><b>Strong</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3121,12 +3169,12 @@ public interface RpgindividualPackage extends EPackage
     EReference TYPE_EXPRESSION__STRONG2 = eINSTANCE.getTypeExpression_Strong2();
 
     /**
-     * The meta object literal for the '<em><b>Current T</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Relation Weak</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TYPE_EXPRESSION__CURRENT_T = eINSTANCE.getTypeExpression_CurrentT();
+    EReference TYPE_EXPRESSION__RELATION_WEAK = eINSTANCE.getTypeExpression_RelationWeak();
 
     /**
      * The meta object literal for the '<em><b>Weak</b></em>' reference feature.
@@ -3325,6 +3373,14 @@ public interface RpgindividualPackage extends EPackage
      * @generated
      */
     EReference RULE__TARGET_ATT = eINSTANCE.getRule_TargetAtt();
+
+    /**
+     * The meta object literal for the '<em><b>Change</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute RULE__CHANGE = eINSTANCE.getRule_Change();
 
     /**
      * The meta object literal for the '<em><b>Sum</b></em>' containment reference feature.

@@ -796,7 +796,7 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     Rule returns Rule
 	 *
 	 * Constraint:
-	 *     (or=ORcondition? targetThen=Target targetAtt=[Attribute|ID] sum=Sum)
+	 *     (or=ORcondition? targetThen=Target targetAtt=[Attribute|ID] (change='-' | change='+') sum=Sum)
 	 */
 	protected void sequence_Rule(ISerializationContext context, Rule semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -900,7 +900,14 @@ public class RpgindividualSemanticSequencer extends AbstractDelegatingSemanticSe
 	 *     TypeExpression returns TypeExpression
 	 *
 	 * Constraint:
-	 *     (strong=[Type|ID] strong2+=[Type|ID]* currentT=[Type|ID] weak=[Type|ID] weak2+=[Type|ID]*)
+	 *     (
+	 *         relationStrong=FloatNum 
+	 *         strong=[Type|ID] 
+	 *         strong2+=[Type|ID]* 
+	 *         relationWeak=FloatNum 
+	 *         weak=[Type|ID] 
+	 *         weak2+=[Type|ID]*
+	 *     )
 	 */
 	protected void sequence_TypeExpression(ISerializationContext context, TypeExpression semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

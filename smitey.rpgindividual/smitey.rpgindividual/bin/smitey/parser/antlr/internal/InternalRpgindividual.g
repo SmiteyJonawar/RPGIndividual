@@ -628,6 +628,33 @@ ruleTypeExpression returns [EObject current=null]
 	leaveRule();
 }:
 	(
+		otherlv_0='strong('
+		{
+			newLeafNode(otherlv_0, grammarAccess.getTypeExpressionAccess().getStrongKeyword_0());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTypeExpressionAccess().getRelationStrongFloatNumParserRuleCall_1_0());
+				}
+				lv_relationStrong_1_0=ruleFloatNum
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTypeExpressionRule());
+					}
+					set(
+						$current,
+						"relationStrong",
+						lv_relationStrong_1_0,
+						"smitey.Rpgindividual.FloatNum");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_2='):'
+		{
+			newLeafNode(otherlv_2, grammarAccess.getTypeExpressionAccess().getRightParenthesisColonKeyword_2());
+		}
 		(
 			(
 				{
@@ -635,16 +662,16 @@ ruleTypeExpression returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getTypeExpressionRule());
 					}
 				}
-				otherlv_0=RULE_ID
+				otherlv_3=RULE_ID
 				{
-					newLeafNode(otherlv_0, grammarAccess.getTypeExpressionAccess().getStrongTypeCrossReference_0_0());
+					newLeafNode(otherlv_3, grammarAccess.getTypeExpressionAccess().getStrongTypeCrossReference_3_0());
 				}
 			)
 		)
 		(
-			otherlv_1=','
+			otherlv_4=','
 			{
-				newLeafNode(otherlv_1, grammarAccess.getTypeExpressionAccess().getCommaKeyword_1_0());
+				newLeafNode(otherlv_4, grammarAccess.getTypeExpressionAccess().getCommaKeyword_4_0());
 			}
 			(
 				(
@@ -653,16 +680,39 @@ ruleTypeExpression returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getTypeExpressionRule());
 						}
 					}
-					otherlv_2=RULE_ID
+					otherlv_5=RULE_ID
 					{
-						newLeafNode(otherlv_2, grammarAccess.getTypeExpressionAccess().getStrong2TypeCrossReference_1_1_0());
+						newLeafNode(otherlv_5, grammarAccess.getTypeExpressionAccess().getStrong2TypeCrossReference_4_1_0());
 					}
 				)
 			)
 		)*
-		otherlv_3='<'
+		otherlv_6='weak('
 		{
-			newLeafNode(otherlv_3, grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_2());
+			newLeafNode(otherlv_6, grammarAccess.getTypeExpressionAccess().getWeakKeyword_5());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getTypeExpressionAccess().getRelationWeakFloatNumParserRuleCall_6_0());
+				}
+				lv_relationWeak_7_0=ruleFloatNum
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getTypeExpressionRule());
+					}
+					set(
+						$current,
+						"relationWeak",
+						lv_relationWeak_7_0,
+						"smitey.Rpgindividual.FloatNum");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_8='):'
+		{
+			newLeafNode(otherlv_8, grammarAccess.getTypeExpressionAccess().getRightParenthesisColonKeyword_7());
 		}
 		(
 			(
@@ -671,33 +721,16 @@ ruleTypeExpression returns [EObject current=null]
 						$current = createModelElement(grammarAccess.getTypeExpressionRule());
 					}
 				}
-				otherlv_4=RULE_ID
+				otherlv_9=RULE_ID
 				{
-					newLeafNode(otherlv_4, grammarAccess.getTypeExpressionAccess().getCurrentTTypeCrossReference_3_0());
-				}
-			)
-		)
-		otherlv_5='<'
-		{
-			newLeafNode(otherlv_5, grammarAccess.getTypeExpressionAccess().getLessThanSignKeyword_4());
-		}
-		(
-			(
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getTypeExpressionRule());
-					}
-				}
-				otherlv_6=RULE_ID
-				{
-					newLeafNode(otherlv_6, grammarAccess.getTypeExpressionAccess().getWeakTypeCrossReference_5_0());
+					newLeafNode(otherlv_9, grammarAccess.getTypeExpressionAccess().getWeakTypeCrossReference_8_0());
 				}
 			)
 		)
 		(
-			otherlv_7=','
+			otherlv_10=','
 			{
-				newLeafNode(otherlv_7, grammarAccess.getTypeExpressionAccess().getCommaKeyword_6_0());
+				newLeafNode(otherlv_10, grammarAccess.getTypeExpressionAccess().getCommaKeyword_9_0());
 			}
 			(
 				(
@@ -706,9 +739,9 @@ ruleTypeExpression returns [EObject current=null]
 							$current = createModelElement(grammarAccess.getTypeExpressionRule());
 						}
 					}
-					otherlv_8=RULE_ID
+					otherlv_11=RULE_ID
 					{
-						newLeafNode(otherlv_8, grammarAccess.getTypeExpressionAccess().getWeak2TypeCrossReference_6_1_0());
+						newLeafNode(otherlv_11, grammarAccess.getTypeExpressionAccess().getWeak2TypeCrossReference_9_1_0());
 					}
 				)
 			)
@@ -1130,10 +1163,37 @@ ruleRule returns [EObject current=null]
 		}
 		(
 			(
+				(
+					lv_change_6_1='-'
+					{
+						newLeafNode(lv_change_6_1, grammarAccess.getRuleAccess().getChangeHyphenMinusKeyword_4_0_0());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRuleRule());
+						}
+						setWithLastConsumed($current, "change", lv_change_6_1, null);
+					}
+					    |
+					lv_change_6_2='+'
+					{
+						newLeafNode(lv_change_6_2, grammarAccess.getRuleAccess().getChangePlusSignKeyword_4_0_1());
+					}
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getRuleRule());
+						}
+						setWithLastConsumed($current, "change", lv_change_6_2, null);
+					}
+				)
+			)
+		)
+		(
+			(
 				{
-					newCompositeNode(grammarAccess.getRuleAccess().getSumSumParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getRuleAccess().getSumSumParserRuleCall_5_0());
 				}
-				lv_sum_6_0=ruleSum
+				lv_sum_7_0=ruleSum
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getRuleRule());
@@ -1141,7 +1201,7 @@ ruleRule returns [EObject current=null]
 					set(
 						$current,
 						"sum",
-						lv_sum_6_0,
+						lv_sum_7_0,
 						"smitey.Rpgindividual.Sum");
 					afterParserOrEnumRuleCall();
 				}

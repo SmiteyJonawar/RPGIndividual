@@ -33,6 +33,7 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 		private static void init(ImmutableMap.Builder<AbstractElement, String> builder, RpgindividualGrammarAccess grammarAccess) {
 			builder.put(grammarAccess.getDeclarationAccess().getAlternatives(), "rule__Declaration__Alternatives");
 			builder.put(grammarAccess.getAttributeValuesAccess().getAlternatives_1(), "rule__AttributeValues__Alternatives_1");
+			builder.put(grammarAccess.getRuleAccess().getChangeAlternatives_4_0(), "rule__Rule__ChangeAlternatives_4_0");
 			builder.put(grammarAccess.getStatementAccess().getAlternatives(), "rule__Statement__Alternatives");
 			builder.put(grammarAccess.getComparatorAccess().getAlternatives(), "rule__Comparator__Alternatives");
 			builder.put(grammarAccess.getSumAccess().getAlternatives_1_0(), "rule__Sum__Alternatives_1_0");
@@ -51,8 +52,8 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRelationsAccess().getGroup(), "rule__Relations__Group__0");
 			builder.put(grammarAccess.getTypeAccess().getGroup(), "rule__Type__Group__0");
 			builder.put(grammarAccess.getTypeExpressionAccess().getGroup(), "rule__TypeExpression__Group__0");
-			builder.put(grammarAccess.getTypeExpressionAccess().getGroup_1(), "rule__TypeExpression__Group_1__0");
-			builder.put(grammarAccess.getTypeExpressionAccess().getGroup_6(), "rule__TypeExpression__Group_6__0");
+			builder.put(grammarAccess.getTypeExpressionAccess().getGroup_4(), "rule__TypeExpression__Group_4__0");
+			builder.put(grammarAccess.getTypeExpressionAccess().getGroup_9(), "rule__TypeExpression__Group_9__0");
 			builder.put(grammarAccess.getMovesAccess().getGroup(), "rule__Moves__Group__0");
 			builder.put(grammarAccess.getMoveAccess().getGroup(), "rule__Move__Group__0");
 			builder.put(grammarAccess.getMEffectAccess().getGroup(), "rule__MEffect__Group__0");
@@ -106,11 +107,12 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRelationsAccess().getTypeAssignment_1(), "rule__Relations__TypeAssignment_1");
 			builder.put(grammarAccess.getTypeAccess().getNameAssignment_1(), "rule__Type__NameAssignment_1");
 			builder.put(grammarAccess.getTypeAccess().getTExpressionAssignment_2(), "rule__Type__TExpressionAssignment_2");
-			builder.put(grammarAccess.getTypeExpressionAccess().getStrongAssignment_0(), "rule__TypeExpression__StrongAssignment_0");
-			builder.put(grammarAccess.getTypeExpressionAccess().getStrong2Assignment_1_1(), "rule__TypeExpression__Strong2Assignment_1_1");
-			builder.put(grammarAccess.getTypeExpressionAccess().getCurrentTAssignment_3(), "rule__TypeExpression__CurrentTAssignment_3");
-			builder.put(grammarAccess.getTypeExpressionAccess().getWeakAssignment_5(), "rule__TypeExpression__WeakAssignment_5");
-			builder.put(grammarAccess.getTypeExpressionAccess().getWeak2Assignment_6_1(), "rule__TypeExpression__Weak2Assignment_6_1");
+			builder.put(grammarAccess.getTypeExpressionAccess().getRelationStrongAssignment_1(), "rule__TypeExpression__RelationStrongAssignment_1");
+			builder.put(grammarAccess.getTypeExpressionAccess().getStrongAssignment_3(), "rule__TypeExpression__StrongAssignment_3");
+			builder.put(grammarAccess.getTypeExpressionAccess().getStrong2Assignment_4_1(), "rule__TypeExpression__Strong2Assignment_4_1");
+			builder.put(grammarAccess.getTypeExpressionAccess().getRelationWeakAssignment_6(), "rule__TypeExpression__RelationWeakAssignment_6");
+			builder.put(grammarAccess.getTypeExpressionAccess().getWeakAssignment_8(), "rule__TypeExpression__WeakAssignment_8");
+			builder.put(grammarAccess.getTypeExpressionAccess().getWeak2Assignment_9_1(), "rule__TypeExpression__Weak2Assignment_9_1");
 			builder.put(grammarAccess.getMovesAccess().getMoveAssignment_1(), "rule__Moves__MoveAssignment_1");
 			builder.put(grammarAccess.getMoveAccess().getNameAssignment_1(), "rule__Move__NameAssignment_1");
 			builder.put(grammarAccess.getMoveAccess().getETypeAssignment_2(), "rule__Move__ETypeAssignment_2");
@@ -125,7 +127,8 @@ public class RpgindividualParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRuleAccess().getOrAssignment_0_1(), "rule__Rule__OrAssignment_0_1");
 			builder.put(grammarAccess.getRuleAccess().getTargetThenAssignment_1(), "rule__Rule__TargetThenAssignment_1");
 			builder.put(grammarAccess.getRuleAccess().getTargetAttAssignment_2(), "rule__Rule__TargetAttAssignment_2");
-			builder.put(grammarAccess.getRuleAccess().getSumAssignment_4(), "rule__Rule__SumAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getChangeAssignment_4(), "rule__Rule__ChangeAssignment_4");
+			builder.put(grammarAccess.getRuleAccess().getSumAssignment_5(), "rule__Rule__SumAssignment_5");
 			builder.put(grammarAccess.getEntitiesAccess().getEntityAssignment_1(), "rule__Entities__EntityAssignment_1");
 			builder.put(grammarAccess.getDeathAccess().getLogAssignment_2(), "rule__Death__LogAssignment_2");
 			builder.put(grammarAccess.getEntityAccess().getNameAssignment_1(), "rule__Entity__NameAssignment_1");

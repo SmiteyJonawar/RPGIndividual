@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link smitey.rpgindividual.Rule#getOr <em>Or</em>}</li>
  *   <li>{@link smitey.rpgindividual.Rule#getTargetThen <em>Target Then</em>}</li>
  *   <li>{@link smitey.rpgindividual.Rule#getTargetAtt <em>Target Att</em>}</li>
+ *   <li>{@link smitey.rpgindividual.Rule#getChange <em>Change</em>}</li>
  *   <li>{@link smitey.rpgindividual.Rule#getSum <em>Sum</em>}</li>
  * </ul>
  *
@@ -91,6 +92,28 @@ public interface Rule extends EObject
    * @generated
    */
   void setTargetAtt(Attribute value);
+
+  /**
+   * Returns the value of the '<em><b>Change</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Change</em>' attribute.
+   * @see #setChange(String)
+   * @see smitey.rpgindividual.RpgindividualPackage#getRule_Change()
+   * @model
+   * @generated
+   */
+  String getChange();
+
+  /**
+   * Sets the value of the '{@link smitey.rpgindividual.Rule#getChange <em>Change</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Change</em>' attribute.
+   * @see #getChange()
+   * @generated
+   */
+  void setChange(String value);
 
   /**
    * Returns the value of the '<em><b>Sum</b></em>' containment reference.

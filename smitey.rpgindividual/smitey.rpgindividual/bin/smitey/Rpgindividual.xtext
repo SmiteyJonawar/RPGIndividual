@@ -45,9 +45,8 @@ Type:
 ;
 
 TypeExpression:
-	strong=[Type] (',' strong2+=[Type])*  '<' currentT=[Type] '<' weak=[Type] (',' weak2+=[Type])*
+	'strong(' relationStrong=FloatNum '):' strong=[Type] (',' strong2+=[Type])* 'weak(' relationWeak=FloatNum '):' weak=[Type] (',' weak2+=[Type])*
 ;
-
 
 Moves:
 	'moves' move+=Move+
@@ -74,7 +73,7 @@ AltAttribute:
 ;
 
 Rule:
-	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum
+	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' change=('-'|'+') sum=Sum
 ;
 
 Entities:

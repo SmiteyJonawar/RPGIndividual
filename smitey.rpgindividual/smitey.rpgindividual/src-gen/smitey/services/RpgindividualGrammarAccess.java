@@ -159,8 +159,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cAttributeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAttributeAttributeParserRuleCall_1_0 = (RuleCall)cAttributeAssignment_1.eContents().get(0);
 		
-		////MoveE:
-		////;
 		//Attributes:
 		//	'attributes' attribute+=Attribute+;
 		@Override public ParserRule getRule() { return rule; }
@@ -323,97 +321,111 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	public class TypeExpressionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.TypeExpression");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cStrongAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final CrossReference cStrongTypeCrossReference_0_0 = (CrossReference)cStrongAssignment_0.eContents().get(0);
-		private final RuleCall cStrongTypeIDTerminalRuleCall_0_0_1 = (RuleCall)cStrongTypeCrossReference_0_0.eContents().get(1);
-		private final Group cGroup_1 = (Group)cGroup.eContents().get(1);
-		private final Keyword cCommaKeyword_1_0 = (Keyword)cGroup_1.eContents().get(0);
-		private final Assignment cStrong2Assignment_1_1 = (Assignment)cGroup_1.eContents().get(1);
-		private final CrossReference cStrong2TypeCrossReference_1_1_0 = (CrossReference)cStrong2Assignment_1_1.eContents().get(0);
-		private final RuleCall cStrong2TypeIDTerminalRuleCall_1_1_0_1 = (RuleCall)cStrong2TypeCrossReference_1_1_0.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cCurrentTAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final CrossReference cCurrentTTypeCrossReference_3_0 = (CrossReference)cCurrentTAssignment_3.eContents().get(0);
-		private final RuleCall cCurrentTTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cCurrentTTypeCrossReference_3_0.eContents().get(1);
-		private final Keyword cLessThanSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cWeakAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cWeakTypeCrossReference_5_0 = (CrossReference)cWeakAssignment_5.eContents().get(0);
-		private final RuleCall cWeakTypeIDTerminalRuleCall_5_0_1 = (RuleCall)cWeakTypeCrossReference_5_0.eContents().get(1);
-		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
-		private final Keyword cCommaKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
-		private final Assignment cWeak2Assignment_6_1 = (Assignment)cGroup_6.eContents().get(1);
-		private final CrossReference cWeak2TypeCrossReference_6_1_0 = (CrossReference)cWeak2Assignment_6_1.eContents().get(0);
-		private final RuleCall cWeak2TypeIDTerminalRuleCall_6_1_0_1 = (RuleCall)cWeak2TypeCrossReference_6_1_0.eContents().get(1);
+		private final Keyword cStrongKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cRelationStrongAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cRelationStrongFloatNumParserRuleCall_1_0 = (RuleCall)cRelationStrongAssignment_1.eContents().get(0);
+		private final Keyword cRightParenthesisColonKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cStrongAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final CrossReference cStrongTypeCrossReference_3_0 = (CrossReference)cStrongAssignment_3.eContents().get(0);
+		private final RuleCall cStrongTypeIDTerminalRuleCall_3_0_1 = (RuleCall)cStrongTypeCrossReference_3_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cCommaKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cStrong2Assignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cStrong2TypeCrossReference_4_1_0 = (CrossReference)cStrong2Assignment_4_1.eContents().get(0);
+		private final RuleCall cStrong2TypeIDTerminalRuleCall_4_1_0_1 = (RuleCall)cStrong2TypeCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cWeakKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRelationWeakAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cRelationWeakFloatNumParserRuleCall_6_0 = (RuleCall)cRelationWeakAssignment_6.eContents().get(0);
+		private final Keyword cRightParenthesisColonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cWeakAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cWeakTypeCrossReference_8_0 = (CrossReference)cWeakAssignment_8.eContents().get(0);
+		private final RuleCall cWeakTypeIDTerminalRuleCall_8_0_1 = (RuleCall)cWeakTypeCrossReference_8_0.eContents().get(1);
+		private final Group cGroup_9 = (Group)cGroup.eContents().get(9);
+		private final Keyword cCommaKeyword_9_0 = (Keyword)cGroup_9.eContents().get(0);
+		private final Assignment cWeak2Assignment_9_1 = (Assignment)cGroup_9.eContents().get(1);
+		private final CrossReference cWeak2TypeCrossReference_9_1_0 = (CrossReference)cWeak2Assignment_9_1.eContents().get(0);
+		private final RuleCall cWeak2TypeIDTerminalRuleCall_9_1_0_1 = (RuleCall)cWeak2TypeCrossReference_9_1_0.eContents().get(1);
 		
 		//TypeExpression:
-		//	strong=[Type] (',' strong2+=[Type])* '<' currentT=[Type] '<' weak=[Type] (',' weak2+=[Type])*;
+		//	'strong(' relationStrong=FloatNum '):' strong=[Type] (',' strong2+=[Type])* 'weak(' relationWeak=FloatNum '):'
+		//	weak=[Type] (',' weak2+=[Type])*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//strong=[Type] (',' strong2+=[Type])* '<' currentT=[Type] '<' weak=[Type] (',' weak2+=[Type])*
+		//'strong(' relationStrong=FloatNum '):' strong=[Type] (',' strong2+=[Type])* 'weak(' relationWeak=FloatNum '):'
+		//weak=[Type] (',' weak2+=[Type])*
 		public Group getGroup() { return cGroup; }
 		
+		//'strong('
+		public Keyword getStrongKeyword_0() { return cStrongKeyword_0; }
+		
+		//relationStrong=FloatNum
+		public Assignment getRelationStrongAssignment_1() { return cRelationStrongAssignment_1; }
+		
+		//FloatNum
+		public RuleCall getRelationStrongFloatNumParserRuleCall_1_0() { return cRelationStrongFloatNumParserRuleCall_1_0; }
+		
+		//'):'
+		public Keyword getRightParenthesisColonKeyword_2() { return cRightParenthesisColonKeyword_2; }
+		
 		//strong=[Type]
-		public Assignment getStrongAssignment_0() { return cStrongAssignment_0; }
+		public Assignment getStrongAssignment_3() { return cStrongAssignment_3; }
 		
 		//[Type]
-		public CrossReference getStrongTypeCrossReference_0_0() { return cStrongTypeCrossReference_0_0; }
+		public CrossReference getStrongTypeCrossReference_3_0() { return cStrongTypeCrossReference_3_0; }
 		
 		//ID
-		public RuleCall getStrongTypeIDTerminalRuleCall_0_0_1() { return cStrongTypeIDTerminalRuleCall_0_0_1; }
+		public RuleCall getStrongTypeIDTerminalRuleCall_3_0_1() { return cStrongTypeIDTerminalRuleCall_3_0_1; }
 		
 		//(',' strong2+=[Type])*
-		public Group getGroup_1() { return cGroup_1; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//','
-		public Keyword getCommaKeyword_1_0() { return cCommaKeyword_1_0; }
+		public Keyword getCommaKeyword_4_0() { return cCommaKeyword_4_0; }
 		
 		//strong2+=[Type]
-		public Assignment getStrong2Assignment_1_1() { return cStrong2Assignment_1_1; }
+		public Assignment getStrong2Assignment_4_1() { return cStrong2Assignment_4_1; }
 		
 		//[Type]
-		public CrossReference getStrong2TypeCrossReference_1_1_0() { return cStrong2TypeCrossReference_1_1_0; }
+		public CrossReference getStrong2TypeCrossReference_4_1_0() { return cStrong2TypeCrossReference_4_1_0; }
 		
 		//ID
-		public RuleCall getStrong2TypeIDTerminalRuleCall_1_1_0_1() { return cStrong2TypeIDTerminalRuleCall_1_1_0_1; }
+		public RuleCall getStrong2TypeIDTerminalRuleCall_4_1_0_1() { return cStrong2TypeIDTerminalRuleCall_4_1_0_1; }
 		
-		//'<'
-		public Keyword getLessThanSignKeyword_2() { return cLessThanSignKeyword_2; }
+		//'weak('
+		public Keyword getWeakKeyword_5() { return cWeakKeyword_5; }
 		
-		//currentT=[Type]
-		public Assignment getCurrentTAssignment_3() { return cCurrentTAssignment_3; }
+		//relationWeak=FloatNum
+		public Assignment getRelationWeakAssignment_6() { return cRelationWeakAssignment_6; }
 		
-		//[Type]
-		public CrossReference getCurrentTTypeCrossReference_3_0() { return cCurrentTTypeCrossReference_3_0; }
+		//FloatNum
+		public RuleCall getRelationWeakFloatNumParserRuleCall_6_0() { return cRelationWeakFloatNumParserRuleCall_6_0; }
 		
-		//ID
-		public RuleCall getCurrentTTypeIDTerminalRuleCall_3_0_1() { return cCurrentTTypeIDTerminalRuleCall_3_0_1; }
-		
-		//'<'
-		public Keyword getLessThanSignKeyword_4() { return cLessThanSignKeyword_4; }
+		//'):'
+		public Keyword getRightParenthesisColonKeyword_7() { return cRightParenthesisColonKeyword_7; }
 		
 		//weak=[Type]
-		public Assignment getWeakAssignment_5() { return cWeakAssignment_5; }
+		public Assignment getWeakAssignment_8() { return cWeakAssignment_8; }
 		
 		//[Type]
-		public CrossReference getWeakTypeCrossReference_5_0() { return cWeakTypeCrossReference_5_0; }
+		public CrossReference getWeakTypeCrossReference_8_0() { return cWeakTypeCrossReference_8_0; }
 		
 		//ID
-		public RuleCall getWeakTypeIDTerminalRuleCall_5_0_1() { return cWeakTypeIDTerminalRuleCall_5_0_1; }
+		public RuleCall getWeakTypeIDTerminalRuleCall_8_0_1() { return cWeakTypeIDTerminalRuleCall_8_0_1; }
 		
 		//(',' weak2+=[Type])*
-		public Group getGroup_6() { return cGroup_6; }
+		public Group getGroup_9() { return cGroup_9; }
 		
 		//','
-		public Keyword getCommaKeyword_6_0() { return cCommaKeyword_6_0; }
+		public Keyword getCommaKeyword_9_0() { return cCommaKeyword_9_0; }
 		
 		//weak2+=[Type]
-		public Assignment getWeak2Assignment_6_1() { return cWeak2Assignment_6_1; }
+		public Assignment getWeak2Assignment_9_1() { return cWeak2Assignment_9_1; }
 		
 		//[Type]
-		public CrossReference getWeak2TypeCrossReference_6_1_0() { return cWeak2TypeCrossReference_6_1_0; }
+		public CrossReference getWeak2TypeCrossReference_9_1_0() { return cWeak2TypeCrossReference_9_1_0; }
 		
 		//ID
-		public RuleCall getWeak2TypeIDTerminalRuleCall_6_1_0_1() { return cWeak2TypeIDTerminalRuleCall_6_1_0_1; }
+		public RuleCall getWeak2TypeIDTerminalRuleCall_9_1_0_1() { return cWeak2TypeIDTerminalRuleCall_9_1_0_1; }
 	}
 	public class MovesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Moves");
@@ -623,14 +635,18 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		private final CrossReference cTargetAttAttributeCrossReference_2_0 = (CrossReference)cTargetAttAssignment_2.eContents().get(0);
 		private final RuleCall cTargetAttAttributeIDTerminalRuleCall_2_0_1 = (RuleCall)cTargetAttAttributeCrossReference_2_0.eContents().get(1);
 		private final Keyword cIsKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSumAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSumSumParserRuleCall_4_0 = (RuleCall)cSumAssignment_4.eContents().get(0);
+		private final Assignment cChangeAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final Alternatives cChangeAlternatives_4_0 = (Alternatives)cChangeAssignment_4.eContents().get(0);
+		private final Keyword cChangeHyphenMinusKeyword_4_0_0 = (Keyword)cChangeAlternatives_4_0.eContents().get(0);
+		private final Keyword cChangePlusSignKeyword_4_0_1 = (Keyword)cChangeAlternatives_4_0.eContents().get(1);
+		private final Assignment cSumAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSumSumParserRuleCall_5_0 = (RuleCall)cSumAssignment_5.eContents().get(0);
 		
 		//Rule:
-		//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum;
+		//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' change=('-' | '+') sum=Sum;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum
+		//('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' change=('-' | '+') sum=Sum
 		public Group getGroup() { return cGroup; }
 		
 		//('if' or=ORcondition 'then')?
@@ -666,11 +682,23 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		//'is'
 		public Keyword getIsKeyword_3() { return cIsKeyword_3; }
 		
+		//change=('-' | '+')
+		public Assignment getChangeAssignment_4() { return cChangeAssignment_4; }
+		
+		//('-' | '+')
+		public Alternatives getChangeAlternatives_4_0() { return cChangeAlternatives_4_0; }
+		
+		//'-'
+		public Keyword getChangeHyphenMinusKeyword_4_0_0() { return cChangeHyphenMinusKeyword_4_0_0; }
+		
+		//'+'
+		public Keyword getChangePlusSignKeyword_4_0_1() { return cChangePlusSignKeyword_4_0_1; }
+		
 		//sum=Sum
-		public Assignment getSumAssignment_4() { return cSumAssignment_4; }
+		public Assignment getSumAssignment_5() { return cSumAssignment_5; }
 		
 		//Sum
-		public RuleCall getSumSumParserRuleCall_4_0() { return cSumSumParserRuleCall_4_0; }
+		public RuleCall getSumSumParserRuleCall_5_0() { return cSumSumParserRuleCall_5_0; }
 	}
 	public class EntitiesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "smitey.Rpgindividual.Entities");
@@ -1592,8 +1620,6 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 		return getEffectAccess().getRule();
 	}
 	
-	////MoveE:
-	////;
 	//Attributes:
 	//	'attributes' attribute+=Attribute+;
 	public AttributesElements getAttributesAccess() {
@@ -1655,7 +1681,8 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//TypeExpression:
-	//	strong=[Type] (',' strong2+=[Type])* '<' currentT=[Type] '<' weak=[Type] (',' weak2+=[Type])*;
+	//	'strong(' relationStrong=FloatNum '):' strong=[Type] (',' strong2+=[Type])* 'weak(' relationWeak=FloatNum '):'
+	//	weak=[Type] (',' weak2+=[Type])*;
 	public TypeExpressionElements getTypeExpressionAccess() {
 		return pTypeExpression;
 	}
@@ -1725,7 +1752,7 @@ public class RpgindividualGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Rule:
-	//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' sum=Sum;
+	//	('if' or=ORcondition 'then')? targetThen=Target targetAtt=[Attribute] 'is' change=('-' | '+') sum=Sum;
 	public RuleElements getRuleAccess() {
 		return pRule;
 	}

@@ -433,14 +433,25 @@ class RpgindividualGenerator extends AbstractGenerator {
 					if(effectMove(move, name, user, enemy)){
 						for(AttributeData aData : «effect.rule.targetThen.toLowerCase».getAttributes()){
 							if(aData.getAttributeName() == "«effect.rule.targetAtt.name»"){
-								aData.setNumber(changeMove(move, name, user, enemy));
+								float modifier = (float) 1.0;
+								String moveType = move.getMove(name).getType();
+								String targetType = «effect.rule.targetThen.toLowerCase».getType();
+								Type type = Type.getInstance();
+								HashMap<String, TypeRelation> typeRelations = type.getTypeRelations();
+								TypeRelation typeRelation = typeRelations.get(targetType);
+								if(typeRelation.getStrongAgainst().contains(moveType)){
+									modifier = typeRelation.getStrongRelationMultiplier();
+								} else if(typeRelation.getWeakAgainst().contains(moveType)){
+									modifier = typeRelation.getWeakRelationMultiplier();
+								}
+								aData.setNumber(aData.getNumber().floatValue() «effect.rule.change» (changeMove(move, name, user, enemy).floatValue() * modifier));
 								System.out.println(«effect.rule.targetThen.toLowerCase».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 							}
 						}
 					}
 					for(AttributeData aData : move.getMove(name).getMoveAttributes()){
 						if(aData.getAttributeName() == "«effect.rule.targetAtt.name»"){
-							aData.setNumber(changeMove(move, name, user, enemy));
+							aData.setNumber(aData.getNumber().floatValue() «effect.rule.change» changeMove(move, name, user, enemy).floatValue());
 							System.out.println(«effect.rule.targetThen.toLowerCase».getName() + "'(s) "  + aData.getAttributeName() + " is now: " + aData.getNumber());
 							
 						}				
@@ -932,18 +943,6 @@ class RpgindividualGenerator extends AbstractGenerator {
 		}
 		'''
 		
-		/*
-		 * «FOR buffEffect : move.BEffect»
-			«IF buffEffect !== null»
-			tempMoveData.addBuffEffect(new «buffEffect.buffEName.name»());
-			«ENDIF»
-			«ENDFOR»
-			«FOR afterEffect : move.AEffect»
-			«IF afterEffect !== null»
-			tempMoveData.addAfterEffect(new «afterEffect.afterEName.name»());
-			«ENDIF»
-			«ENDFOR»
-		  */
 	}
 	
 	def generateTeams(IFileSystemAccess2 fsa, Teams teams){
@@ -1074,6 +1073,8 @@ class RpgindividualGenerator extends AbstractGenerator {
 				
 				public class TypeRelation {
 				
+					private float strongRelationMultiplier;
+					private float weakRelationMultiplier;
 				    private ArrayList<String> weakAgainst;
 				    private ArrayList<String> strongAgainst;
 				
@@ -1087,7 +1088,7 @@ class RpgindividualGenerator extends AbstractGenerator {
 				    }
 				
 				    public void addWeakAgainst(String weak){
-				        strongAgainst.add(weak);
+				        weakAgainst.add(weak);
 				    }
 				
 				    public ArrayList<String> getWeakAgainst(){
@@ -1096,6 +1097,22 @@ class RpgindividualGenerator extends AbstractGenerator {
 				
 				    public ArrayList<String> getStrongAgainst(){
 				        return strongAgainst;
+				    }
+				    
+				    public float getStrongRelationMultiplier(){
+				    	return strongRelationMultiplier;
+				    }
+				    
+				    public void setStrongRelationMultiplier(float x){
+				    	strongRelationMultiplier = x;
+				    }
+				    
+				    public float getWeakRelationMultiplier(){
+				    	return weakRelationMultiplier;
+				    }
+				    
+				    public void setWeakRelationMultiplier(float x){
+				    	weakRelationMultiplier = x;
 				    }
 				
 				}
@@ -1121,6 +1138,8 @@ class RpgindividualGenerator extends AbstractGenerator {
 				«FOR worse : t.TExpression.weak2»
 				tr.addWeakAgainst("«worse.name»");
 				«ENDFOR»
+				tr.setStrongRelationMultiplier((float) «t.TExpression.relationStrong.numberValue»);
+				tr.setWeakRelationMultiplier((float) «t.TExpression.relationWeak.numberValue»);
 				«ENDIF»
 				type.addTypeRelation(currentType, tr);
 				«ENDFOR»

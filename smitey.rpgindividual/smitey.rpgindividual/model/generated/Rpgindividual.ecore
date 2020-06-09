@@ -42,10 +42,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TypeExpression">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationStrong" eType="#//FloatNum"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strong" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="strong2" unique="false"
         upperBound="-1" eType="#//Type"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="currentT" eType="#//Type"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="relationWeak" eType="#//FloatNum"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="weak" eType="#//Type"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="weak2" unique="false" upperBound="-1"
         eType="#//Type"/>
@@ -84,6 +87,7 @@
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetThen" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="targetAtt" eType="#//Attribute"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="change" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="sum" eType="#//Sum" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Entities" eSuperTypes="#//Declaration">

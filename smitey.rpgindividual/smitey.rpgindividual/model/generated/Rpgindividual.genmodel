@@ -40,9 +40,10 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Type/tExpression"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//TypeExpression">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/relationStrong"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/strong"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/strong2"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/currentT"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/relationWeak"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/weak"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//TypeExpression/weak2"/>
     </genClasses>
@@ -73,6 +74,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/or"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//Rule/targetThen"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/targetAtt"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Rpgindividual.ecore#//Rule/change"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Rpgindividual.ecore#//Rule/sum"/>
     </genClasses>
     <genClasses ecoreClass="Rpgindividual.ecore#//Entities">
