@@ -368,6 +368,7 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 	
 	@Check
 	public void checkAllCanDie(SystemRPG sysrpg) {
+		HashMap<String, Entity> nameToEntityMap = new HashMap<>();
 		//Find attributes
 		HashMap<String, ArrayList<String>> entitiesAttributes = new HashMap<>();
 		ArrayList<String> deathAttributes = new ArrayList<>();
@@ -379,11 +380,11 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 						entityAttributes.add(att.getAttribute().getName());
 					}
 					entitiesAttributes.put(entity.getName(), entityAttributes);
+					nameToEntityMap.put(entity.getName(), entity);
 				}
 			} else if(d instanceof Death) {
 				ArrayList<String> al = new ArrayList<String>();
 				propositionToArray(((Death) d).getLog(), al);
-				
 				getAttributesFromArray(al, deathAttributes);
 			}
 		}
@@ -395,7 +396,8 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 		    for(String attribute : deathAttributes) {
 		    	if(!value.contains(attribute)) {
 		    		warning("The entity: " + key +", does not have all the attributes used in Death, which might cause it to be unkillable.",
-		    				RpgindividualPackage.Literals.SYSTEM_RPG__NAME);
+		    				nameToEntityMap.get(key),
+		    				RpgindividualPackage.Literals.ENTITY__ATT);
 		    	}
 		    }
 		}
@@ -403,6 +405,7 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 	
 	@Check
 	public void checkForMoveDeadlocks(SystemRPG sysrpg) {
+		HashMap<String, Entity> nameToEntityMap = new HashMap<>();
 		//find entities
 		//find effects
 		HashMap<String, ArrayList<Move>> entityMap = new HashMap<>();
@@ -414,6 +417,7 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 					for(EntityMoveModifier eMove : entity.getEMoves().getMove()) {
 						moveArray.add(eMove.getMoveName());
 					}
+					nameToEntityMap.put(entity.getName(), entity);
 					entityMap.put(entity.getName(), moveArray);
 				}
 			} else if (d instanceof Effects) {
@@ -466,7 +470,9 @@ public class RpgindividualValidator extends AbstractRpgindividualValidator {
 			}
 			if(movesWithPossibleDeadlockEffect == entry.getValue().size()) {
 				warning("The entity: " + entityName +", only has moves containing possible limited usages, which might cause a deadlock.",
-	    				RpgindividualPackage.Literals.SYSTEM_RPG__NAME);
+						nameToEntityMap.get(entityName),
+						RpgindividualPackage.Literals.ENTITY__NAME
+	    				);
 			}
 		}
 	}
